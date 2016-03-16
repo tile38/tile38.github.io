@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="home">
+<head>
+	<title>Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<p>Tile38 is an open source (MIT licensed), in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Spatial index with search methods such as <a href="/commands/nearby">NEARBY</a>, <a href="/commands/within">WITHIN</a>, and <a href="/commands/intersects">INTERSECTS</a>.</li>
+<li>Realtime <a href="/topics/geofencing">geofencing</a>.</li>
+<li>Object types of <a href="/topics/object-types#latlon-point">lat/lon</a>, <a href="/topics/object-types#bounding-box">bbox</a>, <a href="/topics/object-types#geohash">Geohash</a>, <a href="/topics/object-types#geojson">GeoJSON</a>, <a href="/topics/object-types#quadkey">QuadKey</a>, and <a href="/topics/object-types#xyz-tile">XYZ tile</a>.</li>
+<li>Variety of client protocols, including <a href="/topics/clients#http">http</a> (curl), <a href="/topics/clients#websockets">websockets</a>, <a href="/topics/clients#telnet">telnet</a>, and a <a href="/topics/clients#native-interface">native interface</a>.</li>
+<li>Server responses are in json.</li>
+<li>Full <a href="/topics/command-line-interface">command line interface</a>.</li>
+<li>Leader / follower <a href="/topics/replication">replication</a>.</li>
+<li>In-memory database that persists on disk.</li>
+</ul>
+
+<p><a name="download"></a></p>
+
+<h2>Download</h2>
+
+<p><a href="https://github.com/tidwall/tile38/archive/1.0.4.tar.gz">Tile38 1.0.4 is the latest release</a>.<br />
+Are you looking for the source repository? <a href="https://github.com/tidwall/tile38">Check the Github page.</a></p>
+
+<p><a name="building"></a></p>
+
+<h2>Building and Installing</h2>
+
+<p>Download, extract and compile Tile38 with:</p>
+
+<p><code class="block">$ curl -L <a href="https://github.com/tidwall/tile38/archive/1.0.4.tar.gz">https://github.com/tidwall/tile38/archive/1.0.4.tar.gz</a> &gt; tile38-1.0.4.tar.gz
+$ tar xzf tile38-1.0.4.tar.gz
+$ cd tile38-1.0.4
+$ make</code></p>
+
+<p>The binaries that are now compiled are available in same directory. Run Tile38 with:</p>
+
+<p><code class="block">$ ./tile38-server</code></p>
+
+<p>You can interact with Tile38 using the built-in client:</p>
+
+<p><code class="block">$ ./tile38-cli
+tile38&gt; <keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number>
+tile38&gt; <keyword>GET</keyword> fleet truck1</code></p>
+		</div>
+	</div>
+</body>
+</html>

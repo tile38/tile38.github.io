@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="commands">
+<head>
+	<title>Commands - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<style>
+.commandtable { display: none; }
+.commandtable .filterbar { display: none; }
+</style>
+<div class="commandtable">
+	<div class="filterbar">
+		Filter by group: 
+		<a href="#" class="link-">All</a> | 
+		<a href="#search" class="link-search">Search</a> | 
+		<a href="#keys" class="link-keys">Keys</a> | 
+		<a href="#connection" class="link-connection">Connection</a> |
+		<a href="#replication" class="link-replication">Replication</a> |
+		<a href="#server" class="link-server">Server</a>
+	</div>
+	
+	    <a class="command grp-replication" href="/commands/aof">
+	        <div class="nameargs">
+	            <span class="name">AOF</span>
+	            <span class="args"> pos</span>
+	        </div>
+	        <div class="summary">Downloads the AOF starting from pos and keeps the connection alive</div>
+	    </a>
+
+	    <a class="command grp-replication" href="/commands/aofmd5">
+	        <div class="nameargs">
+	            <span class="name">AOFMD5</span>
+	            <span class="args"> pos size</span>
+	        </div>
+	        <div class="summary">Performs a checksum on a portion of the aof</div>
+	    </a>
+
+	    <a class="command grp-replication" href="/commands/aofshrink">
+	        <div class="nameargs">
+	            <span class="name">AOFSHRINK</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Shrinks the aof in the background</div>
+	    </a>
+
+	    <a class="command grp-connection" href="/commands/auth">
+	        <div class="nameargs">
+	            <span class="name">AUTH</span>
+	            <span class="args"> password</span>
+	        </div>
+	        <div class="summary">Authenticate to the server</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/config%20get">
+	        <div class="nameargs">
+	            <span class="name">CONFIG GET</span>
+	            <span class="args"> parameter</span>
+	        </div>
+	        <div class="summary">Get the value of a configuration parameter</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/config%20rewrite">
+	        <div class="nameargs">
+	            <span class="name">CONFIG REWRITE</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Rewrite the configuration file with the in memory configuration</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/config%20set">
+	        <div class="nameargs">
+	            <span class="name">CONFIG SET</span>
+	            <span class="args"> parameter [value]</span>
+	        </div>
+	        <div class="summary">Set a configuration parameter to the given value</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/del">
+	        <div class="nameargs">
+	            <span class="name">DEL</span>
+	            <span class="args"> key id</span>
+	        </div>
+	        <div class="summary">Delete an id from a key</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/drop">
+	        <div class="nameargs">
+	            <span class="name">DROP</span>
+	            <span class="args"> key</span>
+	        </div>
+	        <div class="summary">Remove a key from the database</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/flushdb">
+	        <div class="nameargs">
+	            <span class="name">FLUSHDB</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Removes all keys</div>
+	    </a>
+
+	    <a class="command grp-replication" href="/commands/follow">
+	        <div class="nameargs">
+	            <span class="name">FOLLOW</span>
+	            <span class="args"> host port</span>
+	        </div>
+	        <div class="summary">Follows a leader host</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/fset">
+	        <div class="nameargs">
+	            <span class="name">FSET</span>
+	            <span class="args"> key id field value</span>
+	        </div>
+	        <div class="summary">Set the value for a single field of an id</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/gc">
+	        <div class="nameargs">
+	            <span class="name">GC</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Forces a garbage collection</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/get">
+	        <div class="nameargs">
+	            <span class="name">GET</span>
+	            <span class="args"> key id [OBJECT|POINT|BOUNDS|(HASH geohash)]</span>
+	        </div>
+	        <div class="summary">Get the object of an id</div>
+	    </a>
+
+	    <a class="command grp-search" href="/commands/intersects">
+	        <div class="nameargs">
+	            <span class="name">INTERSECTS</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	        </div>
+	        <div class="summary">Searches for ids that are nearby a point</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/keys">
+	        <div class="nameargs">
+	            <span class="name">KEYS</span>
+	            <span class="args"> pattern</span>
+	        </div>
+	        <div class="summary">Finds all keys matching the given pattern</div>
+	    </a>
+
+	    <a class="command grp-search" href="/commands/nearby">
+	        <div class="nameargs">
+	            <span class="name">NEARBY</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] POINT lat lon meters</span>
+	        </div>
+	        <div class="summary">Searches for ids that are nearby a point</div>
+	    </a>
+
+	    <a class="command grp-connection" href="/commands/ping">
+	        <div class="nameargs">
+	            <span class="name">PING</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Ping the server</div>
+	    </a>
+
+	    <a class="command grp-connection" href="/commands/quit">
+	        <div class="nameargs">
+	            <span class="name">QUIT</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Close the connection</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/readonly">
+	        <div class="nameargs">
+	            <span class="name">READONLY</span>
+	            <span class="args"> yes|no</span>
+	        </div>
+	        <div class="summary">Turns on or off readonly mode</div>
+	    </a>
+
+	    <a class="command grp-search" href="/commands/scan">
+	        <div class="nameargs">
+	            <span class="name">SCAN</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)]</span>
+	        </div>
+	        <div class="summary">Incrementally iterate though a key</div>
+	    </a>
+
+	    <a class="command grp-server" href="/commands/server">
+	        <div class="nameargs">
+	            <span class="name">SERVER</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Show server stats and details</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/set">
+	        <div class="nameargs">
+	            <span class="name">SET</span>
+	            <span class="args"> key string [FIELD name value ...] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)</span>
+	        </div>
+	        <div class="summary">Sets the value of an id</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/stats">
+	        <div class="nameargs">
+	            <span class="name">STATS</span>
+	            <span class="args"> key [key ...]</span>
+	        </div>
+	        <div class="summary">Show stats for one or more keys</div>
+	    </a>
+
+	    <a class="command grp-search" href="/commands/within">
+	        <div class="nameargs">
+	            <span class="name">WITHIN</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	        </div>
+	        <div class="summary">Searches for ids that are nearby a point</div>
+	    </a>
+
+</div>
+<script>
+var llink = null
+function hashed(){
+	var h = ""
+	var all = document.querySelectorAll(".commandtable .command")
+	if (window.location.hash.length > 0){
+		h = window.location.hash.slice(1)
+	}
+	if (h != ""){
+		for (var i=0;i<all.length;i++){
+			all[i].style.display = 'none';
+		}
+		var items = document.querySelectorAll(".commandtable .command.grp-"+h)
+		for (var i=0;i<items.length;i++){
+			items[i].style.display = '';
+		}
+	} else{
+		for (var i=0;i<all.length;i++){
+			all[i].style.display = '';
+		}
+	}
+	if (llink){
+		llink.style.fontWeight = '';
+	}
+	var link = document.querySelector(".link-"+h)
+	if (link){
+		link.style.fontWeight = 'bold';
+		llink = link;
+	}
+}
+window.addEventListener("hashchange", function(){ hashed(); })
+hashed()
+var bar = document.querySelector(".commandtable .filterbar")
+if (bar){
+	bar.style.display = 'block';
+}
+</script>
+<style>.commandtable { display: block; }</style>
+		</div>
+	</div>
+</body>
+</html>

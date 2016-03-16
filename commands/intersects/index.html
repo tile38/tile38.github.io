@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="command">
+<head>
+	<title>INTERSECTS - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<h2 class="command-title">
+			INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
+		</h2>
+		<div class="related-commands">
+			<div>Related commands</div>
+			<ul>
+				
+					<li class="sel"><a href="/commands/intersects">INTERSECTS</a></li>
+				
+					<li ><a href="/commands/nearby">NEARBY</a></li>
+				
+					<li ><a href="/commands/scan">SCAN</a></li>
+				
+					<li ><a href="/commands/within">WITHIN</a></li>
+				
+			</ul>
+		</div>
+		
+		<div class="inner">
+			<p>INTERSECTS searches a collection for objects that intersect a specified bounding area.</p>
+
+<p><a href="/commands/within">WITHIN</a> and <a href="/commands/intersects">INTERSECTS</a> have identical syntax. The only difference between the two is that WITHIN returns objects that are <em>contained</em> inside an area, and intersects returns objects that are <em>contained or intersects</em> an area.</p>
+
+<p>This command has many options, but at it’s most simplest it may appear like.</p>
+
+<p><code class="block"><keyword>INTERSECTS</keyword> fleet <keyword>BOUNDS</keyword> <number>33.462</number> <number>-112.268</number> <number>33.491</number> <number>-112.245</number></code></p>
+
+<p>Above is a search around the rectangle with the southwestern point <code>33.462,-112.268</code> and the northeastern point <code>33.491,-112.245</code>. A list of all objects that intersect the rectangle are returned.</p>
+
+<p><a name="search-options"></a></p>
+
+<h2>Search Options</h2>
+
+<p>Below is a complete list of search options. These options are shared by the <a href="/commands/nearby">NEARBY</a>, <a href="/commands/within">WITHIN</a>, <a href="/commands/intersects">INTERSECTS</a>, and <a href="/commands/scan">SCAN</a> commands.</p>
+
+<p><em>Please note that the <a href="/commands/scan">SCAN</a> command does not allow <code>FENCE</code> and <code>SPARSE</code>.</em></p>
+
+<p><strong>FENCE</strong> - FENCE opens a <a href="/topics/geofencing">Geofence</a>.</p>
+
+<p><strong>SPARSE</strong> - SPARSE will distribute the results of a search evenly across the requested area.<br />
+This is very helpful for example; when you have many (perhaps millions) of objects and do not want them all clustered together on a map. Sparse will limit the number of objects returned and provide them evenly distributed so that your map looks clean.<br><br>
+You can choose a value between 1 and 8. The value 1 will result in no more than 4 items. The value 8 will result in no more than 65536. <em>1=4, 2=16, 3=64, 4=256, 5=1024, 6=4098, 7=16384, 8=65536.</em><br>
+<table width="100%">
+    <td align="center">No Sparsing<img src="/assets/img/sparse-none.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 1<img src="/assets/img/sparse-1.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 2<img src="/assets/img/sparse-2.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 3<img src="/assets/img/sparse-3.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 4<img src="/assets/img/sparse-4.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 5<img src="/assets/img/sparse-5.png" width="100" height="100" border="0" alt="Search Within"></td>
+</table><br>
+<em>Please note that the higher the sparse value, the slower the performance. Also, LIMIT and CURSOR are not available when using SPARSE.</em></p>
+
+<p><strong>WHERE</strong> - WHERE allows for filtering out results based on <a href="/commands/set#fields">field</a> values. For example<br><code>nearby fleet where speed 70 +inf point 33.462 -112.268 6000</code> will return only the objects in the &lsquo;fleet&rsquo; collection that are within the 6 km radius <strong>and</strong> have a field named <code>speed</code> that is greater than <code>70</code>. <br><br>Multiple WHEREs are concatenated as <strong>and</strong> clauses. <code>WHERE speed 70 +inf WHERE age -inf 24</code> would be interpreted as <em>speed is over 70 <b>and</b> age is less than 24.</em><br><br>The default value for a field is always <code>0</code>. Thus if you do a WHERE on the field <code>speed</code> and an object does not have that field set, the server will pretend that the object does and that the value is Zero.</p>
+
+<p><strong>MATCH</strong> - MATCH is similar to WHERE except that it works on the object id instead of fields.<br><code>nearby fleet match truck* point 33.462 -112.268 6000</code> will return only the objects in the &lsquo;fleet&rsquo; collection that are within the 6 km radius <strong>and</strong> have an object id that starts with <code>truck</code>. There can be multiple MATCH options in a single search. The MATCH value is a simple <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob pattern</a>.</p>
+
+<p><strong>CURSOR</strong> - CURSOR is used to iterate though many objects from the search results. An iteration begins when the CURSOR is set to Zero or not included with the request, and completes when the cursor returned by the server is Zero.</p>
+
+<p><strong>NOFIELDS</strong> - NOFIELDS tells the server that you do not want field values returned with the search results.</p>
+
+<p><strong>LIMIT</strong> - LIMIT can be used to limit the number of objects returned for a single search request.</p>
+
+<p><a name="output-formats"></a></p>
+
+<h2>Output Formats</h2>
+
+<p>Below is a complete list of output formats. These formats are shared by the <a href="/commands/nearby">NEARBY</a>, <a href="/commands/within">WITHIN</a>, <a href="/commands/intersects">INTERSECTS</a>, and <a href="/commands/scan">SCAN</a> commands.</p>
+
+<p><strong>COUNT</strong> - Total object count for the search. <em><code>LIMIT</code> and <code>CURSOR</code> options are ignored</em></p>
+
+<p><strong>IDS</strong>  - A list of IDs belonging to the key. Will not return the objects.</p>
+
+<p><strong>OBJECTS</strong> - A list of <a href="http://geojson.org/">GeoJSON</a> objects.</p>
+
+<p><strong>POINTS</strong> - A list of standard latitude, longitude points.</p>
+
+<p><strong>BOUNDS</strong> - A list of <a href="https://en.wikipedia.org/wiki/Minimum_bounding_rectangle">minimum bounding rectangle</a>.</p>
+
+<p><strong>HASHES</strong> - A list of <a href="https://en.wikipedia.org/wiki/Geohash">Geohash</a>. <em>Requires a precision of 1 to 22.</em></p>
+
+<p><a name="area-formats"></a></p>
+
+<h2>Area Formats</h2>
+
+<p>Below is a complete list of area formats. These formats are shared by the <a href="/commands/within">WITHIN</a> and <a href="/commands/intersects">INTERSECTS</a> commands.</p>
+
+<p><strong>GET</strong> - Any object that already exists in the database. For example,</p>
+
+<p><code class="block"><keyword>WITHIN</keyword> poi <keyword>GET</keyword> cities tempe</code></p>
+
+<p>Might be used to search for all object in the <code>poi</code> key that are within the object <code>tempe</code> that belongs to the key <code>cities</code>. Of course, the <code>cities/tempe</code> object must exist in the database.</p>
+
+<p><strong>BOUNDS</strong> - A <a href="/topics/object-types#bounds">minimum bounding rectangle</a>.</p>
+
+<p><strong>OBJECT</strong> - A <a href="/topics/object-types#geojson">GeoJSON</a> object.</p>
+
+<p><strong>TILE</strong> -  An <a href="/topics/object-types#xyz-tile">XYZ Tile</a>.</p>
+
+<p><strong>QUADKEY</strong> - A <a href="/topics/object-types#quadkey">QuadKey</a>.</p>
+
+<p><strong>HASH</strong> - A <a href="/topics/object-types#geohash">Geohash</a>.</p>
+		</div>
+	</div>
+</body>
+</html>

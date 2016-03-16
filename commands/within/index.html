@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="command">
+<head>
+	<title>WITHIN - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<h2 class="command-title">
+			WITHIN key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
+		</h2>
+		<div class="related-commands">
+			<div>Related commands</div>
+			<ul>
+				
+					<li ><a href="/commands/intersects">INTERSECTS</a></li>
+				
+					<li ><a href="/commands/nearby">NEARBY</a></li>
+				
+					<li ><a href="/commands/scan">SCAN</a></li>
+				
+					<li class="sel"><a href="/commands/within">WITHIN</a></li>
+				
+			</ul>
+		</div>
+		
+		<div class="inner">
+			<p>WITHIN searches a collection for objects that are fully contained inside of a specified bounding area.</p>
+
+<p><a href="/commands/within">WITHIN</a> and <a href="/commands/intersects">INTERSECTS</a> have identical syntax. The only difference between the two is that WITHIN returns objects that are <em>contained</em> inside an area, and intersects returns objects that are <em>contained or intersects</em> an area.</p>
+
+<p>This command has many options, but at it’s most simplest it may appear like.</p>
+
+<p><code class="block"><keyword>WITHIN</keyword> fleet <keyword>BOUNDS</keyword> <number>33.462</number> <number>-112.268</number> <number>33.491</number> <number>-112.245</number></code></p>
+
+<p>Above is a search around the rectangle with the southwestern point <code>33.462,-112.268</code> and the northeastern point <code>33.491,-112.245</code>. A list of all objects that are fully contained inside the rectangle are returned.</p>
+
+<h2>Search Options</h2>
+
+<p>For a complete list of search options please see the <a href="/commands/intersects#search-options">INTERSECTS</a> command.</p>
+
+<h2>Output Formats</h2>
+
+<p>For a complete list of output formats please see the <a href="/commands/intersects#output-formats">INTERSECTS</a> command.</p>
+
+<h2>Area Formats</h2>
+
+<p>For a complete list of area formats please see the <a href="/commands/intersects#area-formats">INTERSECTS</a> command.</p>
+		</div>
+	</div>
+</body>
+</html>

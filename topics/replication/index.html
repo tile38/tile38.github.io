@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+	<title>Replication - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<h2>Replication</h2>
+
+<p>Tile38 replication is a leader-follower model and is intended to be very easy to set up.</p>
+
+<h3>Quick Tutorial</h3>
+
+<p>Run the commands below using the <a href="/topics/command-line-interface">Command Line Interface</a>. On your local machine you will begin two different Tile38 server instances. The second server will follow the first server.</p>
+
+<p>Open a new terminal and run:</p>
+
+<p><code class="block">$ ./tile38-server -p <number>9851</number> -d data1</code></p>
+
+<p>This will start a new Tile38 server and persist all data to the <code>data1</code> directory.</p>
+
+<p>Open a second terminal and run:</p>
+
+<p><code class="block">$ ./tile38-server -p <number>9852</number> -d data2</code></p>
+
+<p>This will start a second Tile38 server and persist all data to the <code>data2</code> directory.</p>
+
+<p>Send the second server the command:</p>
+
+<p><code class="block"><keyword>FOLLOW</keyword> localhost <number>9851</number> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># execute on the port 9852 server</comment></code></p>
+
+<p>This will instruct the second server to follow the first server.</p>
+
+<p>Then create an object on the first server:</p>
+
+<p><code class="block"><keyword>SET</keyword> key1 obj1 <keyword>POINT</keyword> <number>33.1</number> <number>-112.4</number> <keyword></keyword> <comment># execute on the port 9851 server</comment></code></p>
+
+<p>This will create the object on the first server and replicate the object to the second server.</p>
+
+<p>Finally, test if the object has been create on the second server.</p>
+
+<p><code class="block"><keyword>GET</keyword> key1 obj1 <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># execute on the port 9852 server</comment></code></p>
+
+<p>The object will be returned.</p>
+		</div>
+	</div>
+</body>
+</html>

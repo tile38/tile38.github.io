@@ -1,0 +1,68 @@
+<!-- 
+layout: index.html
+title:  Commands - Tile38
+class:  commands
+-->
+
+<style>
+.commandtable { display: none; }
+.commandtable .filterbar { display: none; }
+</style>
+<div class="commandtable">
+	<div class="filterbar">
+		Filter by group: 
+		<a href="#" class="link-">All</a> | 
+		<a href="#search" class="link-search">Search</a> | 
+		<a href="#keys" class="link-keys">Keys</a> | 
+		<a href="#connection" class="link-connection">Connection</a> |
+		<a href="#replication" class="link-replication">Replication</a> |
+		<a href="#server" class="link-server">Server</a>
+	</div>
+	{{ range $i, $name := .SortedCommands }}
+	    <a class="command grp-{{ (index $.Commands $name).Group }}" href="/commands/{{lcase $name}}">
+	        <div class="nameargs">
+	            <span class="name">{{$name}}</span>
+	            <span class="args">{{ simpleCommandParams (index $.Commands $name) }}</span>
+	        </div>
+	        <div class="summary">{{ (index $.Commands $name).Summary }}</div>
+	    </a>
+{{ end }}
+</div>
+<script>
+var llink = null
+function hashed(){
+	var h = ""
+	var all = document.querySelectorAll(".commandtable .command")
+	if (window.location.hash.length > 0){
+		h = window.location.hash.slice(1)
+	}
+	if (h != ""){
+		for (var i=0;i<all.length;i++){
+			all[i].style.display = 'none';
+		}
+		var items = document.querySelectorAll(".commandtable .command.grp-"+h)
+		for (var i=0;i<items.length;i++){
+			items[i].style.display = '';
+		}
+	} else{
+		for (var i=0;i<all.length;i++){
+			all[i].style.display = '';
+		}
+	}
+	if (llink){
+		llink.style.fontWeight = '';
+	}
+	var link = document.querySelector(".link-"+h)
+	if (link){
+		link.style.fontWeight = 'bold';
+		llink = link;
+	}
+}
+window.addEventListener("hashchange", function(){ hashed(); })
+hashed()
+var bar = document.querySelector(".commandtable .filterbar")
+if (bar){
+	bar.style.display = 'block';
+}
+</script>
+<style>.commandtable { display: block; }</style>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+	<title>Network Protocol and Clients - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<h2>Network Protocol</h2>
+
+<p>It&rsquo;s recommended to use the <a href="#native-interface">native interface</a>, but there are times when only HTTP is available or when you need to test from a remote terminal. In those cases we provide an HTTP and telnet options.</p>
+
+<h3>HTTP</h3>
+
+<p>One of the simplest ways to call a tile38 command is to use HTTP. From the command line you can use <a href="https://curl.haxx.se/">curl</a>. For example:</p>
+
+<p><code class="block"><comment># call with request in the body</comment>
+curl &ndash;data &#34;set fleet truck3 point <number>33.4762</number> -112.10923&#34; localhost:9851
+<keyword></keyword>
+<comment># call with request in the url path</comment>
+curl localhost:9851/set+fleet+truck3+point+33.4762+-112.10923</code></p>
+
+<h3>Websockets</h3>
+
+<p>Websockets can be used when you need to Geofence and keep the connection alive. It works just like the HTTP example above, with the exception that the connection stays alive and the data is sent from the server as text websocket messages.</p>
+
+<h3>Telnet</h3>
+
+<p>There is the option to use a plain telnet connection.</p>
+
+<p><code class="block">telnet localhost <number>9851</number>
+<keyword>SET</keyword> fleet truck3 <keyword>POINT</keyword> <number>33.4762</number> <number>-112.10923</number>
+<geojson>{&#34;ok&#34;:true,&#34;elapsed&#34;:&#34;18.73µs&#34;}</comment></code></p>
+
+<h3>Native interface</h3>
+
+<p>The native interface is very simple. A single message is composed of:</p>
+
+<p><code class="block">$ + TEXT_DATA_SIZE + SPACE + DATA + CRLF</code></p>
+
+<p>So the request message:</p>
+
+<p><code class="block"><keyword>GET</keyword> fleet truck1</code></p>
+
+<p>Should be sent to the server as (without quotes):</p>
+
+<p><code class="block">&#34;$16 GET fleet truck1\r\n&#34;</code></p>
+
+<p>The server will always respond in JSON, and will include the top level member <code>ok</code>. When <code>ok</code> is <code>false</code> there will also be an accompanied <code>err</code> member describing the problem. In nearly every response there will also be an <code>elapsed</code> member that is the duration of time that it took to process the request on the server. For more information on this string please refer to the <a href="https://golang.org/pkg/time/#Duration">time.Duration</a> Go documentation.</p>
+
+<p>So the response message:</p>
+
+<p><code class="block"><json>{&#34;ok&#34;:true,&#34;elapsed&#34;:&#34;37.829µs&#34;}</json></code></p>
+
+<p>Will be sent to the client as (without quotes):</p>
+
+<p><code class="block">&#34;$32 {&#34;ok&#34;:true,&#34;elapsed&#34;:&#34;37.829µs&#34;}\r\n&#34;</code></p>
+
+<h2>Clients</h2>
+
+<p>Currently we have one client written in Go. Though it should be straight forward to write one in your language of choice.</p>
+
+<ul>
+<li><a href="https://github.com/tidwall/tile38/tree/master/client">Go</a></li>
+</ul>
+		</div>
+	</div>
+</body>
+</html>

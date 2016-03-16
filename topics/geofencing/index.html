@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+	<title>Geofencing - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<h2>Geofencing</h2>
+
+<p><img src="/assets/img/geofence.gif" width="200" height="200" border="0" alt="Geofence animation" align="right" style="margin-left: 10px">
+A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual boundary that can detect when an object enters or exits the area. This boundary of this area can be a radius or any <a href="/commands/intersects#area-formats">search area format</a>, such as a <a href="/topics/object-types#bounding-box">bounding box</a>, <a href="/topics/object-types#geojson">GeoJSON</a> object, etc. Tile38 can turn any standard search into a geofence monitor by adding the FENCE keyword to the search.
+<br clear="all"></p>
+
+<p>A simple example:</p>
+
+<p><code class="block"><keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
+
+<p>This command opens a geofence that monitors the <code>fleet</code> collection. The server will respond with:</p>
+
+<p><code class="block"><json>{
+    &#34;ok&#34;: true,
+    &#34;live&#34;: true
+}</json></code></p>
+
+<p>And the connection will be kept open. If any object enters or exits the 6 km radius around <code>33.462,-112.268</code> the server will respond in realtime with messages such as:</p>
+
+<p><code class="block"><json>{
+    &#34;command&#34;: &#34;set&#34;,
+    &#34;detect&#34;: &#34;enter&#34;,
+    &#34;id&#34;: &#34;truck02&#34;,
+    &#34;object&#34;: {
+        &#34;type&#34;: &#34;Point&#34;,
+        &#34;coordinates&#34;: [-112.2695, 33.4626]
+    }
+}</json></code></p>
+
+<p>The server will notify the client if the <code>command</code> is <strong><code>del</code></strong> or <strong><code>set</code></strong> or <strong><code>drop</code></strong>.</p>
+
+<ul>
+<li><strong><code>del</code></strong> notifies the client that an object has been deleted from the collection that is being fenced.</li>
+<li><strong><code>drop</code></strong> notifies the client that the entire collection is dropped.</li>
+<li><strong><code>set</code></strong> notifies the client that an object has been added or updated, and when it&rsquo;s position is detected by the fence.</li>
+</ul>
+
+<p>The <strong><code>detect</code></strong> may be <strong><code>enter</code></strong> or <strong><code>exit</code></strong> or <strong><code>cross</code></strong>.</p>
+
+<ul>
+<li><strong><code>enter</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered the area.</li>
+<li><strong><code>exit</code></strong> is when an object that <strong>was</strong> previously in the fence has exited the area.</li>
+<li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered and exited the area.</li>
+</ul>
+		</div>
+	</div>
+</body>
+</html>
