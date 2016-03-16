@@ -24,5 +24,5 @@ Below are some topics that you may help you on your journey.
     - Email Josh Baker [&lt;joshbaker77@gmail.com&gt;](mailto:joshbaker77@gmail.com) - I will do my best to get back to you asap.
     - Ask me on Twitter [@tidwall](https://twitter.com/tidwall)
 - Report an Issue
-    - [with this website](https://github.com/tidwall/tile38/issues)
+    - [with this website](https://github.com/tile38/tile38.github.io/issues)
     - [with Tile38](https://github.com/tidwall/tile38/issues)
