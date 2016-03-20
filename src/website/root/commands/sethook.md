@@ -33,9 +33,9 @@ Tile38 currently supports endpoints with the **`http`**, **`https`**, and **`dis
 
 ### HTTP / HTTPS
 
-When using the `http://` and `https://` url scheme, Tile38 will simply perform an HTTP POST to the specified url with the `content-type` of `application/json` and the request body containing the message. 
+When using the `http://` and `https://` url scheme an HTTP POST will be sent to the specified url with the `content-type` of `application/json` and the request body containing the message. 
 
-Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200, then Tile38 will consider the message sent.
+Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200 the message will be considered sent.
 
 ### Disque
 
