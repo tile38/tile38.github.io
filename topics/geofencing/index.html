@@ -44,6 +44,9 @@ A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual bo
 <p><code class="block"><json>{
     &#34;command&#34;: &#34;set&#34;,
     &#34;detect&#34;: &#34;enter&#34;,
+    &#34;hook&#34;: &#34;warehouse&#34;,
+    &#34;time&#34;: &#34;2016-03-20T09:37:49.567854293-07:00&#34;,
+    &#34;key&#34;: &#34;fleet&#34;,
     &#34;id&#34;: &#34;truck02&#34;,
     &#34;object&#34;: {
         &#34;type&#34;: &#34;Point&#34;,
@@ -59,12 +62,14 @@ A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual bo
 <li><strong><code>set</code></strong> notifies the client that an object has been added or updated, and when it&rsquo;s position is detected by the fence.</li>
 </ul>
 
-<p>The <strong><code>detect</code></strong> may be <strong><code>enter</code></strong> or <strong><code>exit</code></strong> or <strong><code>cross</code></strong>.</p>
+<p>The <strong><code>detect</code></strong> may be one of the following values.</p>
 
 <ul>
+<li><strong><code>inside</code></strong> is when an object is inside the specified area.</li>
+<li><strong><code>outside</code></strong> is when an object is outside the specified area.</li>
 <li><strong><code>enter</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered the area.</li>
 <li><strong><code>exit</code></strong> is when an object that <strong>was</strong> previously in the fence has exited the area.</li>
-<li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered and exited the area.</li>
+<li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered <strong>and</strong> exited the area.</li>
 </ul>
 		</div>
 		
