@@ -5,7 +5,7 @@ class:   command
 command: sethook
 -->
 
-Creates a webhook which points to [geofenced](/topics/geofencing) search. If a hook is already associated to that name, it'll be overwritten.
+Creates a webhook which points to a [geofenced](/topics/geofencing) search. If a hook is already associated to that name, it'll be overwritten.
 
 ## Examples
 
