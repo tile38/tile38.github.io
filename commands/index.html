@@ -101,6 +101,14 @@
 	        <div class="summary">Delete an id from a key</div>
 	    </a>
 
+	    <a class="command grp-webhook" href="/commands/delhook">
+	        <div class="nameargs">
+	            <span class="name">DELHOOK</span>
+	            <span class="args"> name</span>
+	        </div>
+	        <div class="summary">Removes a webhook</div>
+	    </a>
+
 	    <a class="command grp-keys" href="/commands/drop">
 	        <div class="nameargs">
 	            <span class="name">DROP</span>
@@ -147,6 +155,14 @@
 	            <span class="args"> key id [OBJECT|POINT|BOUNDS|(HASH geohash)]</span>
 	        </div>
 	        <div class="summary">Get the object of an id</div>
+	    </a>
+
+	    <a class="command grp-webhook" href="/commands/hooks">
+	        <div class="nameargs">
+	            <span class="name">HOOKS</span>
+	            <span class="args"> pattern</span>
+	        </div>
+	        <div class="summary">Finds all hooks matching a pattern</div>
 	    </a>
 
 	    <a class="command grp-search" href="/commands/intersects">
@@ -219,6 +235,14 @@
 	            <span class="args"> key string [FIELD name value ...] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)</span>
 	        </div>
 	        <div class="summary">Sets the value of an id</div>
+	    </a>
+
+	    <a class="command grp-webhook" href="/commands/sethook">
+	        <div class="nameargs">
+	            <span class="name">SETHOOK</span>
+	            <span class="args"> name endpoint NEARBY|WITHIN|INTERSECTS key FENCE param [param ...]</span>
+	        </div>
+	        <div class="summary">Creates a webhook which points to geofenced search</div>
 	    </a>
 
 	    <a class="command grp-keys" href="/commands/stats">
