@@ -20,7 +20,7 @@ class:  commands
 		<a href="#server" class="link-server">Server</a>
 	</div>
 	{{ range $i, $name := .SortedCommands }}
-	    <a class="command grp-{{ (index $.Commands $name).Group }}" href="/commands/{{lcase $name}}">
+	    <a class="command grp-{{ (index $.Commands $name).Group }}" href="/commands/{{urlname $name}}">
 	        <div class="nameargs">
 	            <span class="name">{{$name}}</span>
 	            <span class="args">{{ simpleCommandParams (index $.Commands $name) }}</span>
