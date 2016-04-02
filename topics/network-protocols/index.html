@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+	<title>Network Protocol and Clients - Tile38</title>
+	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+</head>
+<body>
+	<div class="top-bar">
+		<div class="inner">
+			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
+			<a href="/commands">Commands</a
+			><a href="/clients">Clients</a
+			><a href="/documentation">Documentation</a
+			><a href="https://github.com/tidwall/tile38">Github</a
+			><a href="/license">License</a
+			>
+		</div>
+	</div>
+	<div class="logo-bar">
+		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+	</div>
+	<div class="content">
+		
+		<div class="inner">
+			<h2>Network protocols</h2>
+
+<p>It&rsquo;s recommended to use a <a href="/clients">client library</a> or the <a href="/topics/command-line-interface">Tile38 CLI</a>, but there are times when only HTTP is available or when you need to test from a remote terminal. In those cases we provide an HTTP and telnet options.</p>
+
+<h4>HTTP</h4>
+
+<p>One of the simplest ways to call a tile38 command is to use HTTP. From the command line you can use <a href="https://curl.haxx.se/">curl</a>. For example:</p>
+
+<p><code class="block"><comment># call with request in the body</comment>
+curl &ndash;data &#34;set fleet truck3 point <number>33.4762</number> -112.10923&#34; localhost:9851
+<keyword></keyword>
+<comment># call with request in the url path</comment>
+curl localhost:9851/set+fleet+truck3+point+33.4762+-112.10923</code></p>
+
+<h4>Websockets</h4>
+
+<p>Websockets can be used when you need to Geofence and keep the connection alive. It works just like the HTTP example above, with the exception that the connection stays alive and the data is sent from the server as text websocket messages.</p>
+
+<h4>Telnet</h4>
+
+<p>There is the option to use a plain telnet connection. The default output through telnet is <a href="http://redis.io/topics/protocol">RESP</a>.</p>
+
+<p><code class="block">telnet localhost <number>9851</number>
+set fleet truck3 point <number>33.4762</number> <number>-112.10923</number>
++OK</code></p>
+
+<p>The server will respond in <a href="http://json.org">JSON</a> or <a href="http://redis.io/topics/protocol">RESP</a> depending on which protocol is used when initiating the first command.</p>
+
+<ul>
+<li>HTTP and Websockets use JSON.</li>
+<li>Telnet and RESP clients use RESP.</li>
+</ul>
+		</div>
+		
+		<div style="clear: both"></div>
+		<br clear=both><hr><br>
+		<center>
+		    <a class="github-button" href="https://github.com/tidwall/tile38" data-icon="octicon-star" data-style="mega" data-count-href="/tidwall/tile38/stargazers" data-count-api="/repos/tidwall/tile38#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star tidwall/tile38 on GitHub">Star</a>
+		</center>
+	</div>
+	
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-75165369-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

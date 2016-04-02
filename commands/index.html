@@ -10,6 +10,7 @@
 		<div class="inner">
 			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
 			<a href="/commands">Commands</a
+			><a href="/clients">Clients</a
 			><a href="/documentation">Documentation</a
 			><a href="https://github.com/tidwall/tile38">Github</a
 			><a href="/license">License</a
@@ -153,7 +154,7 @@
 	    <a class="command grp-keys" href="/commands/get">
 	        <div class="nameargs">
 	            <span class="name">GET</span>
-	            <span class="args"> key id [OBJECT|POINT|BOUNDS|(HASH geohash)]</span>
+	            <span class="args"> key id [WITHFIELDS] [OBJECT|POINT|BOUNDS|(HASH geohash)]</span>
 	        </div>
 	        <div class="summary">Get the object of an id</div>
 	    </a>
@@ -169,7 +170,7 @@
 	    <a class="command grp-search" href="/commands/intersects">
 	        <div class="nameargs">
 	            <span class="name">INTERSECTS</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [DETECT what] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>
@@ -185,7 +186,7 @@
 	    <a class="command grp-search" href="/commands/nearby">
 	        <div class="nameargs">
 	            <span class="name">NEARBY</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] POINT lat lon meters</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [DETECT what] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] POINT lat lon meters</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>
@@ -241,7 +242,7 @@
 	    <a class="command grp-webhook" href="/commands/sethook">
 	        <div class="nameargs">
 	            <span class="name">SETHOOK</span>
-	            <span class="args"> name endpoint NEARBY|WITHIN|INTERSECTS key FENCE param [param ...]</span>
+	            <span class="args"> name endpoint NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] param [param ...]</span>
 	        </div>
 	        <div class="summary">Creates a webhook which points to geofenced search</div>
 	    </a>
@@ -257,7 +258,7 @@
 	    <a class="command grp-search" href="/commands/within">
 	        <div class="nameargs">
 	            <span class="name">WITHIN</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [DETECT what] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>

@@ -10,6 +10,7 @@
 		<div class="inner">
 			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
 			<a href="/commands">Commands</a
+			><a href="/clients">Clients</a
 			><a href="/documentation">Documentation</a
 			><a href="https://github.com/tidwall/tile38">Github</a
 			><a href="/license">License</a
@@ -30,8 +31,9 @@
 <li>Spatial index with search methods such as <a href="/commands/nearby">NEARBY</a>, <a href="/commands/within">WITHIN</a>, and <a href="/commands/intersects">INTERSECTS</a>.</li>
 <li>Realtime <a href="/topics/geofencing">geofencing</a> through persistent sockets or <a href="/commands/sethook">webhooks</a>.</li>
 <li>Object types of <a href="/topics/object-types#latlon-point">lat/lon</a>, <a href="/topics/object-types#bounding-box">bbox</a>, <a href="/topics/object-types#geohash">Geohash</a>, <a href="/topics/object-types#geojson">GeoJSON</a>, <a href="/topics/object-types#quadkey">QuadKey</a>, and <a href="/topics/object-types#xyz-tile">XYZ tile</a>.</li>
-<li>Variety of client protocols, including <a href="/topics/clients#http">http</a> (curl), <a href="/topics/clients#websockets">websockets</a>, <a href="/topics/clients#telnet">telnet</a>, and a <a href="/topics/clients#native-interface">native interface</a>.</li>
-<li>Server responses are in json.</li>
+<li>Support for lots of <a href="/clients">Clients Libraries</a> written in many different langauges.</li>
+<li>Variety of client protocols, including <a href="/topics/network-protocols#http">http</a> (curl), <a href="/topics/network-protocols#websockets">websockets</a>, <a href="/topics/network-protocols#telnet">telnet</a>, and the <a href="http://redis.io/topics/protocol">Redis RESP</a>.</li>
+<li>Server responses are <a href="http://redis.io/topics/protocol">RESP</a> or <a href="http://www.json.org">JSON</a>.</li>
 <li>Full <a href="/topics/command-line-interface">command line interface</a>.</li>
 <li>Leader / follower <a href="/topics/replication">replication</a>.</li>
 <li>In-memory database that persists on disk.</li>
