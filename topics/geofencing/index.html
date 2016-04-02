@@ -72,6 +72,12 @@ A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual bo
 <li><strong><code>exit</code></strong> is when an object that <strong>was</strong> previously in the fence has exited the area.</li>
 <li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered <strong>and</strong> exited the area.</li>
 </ul>
+
+<p>By default <strong>all</strong> detect types are returned. If you would like to only have a select few then use the <code>DETECT</code> option, for example:</p>
+
+<p><code class="block"><keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>DETECT</keyword> inside,outside <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
+
+<p>This command will only tell the fence that you only want <strong>inside</strong> and <strong>outside</strong> detection.</p>
 		</div>
 		
 		<div style="clear: both"></div>
