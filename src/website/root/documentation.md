@@ -15,7 +15,7 @@ Below are some topics that you may help you on your journey.
 - [Network Protocol and Clients](/topics/network-protocols) - Network protocol and client information.
 - [Command Line Interface](/topics/command-line-interface) - How to use the CLI.
 - [Replication](/topics/replication) - What you need to know in order to set up leader-follower replication.
-- [Install Tile38](/#getting-started) - Downloading and installation instructions.
+- [Installation](/#getting-started) - Downloading and installation instructions.
 
 
 ## Support
