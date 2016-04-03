@@ -29,33 +29,69 @@ Tile38 is an open source (MIT licensed), in-memory geolocation data store, spati
 <td align="center"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" width="80%" alt="Intersects" border="0"></a><br>Intersects</td>
 </table>
 
-<a name="download"></a>
-## Download
+## Getting Started
 
-[Tile38 {{.LatestVersion}} is the latest release](https://github.com/tidwall/tile38/archive/{{.LatestVersion}}.tar.gz).  
-Are you looking for the source repository? [Check the Github page.](https://github.com/tidwall/tile38)
+The easiest way to get Tile38 is to use one of the pre-built release binaries which are available for OSX, Linux, and Windows. Instructions for using these binaries are on the GitHub [releases page](https://github.com/tidwall/tile38/releases).
+
+If you want to try the latest version, you can build Tile38 from the master branch.
+
+### OS X
+
+To get started on OSX run the following in a terminal:
+
+```tile38-cli
+curl -L  https://github.com/tidwall/tile38/releases/download/{{.LatestVersion}}/tile38-{{.LatestVersion}}-darwin-amd64.zip -o tile38-{{.LatestVersion}}-darwin-amd64.zip
+unzip tile38-{{.LatestVersion}}-darwin-amd64.zip
+cd tile38-{{.LatestVersion}}-darwin-amd64
+./tile38-server
+```
+
+Open another terminal:
+
+```tile38-cli
+./tile38-cli set fleet truck point 33.5 -115.5
+./tile38-cli get fleet truck
+```
+
+### Linux
+
+To get started on Linux run the following in a terminal:
+
+```tile38-cli
+curl -L  https://github.com/tidwall/tile38/releases/download/{{.LatestVersion}}/tile38-{{.LatestVersion}}-linux-amd64.tar.gz -o tile38-{{.LatestVersion}}-linux-amd64.tar.gz
+tar xzvf tile38-{{.LatestVersion}}-linux-amd64.tar.gz
+cd tile38-{{.LatestVersion}}-linux-amd64
+./tile38-server
+```
+
+Open another terminal:
+
+```tile38-cli
+./tile38-cli set fleet truck point 33.5 -115.5
+./tile38-cli get fleet truck
+```
 
 <a name="building"></a>
-## Building and Installing
+## Building Tile38
 Download, extract and compile Tile38 with:
 
 ```tile38-cli
-$ curl -L https://github.com/tidwall/tile38/archive/{{.LatestVersion}}.tar.gz > tile38-{{.LatestVersion}}.tar.gz
-$ tar xzf tile38-{{.LatestVersion}}.tar.gz
-$ cd tile38-{{.LatestVersion}}
-$ make
+curl -L https://github.com/tidwall/tile38/archive/{{.LatestVersion}}.tar.gz > tile38-{{.LatestVersion}}.tar.gz
+tar xzf tile38-{{.LatestVersion}}.tar.gz
+cd tile38-{{.LatestVersion}}
+make
 ```
 
 The binaries that are now compiled are available in same directory. Run Tile38 with:
 
 ```tile38-cli
-$ ./tile38-server
+./tile38-server
 ```
 
 You can interact with Tile38 using the built-in client:
 
 ```tile38-cli
-$ ./tile38-cli
+./tile38-cli
 tile38> SET fleet truck1 POINT 33.5123 -112.2693
 tile38> GET fleet truck1
 ```

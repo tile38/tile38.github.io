@@ -48,31 +48,58 @@
 <td align="center"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" width="80%" alt="Intersects" border="0"></a><br>Intersects</td>
 </table>
 
-<p><a name="download"></a></p>
+<h2>Getting Started</h2>
 
-<h2>Download</h2>
+<p>The easiest way to get Tile38 is to use one of the pre-built release binaries which are available for OSX, Linux, and Windows. Instructions for using these binaries are on the GitHub <a href="https://github.com/tidwall/tile38/releases">releases page</a>.</p>
 
-<p><a href="https://github.com/tidwall/tile38/archive/1.1.0.tar.gz">Tile38 1.1.0 is the latest release</a>.<br />
-Are you looking for the source repository? <a href="https://github.com/tidwall/tile38">Check the Github page.</a></p>
+<p>If you want to try the latest version, you can build Tile38 from the master branch.</p>
+
+<h3>OS X</h3>
+
+<p>To get started on OSX run the following in a terminal:</p>
+
+<p><code class="block">curl -L <keyword></keyword> <a href="https://github.com/tidwall/tile38/releases/download/1.1.0/tile38-1.1.0-darwin-amd64.zip">https://github.com/tidwall/tile38/releases/download/1.1.0/tile38-1.1.0-darwin-amd64.zip</a> -o tile38-1.1.0-darwin-amd64.zip
+unzip tile38-1.1.0-darwin-amd64.zip
+cd tile38-1.1.0-darwin-amd64
+./tile38-server</code></p>
+
+<p>Open another terminal:</p>
+
+<p><code class="block">./tile38-cli set fleet truck point <number>33.5</number> <number>-115.5</number>
+./tile38-cli get fleet truck</code></p>
+
+<h3>Linux</h3>
+
+<p>To get started on Linux run the following in a terminal:</p>
+
+<p><code class="block">curl -L <keyword></keyword> <a href="https://github.com/tidwall/tile38/releases/download/1.1.0/tile38-1.1.0-linux-amd64.tar.gz">https://github.com/tidwall/tile38/releases/download/1.1.0/tile38-1.1.0-linux-amd64.tar.gz</a> -o tile38-1.1.0-linux-amd64.tar.gz
+tar xzvf tile38-1.1.0-linux-amd64.tar.gz
+cd tile38-1.1.0-linux-amd64
+./tile38-server</code></p>
+
+<p>Open another terminal:</p>
+
+<p><code class="block">./tile38-cli set fleet truck point <number>33.5</number> <number>-115.5</number>
+./tile38-cli get fleet truck</code></p>
 
 <p><a name="building"></a></p>
 
-<h2>Building and Installing</h2>
+<h2>Building Tile38</h2>
 
 <p>Download, extract and compile Tile38 with:</p>
 
-<p><code class="block">$ curl -L <a href="https://github.com/tidwall/tile38/archive/1.1.0.tar.gz">https://github.com/tidwall/tile38/archive/1.1.0.tar.gz</a> &gt; tile38-1.1.0.tar.gz
-$ tar xzf tile38-1.1.0.tar.gz
-$ cd tile38-1.1.0
-$ make</code></p>
+<p><code class="block">curl -L <a href="https://github.com/tidwall/tile38/archive/1.1.0.tar.gz">https://github.com/tidwall/tile38/archive/1.1.0.tar.gz</a> &gt; tile38-1.1.0.tar.gz
+tar xzf tile38-1.1.0.tar.gz
+cd tile38-1.1.0
+make</code></p>
 
 <p>The binaries that are now compiled are available in same directory. Run Tile38 with:</p>
 
-<p><code class="block">$ ./tile38-server</code></p>
+<p><code class="block">./tile38-server</code></p>
 
 <p>You can interact with Tile38 using the built-in client:</p>
 
-<p><code class="block">$ ./tile38-cli
+<p><code class="block">./tile38-cli
 tile38&gt; <keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number>
 tile38&gt; <keyword>GET</keyword> fleet truck1</code></p>
 		</div>
