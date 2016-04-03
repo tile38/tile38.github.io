@@ -29,6 +29,7 @@ Tile38 is an open source (MIT licensed), in-memory geolocation data store, spati
 <td align="center"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" width="80%" alt="Intersects" border="0"></a><br>Intersects</td>
 </table>
 
+<a name="getting-started"></a>
 ## Getting Started
 
 The easiest way to get Tile38 is to use one of the pre-built release binaries which are available for OSX, Linux, and Windows. Instructions for using these binaries are on the GitHub [releases page](https://github.com/tidwall/tile38/releases).
