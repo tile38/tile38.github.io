@@ -19,10 +19,6 @@ Tile38 is an open source (MIT licensed), in-memory geolocation data store, spati
 - Leader / follower [replication](/topics/replication).
 - In-memory database that persists on disk.
 
-
-<div style="text-align: center"><a href="/try">Try Tile38 Online</a></div>
-
-
 <br>
 
 <table style="font-size:0.8em;font-style: italic;">
