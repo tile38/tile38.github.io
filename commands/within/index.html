@@ -87,24 +87,5 @@
 
 	</script>
 	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-	<script>
-		function openMenu(){
-			var el = document.querySelector(".top-bar .inner");
-			var opened = false
-			var nclassName = []
-			var classNames = el.className.split(" ")
-			for (var i=0;i<classNames.length;i++){
-				if (classNames[i] == "opened"){
-					opened = true
-				} else{
-					nclassName.push(classNames[i])
-				}
-			}
-			if (!opened){
-				nclassName.push("opened")
-			}
-			el.className = nclassName.join(" ")
-		}
-	</script>
 </body>
 </html>

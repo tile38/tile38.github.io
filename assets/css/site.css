@@ -97,30 +97,39 @@ code geojson  { color: #e6db74; }
 @media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
 	.top-bar .inner {
 		min-width: 0;
+		text-align: center;
 	}
-	.top-bar .inner.opened {
-		min-height: 100px;
-		height: 100px;
+	.top-bar .inner {
+		min-height: 100%;
+		height: inherit;
 	}
 	.top-bar .m-menu {
-		display: inline;
+		display: none;
+	}
+	.top-bar .logo{
+		margin: 0;
+		padding-top: 10px;
+		position: relative;
 	}
 	.top-bar span.m-menu-full-bar {
 		display: block;
-	}
-	.top-bar span.m-menu-full-bar a {
-		line-height: 30px;
-	}
+		position: relative;
+		top: -18px;
+		
 
+	}
+	.top-bar span.m-menu-full-bar a{
+		line-height: 15px;
+	}
+}
+@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
 	.m-documentation .short {
 		display: inline;
 	}
 	.m-documentation .long {
 		display: none;
 	}
-
 }
-
 
 
 
