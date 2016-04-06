@@ -4,17 +4,21 @@
 	<title>Geofencing - Tile38</title>
 	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 </head>
 <body>
 	<div class="top-bar">
 		<div class="inner">
 			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
-			<a href="/commands" class="m-commands">Commands</a
-			><a href="/clients" class="m-clients">Clients</a
-			><a href="/documentation" class="m-documentation"><span class="long">Documentation</span><span class="short">Docs</span></a
-			><a href="https://github.com/tidwall/tile38" class="m-github">Github</a
-			><a href="/license" class="m-license">License</a
-			>
+			<span class="m-menu-button-bar"><a href="javascript:openMenu()" class="m-menu">Menu</a></span>
+			<span class="m-menu-full-bar"
+				><a href="/commands" class="m-commands">Commands</a
+				><a href="/clients" class="m-clients">Clients</a
+				><a href="/documentation" class="m-documentation"><span class="long">Documentation</span><span class="short">Docs</span></a
+				><a href="https://github.com/tidwall/tile38" class="m-github">Github</a
+				><a href="/license" class="m-license">License</a
+			></span>
+
 		</div>
 	</div>
 	<div class="logo-bar">
@@ -99,5 +103,24 @@ A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual bo
 
 	</script>
 	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	<script>
+		function openMenu(){
+			var el = document.querySelector(".top-bar .inner");
+			var opened = false
+			var nclassName = []
+			var classNames = el.className.split(" ")
+			for (var i=0;i<classNames.length;i++){
+				if (classNames[i] == "opened"){
+					opened = true
+				} else{
+					nclassName.push(classNames[i])
+				}
+			}
+			if (!opened){
+				nclassName.push("opened")
+			}
+			el.className = nclassName.join(" ")
+		}
+	</script>
 </body>
 </html>

@@ -48,17 +48,18 @@ code geojson  { color: #e6db74; }
 	display: none;
 }
 
+/* top bar */
 .top-bar {
 	background: #111;
 	min-height: 60px;
 }
 .top-bar .inner {
 	text-align: right;
-	max-width:900px;
+	max-width: 900px;
 	min-width: 600px;
-	margin:0 auto;
+	margin: 0 auto;
 	height: 60px;
-	padding: 0 50px;
+	padding: 0 20px;
 }
 .top-bar a {
 	display: inline-block;
@@ -66,8 +67,6 @@ code geojson  { color: #e6db74; }
 	font-size: 15px;
 	line-height: 60px;
 	margin:0 7px;
-	font-weight: 300;
-	//text-transform: uppercase;
 }
 .top-bar a:first-child{
 	margin-left: 0;
@@ -87,6 +86,59 @@ code geojson  { color: #e6db74; }
 .top-bar .logo img{
 	height: 44px;
 }
+.m-documentation .short {
+	display: none;
+}
+
+.top-bar .m-menu {
+	display: none;
+}
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+	.top-bar .inner {
+		min-width: 0;
+	}
+	.top-bar .inner.opened {
+		min-height: 100px;
+		height: 100px;
+	}
+	.top-bar .m-menu {
+		display: inline;
+	}
+	.top-bar span.m-menu-full-bar {
+		display: block;
+	}
+	.top-bar span.m-menu-full-bar a {
+		line-height: 30px;
+	}
+
+	.m-documentation .short {
+		display: inline;
+	}
+	.m-documentation .long {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .logo-bar{
 	min-width: 600px;
@@ -98,10 +150,17 @@ code geojson  { color: #e6db74; }
 .content {
 	font-size: 16px;
 	margin: 50px auto;
-	padding: 0 50px;
+	padding: 0 25px;
 	max-width: 900px;	
 	min-width: 600px;
 }
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+	.content {
+		min-width: 0;
+	}
+}
+
 
 .commandtable .command .nameargs{
 	white-space: nowrap;
@@ -153,14 +212,23 @@ code geojson  { color: #e6db74; }
 	font-weight: bold;
 }
 
-.m-documentation .short {
-	display: none;
-}
-@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
-	.m-documentation .short {
-		display: inline;
-	}
-	.m-documentation .long {
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+	.related-commands {
 		display: none;
+		float: none;
+		width: 100%;
+		min-width: 0;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: left;
+	}
+	.related-commands ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	.related-commands li {
+		display: inline;
 	}
 }
