@@ -152,3 +152,15 @@ code geojson  { color: #e6db74; }
 .related-commands .sel{
 	font-weight: bold;
 }
+
+.m-documentation .short {
+	display: none;
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.m-documentation .short {
+		display: inline;
+	}
+	.m-documentation .long {
+		display: none;
+	}
+}
