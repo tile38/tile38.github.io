@@ -46,13 +46,6 @@ cd tile38-{{.LatestVersion}}-darwin-amd64
 ./tile38-server
 ```
 
-Open another terminal:
-
-```tile38-cli
-./tile38-cli set fleet truck point 33.5 -115.5
-./tile38-cli get fleet truck
-```
-
 ### Linux
 
 To get started on Linux run the following in a terminal:
@@ -62,13 +55,6 @@ curl -L  https://github.com/tidwall/tile38/releases/download/{{.LatestVersion}}/
 tar xzvf tile38-{{.LatestVersion}}-linux-amd64.tar.gz
 cd tile38-{{.LatestVersion}}-linux-amd64
 ./tile38-server
-```
-
-Open another terminal:
-
-```tile38-cli
-./tile38-cli set fleet truck point 33.5 -115.5
-./tile38-cli get fleet truck
 ```
 
 <a name="building"></a>
