@@ -22,10 +22,10 @@ Tile38 is an open source (MIT licensed), in-memory geolocation data store, spati
 <br>
 
 <table style="font-size:0.8em;font-style: italic;">
-<td align="center"><a href="/topics/geofencing"><img src="/assets/img/geofence.gif" width="80%" alt="Geofence" border="0"></a><br>Geofencing</td>
-<td align="center"><a href="/commands/nearby"><img src="/assets/img/search-nearby.png" width="80%" alt="Nearby" border="0"></a><br>Nearby</td>
-<td align="center"><a href="/commands/within"><img src="/assets/img/search-within.png" width="80%" alt="Within" border="0"></a><br>Within</td>
-<td align="center"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" width="80%" alt="Intersects" border="0"></a><br>Intersects</td>
+<td align="center" width="25%"><a href="/topics/geofencing"><img src="/assets/img/geofence.gif" width="90%" alt="Geofence" border="0"></a><br>Geofencing</td>
+<td align="center" width="25%"><a href="/commands/nearby"><img src="/assets/img/search-nearby.png" width="90%" alt="Nearby" border="0"></a><br>Nearby</td>
+<td align="center" width="25%"><a href="/commands/within"><img src="/assets/img/search-within.png" width="90%" alt="Within" border="0"></a><br>Within</td>
+<td align="center" width="25%"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" width="90%" alt="Intersects" border="0"></a><br>Intersects</td>
 </table>
 
 <a name="getting-started"></a>
