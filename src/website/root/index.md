@@ -1,6 +1,6 @@
 <!-- 
 layout: index.html
-title:  Tile38
+title:  Tile38 - Geolocation data store, spatial index, and realtime geofence
 class:  home
 -->
 
