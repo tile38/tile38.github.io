@@ -262,6 +262,10 @@ code geojson  { color: #e6db74; }
 		display: inline;
 	}
 
+	.extable {
+		font-size:0.7em;
+	}
+
 	.extable .split{
 		display: inline;
 	}
