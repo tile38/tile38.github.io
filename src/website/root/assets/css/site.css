@@ -276,4 +276,9 @@ code geojson  { color: #e6db74; }
 		display: inline-block;
 		width: 17%;
 	}
+
+	.side-img {
+		width: 150px; 
+		height: 150px;	
+	}
 }
