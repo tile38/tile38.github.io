@@ -221,6 +221,27 @@ code geojson  { color: #e6db74; }
 	font-weight: bold;
 }
 
+.extable {
+	font-size:0.8em;
+	font-style: italic;
+	display: block;
+}
+
+.extable div{
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+.extable div img{
+	width: 95%;
+}
+.extable .split{
+	display: none;
+}
+.extable .r2a,.extable .r2b{
+	display: none;
+}
+
 @media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
 	.related-commands {
 		display: none;
@@ -239,5 +260,20 @@ code geojson  { color: #e6db74; }
 	}
 	.related-commands li {
 		display: inline;
+	}
+
+	.extable .split{
+		display: inline;
+	}
+	.extable .r1{
+		width: 33%
+	}
+	.extable .r2{
+		margin-top:20px;
+		width: 33%;
+	}
+	.extable .r2a, .extable .r2b{
+		display: inline-block;
+		width: 17%;
 	}
 }
