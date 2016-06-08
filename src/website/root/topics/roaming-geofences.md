@@ -82,7 +82,3 @@ And if you are using [webhooks](/commands/sethook) you can assign this fence lik
 ```tile38-cli
 SETHOOK myhook http://10.0.1.5/hook NEARBY people FENCE ROAM people * 5000
 ```
-
-
-I'm super excited about this new feature and would love to hear your thoughts. Please feel free to contact me with any feedback.
-
