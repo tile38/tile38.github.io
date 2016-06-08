@@ -58,6 +58,29 @@ cd tile38-{{.LatestVersion}}-linux-amd64
 ./tile38-server
 ```
 
+### FreeBSD
+
+To get started on FreeBSD run the following in a terminal:
+
+```tile38-cli
+curl -L  https://github.com/tidwall/tile38/releases/download/{{.LatestVersion}}/tile38-{{.LatestVersion}}-freebsd-amd64.tar.gz -o tile38-{{.LatestVersion}}-freebsd-amd64.tar.gz
+tar xzvf tile38-{{.LatestVersion}}-freebsd-amd64.tar.gz
+cd tile38-{{.LatestVersion}}-freebsd-amd64
+./tile38-server
+```
+
+Or install from packages:
+
+```tile38-cli
+pkg install tile38
+```
+
+Or from the ports:
+
+```tile38-cli
+make -C /usr/ports/databases/tile38 install
+```
+
 <a name="building"></a>
 ## Building Tile38
 Download, extract and compile Tile38 with:
