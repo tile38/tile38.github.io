@@ -49,6 +49,7 @@ The server will notify the client if the `command` is **`del`** or **`set`** or 
 - **`drop`** notifies the client that the entire collection is dropped.
 - **`set`** notifies the client that an object has been added or updated, and when it's position is detected by the fence.
 
+<a name="detect"></a>
 The **`detect`** may be one of the following values.
 
 - **`inside`** is when an object is inside the specified area.

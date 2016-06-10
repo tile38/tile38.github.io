@@ -26,6 +26,8 @@ Below is a complete list of search options. These options are shared by the [NEA
 
 **FENCE** - FENCE opens a [Geofence](/topics/geofencing).
 
+**DETECT** - DETECT is available when the FENCE options is specified. It allows for filtering out geofence notification based on their type. For more information see the [Geofence](/topics/geofencing#detect) topic.
+
 **SPARSE** - SPARSE will distribute the results of a search evenly across the requested area.  
 This is very helpful for example; when you have many (perhaps millions) of objects and do not want them all clustered together on a map. Sparse will limit the number of objects returned and provide them evenly distributed so that your map looks clean.<br><br>
 You can choose a value between 1 and 8. The value 1 will result in no more than 4 items. The value 8 will result in no more than 65536. *1=4, 2=16, 3=64, 4=256, 5=1024, 6=4098, 7=16384, 8=65536.*<br>
