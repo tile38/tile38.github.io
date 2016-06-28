@@ -13,7 +13,7 @@ Tile38 1.2 introduces a powerful new feature which allows for dynamic [geofences
 
 A couple of common use cases are:
   
-  - **Vehicle pickup services**: Instantly be notified when a vehicle is nearby somebody waiting for be picked up, or when a person approaches a vehicle, or when a vehicle is nearby other vehicles in the fleet.
+  - **Vehicle pickup services**: Instantly be notified when a vehicle is nearby somebody waiting to be picked up, or when a person approaches a vehicle, or when a vehicle is nearby other vehicles in the fleet.
 
   - **Proximity social apps**: Very useful for when you need to check if two users are nearby without having to constantly query the database.
 
