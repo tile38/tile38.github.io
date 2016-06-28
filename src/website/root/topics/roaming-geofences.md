@@ -15,7 +15,7 @@ A couple of common use cases are:
   
   - **Vehicle pickup services**: Instantly be notified when a vehicle is nearby somebody waiting to be picked up, or when a person approaches a vehicle, or when a vehicle is nearby other vehicles in the fleet.
 
-  - **Proximity social apps**: Very useful for when you need to check if two users are nearby without having to constantly query the database.
+  - **Proximity social apps**: Very useful for when you need to check if two users are nearby each other without having to constantly query the database.
 
 
 <br clear="all">
