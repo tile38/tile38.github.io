@@ -97,6 +97,16 @@
 <keyword>SET</keyword> fleet truck1 <keyword>FIELD</keyword> speed <number>90</number> <keyword>FIELD</keyword> age <number>21</number> <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number></code></p>
 
 <p>It&rsquo;s also possible to set a field when an object already exists. See <a href="/commands/fset">FSET</a>.</p>
+
+<p><a name="strings"></a></p>
+
+<h2>Strings</h2>
+
+<p>It&rsquo;s possible to set a raw string by using the STRING keyword.
+The value of a string type can be plain text or a series of raw bytes.
+To retrieve a string value you can use <a href="/commands/get">GET</a>, <a href="/commands/scan">SCAN</a>, or <a href="/commands/search">SEARCH</a>.</p>
+
+<p><code class="block"><keyword>SET</keyword> fleet truck1:driver <keyword>STRING</keyword> &#34;John Denton&#34;</code></p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>
