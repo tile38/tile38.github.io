@@ -61,3 +61,15 @@ SET fleet truck1 FIELD speed 90 FIELD age 21 POINT 33.5123 -112.2693
 ```
 
 It's also possible to set a field when an object already exists. See [FSET](/commands/fset).
+
+<a name="strings"></a>
+## Strings
+
+It's possible to set a raw string by using the STRING keyword.
+The value of a string type can be plain text or a series of raw bytes.
+To retrieve a string value you can use [GET](/commands/get), [SCAN](/commands/scan), or [SEARCH](/commands/search).
+
+```tile38
+SET fleet truck1:driver STRING "John Denton"
+```
+
