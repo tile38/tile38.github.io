@@ -28,7 +28,7 @@ The above command will search for all values that begin with `J` from the `names
 
 For a complete list of search options please see the [INTERSECTS](/commands/intersects#search-options) command.
 
-*Please note that the [SCAN](/commands/scan) command does not allow `FENCE` and `SPARSE`.*
+*Please note that the [SEARCH](/commands/search) command does not allow `FENCE` and `SPARSE`.*
 
 ## Output Formats
 
