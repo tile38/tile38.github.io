@@ -123,6 +123,14 @@
 	        <div class="summary">Remove a key from the database</div>
 	    </a>
 
+	    <a class="command grp-keys" href="/commands/expire">
+	        <div class="nameargs">
+	            <span class="name">EXPIRE</span>
+	            <span class="args"> key id seconds</span>
+	        </div>
+	        <div class="summary">Set a timeout on an id</div>
+	    </a>
+
 	    <a class="command grp-server" href="/commands/flushdb">
 	        <div class="nameargs">
 	            <span class="name">FLUSHDB</span>
@@ -203,6 +211,14 @@
 	        <div class="summary">Gets or sets the output format for the current connection.</div>
 	    </a>
 
+	    <a class="command grp-keys" href="/commands/persist">
+	        <div class="nameargs">
+	            <span class="name">PERSIST</span>
+	            <span class="args"> key id</span>
+	        </div>
+	        <div class="summary">Remove the existing timeout on an id</div>
+	    </a>
+
 	    <a class="command grp-connection" href="/commands/ping">
 	        <div class="nameargs">
 	            <span class="name">PING</span>
@@ -254,7 +270,7 @@
 	    <a class="command grp-keys" href="/commands/set">
 	        <div class="nameargs">
 	            <span class="name">SET</span>
-	            <span class="args"> key id [FIELD name value ...] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)</span>
+	            <span class="args"> key id [FIELD name value ...] [EX seconds value] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)</span>
 	        </div>
 	        <div class="summary">Sets the value of an id</div>
 	    </a>
@@ -273,6 +289,14 @@
 	            <span class="args"> key [key ...]</span>
 	        </div>
 	        <div class="summary">Show stats for one or more keys</div>
+	    </a>
+
+	    <a class="command grp-keys" href="/commands/ttl">
+	        <div class="nameargs">
+	            <span class="name">TTL</span>
+	            <span class="args"> key id</span>
+	        </div>
+	        <div class="summary">Get a timeout on an id</div>
 	    </a>
 
 	    <a class="command grp-search" href="/commands/within">
