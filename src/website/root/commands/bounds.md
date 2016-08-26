@@ -2,7 +2,7 @@
 layout:  index.html
 title:   BOUNDS - Tile38
 class:   command
-command: keys
+command: bounds
 -->
 
 Returns the minimum bounding rectangle for all objects in a key.
