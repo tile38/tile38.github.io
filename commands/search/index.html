@@ -27,7 +27,7 @@
 	<div class="content">
 		
 		<h2 class="command-title">
-			SEARCH key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [NOFIELDS] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)]
+			SEARCH key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [NOFIELDS] [COUNT|IDS]
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
@@ -62,15 +62,8 @@ For Example:</p>
 
 <p>The above command will search for all values that begin with <code>J</code> from the <code>names</code> key and return the results in descending order.</p>
 
-<h2>Search Options</h2>
-
-<p>For a complete list of search options please see the <a href="/commands/intersects#search-options">INTERSECTS</a> command.</p>
-
-<p><em>Please note that the <a href="/commands/search">SEARCH</a> command does not allow <code>FENCE</code> and <code>SPARSE</code>.</em></p>
-
-<h2>Output Formats</h2>
-
-<p>For a complete list of output formats please see the <a href="/commands/intersects#output-formats">INTERSECTS</a> command.</p>
+<p>Please note that this command only STRING values.
+Geo values such and POINT and OBJECT require use the SCAN command.</p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>

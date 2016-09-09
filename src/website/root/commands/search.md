@@ -24,12 +24,5 @@ SEARCH names MATCH J* DESC
 
 The above command will search for all values that begin with `J` from the `names` key and return the results in descending order.
 
-## Search Options
-
-For a complete list of search options please see the [INTERSECTS](/commands/intersects#search-options) command.
-
-*Please note that the [SEARCH](/commands/search) command does not allow `FENCE` and `SPARSE`.*
-
-## Output Formats
-
-For a complete list of output formats please see the [INTERSECTS](/commands/intersects#output-formats) command.
+Please note that this command only STRING values. 
+Geo values such and POINT and OBJECT require use the SCAN command.
