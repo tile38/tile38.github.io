@@ -219,6 +219,14 @@
 	        <div class="summary">Gets or sets the output format for the current connection.</div>
 	    </a>
 
+	    <a class="command grp-webhook" href="/commands/pdelhook">
+	        <div class="nameargs">
+	            <span class="name">PDELHOOK</span>
+	            <span class="args"> pattern</span>
+	        </div>
+	        <div class="summary">Removes all hooks matching a pattern</div>
+	    </a>
+
 	    <a class="command grp-keys" href="/commands/persist">
 	        <div class="nameargs">
 	            <span class="name">PERSIST</span>
@@ -278,7 +286,7 @@
 	    <a class="command grp-keys" href="/commands/set">
 	        <div class="nameargs">
 	            <span class="name">SET</span>
-	            <span class="args"> key id [FIELD name value ...] [EX seconds value] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)</span>
+	            <span class="args"> key id [FIELD name value ...] [EX seconds] [NX|XX] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)</span>
 	        </div>
 	        <div class="summary">Sets the value of an id</div>
 	    </a>

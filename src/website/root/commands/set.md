@@ -15,7 +15,7 @@ Set a simple point in latitude, longitude.
 SET fleet truck1 POINT 33.5123 -112.2693
 ```
 
-A point with **Z** data. This is application specific such as elevation, or a timestamp, etc.
+A point with [**Z** coordinate](#z-coordinate). This is application specific such as elevation, or a timestamp, etc.
 
 ```tile38
 SET fleet truck1 POINT 33.5123 -112.2693 245.0
@@ -47,6 +47,13 @@ A [GeoJSON](http://geojson.org/) object. GeoJSON is an industry standard format 
 SET cities tempe OBJECT {"type":"Polygon","coordinates":[[[-111.9787,33.4411],[-111.8902,33.4377],[-111.8950,33.2892],[-111.9739,33.2932],[-111.9787,33.4411]]]}
 ```
 
+<a name="options"></a>
+## Options
+SET supports a set of options that modify its behavior:
+
+- EX seconds -- Set the specified expire time, in seconds.  
+- NX -- Only set the object if it does not already exist.
+- XX -- Only set the object if it already exist.
 
 <a name="fields"></a>
 ## Fields
@@ -61,6 +68,30 @@ SET fleet truck1 FIELD speed 90 FIELD age 21 POINT 33.5123 -112.2693
 ```
 
 It's also possible to set a field when an object already exists. See [FSET](/commands/fset).
+
+<a name="z-coordinate"></a>
+## Z Coordinate
+A **z** coordinate allows for optimized range queries for values such as Elevation and Timestamps.
+
+To set the z coordinate:
+
+```tile38
+SET fleet truck1 POINT 33.5123 -112.2693 115
+SET fleet truck1 OBJECT {"type":"Point","coordinates":[33.5123,-112.2693,115]}
+```
+
+Now queries can search the z coordinate by treating it as a field:
+
+```tile38
+NEARBY 1 WHERE z -15 130 POINTS 33 -115 100000
+```
+
+Which will look for all points that are within 100 kilometers of 33,-115 and have a `z` coordinate between -15 and 130.
+**notice the lowercase `z` in the WHERE clause**
+
+
+
+
 
 <a name="strings"></a>
 ## Strings

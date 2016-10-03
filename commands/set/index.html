@@ -27,7 +27,7 @@
 	<div class="content">
 		
 		<h2 class="command-title">
-			SET key id [FIELD name value ...] [EX seconds value] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)
+			SET key id [FIELD name value ...] [EX seconds] [NX|XX] (OBJECT geojson)|(POINT lat lon [z])|(BOUNDS minlat minlon maxlat maxlon)|(HASH geohash)|(STRING value)
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
@@ -67,7 +67,7 @@
 
 <p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number></code></p>
 
-<p>A point with <strong>Z</strong> data. This is application specific such as elevation, or a timestamp, etc.</p>
+<p>A point with <a href="#z-coordinate"><strong>Z</strong> coordinate</a>. This is application specific such as elevation, or a timestamp, etc.</p>
 
 <p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <number>245.0</number></code></p>
 
@@ -93,6 +93,18 @@
 
 <p><code class="block"><keyword>SET</keyword> cities tempe <keyword>OBJECT</keyword> <geojson>{&#34;type&#34;:&#34;Polygon&#34;,&#34;coordinates&#34;:[[[-111.9787,33.4411],[-111.8902,33.4377],[-111.8950,33.2892],[-111.9739,33.2932],[-111.9787,33.4411]]]}</comment></code></p>
 
+<p><a name="options"></a></p>
+
+<h2>Options</h2>
+
+<p>SET supports a set of options that modify its behavior:</p>
+
+<ul>
+<li>EX seconds &ndash; Set the specified expire time, in seconds.<br /></li>
+<li>NX &ndash; Only set the object if it does not already exist.</li>
+<li>XX &ndash; Only set the object if it already exist.</li>
+</ul>
+
 <p><a name="fields"></a></p>
 
 <h2>Fields</h2>
@@ -105,6 +117,24 @@
 <keyword>SET</keyword> fleet truck1 <keyword>FIELD</keyword> speed <number>90</number> <keyword>FIELD</keyword> age <number>21</number> <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number></code></p>
 
 <p>It&rsquo;s also possible to set a field when an object already exists. See <a href="/commands/fset">FSET</a>.</p>
+
+<p><a name="z-coordinate"></a></p>
+
+<h2>Z Coordinate</h2>
+
+<p>A <strong>z</strong> coordinate allows for optimized range queries for values such as Elevation and Timestamps.</p>
+
+<p>To set the z coordinate:</p>
+
+<p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <number>115</number>
+<keyword>SET</keyword> fleet truck1 <keyword>OBJECT</keyword> <geojson>{&#34;type&#34;:&#34;Point&#34;,&#34;coordinates&#34;:[33.5123,-112.2693,115]}</comment></code></p>
+
+<p>Now queries can search the z coordinate by treating it as a field:</p>
+
+<p><code class="block"><keyword>NEARBY</keyword> <number>1</number> <keyword>WHERE</keyword> z <number>-15</number> <number>130</number> <keyword>POINTS</keyword> <number>33</number> <number>-115</number> <number>100000</number></code></p>
+
+<p>Which will look for all points that are within 100 kilometers of 33,-115 and have a <code>z</code> coordinate between -15 and 130.
+<strong>notice the lowercase <code>z</code> in the WHERE clause</strong></p>
 
 <p><a name="strings"></a></p>
 

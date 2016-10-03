@@ -37,9 +37,23 @@ When using the `http://` and `https://` url scheme an HTTP POST will be sent to 
 
 Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200 the message will be considered sent.
 
+### GRPC
+
+The `grpc://` url scheme provides support for sending messages over [GRPC](http://www.grpc.io/).
+
+For example:
+
+```tile38
+SETHOOK warehouse grpc://10.0.20.78:6798/ ...
+```
+
+All webhook messages will be sent to the GPRC server at `10.0.20.78:6798`. 
+
+The proto file can be found in the [/hservice directory](https://github.com/tidwall/tile38/tree/master/hservice).
+
 ### Disque
 
-The `disque://` url scheme provide support for sending messages to a [Disque](https://github.com/antirez/disque) server.
+The `disque://` url scheme provides support for sending messages to a [Disque](https://github.com/antirez/disque) server.
 
 For example:
 
@@ -48,6 +62,7 @@ SETHOOK warehouse disque://10.0.20.78:7711/warehouse?replicate=2 ...
 ```
 
 All webhook messages will be sent to the Disque server at `10.0.20.78:7711`. The replicate param is optional and when this value is greater than one, Tile38 will require that the Disque server to make copies of the message on N servers, where N is the value of `replicate`. Please review the [Disque API](https://github.com/antirez/disque#main-api) for information on the replicate option.
+
 
 
 ### Endpoint Failover

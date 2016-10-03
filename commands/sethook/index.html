@@ -37,6 +37,8 @@
 				
 					<li ><a href="/commands/hooks">HOOKS</a></li>
 				
+					<li ><a href="/commands/pdelhook">PDELHOOK</a></li>
+				
 					<li class="sel"><a href="/commands/sethook">SETHOOK</a></li>
 				
 			</ul>
@@ -75,9 +77,21 @@
 
 <p>Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200 the message will be considered sent.</p>
 
+<h3>GRPC</h3>
+
+<p>The <code>grpc://</code> url scheme provides support for sending messages over <a href="http://www.grpc.io/">GRPC</a>.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse grpc://10.0.20.78:6798/ &hellip;</code></p>
+
+<p>All webhook messages will be sent to the GPRC server at <code>10.0.20.78:6798</code>.</p>
+
+<p>The proto file can be found in the <a href="https://github.com/tidwall/tile38/tree/master/hservice">/hservice directory</a>.</p>
+
 <h3>Disque</h3>
 
-<p>The <code>disque://</code> url scheme provide support for sending messages to a <a href="https://github.com/antirez/disque">Disque</a> server.</p>
+<p>The <code>disque://</code> url scheme provides support for sending messages to a <a href="https://github.com/antirez/disque">Disque</a> server.</p>
 
 <p>For example:</p>
 
