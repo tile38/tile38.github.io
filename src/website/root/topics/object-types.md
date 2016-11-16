@@ -11,7 +11,7 @@ All object types except for XYZ Tiles and QuadKeys can be stored in a collection
 
 <a name="latlon-point"></a>
 ### Lat/lon Point
-The most basic object type is a point that is composed of a latitude and a longitude. There is an optional `z` member that may be used for auxilary data such as elevation or a timestamp.
+The most basic object type is a point that is composed of a latitude and a longitude. There is an optional `z` member that may be used for auxiliary data such as elevation or a timestamp.
 
 ```tile38
 SET fleet truck1 POINT 33.5123 -112.2693     # plain lat/lon

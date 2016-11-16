@@ -67,7 +67,7 @@ All webhook messages will be sent to the Disque server at `10.0.20.78:7711`. The
 
 ### Endpoint Failover
 
-It's possible to specify multiple endpoints for a webhook by seperating each with a comma. Make sure that there are no spaces between the comma and the urls.
+It's possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.
 
 ```tile38
 SETHOOK warehouse http://10.0.20.78/ep1,http://10.0.20.78/ep2 ...
