@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="command">
 <head>
-	<title>GET - Tile38</title>
+	<title>PDEL - Tile38</title>
 	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
 	<meta property="og:image" content="/assets/img/logo1500.png" />
@@ -27,7 +27,7 @@
 	<div class="content">
 		
 		<h2 class="command-title">
-			GET key id [WITHFIELDS] [OBJECT|POINT|BOUNDS|(HASH geohash)]
+			PDEL key pattern
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
@@ -43,7 +43,7 @@
 				
 					<li ><a href="/commands/fset">FSET</a></li>
 				
-					<li class="sel"><a href="/commands/get">GET</a></li>
+					<li ><a href="/commands/get">GET</a></li>
 				
 					<li ><a href="/commands/jdel">JDEL</a></li>
 				
@@ -53,7 +53,7 @@
 				
 					<li ><a href="/commands/keys">KEYS</a></li>
 				
-					<li ><a href="/commands/pdel">PDEL</a></li>
+					<li class="sel"><a href="/commands/pdel">PDEL</a></li>
 				
 					<li ><a href="/commands/persist">PERSIST</a></li>
 				
@@ -67,26 +67,13 @@
 		</div>
 		
 		<div class="inner">
-			<p>Get the object of an id. The default output format is a GeoJSON object.</p>
-
-<p>Output formats:</p>
-
-<ul>
-<li><strong>OBJECT</strong>: A <a href="http://geojson.org/">GeoJSON</a> object.</li>
-<li><strong>POINT</strong>: A standard latitude, longitude point.</li>
-<li><strong>BOUNDS</strong>: A <a href="https://en.wikipedia.org/wiki/Minimum_bounding_rectangle">minimum bounding rectangle</a>.</li>
-<li><strong>HASH</strong>: A <a href="https://en.wikipedia.org/wiki/Geohash">Geohash</a>.</li>
-</ul>
-
-<p>A Geohash requires a precision of 1 to 22.</p>
+			<p>Removes objects that match a specified pattern.</p>
 
 <h2>Examples</h2>
 
-<p><code class="block"><keyword>GET</keyword> fleet truck1 <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># get geojson object &#39;truck1&#39; from &#39;fleet&#39;</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>OBJECT</keyword> <keyword></keyword> <keyword></keyword> <comment># same as above</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>POINT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># get latitude, longitude point</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>BOUNDS</keyword> <keyword></keyword> <keyword></keyword> <comment># get bounding rectangle</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>HASH</keyword> <number>5</number> <keyword></keyword> <keyword></keyword> <comment># get geohash with precision of 5</comment></code></p>
+<p><code class="block"><keyword>PDEL</keyword> fleet truck*</code></p>
+
+<p>This will remove all objects from the <code>fleet</code> collection which have an ID that begins with <code>truck</code>.</p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="command">
 <head>
-	<title>GET - Tile38</title>
+	<title>JSET - Tile38</title>
 	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
 	<meta property="og:image" content="/assets/img/logo1500.png" />
@@ -27,7 +27,7 @@
 	<div class="content">
 		
 		<h2 class="command-title">
-			GET key id [WITHFIELDS] [OBJECT|POINT|BOUNDS|(HASH geohash)]
+			JSET key id path value [RAW]
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
@@ -43,13 +43,13 @@
 				
 					<li ><a href="/commands/fset">FSET</a></li>
 				
-					<li class="sel"><a href="/commands/get">GET</a></li>
+					<li ><a href="/commands/get">GET</a></li>
 				
 					<li ><a href="/commands/jdel">JDEL</a></li>
 				
 					<li ><a href="/commands/jget">JGET</a></li>
 				
-					<li ><a href="/commands/jset">JSET</a></li>
+					<li class="sel"><a href="/commands/jset">JSET</a></li>
 				
 					<li ><a href="/commands/keys">KEYS</a></li>
 				
@@ -67,26 +67,27 @@
 		</div>
 		
 		<div class="inner">
-			<p>Get the object of an id. The default output format is a GeoJSON object.</p>
+			<p>Set a value in a JSON document.</p>
 
-<p>Output formats:</p>
+<p>JGET, JSET, and JDEL allow for working with JSON strings, for example:</p>
 
-<ul>
-<li><strong>OBJECT</strong>: A <a href="http://geojson.org/">GeoJSON</a> object.</li>
-<li><strong>POINT</strong>: A standard latitude, longitude point.</li>
-<li><strong>BOUNDS</strong>: A <a href="https://en.wikipedia.org/wiki/Minimum_bounding_rectangle">minimum bounding rectangle</a>.</li>
-<li><strong>HASH</strong>: A <a href="https://en.wikipedia.org/wiki/Geohash">Geohash</a>.</li>
-</ul>
+<p><code class="block"><keyword>JSET</keyword> user <number>901</number> name Tom
+<keyword>JGET</keyword> user <number>901</number>
+&gt; <geojson>{&#34;name&#34;:&#34;Tom&#34;}</comment>
+<keyword></keyword>
+<keyword>JSET</keyword> user <number>901</number> name.first Tom
+<keyword>JSET</keyword> user <number>901</number> name.last Anderson
+<keyword>JGET</keyword> user <number>901</number>
+&gt; <geojson>{&#34;name&#34;:{&#34;first&#34;:&#34;Tom&#34;,&#34;last&#34;:&#34;Anderson&#34;}}</comment>
+<keyword></keyword>
+<keyword>JDEL</keyword> user <number>901</number> name.last
+<keyword>JGET</keyword> user <number>901</number>
+&gt; <geojson>{&#34;name&#34;:{&#34;first&#34;:&#34;Tom&#34;}}</comment></code></p>
 
-<p>A Geohash requires a precision of 1 to 22.</p>
+<p>All commands use the GJSON path syntax, for more information:</p>
 
-<h2>Examples</h2>
-
-<p><code class="block"><keyword>GET</keyword> fleet truck1 <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># get geojson object &#39;truck1&#39; from &#39;fleet&#39;</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>OBJECT</keyword> <keyword></keyword> <keyword></keyword> <comment># same as above</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>POINT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># get latitude, longitude point</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>BOUNDS</keyword> <keyword></keyword> <keyword></keyword> <comment># get bounding rectangle</comment>
-<keyword>GET</keyword> fleet truck1 <keyword>HASH</keyword> <number>5</number> <keyword></keyword> <keyword></keyword> <comment># get geohash with precision of 5</comment></code></p>
+<p>Setting JSON: <a href="https://github.com/tidwall/sjson">https://github.com/tidwall/sjson</a><br />
+Getting JSON: <a href="https://github.com/tidwall/gjson">https://github.com/tidwall/gjson</a></p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>

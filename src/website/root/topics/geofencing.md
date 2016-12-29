@@ -58,7 +58,8 @@ The **`detect`** may be one of the following values.
 - **`exit`** is when an object that **was** previously in the fence has exited the area.
 - **`cross`** is when an object that **was not** previously in the fence has entered **and** exited the area.
 
-By default **all** detect types are returned. If you would like to only have a select few then use the `DETECT` option, for example:
+By default **all** detect types and commands are returned.
+If you would like to only have a select few then use the `DETECT` option, for example:
 
 ```tile38
 NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
@@ -66,5 +67,11 @@ NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
 
 This command will only tell the fence that you only want **inside** and **outside** detection.
 
+It's also possible to mask which commands are returned by using the	`COMMAND` option, for example:
 
+```tile38
+NEARBY fleet FENCE DETECT enter COMMAND set POINT 33.462 -112.268 6000
+```
+
+This specifies that you only want the **enter** detection for the **set** command.
 
