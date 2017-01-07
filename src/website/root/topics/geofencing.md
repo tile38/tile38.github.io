@@ -67,10 +67,10 @@ NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
 
 This command will only tell the fence that you only want **inside** and **outside** detection.
 
-It's also possible to mask which commands are returned by using the	`COMMAND` option, for example:
+It's also possible to mask which commands are returned by using the	`COMMANDS` option, for example:
 
 ```tile38
-NEARBY fleet FENCE DETECT enter COMMAND set POINT 33.462 -112.268 6000
+NEARBY fleet FENCE DETECT enter COMMANDS set POINT 33.462 -112.268 6000
 ```
 
 This specifies that you only want the **enter** detection for the **set** command.
