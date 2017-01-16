@@ -25,25 +25,25 @@
 		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
 	</div>
 	<div class="content">
-
+		
 		<h2 class="command-title">
 			SETHOOK name endpoint [META name value ...] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
 			<ul>
-
+				
 					<li ><a href="/commands/delhook">DELHOOK</a></li>
-
+				
 					<li ><a href="/commands/hooks">HOOKS</a></li>
-
+				
 					<li ><a href="/commands/pdelhook">PDELHOOK</a></li>
-
+				
 					<li class="sel"><a href="/commands/sethook">SETHOOK</a></li>
-
+				
 			</ul>
 		</div>
-
+		
 		<div class="inner">
 			<p>Creates a webhook which points to a <a href="/topics/geofencing">geofenced</a> search. If a hook is already associated to that name, it&rsquo;ll be overwritten.</p>
 
@@ -69,7 +69,7 @@
 
 <h2>Endpoints</h2>
 
-<p>Tile38 currently supports endpoints with the <strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>GRPC</code></strong>, <strong><code>Redis</code></strong> and <strong><code>disque</code></strong> url schemes.</p>
+<p>Tile38 currently supports endpoints with the <strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong> and <strong><code>disque</code></strong> url schemes.</p>
 
 <h3>HTTP / HTTPS</h3>
 
@@ -91,13 +91,13 @@
 
 <h3>Redis</h3>
 
-<p>The <code>redis://</code> url scheme provides support for sending messages to a <a href="https://redis.io/">Redis</a> server.</p>
+<p>The <code>redis://</code> url scheme provides support for sending messages to a <a href="https://redis.io">Redis</a> server.</p>
 
 <p>For example:</p>
 
 <p><code class="block"><keyword>SETHOOK</keyword> warehouse redis://10.0.20.78:6379/warehouse &hellip;</code></p>
 
-<p>All webhook messages will be sent to the Redis server at <code>10.0.20.78:6379</code> to a <a href="https://redis.io/commands#pubsub">PUBSUB</a> <code>warehouse</code> as a JSON messages.</p>
+<p>All webhook messages will be sent to the Redis server at <code>10.0.20.78:6379</code> in a <a href="https://redis.io/commands#pubsub">PUBSUB</a> queue <code>warehouse</code> as a JSON messages.</p>
 
 <h3>Disque</h3>
 
@@ -124,7 +124,7 @@
 			    <a class="github-button" href="https://github.com/tidwall/tile38" data-icon="octicon-star" data-style="mega" data-count-href="/tidwall/tile38/stargazers" data-count-api="/repos/tidwall/tile38#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star tidwall/tile38 on GitHub">Star</a>
 			</center>
 	</div></div>
-
+	
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

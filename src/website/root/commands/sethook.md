@@ -25,15 +25,15 @@ In this example we created a webhook named `warehouse` that watches for changes 
 
 *For more information on the format of this message please see the topic on [Geofencing](/topics/geofencing).*
 
-[NEARBY](/commands/nearby), [INTERSECTS](/commands/intersects), and [WITHIN](/commands/within) are supported search types. The `FENCE` keyword must be present. 
+[NEARBY](/commands/nearby), [INTERSECTS](/commands/intersects), and [WITHIN](/commands/within) are supported search types. The `FENCE` keyword must be present.
 
 ## Endpoints
 
-Tile38 currently supports endpoints with the **`http`**, **`https`**, and **`disque`** url schemes. 
+Tile38 currently supports endpoints with the **`http`**, **`https`**, **`grpc`**, **`redis`** and **`disque`** url schemes.
 
 ### HTTP / HTTPS
 
-When using the `http://` and `https://` url scheme an HTTP POST will be sent to the specified url with the `content-type` of `application/json` and the request body containing the message. 
+When using the `http://` and `https://` url scheme an HTTP POST will be sent to the specified url with the `content-type` of `application/json` and the request body containing the message.
 
 Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200 the message will be considered sent.
 
@@ -47,9 +47,21 @@ For example:
 SETHOOK warehouse grpc://10.0.20.78:6798/ ...
 ```
 
-All webhook messages will be sent to the GPRC server at `10.0.20.78:6798`. 
+All webhook messages will be sent to the GPRC server at `10.0.20.78:6798`.
 
 The proto file can be found in the [/hservice directory](https://github.com/tidwall/tile38/tree/master/hservice).
+
+### Redis
+
+The `redis://` url scheme provides support for sending messages to a [Redis](https://redis.io) server.
+
+For example:
+
+```tile38
+SETHOOK warehouse redis://10.0.20.78:6379/warehouse ...
+```
+
+All webhook messages will be sent to the Redis server at `10.0.20.78:6379` in a [PUBSUB](https://redis.io/commands#pubsub) queue `warehouse` as a JSON messages.
 
 ### Disque
 
@@ -74,6 +86,3 @@ SETHOOK warehouse http://10.0.20.78/ep1,http://10.0.20.78/ep2 ...
 ```
 
 Tile38 will try to send a message to the first endpoint. If the send is a failure then the second endpoint is tried, and so on.
-
-
-
