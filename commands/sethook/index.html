@@ -69,7 +69,7 @@
 
 <h2>Endpoints</h2>
 
-<p>Tile38 currently supports endpoints with the <strong><code>http</code></strong>, <strong><code>https</code></strong>, and <strong><code>disque</code></strong> url schemes.</p>
+<p>Tile38 currently supports endpoints with the <strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong> and <strong><code>disque</code></strong> url schemes.</p>
 
 <h3>HTTP / HTTPS</h3>
 
@@ -88,6 +88,16 @@
 <p>All webhook messages will be sent to the GPRC server at <code>10.0.20.78:6798</code>.</p>
 
 <p>The proto file can be found in the <a href="https://github.com/tidwall/tile38/tree/master/hservice">/hservice directory</a>.</p>
+
+<h3>Redis</h3>
+
+<p>The <code>redis://</code> url scheme provides support for sending messages to a <a href="https://redis.io">Redis</a> server.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse redis://10.0.20.78:6379/warehouse &hellip;</code></p>
+
+<p>All webhook messages will be sent to the Redis server at <code>10.0.20.78:6379</code> in a <a href="https://redis.io/commands#pubsub">PUBSUB</a> queue <code>warehouse</code> as a JSON messages.</p>
 
 <h3>Disque</h3>
 
