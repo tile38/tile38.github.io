@@ -23,7 +23,7 @@ A couple of common use cases are:
 A simple example:
 
 ```tile38
-NEARBY people FENCE ROAM people * 100
+NEARBY people FENCE ROAM people * 5000
 ```
 
 This will open a roaming fence on the `people` collection. The fence watches for when any object is within 5000 meters of any other object in the same collection.
