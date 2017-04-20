@@ -131,6 +131,16 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 <p><strong>QUADKEY</strong> - A <a href="/topics/object-types#quadkey">QuadKey</a>.</p>
 
 <p><strong>HASH</strong> - A <a href="/topics/object-types#geohash">Geohash</a>.</p>
+
+<p><a name="fields"></a></p>
+
+<h2>Fields</h2>
+
+<p>The object <a href="/commands/set#fields">field</a> values are grouped together in a list per object.
+Due to the way Tile38 organizes field memory, it&rsquo;s possible to see zero values for fields
+that have not been set. <strong>It&rsquo;s recommended to treat all nonexistent or omitted fields as
+having the value of zero.</strong> Check out this <a href="https://github.com/tidwall/tile38/issues/169#issuecomment-295280587">Github issue</a>
+for more information.</p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>
