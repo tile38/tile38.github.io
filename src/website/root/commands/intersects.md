@@ -92,3 +92,16 @@ Might be used to search for all object in the `poi` key that are within the obje
 **QUADKEY** - A [QuadKey](/topics/object-types#quadkey).
 
 **HASH** - A [Geohash](/topics/object-types#geohash).
+
+<a name="fields"></a>
+## Fields
+
+The object [field](/commands/set#fields) values are grouped together in a list per object.
+Due to the way Tile38 organizes field memory, it's possible to see zero values for fields
+that have not been set. **It's recommended to treat all nonexistent or omitted fields as
+having the value of zero.** Check out this [Github issue](https://github.com/tidwall/tile38/issues/169#issuecomment-295280587)
+for more information.
+
+
+
+

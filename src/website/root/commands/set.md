@@ -58,7 +58,9 @@ SET supports a set of options that modify its behavior:
 <a name="fields"></a>
 ## Fields
 
-Fields are extra data which belongs to an object. A field is always a [double precision floating point](https://en.wikipedia.org/wiki/Double-precision_floating-point_format). There is no limit to the number of fields that an object can have.
+Fields are extra data which belongs to an object.
+A field is always a [double precision floating point](https://en.wikipedia.org/wiki/Double-precision_floating-point_format).
+There is no limit to the number of fields that an object can have.
 
 To set a field when setting an object.
 

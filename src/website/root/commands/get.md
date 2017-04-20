@@ -16,6 +16,9 @@ Output formats:
 
 A Geohash requires a precision of 1 to 22.
 
+The **WITHFIELDS** option will also return the [fields](/commands/set#fields) that belong to the object.
+Field values that are equal to zero are omitted.
+
 ## Examples
 
 ```tile38
@@ -24,5 +27,5 @@ GET fleet truck1 OBJECT   # same as above
 GET fleet truck1 POINT    # get latitude, longitude point
 GET fleet truck1 BOUNDS   # get bounding rectangle
 GET fleet truck1 HASH 5   # get geohash with precision of 5
-
 ```
+
