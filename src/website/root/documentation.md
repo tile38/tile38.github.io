@@ -1,4 +1,4 @@
-<!-- 
+<!--
 layout: index.html
 title:  Documentation - Tile38
 class:  documentation
@@ -22,7 +22,7 @@ Below are some topics that may help you on your journey.
 ## Support
 
 - Ask a Question
-    - Ask on [Github](https://github.com/tidwall/tile38/issues) - This is a nice way to share the question with the community.
+    - Ask on [GitHub](https://github.com/tidwall/tile38/issues) - This is a nice way to share the question with the community.
     - Email Josh Baker [&lt;joshbaker77@gmail.com&gt;](mailto:joshbaker77@gmail.com) - I will do my best to get back to you asap.
     - Ask me on Twitter [@tidwall](https://twitter.com/tidwall)
 - Report an Issue
