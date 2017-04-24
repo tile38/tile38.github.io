@@ -29,7 +29,7 @@ In this example we created a webhook named `warehouse` that watches for changes 
 
 ## Endpoints
 
-Tile38 currently supports endpoints with the **`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`** and **`kafka`** url schemes.
+Tile38 currently supports endpoints with the **`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`** and **`amqp`** url schemes.
 
 ### HTTP / HTTPS
 
@@ -77,15 +77,40 @@ All webhook messages will be sent to the Disque server at `10.0.20.78:7711`. The
 
 ### Kafka
 
-The `kafka://` url scheme provies support for sending messages to a [Kafka](https://kafka.apache.org/) broker.
+The `kafka://` url scheme provides support for sending messages to a [Kafka](https://kafka.apache.org/) broker.
 
 For example:
 
 ```tile38
-SETHOOK warehouse kafka://10.0.20.78:9092/warehouse
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse ...
 ```
 
 All webhook messages will be sent to the Kafka server at `10.0.20.78:9092` to a [topic](https://kafka.apache.org/documentation/#intro_topics) called warehouse. The port number is optional and will default to 9092.
+
+### AMQP
+
+The `amqp://` url scheme provides support for sending messages to a [RabbitMQ](https://www.rabbitmq.com/) broker via the Advanced Message Queuing Protocol (AMQP) version 0.9.1.
+
+For example:
+
+```tile38
+SETHOOK warehouse amqp://guest:guest@10.0.20.78:5672/warehouse?route=tile ...
+```
+
+All webhook messages will be sent to the RabbitMQ broker at `10.0.20.78:5672` to the queue called warehouse. Route is an optional parameter and will default to tile38.
+
+#### Options
+The following optional parameters are available for this hook, the listed value is the default value:  
+
+* `type` - 'direct'  
+* `durable` - true  
+* `immediate` - false  
+* `mandatory` - false  
+* `auto_delete` - false  
+* `internal` - false  
+* `no_wait` - false  
+* `delivery_mode` - 1  
+* `route` - tile38  
 
 ### Endpoint Failover
 
