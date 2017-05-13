@@ -24,6 +24,11 @@ For a complete list of search options please see the [INTERSECTS](/commands/inte
 
 For a complete list of output formats please see the [INTERSECTS](/commands/intersects#output-formats) command.
 
+## KNN Search
+Normally the results of NEARBY are unsorted, but when a LIMIT is set with no radius, the KNN algorithm will be used instead of the standard overlap+Haversine algorithm, sorting the results in order of distance ascending, i.e., nearest first.
 
+The following example will find the object closest to the given point:
 
-
+```tile38
+NEARBY fleet LIMIT 1 POINT 33.462 -112.268
+```
