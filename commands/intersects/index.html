@@ -27,7 +27,7 @@
 	<div class="content">
 		
 		<h2 class="command-title">
-			INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
+			INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
 		</h2>
 		<div class="related-commands">
 			<div>Related commands</div>
@@ -83,6 +83,8 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 <em>Please note that the higher the sparse value, the slower the performance. Also, LIMIT and CURSOR are not available when using SPARSE.</em></p>
 
 <p><strong>WHERE</strong> - WHERE allows for filtering out results based on <a href="/commands/set#fields">field</a> values. For example<br><code>nearby fleet where speed 70 +inf point 33.462 -112.268 6000</code> will return only the objects in the &lsquo;fleet&rsquo; collection that are within the 6 km radius <strong>and</strong> have a field named <code>speed</code> that is greater than <code>70</code>. <br><br>Multiple WHEREs are concatenated as <strong>and</strong> clauses. <code>WHERE speed 70 +inf WHERE age -inf 24</code> would be interpreted as <em>speed is over 70 <b>and</b> age is less than 24.</em><br><br>The default value for a field is always <code>0</code>. Thus if you do a WHERE on the field <code>speed</code> and an object does not have that field set, the server will pretend that the object does and that the value is Zero.</p>
+
+<p><strong>WHEREIN</strong> - WHEREIN is similar to WHERE except that it checks whether the object&rsquo;s <a href="/commands/set#fields">field</a> value is in a given list. For example<br><code>nearby fleet where 3 14 18 22 point 33.462 -112.268 6000</code> will return only the objects in the &lsquo;fleet&rsquo; collection that are within the 6 km radius <strong>and</strong> have a field named <code>wheels</code> that is either <code>14</code> or <code>18</code> or <code>22</code>. <br><br>Multiple WHEREINs are concatenated as <strong>and</strong> clauses. <code>WHEREIN doors 2 2 5 WHEREIN wheels 3 14 18 22</code> would be interpreted as <em>doors is either 2 or 5 <b>and</b> wheels is either 14 or 18 or 22.</em><br><br>The default value for a field is always <code>0</code>. Thus if you do a WHEREIN on the field <code>wheels</code> and an object does not have that field set, the server will pretend that the object does and that the value is Zero.</p>
 
 <p><strong>MATCH</strong> - MATCH is similar to WHERE except that it works on the object id instead of fields.<br><code>nearby fleet match truck* point 33.462 -112.268 6000</code> will return only the objects in the &lsquo;fleet&rsquo; collection that are within the 6 km radius <strong>and</strong> have an object id that starts with <code>truck</code>. There can be multiple MATCH options in a single search. The MATCH value is a simple <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob pattern</a>.</p>
 
