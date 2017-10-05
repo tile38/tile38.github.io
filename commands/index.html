@@ -132,6 +132,54 @@
 	        <div class="summary">Remove a key from the database</div>
 	    </a>
 
+	    <a class="command grp-scripting" href="/commands/eval">
+	        <div class="nameargs">
+	            <span class="name">EVAL</span>
+	            <span class="args"> script numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates a Lua script</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/evalna">
+	        <div class="nameargs">
+	            <span class="name">EVALNA</span>
+	            <span class="args"> script numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates a Lua script in a non-atomic fashion</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/evalnasha">
+	        <div class="nameargs">
+	            <span class="name">EVALNASHA</span>
+	            <span class="args"> sha1 numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates, in a non-atomic fashion, a Lua script cached on the server by its SHA1 digest</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/evalro">
+	        <div class="nameargs">
+	            <span class="name">EVALRO</span>
+	            <span class="args"> script numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates a read-only Lua script</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/evalrosha">
+	        <div class="nameargs">
+	            <span class="name">EVALROSHA</span>
+	            <span class="args"> script numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates a read-only Lua script cached on the server by its SHA1 digest</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/evalsha">
+	        <div class="nameargs">
+	            <span class="name">EVALSHA</span>
+	            <span class="args"> sha1 numkeys [key ...] [arg ...]</span>
+	        </div>
+	        <div class="summary">Evaluates a Lua script cached on the server by its SHA1 digest</div>
+	    </a>
+
 	    <a class="command grp-keys" href="/commands/expire">
 	        <div class="nameargs">
 	            <span class="name">EXPIRE</span>
@@ -298,6 +346,30 @@
 	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)]</span>
 	        </div>
 	        <div class="summary">Incrementally iterate though a key</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/script-exists">
+	        <div class="nameargs">
+	            <span class="name">SCRIPT EXISTS</span>
+	            <span class="args"> sha1 ...</span>
+	        </div>
+	        <div class="summary">Returns information about the existence of the scripts in server cache</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/script-flush">
+	        <div class="nameargs">
+	            <span class="name">SCRIPT FLUSH</span>
+	            <span class="args"></span>
+	        </div>
+	        <div class="summary">Flushes the server cache of Lua scripts</div>
+	    </a>
+
+	    <a class="command grp-scripting" href="/commands/script-load">
+	        <div class="nameargs">
+	            <span class="name">SCRIPT LOAD</span>
+	            <span class="args"> script</span>
+	        </div>
+	        <div class="summary">Loads the compiled version of a script into the server cache, without executing</div>
 	    </a>
 
 	    <a class="command grp-search" href="/commands/search">
