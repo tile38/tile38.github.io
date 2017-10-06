@@ -123,3 +123,21 @@ Commands relevant to script caching are:
 
 ## Replication
 The changes to the tile38 data made by scripts are replicated on the command level.  In other words, when the script runs multiple commands, each command's changes will be shipped to the replicas and replayed there.
+
+## Global variables protection
+The scripts are not allowed to create global variables, as this would leak memory in the re-used Lua state.  An attempt to create a global variable will result in error:
+```tile38
+EVAL 'a=10' 0
+(error) ERR f_933044db579a2f8fd45d8065f04a8d0249383e57:1: attempt to create global variable 'a'
+stack traceback:
+    [G]: in function (anonymous)
+    f_933044db579a2f8fd45d8065f04a8d0249383e57:1: in main chunk
+    [G]: ?
+```
+Note: this measure can only prevent the accidental modifications of the global namespace.  If the malicious user really wants to modify or delete existing global variables, there's no protection we could put in place that the user could not undo.  Therefore there's no more protection for existing globals. Do not mess them up!
+
+Any variables that the script needs to set up should be prepended with the `local` keyword:
+```tile38
+EVAL 'local a=10; return a * 3' 0
+(integer) 30
+```
