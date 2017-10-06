@@ -113,6 +113,7 @@ SCRIPT LOAD "return tile38.pcall('set', KEYS[1], ARGV[1], 'point', ARGV[2], ARGV
 EVALSHA d8bc159162250f39654a6466a92a66215814877b 1 mykey myid2 33.1 -115.1
 OK
 ```
+
 The script caching is not persistent, meaning it will be lost when the tile38 server is restarted.
 
 Commands relevant to script caching are:
