@@ -172,9 +172,10 @@ No other command is running on the server during the execution ofthe script;</li
 &#34;d8bc159162250f39654a6466a92a66215814877b&#34;</code></li>
 <li>Use a -SHA command exactly as you would have used a non-SHA command, the only difference being that you send a SHA1 digest string as your first argument.
 <code class="block"><keyword>EVALSHA</keyword> d8bc159162250f39654a6466a92a66215814877b <number>1</number> mykey myid2 <number>33.1</number> <number>-115.1</number>
-<keyword>OK</keyword></code>
-The script caching is not persistent, meaning it will be lost when the tile38 server is restarted.</li>
+<keyword>OK</keyword></code></li>
 </ol>
+
+<p>The script caching is not persistent, meaning it will be lost when the tile38 server is restarted.</p>
 
 <p>Commands relevant to script caching are:</p>
 
@@ -187,6 +188,21 @@ The script caching is not persistent, meaning it will be lost when the tile38 se
 <h2>Replication</h2>
 
 <p>The changes to the tile38 data made by scripts are replicated on the command level.  In other words, when the script runs multiple commands, each command&rsquo;s changes will be shipped to the replicas and replayed there.</p>
+
+<h2>Global variables protection</h2>
+
+<p>The scripts are not allowed to create global variables, as this would leak memory in the re-used Lua state.  An attempt to create a global variable will result in error:
+<code class="block"><keyword>EVAL</keyword> &#39;a=10&#39; <number>0</number>
+(error) <keyword>ERR</keyword> f_933044db579a2f8fd45d8065f04a8d0249383e57:1: attempt to create global variable &#39;a&#39;
+stack traceback:
+    [G]: in function (anonymous)
+    f_933044db579a2f8fd45d8065f04a8d0249383e57:1: in main chunk
+    [G]: ?</code>
+Note: this measure can only prevent the accidental modifications of the global namespace.  If the malicious user really wants to modify or delete existing global variables, there&rsquo;s no protection we could put in place that the user could not undo.  Therefore there&rsquo;s no more protection for existing globals. Do not mess them up!</p>
+
+<p>Any variables that the script needs to set up should be prepended with the <code>local</code> keyword:
+<code class="block"><keyword>EVAL</keyword> &#39;local a=10; return a * 3&#39; <number>0</number>
+(integer) <number>30</number></code></p>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>
