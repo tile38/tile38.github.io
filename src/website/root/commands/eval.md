@@ -142,3 +142,49 @@ Any variables that the script needs to set up should be prepended with the `loca
 EVAL 'local a=10; return a * 3' 0
 (integer) 30
 ```
+
+## Available libraries
+
+The following libraries are loaded in the Lua interpreter inside the Tile38 server:
+
+* `base`
+* `table`
+* `io`
+* `os`
+* `string`
+* `math`
+* `debug`
+* `json`
+
+Every Tile38 instance is guaranteed to have all these libraries so you can be sure that the environment for your scripts is always the same.
+
+`json` is an external library, all the other libraries are standard Lua libraries, see **Miscellaneous notes** below.
+
+### JSON
+
+The JSON library exposes `decode` and `encode` functions. Examples:
+
+```tile38
+> EVAL 'return json.encode({["foo"]= "bar"})' 0
+"{\"foo\":\"bar\"}"
+    
+> EVAL 'return json.decode(ARGV[1])["foo"]' 0 "{\"foo\":\"bar\"}"
+"bar"
+```
+
+### Unsupported functions
+
+The following functions from standard Lua libraries are not available:
+
+* `string.dump`
+* `os.setlocale`
+* `lua_Debug.namewhat`
+* `package.loadlib`
+* debug hooks
+
+### Miscellaneous notes
+
+* `collectgarbage` does not take any arguments and runs the garbage collector for the entire Tile38 server.
+* `file:setvbuf` does not support a line buffering.
+* Daylight saving time is not supported.
+* `os.setenv(name, value)` is a function that sets an environment variable.
