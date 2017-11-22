@@ -203,6 +203,56 @@ Note: this measure can only prevent the accidental modifications of the global n
 <p>Any variables that the script needs to set up should be prepended with the <code>local</code> keyword:
 <code class="block"><keyword>EVAL</keyword> &#39;local a=10; return a * 3&#39; <number>0</number>
 (integer) <number>30</number></code></p>
+
+<h2>Available libraries</h2>
+
+<p>The following libraries are loaded in the Lua interpreter inside the Tile38 server:</p>
+
+<ul>
+<li><code>base</code></li>
+<li><code>table</code></li>
+<li><code>io</code></li>
+<li><code>os</code></li>
+<li><code>string</code></li>
+<li><code>math</code></li>
+<li><code>debug</code></li>
+<li><code>json</code></li>
+</ul>
+
+<p>Every Tile38 instance is guaranteed to have all these libraries so you can be sure that the environment for your scripts is always the same.</p>
+
+<p><code>json</code> is an external library, all the other libraries are standard Lua libraries, see <strong>Miscellaneous notes</strong> below.</p>
+
+<h3>JSON</h3>
+
+<p>The JSON library exposes <code>decode</code> and <code>encode</code> functions. Examples:</p>
+
+<p><code class="block">&gt; <keyword>EVAL</keyword> &#39;return json.encode({[&#34;foo&#34;]= &#34;bar&#34;})&#39; <number>0</number>
+&#34;{&amp;#34;foo&amp;#34;:&amp;#34;bar&amp;#34;}&#34;
+    <keyword></keyword>
+&gt; <keyword>EVAL</keyword> &#39;return json.decode(ARGV[1])[&#34;foo&#34;]&#39; <number>0</number> &#34;{&amp;#34;foo&amp;#34;:&amp;#34;bar&amp;#34;}&#34;
+&#34;bar&#34;</code></p>
+
+<h3>Unsupported functions</h3>
+
+<p>The following functions from standard Lua libraries are not available:</p>
+
+<ul>
+<li><code>string.dump</code></li>
+<li><code>os.setlocale</code></li>
+<li><code>lua_Debug.namewhat</code></li>
+<li><code>package.loadlib</code></li>
+<li>debug hooks</li>
+</ul>
+
+<h3>Miscellaneous notes</h3>
+
+<ul>
+<li><code>collectgarbage</code> does not take any arguments and runs the garbage collector for the entire Tile38 server.</li>
+<li><code>file:setvbuf</code> does not support a line buffering.</li>
+<li>Daylight saving time is not supported.</li>
+<li><code>os.setenv(name, value)</code> is a function that sets an environment variable.</li>
+</ul>
 		</div>
 		<div class="bottom">
 			<div style="clear: both"></div>
