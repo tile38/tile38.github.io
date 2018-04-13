@@ -240,7 +240,7 @@
 	    <a class="command grp-search" href="/commands/intersects">
 	        <div class="nameargs">
 	            <span class="name">INTERSECTS</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>
@@ -280,7 +280,7 @@
 	    <a class="command grp-search" href="/commands/nearby">
 	        <div class="nameargs">
 	            <span class="name">NEARBY</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [DISTANCE] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (POINT lat lon meters)|(ROAM key pattern meters)</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [DISTANCE] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (POINT lat lon meters)|(ROAM key pattern meters)</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>
@@ -344,7 +344,7 @@
 	    <a class="command grp-search" href="/commands/scan">
 	        <div class="nameargs">
 	            <span class="name">SCAN</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)]</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)]</span>
 	        </div>
 	        <div class="summary">Incrementally iterate though a key</div>
 	    </a>
@@ -376,7 +376,7 @@
 	    <a class="command grp-search" href="/commands/search">
 	        <div class="nameargs">
 	            <span class="name">SEARCH</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [COUNT|IDS]</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [MATCH pattern] [ASC|DESC] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [COUNT|IDS]</span>
 	        </div>
 	        <div class="summary">Search for string values in a key</div>
 	    </a>
@@ -424,7 +424,7 @@
 	    <a class="command grp-search" href="/commands/within">
 	        <div class="nameargs">
 	            <span class="name">WITHIN</span>
-	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
+	            <span class="args"> key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)</span>
 	        </div>
 	        <div class="summary">Searches for ids that are nearby a point</div>
 	    </a>
