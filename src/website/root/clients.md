@@ -15,7 +15,7 @@ Tile38 uses the [Redis RESP](http://redis.io/topics/protocol) protocol natively.
 - Clojure: [carmine](https://github.com/ptaoussanis/carmine)
 - Common Lisp: [CL-Redis](https://github.com/vseloved/cl-redis)
 - Erlang: [Eredis](https://github.com/wooga/eredis)
-- Go: [Redigo](https://github.com/garyburd/redigo)
+- Go: [Redigo](https://github.com/gomodule/redigo)
 - Haskell: [hedis](https://github.com/informatikr/hedis)
 - Java: [lettuce](https://github.com/mp911de/lettuce)
 - Node.js: [node_redis](https://github.com/NodeRedis/node_redis) 

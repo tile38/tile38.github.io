@@ -19,7 +19,7 @@ import (
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/russross/blackfriday"
-	"github.com/tidwall/tile38/core"
+	"github.com/tidwall/tile38/pkg/core"
 )
 
 type TemplateData struct {
