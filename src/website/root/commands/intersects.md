@@ -91,6 +91,8 @@ Might be used to search for all object in the `poi` key that are within the obje
 
 **OBJECT** - A [GeoJSON](/topics/object-types#geojson) object.
 
+**CIRCLE** - A circle with the specified center and radius.
+
 **TILE** -  An [XYZ Tile](/topics/object-types#xyz-tile).
 
 **QUADKEY** - A [QuadKey](/topics/object-types#quadkey).
