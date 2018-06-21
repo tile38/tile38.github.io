@@ -16,7 +16,7 @@ Tile38 is a location intelligence company. We build high-performance geospatial 
 
 We maintain the <a href="https://github.com/tidwall/tile38">Tile38 Open Source Database</a> and we're actively building some amazing new software for enterprise users.
 
-### Jobs
+### Roles
 
 - [Front-end Web Developer](#front-end-web-developer)
 - [Senior Go Engineer](#senior-go-engineer)
