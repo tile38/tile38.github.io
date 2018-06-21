@@ -19,7 +19,7 @@ We maintain the <a href="https://github.com/tidwall/tile38">Tile38 Open Source D
 ### Roles
 
 - [Front-end Web Developer](#front-end-web-developer)
-- [Senior Go Engineer](#senior-go-engineer)
+- [Go Engineer](#go-engineer)
 
 <div><br></div>
 
@@ -56,7 +56,7 @@ Contact us at <a href="mailto:jobs@tile38.com">jobs@tile38.com</a>
 <div><br></div>
 
 <a name="senior-go-engineer"></a>
-## Senior Go Engineer
+## Go Engineer
 
 Develop the Tile38 database integration and enterprise tools by adding new features and improving the Go codebase. Participate in our product planning meetings and help determine the direction of our Go APIs. You will be the owner of our Go development, testing, and build processes and responsible for shipping a high-quality product on a weekly basis.
 
