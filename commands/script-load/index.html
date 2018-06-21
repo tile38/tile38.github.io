@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" class="command">
+
 <head>
-	<title>SCRIPT LOAD - Tile38</title>
-	<link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
-	<meta property="og:image" content="/assets/img/logo1500.png" />
-	<meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
+    <title>SCRIPT LOAD - Tile38</title>
+    <link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+    <meta property="og:image" content="/assets/img/logo1500.png" />
+    <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
 </head>
+
 <body>
-	<div class="top-bar">
-		<div class="inner">
-			<div class="logo"><a href="/"><img src="/assets/img/logoh200.png" alt="Tile38"></a></div>
-			<span class="m-menu-button-bar"><a href="javascript:openMenu()" class="m-menu">Menu</a></span>
-			<span class="m-menu-full-bar"
-				><a href="/commands" class="m-commands">Commands</a
-				><a href="/clients" class="m-clients">Clients</a
-				><a href="/documentation" class="m-documentation"><span class="long">Documentation</span><span class="short">Docs</span></a
-				><a href="https://github.com/tidwall/tile38" class="m-github">GitHub</a
-				><a href="/license" class="m-license">License</a
-				><a href="/help" class="m-help">Help</a
-			></span>
-		</div>
-	</div>
-	<div class="logo-bar">
-		<img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
-	</div>
-	<div class="content">
-		
-		<h2 class="command-title">
-			SCRIPT LOAD script
-		</h2>
-		<div class="related-commands">
-			<div>Related commands</div>
-			<ul>
-				
-					<li ><a href="/commands/eval">EVAL</a></li>
-				
-					<li ><a href="/commands/evalna">EVALNA</a></li>
-				
-					<li ><a href="/commands/evalnasha">EVALNASHA</a></li>
-				
-					<li ><a href="/commands/evalro">EVALRO</a></li>
-				
-					<li ><a href="/commands/evalrosha">EVALROSHA</a></li>
-				
-					<li ><a href="/commands/evalsha">EVALSHA</a></li>
-				
-					<li ><a href="/commands/script-exists">SCRIPT EXISTS</a></li>
-				
-					<li ><a href="/commands/script-flush">SCRIPT FLUSH</a></li>
-				
-					<li class="sel"><a href="/commands/script-load">SCRIPT LOAD</a></li>
-				
-			</ul>
-		</div>
-		
-		<div class="inner">
-			<p>Loads the compiled version of a script into the server cache, without executing.</p>
+    <div class="top-bar">
+        <div class="inner">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/img/logoh200.png" alt="Tile38">
+                </a>
+            </div>
+            <span class="m-menu-button-bar">
+                <a href="javascript:openMenu()" class="m-menu">Menu</a>
+            </span>
+            <span class="m-menu-full-bar">
+                
+                <a href="/commands" class="m-commands">Commands</a>
+                <a href="/clients" class="m-clients">Clients</a>
+                <a href="/documentation" class="m-documentation">
+                    <span class="long">Documentation</span>
+                    <span class="short">Docs</span>
+                </a>
+                <a href="https://github.com/tidwall/tile38" class="m-github">GitHub</a>
+                <a href="/license" class="m-license">License</a>
+                <a href="/help" class="m-help">Help</a>
+            </span>
+        </div>
+    </div>
+    <div class="logo-bar">
+        <img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+    </div>
+    <div class="content">
+        
+        <h2 class="command-title">
+            SCRIPT LOAD script
+        </h2>
+        <div class="related-commands">
+            <div>Related commands</div>
+            <ul>
+                
+                <li >
+                    <a href="/commands/eval">EVAL</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/evalna">EVALNA</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/evalnasha">EVALNASHA</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/evalro">EVALRO</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/evalrosha">EVALROSHA</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/evalsha">EVALSHA</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/script-exists">SCRIPT EXISTS</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/script-flush">SCRIPT FLUSH</a>
+                </li>
+                
+                <li class="sel" >
+                    <a href="/commands/script-load">SCRIPT LOAD</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="inner">
+            <p>Loads the compiled version of a script into the server cache, without executing.</p>
 
 <p>If the parsing and compilation is successful, the command returns the string value of the SHA1 digest of the script.  That value can be used for <a href="/commands/evalsha">EVALSHA</a> and similar commands that execute scripts based on the SHA1 digest.</p>
 
@@ -65,26 +95,22 @@
 <p>If either parsing or compilation fails, the command will return the error response with the detailed traceback of the Lua failure.</p>
 
 <p>See <a href="/commands/eval">EVAL</a> for more details on Lua scripting.</p>
-		</div>
-		<div class="bottom">
-			<div style="clear: both"></div>
-			<br clear=both><hr><br>
-			<center>
-			    <a class="github-button" href="https://github.com/tidwall/tile38" data-icon="octicon-star" data-style="mega" data-count-href="/tidwall/tile38/stargazers" data-count-api="/repos/tidwall/tile38#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star tidwall/tile38 on GitHub">Star</a>
-			</center>
-	</div></div>
+        </div>
+    </div>
 
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	  ga('create', 'UA-75165369-1', 'auto');
-	  ga('send', 'pageview');
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
 
-	</script>
-	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    </script>
 </body>
+
 </html>
