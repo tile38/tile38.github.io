@@ -94,7 +94,7 @@ code geojson  { color: #e6db74; }
 	display: none;
 }
 
-@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
 	.top-bar .inner {
 		min-width: 0;
 		text-align: center;
@@ -122,7 +122,7 @@ code geojson  { color: #e6db74; }
 		line-height: 15px;
 	}
 }
-@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
 	.m-documentation .short {
 		display: inline;
 	}
@@ -285,4 +285,24 @@ code geojson  { color: #e6db74; }
 		width: 150px; 
 		height: 150px;	
 	}
+}
+
+.jobs-link {
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+
+
+.jobs-link a {
+    text-decoration: none;
+    display: inline-block;
+    background: #602818;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.jobs-link a:hover {
+    background: #3a180e;
 }

@@ -4,6 +4,7 @@ title:  Tile38 - Geolocation data store, spatial index, and realtime geofence
 class:  home
 -->
 
+<!-- <div class="jobs-link"><a href="/jobs">Come work with us at Tile38! We’re hiring.</a></div> -->
 
 Tile38 is an open source (MIT licensed), in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON.
 
