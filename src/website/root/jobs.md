@@ -16,8 +16,6 @@ Tile38 is a location intelligence company. We build high-performance geospatial 
 
 We maintain the <a href="https://github.com/tidwall/tile38">Tile38 Open Source Database</a> and we're actively building some amazing new software for enterprise users.
 
-Tile38 was founded by <a href="https://github.com/tidwall">Josh Baker</a>. 
-
 ### Jobs
 
 - [Front-end Web Developer](#front-end-web-developer)
