@@ -292,17 +292,9 @@ code geojson  { color: #e6db74; }
     margin: 0 0 40px 0;
 }
 
-
 .jobs-link a {
-    text-decoration: none;
     display: inline-block;
-    background: #602818;
-    color: white;
-    padding: 14px 30px;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.jobs-link a:hover {
-    background: #3a180e;
+    color: #602818;
+    font-size: 20px;
+    font-weight: bold;
 }

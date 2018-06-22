@@ -6,7 +6,12 @@ class:  home
 
 <div class="jobs-link"><a href="/jobs">Come work with us at Tile38! We’re hiring.</a></div>
 
-Tile38 is an open source (MIT licensed), in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON.
+
+Tile38 is a location intelligence company. We build high-performance geospatial and real-time geofencing technology that makes it super easy for companies to connect to and manage the locations of their fleet, mobile apps, and IoT devices.
+
+We maintain the <a href="https://github.com/tidwall/tile38">Tile38 Open Source Database</a> and we're actively building some amazing new software for enterprise users.
+
+Our open source software (MIT licensed) is an in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON.
 
 ## Features
 
