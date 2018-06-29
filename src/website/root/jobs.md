@@ -33,7 +33,7 @@ Here at Tile38 we make bleeding edge techology and we're looking for amazing peo
 
 ## UX/UI Designer
 
-Design beautiful user interfaces and experiences for Tile38. This critical role will play a key part in defining how the user interactes with our technology, and how our brand and messaging is communicated through our software.
+Design beautiful user interfaces and experiences for Tile38. This critical role will play a key part in defining how the user interactes with our technology, and how our brand and messaging is communicated through our software. 
 
 ### Must have
 
@@ -118,7 +118,7 @@ Develop the Tile38 database integration and enterprise tools by adding new featu
 
 - Front-end skills such as Javascript, CSS, HTML
 - Experience with mapping tools and geospatial technologies
-- C development background (our core database is in C)
+- C development background
 
 ### Details
 
