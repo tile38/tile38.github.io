@@ -15,7 +15,7 @@ Tile38 is a location intelligence company. We build high-performance geospatial 
 
 We maintain the Tile38 <a href="https://github.com/tidwall/tile38">open source database</a> and we're actively building some amazing new software for SaaS and enterprise users.
 
-The Tile38 project was started by <a href="https://github.com/tidwall">Josh Baker</a> in 2015, the v1.0 open source software was released in 2016, and the company was officially founded in 2017. Josh has a passion for well-crafted software and beautiful interfaces. He's been entrepreneuring for 15 years and his previous companies (<a href="https://shotzoom.com">Shotzoom</a>/<a href="http://brushfireinteractive.com/">Brushfire</a>) have built a series of world-class products. Accolades: Apple’s Top 5 Grossing, Apple’s Design of the Year Award, Starbucks “App of the Week,” and a Microsoft Case Study.
+The Tile38 project was started by <a href="https://github.com/tidwall">Josh Baker</a> in 2015. The v1.0 open source software was released in 2016, and the company was officially founded in 2017. Josh has a passion for well-crafted software and beautiful interfaces. He's been entrepreneuring for 15 years and his previous companies (<a href="https://shotzoom.com">Shotzoom</a>/<a href="http://brushfireinteractive.com/">Brushfire</a>) have built a series of world-class products. Accolades include Apple’s Top 5 Grossing, Apple’s Design of the Year Award, Starbucks “App of the Week,” and a Microsoft Case Study.
 
 ### Roles
 
