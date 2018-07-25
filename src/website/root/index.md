@@ -4,16 +4,29 @@ title:  Tile38 - Geolocation data store, spatial index, and realtime geofence
 class:  home
 -->
 
-<div class="jobs-link"><a href="/jobs">Come work with us at Tile38! We’re hiring.</a></div>
+Tile38 is a location intelligence company. We build high-performance geospatial
+and real-time geofencing technology that makes it super easy for companies to
+connect to and manage the locations of their fleet, mobile apps, and IoT 
+devices. We maintain our <a href="https://github.com/tidwall/tile38">open source
+database software</a> and we're actively building some amazing new software for 
+SaaS and enterprise users.
 
-
-Tile38 is a location intelligence company. We build high-performance geospatial and real-time geofencing technology that makes it super easy for companies to connect to and manage the locations of their fleet, mobile apps, and IoT devices.
-
-We maintain the Tile38 <a href="https://github.com/tidwall/tile38">open source database</a> and we're actively building some amazing new software for SaaS and enterprise users.
 
 Our open source software (MIT licensed) is an in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON.
 
+<br>
+
+<div class="extable">
+    <div class="r1"><a href="/commands/nearby"><img src="/assets/img/search-nearby.png" alt="Nearby" border="0"></a><br>Nearby</div
+    ><div class="r1"><a href="/commands/within"><img src="/assets/img/search-within.png" alt="Within" border="0"></a><br>Within</div
+    ><div class="r1"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" alt="Intersects" border="0"></a><br>Intersects</div
+    ><br class="split"><div class="r2a"></div><div class="r2"><a href="/topics/geofencing"><img src="/assets/img/geofence.gif" alt="Geofence" border="0"></a><br>Static Geofence</div
+    ><div class="r2"><a href="/topics/roaming-geofences"><img src="/assets/img/roaming.gif" alt="Roaming Geofence" border="0"></a><br>Roaming Geofence</div><div class="r2b"></div>
+</div>
+
+
 ## Features
+
 
 - Spatial index with search methods such as [NEARBY](/commands/nearby), [WITHIN](/commands/within), and [INTERSECTS](/commands/intersects).
 - Realtime [geofencing](/topics/geofencing) through persistent sockets or [webhooks](/commands/sethook).
@@ -25,15 +38,6 @@ Our open source software (MIT licensed) is an in-memory geolocation data store, 
 - Leader / follower [replication](/topics/replication).
 - In-memory database that persists on disk.
 
-<br>
-
-<div class="extable">
-    <div class="r1"><a href="/commands/nearby"><img src="/assets/img/search-nearby.png" alt="Nearby" border="0"></a><br>Nearby</div
-    ><div class="r1"><a href="/commands/within"><img src="/assets/img/search-within.png" alt="Within" border="0"></a><br>Within</div
-    ><div class="r1"><a href="/commands/intersects"><img src="/assets/img/search-intersects.png" alt="Intersects" border="0"></a><br>Intersects</div
-    ><br class="split"><div class="r2a"></div><div class="r2"><a href="/topics/geofencing"><img src="/assets/img/geofence.gif" alt="Geofence" border="0"></a><br>Static Geofence</div
-    ><div class="r2"><a href="/topics/roaming-geofences"><img src="/assets/img/roaming.gif" alt="Roaming Geofence" border="0"></a><br>Roaming Geofence</div><div class="r2b"></div>
-</div>
 
 <a name="getting-started"></a>
 ## Getting Started
