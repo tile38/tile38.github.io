@@ -95,7 +95,9 @@
 
 <h2>Endpoints</h2>
 
-<p>Tile38 currently supports endpoints with the <strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong>, <strong><code>disque</code></strong>, <strong><code>kafka</code></strong> and <strong><code>amqp</code></strong> url schemes.</p>
+<p>Tile38 currently supports endpoints with the following url schemes:</p>
+
+<p><strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong>, <strong><code>disque</code></strong>, <strong><code>kafka</code></strong>, <strong><code>amqp</code></strong>, <strong><code>mqtt</code></strong>, <strong><code>sqs</code></strong></p>
 
 <h3>HTTP / HTTPS</h3>
 
@@ -177,7 +179,7 @@
 
 <p>For example:</p>
 
-<p><code class="block"><keyword>SETHOOK</keyword> warehouse mqtt://10.0.1.1:8443/mytopic?qos=1&amp;retained=0&hellip;</code></p>
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse mqtt://10.0.1.1:8443/mytopic?qos=1&amp;retained=0 &hellip;</code></p>
 
 <p>All webhook messages will be sent to the MQTT broker at <code>10.0.1.1:8443</code> to the topic called mytopic.</p>
 
@@ -186,17 +188,20 @@
 <p>The following optional parameters are available for this hook, the listed value is the default value:</p>
 
 <ul>
-<li><code>qos</code> - null<br /></li>
-<li><code>durable</code> - null<br /></li>
+<li><code>qos</code> - 0<br /></li>
+<li><code>retained</code> - false<br /></li>
+<li><code>cacert</code> - empty string</li>
+<li><code>cert</code> - empty string</li>
+<li><code>key</code> - empty string</li>
 </ul>
 
 <h3>SQS</h3>
 
-<p>The <code>sqs://</code> url scheme provides support for sending messages to a SQS queue</p>
+<p>The <code>sqs://</code> url scheme provides support for sending messages to a <a href="https://aws.amazon.com/sqs/">SQS</a> queue</p>
 
 <p>For example:</p>
 
-<p><code class="block"><keyword>SETHOOK</keyword> warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&amp;credprofile=value&hellip;</code></p>
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&amp;credprofile=value &hellip;</code></p>
 
 <p>All webhook messages will be sent to the SQS queue named <code>myqueuename</code> in the region <code>eu-central-1</code> with the queue id <code>myqueueid</code></p>
 
@@ -205,8 +210,8 @@
 <p>The following optional parameters are available for this hook, the listed value is the default value:</p>
 
 <ul>
-<li><code>credpath</code> - null<br /></li>
-<li><code>credprofile</code> - null<br /></li>
+<li><code>credpath</code> - empty string<br /></li>
+<li><code>credprofile</code> - empty string<br /></li>
 </ul>
 
 <h3>Endpoint Failover</h3>

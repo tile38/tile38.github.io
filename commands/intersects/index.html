@@ -45,7 +45,7 @@
     <div class="content">
         
         <h2 class="command-title">
-            INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
+            INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value ...] ...] [WHEREEVAL script numargs arg [arg ...] ...] [WHEREEVALSHA sha1 numargs arg [arg ...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)
         </h2>
         <div class="related-commands">
             <div>Related commands</div>
@@ -121,6 +121,8 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 <p><strong>CURSOR</strong> - CURSOR is used to iterate though many objects from the search results. An iteration begins when the CURSOR is set to Zero or not included with the request, and completes when the cursor returned by the server is Zero.</p>
 
 <p><strong>NOFIELDS</strong> - NOFIELDS tells the server that you do not want field values returned with the search results.</p>
+
+<p><strong>CLIP</strong> - CLIP tells the server to clip intersecting objects by the bounding box area of the search.  It can only be used with these area formats: BOUNDS, TILE, QUADKEY, HASH.</p>
 
 <p><strong>LIMIT</strong> - LIMIT can be used to limit the number of objects returned for a single search request.</p>
 

@@ -29,7 +29,9 @@ In this example we created a webhook named `warehouse` that watches for changes 
 
 ## Endpoints
 
-Tile38 currently supports endpoints with the **`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`** and **`amqp`** url schemes.
+Tile38 currently supports endpoints with the following url schemes:  
+
+**`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`**, **`amqp`**, **`mqtt`**, **`sqs`**
 
 ### HTTP / HTTPS
 
@@ -100,6 +102,7 @@ SETHOOK warehouse amqp://guest:guest@10.0.20.78:5672/warehouse?route=tile ...
 All webhook messages will be sent to the RabbitMQ broker at `10.0.20.78:5672` to the queue called warehouse. Route is an optional parameter and will default to tile38.
 
 #### Options
+
 The following optional parameters are available for this hook, the listed value is the default value:  
 
 * `type` - 'direct'  
@@ -111,6 +114,47 @@ The following optional parameters are available for this hook, the listed value 
 * `no_wait` - false  
 * `delivery_mode` - 1  
 * `route` - tile38  
+
+### MQTT
+
+The `mqtt://` url scheme provides support for sending messages to a MQTT broker
+
+For example:
+
+```tile38
+SETHOOK warehouse mqtt://10.0.1.1:8443/mytopic?qos=1&retained=0 ...
+```
+
+All webhook messages will be sent to the MQTT broker at `10.0.1.1:8443` to the topic called mytopic.
+
+#### Options
+
+The following optional parameters are available for this hook, the listed value is the default value:
+
+* `qos` - 0  
+* `retained` - false  
+* `cacert` - empty string 
+* `cert` - empty string 
+* `key` - empty string 
+
+### SQS
+
+The `sqs://` url scheme provides support for sending messages to a [SQS](https://aws.amazon.com/sqs/) queue
+
+For example:
+
+```tile38
+SETHOOK warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&credprofile=value ...
+```
+
+All webhook messages will be sent to the SQS queue named `myqueuename` in the region `eu-central-1` with the queue id `myqueueid`
+
+#### Options
+
+The following optional parameters are available for this hook, the listed value is the default value:
+
+* `credpath` - empty string  
+* `credprofile` - empty string  
 
 ### Endpoint Failover
 
