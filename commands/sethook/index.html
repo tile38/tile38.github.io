@@ -171,6 +171,44 @@
 <li><code>route</code> - tile38<br /></li>
 </ul>
 
+<h3>MQTT</h3>
+
+<p>The <code>mqtt://</code> url scheme provides support for sending messages to a MQTT broker</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse mqtt://10.0.1.1:8443/mytopic?qos=1&amp;retained=0&hellip;</code></p>
+
+<p>All webhook messages will be sent to the MQTT broker at <code>10.0.1.1:8443</code> to the topic called mytopic.</p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>qos</code> - null<br /></li>
+<li><code>durable</code> - null<br /></li>
+</ul>
+
+<h3>SQS</h3>
+
+<p>The <code>sqs://</code> url scheme provides support for sending messages to a SQS queue</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&amp;credprofile=value&hellip;</code></p>
+
+<p>All webhook messages will be sent to the SQS queue named <code>myqueuename</code> in the region <code>eu-central-1</code> with the queue id <code>myqueueid</code></p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>credpath</code> - null<br /></li>
+<li><code>credprofile</code> - null<br /></li>
+</ul>
+
 <h3>Endpoint Failover</h3>
 
 <p>It&rsquo;s possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.</p>
