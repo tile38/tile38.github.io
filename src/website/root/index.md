@@ -4,7 +4,10 @@ title:  Tile38 - Geolocation data store, spatial index, and realtime geofence
 class:  home
 -->
 
-Tile38 is an in-memory geolocation data store, spatial index, and realtime geofence. It supports a variety of object types including lat/lon points, bounding boxes, XYZ tiles, Geohashes, and GeoJSON. Making it super easy to connect to and manage the locations of your fleet, mobile apps, and IoT devices.
+<div style="text-align:center;font-size:1.2em">
+Tile38 is an advanced geolocation database that provides real-time geofence
+notifications for fleet management and proximity-based applications.
+</div>
 
 <br>
 
@@ -18,16 +21,16 @@ Tile38 is an in-memory geolocation data store, spatial index, and realtime geofe
 
 ## Features
 
-
-- Spatial index with search methods such as [NEARBY](/commands/nearby), [WITHIN](/commands/within), and [INTERSECTS](/commands/intersects).
-- Realtime [geofencing](/topics/geofencing) through persistent sockets or [webhooks](/commands/sethook).
-- Object types of [lat/lon](/topics/object-types#latlon-point), [bbox](/topics/object-types#bounding-box), [Geohash](/topics/object-types#geohash), [GeoJSON](/topics/object-types#geojson), [QuadKey](/topics/object-types#quadkey), and [XYZ tile](/topics/object-types#xyz-tile).
-- Support for lots of [Clients Libraries](/clients) written in many different languages.
-- Variety of client protocols, including [http](/topics/network-protocols#http) (curl), [websockets](/topics/network-protocols#websockets), [telnet](/topics/network-protocols#telnet), and the [Redis RESP](http://redis.io/topics/protocol).
-- Server responses are [RESP](http://redis.io/topics/protocol) or [JSON](http://www.json.org).
-- Full [command line interface](/topics/command-line-interface).
-- Leader / follower [replication](/topics/replication).
-- In-memory database that persists on disk.
+- High-performance geospatial database
+- Search methods such as [NEARBY](/commands/nearby), [WITHIN](/commands/within), and [INTERSECTS](/commands/intersects)
+- Realtime [geofencing](/topics/geofencing) through persistent sockets or [webhooks](/commands/sethook)
+- Object types of [lat/lon](/topics/object-types#latlon-point), [bbox](/topics/object-types#bounding-box), [Geohash](/topics/object-types#geohash), [GeoJSON](/topics/object-types#geojson), [QuadKey](/topics/object-types#quadkey), and [XYZ tile](/topics/object-types#xyz-tile)
+- Support for lots of [Clients Libraries](/clients) written in many different languages
+- Variety of client protocols, including [http](/topics/network-protocols#http) (curl), [websockets](/topics/network-protocols#websockets), [telnet](/topics/network-protocols#telnet), and the [Redis RESP](http://redis.io/topics/protocol)
+- Server responses are [RESP](http://redis.io/topics/protocol) or [JSON](http://www.json.org)
+- Full [command line interface](/topics/command-line-interface)
+- Leader / follower [replication](/topics/replication)
+- In-memory database that persists on disk
 
 
 <a name="getting-started"></a>
