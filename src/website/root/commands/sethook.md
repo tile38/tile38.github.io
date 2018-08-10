@@ -31,7 +31,7 @@ In this example we created a webhook named `warehouse` that watches for changes 
 
 Tile38 currently supports endpoints with the following url schemes:  
 
-**`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`**, **`amqp`**, **`mqtt`**, **`sqs`**
+**`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`**, **`amqp`**, **`mqtt`**, **`sqs`**, **`nats`**
 
 ### HTTP / HTTPS
 
@@ -164,7 +164,7 @@ The `nats://` url scheme provides support for sending messages to a [NATS](https
 For example:
 
 ```tile38
-SETHOOK warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123
+SETHOOK warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123 ...
 ```
 
 All webhook messages will be sent to the NATS server at `127.0.0.1:4222` to the topic named `mytopic` and the username `admin` and password `123`

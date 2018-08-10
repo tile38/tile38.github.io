@@ -97,7 +97,7 @@
 
 <p>Tile38 currently supports endpoints with the following url schemes:</p>
 
-<p><strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong>, <strong><code>disque</code></strong>, <strong><code>kafka</code></strong>, <strong><code>amqp</code></strong>, <strong><code>mqtt</code></strong>, <strong><code>sqs</code></strong></p>
+<p><strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong>, <strong><code>disque</code></strong>, <strong><code>kafka</code></strong>, <strong><code>amqp</code></strong>, <strong><code>mqtt</code></strong>, <strong><code>sqs</code></strong>, <strong><code>nats</code></strong></p>
 
 <h3>HTTP / HTTPS</h3>
 
@@ -220,9 +220,9 @@
 
 <p>For example:</p>
 
-<p><code class="block"><keyword>SETHOOK</keyword> warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123</code></p>
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123 &hellip;</code></p>
 
-<p>All webhook messages will be sent to the NATS topic named <code>mytopic</code> on the host <code>127.0.0.1</code> with the port <code>4222</code> and the username <code>admin</code> and password <code>123</code></p>
+<p>All webhook messages will be sent to the NATS server at <code>127.0.0.1:4222</code> to the topic named <code>mytopic</code> and the username <code>admin</code> and password <code>123</code></p>
 
 <h4>Options</h4>
 
