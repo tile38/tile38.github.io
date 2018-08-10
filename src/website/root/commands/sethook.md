@@ -156,6 +156,27 @@ The following optional parameters are available for this hook, the listed value 
 * `credpath` - empty string  
 * `credprofile` - empty string  
 
+
+### NATS
+
+The `nats://` url scheme provides support for sending messages to a [NATS](https://www.nats.io/) topic
+
+For example:
+
+```tile38
+SETHOOK warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123
+```
+
+All webhook messages will be sent to the NATS server at `127.0.0.1:4222` to the topic named `mytopic` and the username `admin` and password `123`
+
+#### Options
+
+The following optional parameters are available for this hook, the listed value is the default value:
+
+* `user` - empty string  
+* `pass` - empty string  
+
+
 ### Endpoint Failover
 
 It's possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.
