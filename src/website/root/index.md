@@ -5,7 +5,7 @@ class:  home
 -->
 
 <div style="text-align:center;font-size:1.2em">
-Tile38 is an advanced geolocation database that provides real-time geofence
+Tile38 is a geolocation database that provides real-time geofence
 notifications for fleet management and proximity-based applications.
 </div>
 
