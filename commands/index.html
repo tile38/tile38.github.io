@@ -102,6 +102,14 @@
 	        <div class="summary">Get the combined bounds of all the objects in a key</div>
 	    </a>
 
+	    <a class="command grp-pubsub" href="/commands/chans">
+	        <div class="nameargs">
+	            <span class="name">CHANS</span>
+	            <span class="args"> pattern</span>
+	        </div>
+	        <div class="summary">Finds all channels matching a pattern</div>
+	    </a>
+
 	    <a class="command grp-server" href="/commands/config-get">
 	        <div class="nameargs">
 	            <span class="name">CONFIG GET</span>
@@ -132,6 +140,14 @@
 	            <span class="args"> key id</span>
 	        </div>
 	        <div class="summary">Delete an id from a key</div>
+	    </a>
+
+	    <a class="command grp-pubsub" href="/commands/delchan">
+	        <div class="nameargs">
+	            <span class="name">DELCHAN</span>
+	            <span class="args"> name</span>
+	        </div>
+	        <div class="summary">Removes a channel</div>
 	    </a>
 
 	    <a class="command grp-webhook" href="/commands/delhook">
@@ -318,6 +334,14 @@
 	        <div class="summary">Removes all objects matching a pattern</div>
 	    </a>
 
+	    <a class="command grp-pubsub" href="/commands/pdelchan">
+	        <div class="nameargs">
+	            <span class="name">PDELCHAN</span>
+	            <span class="args"> pattern</span>
+	        </div>
+	        <div class="summary">Removes all channels matching a pattern</div>
+	    </a>
+
 	    <a class="command grp-webhook" href="/commands/pdelhook">
 	        <div class="nameargs">
 	            <span class="name">PDELHOOK</span>
@@ -340,6 +364,14 @@
 	            <span class="args"></span>
 	        </div>
 	        <div class="summary">Ping the server</div>
+	    </a>
+
+	    <a class="command grp-pubsub" href="/commands/psubscribe">
+	        <div class="nameargs">
+	            <span class="name">PSUBSCRIBE</span>
+	            <span class="args"> pattern [pattern ...]</span>
+	        </div>
+	        <div class="summary">Subscribes the client to the given patterns</div>
 	    </a>
 
 	    <a class="command grp-connection" href="/commands/quit">
@@ -414,10 +446,18 @@
 	        <div class="summary">Sets the value of an id</div>
 	    </a>
 
+	    <a class="command grp-pubsub" href="/commands/setchan">
+	        <div class="nameargs">
+	            <span class="name">SETCHAN</span>
+	            <span class="args"> name [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]</span>
+	        </div>
+	        <div class="summary">Creates a pubsub channel which points to geofenced search</div>
+	    </a>
+
 	    <a class="command grp-webhook" href="/commands/sethook">
 	        <div class="nameargs">
 	            <span class="name">SETHOOK</span>
-	            <span class="args"> name endpoint [META name value ...] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]</span>
+	            <span class="args"> name endpoint [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]</span>
 	        </div>
 	        <div class="summary">Creates a webhook which points to geofenced search</div>
 	    </a>
@@ -428,6 +468,14 @@
 	            <span class="args"> key [key ...]</span>
 	        </div>
 	        <div class="summary">Show stats for one or more keys</div>
+	    </a>
+
+	    <a class="command grp-pubsub" href="/commands/subscribe">
+	        <div class="nameargs">
+	            <span class="name">SUBSCRIBE</span>
+	            <span class="args"> channel [channel ...]</span>
+	        </div>
+	        <div class="summary">Subscribe to a geofence channel</div>
 	    </a>
 
 	    <a class="command grp-keys" href="/commands/ttl">
