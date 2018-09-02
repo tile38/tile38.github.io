@@ -45,7 +45,7 @@
     <div class="content">
         
         <h2 class="command-title">
-            JSET key id path value [RAW]
+            JSET key id path value [RAW|STR]
         </h2>
         <div class="related-commands">
             <div>Related commands</div>
@@ -117,6 +117,8 @@
         <div class="inner">
             <p>Set a value in a JSON document.</p>
 
+<h2>Examples</h2>
+
 <p>JGET, JSET, and JDEL allow for working with JSON strings, for example:</p>
 
 <p><code class="block"><keyword>JSET</keyword> user <number>901</number> name Tom
@@ -131,6 +133,28 @@
 <keyword>JDEL</keyword> user <number>901</number> name.last
 <keyword>JGET</keyword> user <number>901</number>
 &gt; <geojson>{&#34;name&#34;:{&#34;first&#34;:&#34;Tom&#34;}}</comment></code></p>
+
+<h2>Options</h2>
+
+<p>JSET allows a set of options that modify its behavior:</p>
+
+<p><code>RAW</code> allows <code>value</code> to be interpreted as a serialized JSON object:</p>
+
+<p><code class="block"><keyword>SET</keyword> linestrings <number>1</number> <keyword>OBJECT</keyword> <geojson>{&#34;type&#34;: &#34;LineString&#34;, &#34;coordinates&#34;: [[0, 0], [1, 1]]}</comment>
+<keyword>JSET</keyword> linestrings <number>1</number> coordinates.-1 [2,2] <keyword>RAW</keyword>
+<keyword>JGET</keyword> linestrings <number>1</number>
+&gt; <geojson>{&#34;type&#34;:&#34;LineString&#34;,&#34;coordinates&#34;:[[0,0],[1,1],[2,2]]}</comment></code></p>
+
+<p><code>STR</code> allows <code>value</code> to be interpreted as a string:
+<code class="block"><keyword>JSET</keyword> test <number>1</number> properties.bool true
+<keyword>JGET</keyword> test <number>1</number> properties.bool
+&gt; <geojson>{&#34;value&#34;:true}</comment>
+<keyword></keyword>
+<keyword>JSET</keyword> test <number>1</number> properties.bool true <keyword>STR</keyword>
+<keyword>JGET</keyword> test <number>1</number> properties.bool
+&gt; <geojson>{&#34;value&#34;:&#34;true&#34;}</comment></code></p>
+
+<h2>Path syntax</h2>
 
 <p>All commands use the GJSON path syntax, for more information:</p>
 
