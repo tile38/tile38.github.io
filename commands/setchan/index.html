@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="command">
+
+<head>
+    <title>SETCHAN - Tile38</title>
+    <link href="/assets/css/site.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+    <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="http://tile38.com/jobs" />
+    <meta property="og:title" content="Tile38" />
+    <meta property="og:description" content="Location intelligence and real-time geofencing technology for managing fleets, mobile apps, and IoT devices."
+    />
+    <meta property="og:image" content="http://tile38.com/assets/img/ogimage2.jpg" />
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="inner">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/img/logoh200.png" alt="Tile38">
+                </a>
+            </div>
+            <span class="m-menu-button-bar">
+                <a href="javascript:openMenu()" class="m-menu">Menu</a>
+            </span>
+            <span class="m-menu-full-bar">
+                <a href="/jobs" class="m-jobs">Jobs</a>
+                <a href="/commands" class="m-commands">Commands</a>
+                <a href="/clients" class="m-clients">Clients</a>
+                <a href="/documentation" class="m-documentation">
+                    <span class="long">Documentation</span>
+                    <span class="short">Docs</span>
+                </a>
+                <a href="https://github.com/tidwall/tile38" class="m-github">GitHub</a>
+                <a href="/license" class="m-license">License</a>
+                <a href="/help" class="m-help">Help</a>
+            </span>
+        </div>
+    </div>
+    <div class="logo-bar">
+        <img src="/assets/img/logo1500.png" width="200" height="200" alt="Tile38">
+    </div>
+    <div class="content">
+        
+        <h2 class="command-title">
+            SETCHAN name [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]
+        </h2>
+        <div class="related-commands">
+            <div>Related commands</div>
+            <ul>
+                
+                <li >
+                    <a href="/commands/chans">CHANS</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/delchan">DELCHAN</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/pdelchan">PDELCHAN</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/psubscribe">PSUBSCRIBE</a>
+                </li>
+                
+                <li class="sel" >
+                    <a href="/commands/setchan">SETCHAN</a>
+                </li>
+                
+                <li >
+                    <a href="/commands/subscribe">SUBSCRIBE</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="inner">
+            <p>Creates a Pub/Sub channel which points to a <a href="/topics/geofencing">geofenced</a> search. If a channel is already associated to that name, it&rsquo;ll be overwritten. Once the channel is created a client can then listen for events on that channel with <a href="/commands/subscribe">SUBSCRIBE</a> or <a href="/commands/psubscribe">PSUBSCRIBE</a>.</p>
+
+<h2>Examples</h2>
+
+<p>Set a simple channel.</p>
+
+<p><code class="block"><keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <number>500</number></code></p>
+
+<p>In this example we created a channel named <code>warehouse</code> that watches for changes to objects in the <code>fleet</code> collection. When a change occurs the channel <code>warehouse</code> is notified with a detailed message. The message contains a member named <code>'detect'</code> which has one of the following values:</p>
+
+<ul>
+<li><strong><code>inside</code></strong> is when an object is inside the specified area.</li>
+<li><strong><code>outside</code></strong> is when an object is outside the specified area.</li>
+<li><strong><code>enter</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered the area.</li>
+<li><strong><code>exit</code></strong> is when an object that <strong>was</strong> previously in the fence has exited the area.</li>
+<li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered <strong>and</strong> exited the area.</li>
+</ul>
+
+<p><em>For more information on the format of this message please see the topic on <a href="/topics/geofencing">Geofencing</a>.</em></p>
+
+<p><a href="/commands/nearby">NEARBY</a>, <a href="/commands/intersects">INTERSECTS</a>, and <a href="/commands/within">WITHIN</a> are supported search types. The <code>FENCE</code> keyword must be present.</p>
+        </div>
+    </div>
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
