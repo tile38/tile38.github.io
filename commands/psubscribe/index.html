@@ -81,12 +81,15 @@
         <div class="inner">
             <p>Subscribes the client to the given patterns.</p>
 
-<p>Supported glob-style patterns:</p>
+<p>Supported <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob-style patterns</a>:</p>
 
-<p>h?llo subscribes to hello, hallo and hxllo
-h*llo subscribes to hllo and heeeello
-h[ae]llo subscribes to hello and hallo, but not hillo
-Use \ to escape special characters if you want to match them verbatim.</p>
+<ul>
+<li>h?llo matches hello, hallo and hxllo</li>
+<li>h*llo matches hllo and heeeello</li>
+<li>h[ae]llo matches hello and hallo, but not hillo</li>
+<li>h[^e]llo matches hallo, hbllo, &hellip; but not hello</li>
+<li>h[a-b]llo matches hallo and hbllo</li>
+</ul>
         </div>
     </div>
 

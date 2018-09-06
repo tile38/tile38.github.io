@@ -8,9 +8,10 @@ command: psubscribe
 
 Subscribes the client to the given patterns.
 
-Supported glob-style patterns:
+Supported [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)):
 
-h?llo subscribes to hello, hallo and hxllo
-h*llo subscribes to hllo and heeeello
-h[ae]llo subscribes to hello and hallo, but not hillo
-Use \ to escape special characters if you want to match them verbatim.
+- h?llo matches hello, hallo and hxllo
+- h*llo matches hllo and heeeello
+- h[ae]llo matches hello and hallo, but not hillo
+- h[^e]llo matches hallo, hbllo, ... but not hello
+- h[a-b]llo matches hallo and hbllo
