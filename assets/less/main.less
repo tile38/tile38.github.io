@@ -803,8 +803,13 @@ body > .content {
 
 
 
-.content .inner > .extra{
+.content .inner > .extra {
 	padding: 40px 40px 40px 40px;
+	@media @phone {
+		padding-left: 15px;
+		padding-right: 15px;
+		
+	}
 }
 
 .home .content .inner {
@@ -1110,8 +1115,6 @@ footer {
 
 	a,h2 {color: @white;}
 
-
-
 	.inner {
 		.logo,h2,.nav {
 			margin-top: 0;
@@ -1145,7 +1148,6 @@ footer {
 			height: 70px;
 			position: relative;
 			top: -12px;
-			// left: -2px;
 		}
 		.social {
 			margin-left: -12px;
@@ -1194,7 +1196,7 @@ footer {
 				margin-left: 0;
 			}
 		}
-		
+
 	}
 
 	input[type="text"],
