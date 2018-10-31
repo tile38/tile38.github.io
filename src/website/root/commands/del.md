@@ -2,6 +2,7 @@
 layout:  index.html
 title:   DEL - Tile38
 class:   command
+super:   documentation
 command: del
 -->
 

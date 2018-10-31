@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SEARCH - Tile38
 class:   command
+super:   documentation
 command: search
 -->
 

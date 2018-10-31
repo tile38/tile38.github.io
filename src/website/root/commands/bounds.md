@@ -2,6 +2,7 @@
 layout:  index.html
 title:   BOUNDS - Tile38
 class:   command
+super:   documentation
 command: bounds
 -->
 

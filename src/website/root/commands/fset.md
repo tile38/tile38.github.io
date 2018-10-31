@@ -2,6 +2,7 @@
 layout:  index.html
 title:   FSET - Tile38
 class:   command
+super:   documentation
 command: fset
 -->
 

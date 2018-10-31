@@ -2,6 +2,7 @@
 layout:  index.html
 title:   GET - Tile38
 class:   command
+super:   documentation
 command: get
 -->
 

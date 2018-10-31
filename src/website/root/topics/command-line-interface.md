@@ -2,14 +2,14 @@
 layout:  index.html
 title:   Command Line Interface - Tile38
 class:   topic
+super:   documentation
 -->
 
-Command Line Interface
----
+# Command Line Interface
 
 When you [build](/#building) the `tile38-server` executable binary, an accompanied `tile38-cli` executable binary will also be built.
 
-### Basic Operations
+## Basic Operations
 
 Connect to the default Tile38 server running on port `9851`.
 
@@ -44,13 +44,7 @@ Type: "help @<group>" to get a list of commands in <group>
       "quit" to exit
 ```
 
-
-
-
-
-
-
-### Arguments
+## Arguments
 
 ```tile38-cli
 $ ./tile38-cli -h

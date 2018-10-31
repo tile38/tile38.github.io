@@ -2,6 +2,7 @@
 layout:  index.html
 title:   PDELHOOK - Tile38
 class:   command
+super:   documentation
 command: pdelhook
 -->
 

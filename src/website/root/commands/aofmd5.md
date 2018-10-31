@@ -2,6 +2,7 @@
 layout:  index.html
 title:   AOFMD5 - Tile38
 class:   command
+super:   documentation
 command: aofmd5
 -->
 

@@ -2,6 +2,7 @@
 layout:  index.html
 title:   CHANS - Tile38
 class:   command
+super:   documentation
 command: chans
 -->
 

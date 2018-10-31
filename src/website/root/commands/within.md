@@ -2,6 +2,7 @@
 layout:  index.html
 title:   WITHIN - Tile38
 class:   command
+super:   documentation
 command: within
 -->
 

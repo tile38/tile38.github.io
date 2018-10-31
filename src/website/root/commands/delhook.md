@@ -2,6 +2,7 @@
 layout:  index.html
 title:   DELHOOK - Tile38
 class:   command
+super:   documentation
 command: delhook
 -->
 

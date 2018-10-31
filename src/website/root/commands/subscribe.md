@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SUBSCRIBE - Tile38
 class:   command
+super:   documentation
 command: subscribe
 -->
 

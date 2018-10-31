@@ -2,6 +2,7 @@
 layout:  index.html
 title:   HOOKS - Tile38
 class:   command
+super:   documentation
 command: hooks
 -->
 

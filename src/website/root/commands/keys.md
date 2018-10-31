@@ -2,6 +2,7 @@
 layout:  index.html
 title:   KEYS - Tile38
 class:   command
+super:   documentation
 command: keys
 -->
 

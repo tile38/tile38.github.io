@@ -2,6 +2,7 @@
 layout:  index.html
 title:   READONLY - Tile38
 class:   command
+super:   documentation
 command: readonly
 -->
 

@@ -2,14 +2,14 @@
 layout:  index.html
 title:   Replication - Tile38
 class:   topic
+super:   documentation
 -->
 
-Replication
----
+# Replication
 
 Tile38 replication is a leader-follower model and is intended to be very easy to set up. 
 
-### Quick Tutorial
+## Quick Tutorial
 
 Run the commands below using the [Command Line Interface](/topics/command-line-interface). On your local machine you will begin two different Tile38 server instances. The second server will follow the first server.
 

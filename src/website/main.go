@@ -27,6 +27,7 @@ type TemplateData struct {
 	FrontMatter     map[string]string
 	Title           string
 	PageClass       string
+	Super           string
 	Commands        map[string]core.Command
 	CommandName     string
 	SortedCommands  []string
@@ -254,6 +255,7 @@ func Scan(depth int, output, dir string, t *template.Template, commands map[stri
 			FrontMatter:    frontMatter,
 			Title:          frontMatter["title"],
 			PageClass:      frontMatter["class"],
+			Super:          frontMatter["super"],
 			Commands:       commands,
 			SortedCommands: sortedCommands,
 			CommandName:    strings.ToUpper(frontMatter["command"]),
@@ -290,7 +292,8 @@ func Scan(depth int, output, dir string, t *template.Template, commands map[stri
 			markup = string(ob.Bytes())
 		}
 
-		data.Contents = template.HTML(strings.TrimSpace(markup))
+		html := template.HTML(strings.TrimSpace(markup))
+		data.Contents = html
 
 		for _, t := range t.Templates() {
 			var buf bytes.Buffer

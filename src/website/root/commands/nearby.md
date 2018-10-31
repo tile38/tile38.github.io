@@ -2,6 +2,7 @@
 layout:  index.html
 title:   NEARBY - Tile38
 class:   command
+super:   documentation
 command: nearby
 -->
 

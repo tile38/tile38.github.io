@@ -2,6 +2,7 @@
 layout:  index.html
 title:   PING - Tile38
 class:   command
+super:   documentation
 command: ping
 -->
 

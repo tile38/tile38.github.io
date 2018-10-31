@@ -2,35 +2,41 @@
 layout: index.html
 title:  Commands - Tile38
 class:  commands
+super:  commands
 -->
 
 <style>
 .commandtable { display: none; }
 .commandtable .filterbar { display: none; }
 </style>
+
 <div class="commandtable">
 	<div class="filterbar">
-		Filter by group: 
-		<a href="#" class="link-">All</a> | 
-		<a href="#search" class="link-search">Search</a> | 
-		<a href="#keys" class="link-keys">Keys</a> | 
-		<a href="#webhook" class="link-webhook">Webhooks</a> | 
-		<a href="#pubsub" class="link-pubsub">Channels</a> | 
-		<a href="#connection" class="link-connection">Connection</a> |
-		<a href="#replication" class="link-replication">Replication</a> |
-		<a href="#scripting" class="link-scripting">Scripting</a> |
-		<a href="#server" class="link-server">Server</a>
+		<h1>Commands</h1>
+		<p>
+			<a href="#" class="link-">All</a>
+			<a href="#search" class="link-search">Search</a>
+			<a href="#keys" class="link-keys">Keys</a>
+			<a href="#webhook" class="link-webhook">Webhooks</a>
+			<a href="#pubsub" class="link-pubsub">Channels</a>
+			<a href="#connection" class="link-connection">Connection</a>
+			<a href="#replication" class="link-replication">Replication</a>
+			<a href="#scripting" class="link-scripting">Scripting</a>
+			<a href="#server" class="link-server">Server</a>
+		</p>
 	</div>
 	{{ range $i, $name := .SortedCommands }}
 	    <a class="command grp-{{ (index $.Commands $name).Group }}" href="/commands/{{urlname $name}}">
 	        <div class="nameargs">
 	            <span class="name">{{$name}}</span>
-	            <span class="args">{{ simpleCommandParams (index $.Commands $name) }}</span>
+	            <!-- <span class="args">{{ simpleCommandParams (index $.Commands $name) }}</span> -->
 	        </div>
 	        <div class="summary">{{ (index $.Commands $name).Summary }}</div>
 	    </a>
-{{ end }}
+	{{ end }}
+	<div style="clear:both"></div>
 </div>
+
 <script>
 var llink = null
 function hashed(){
@@ -53,11 +59,11 @@ function hashed(){
 		}
 	}
 	if (llink){
-		llink.style.fontWeight = '';
+		llink.style.color = '';
 	}
 	var link = document.querySelector(".link-"+h)
 	if (link){
-		link.style.fontWeight = 'bold';
+		link.style.color = '#1E394a'
 		llink = link;
 	}
 }

@@ -2,6 +2,7 @@
 layout:  index.html
 title:   OUTPUT - Tile38
 class:   command
+super:   documentation
 command: output
 -->
 

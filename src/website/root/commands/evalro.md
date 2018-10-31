@@ -2,6 +2,7 @@
 layout:  index.html
 title:   EVALRO - Tile38
 class:   command
+super:   documentation
 command: evalro
 -->
 

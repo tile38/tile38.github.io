@@ -2,6 +2,7 @@
 layout:  index.html
 title:   QUIT - Tile38
 class:   command
+super:   documentation
 command: quit
 -->
 

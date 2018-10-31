@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SCRIPT LOAD - Tile38
 class:   command
+super:   documentation
 command: script load
 -->
 

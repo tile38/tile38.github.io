@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SCAN - Tile38
 class:   command
+super:   documentation
 command: scan
 -->
 

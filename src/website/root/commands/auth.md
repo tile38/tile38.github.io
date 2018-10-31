@@ -2,6 +2,7 @@
 layout:  index.html
 title:   AUTH - Tile38
 class:   command
+super:   documentation
 command: auth
 -->
 

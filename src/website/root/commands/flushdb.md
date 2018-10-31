@@ -2,6 +2,7 @@
 layout:  index.html
 title:   FLUSHDB - Tile38
 class:   command
+super:   documentation
 command: flushdb
 -->
 

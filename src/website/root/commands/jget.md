@@ -2,6 +2,7 @@
 layout:  index.html
 title:   JGET - Tile38
 class:   command
+super:   documentation
 command: jget
 -->
 

@@ -2,6 +2,7 @@
 layout:  index.html
 title:   EXPIRE - Tile38
 class:   command
+super:   documentation
 command: expire
 -->
 

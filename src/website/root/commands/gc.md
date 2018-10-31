@@ -2,6 +2,7 @@
 layout:  index.html
 title:   GC - Tile38
 class:   command
+super:   documentation
 command: gc
 -->
 

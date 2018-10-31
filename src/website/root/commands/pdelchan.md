@@ -2,6 +2,7 @@
 layout:  index.html
 title:   PDELCHAN - Tile38
 class:   command
+super:   documentation
 command: pdelchan
 -->
 

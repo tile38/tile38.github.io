@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SETHOOK - Tile38
 class:   command
+super:   documentation
 command: sethook
 -->
 

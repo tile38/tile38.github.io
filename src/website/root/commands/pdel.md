@@ -2,6 +2,7 @@
 layout:  index.html
 title:   PDEL - Tile38
 class:   command
+super:   documentation
 command: pdel
 -->
 

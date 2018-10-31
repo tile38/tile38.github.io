@@ -2,6 +2,7 @@
 layout:  index.html
 title:   INTERSECTS - Tile38
 class:   command
+super:   documentation
 command: intersects
 -->
 
@@ -32,12 +33,12 @@ Below is a complete list of search options. These options are shared by the [NEA
 This is very helpful for example; when you have many (perhaps millions) of objects and do not want them all clustered together on a map. Sparse will limit the number of objects returned and provide them evenly distributed so that your map looks clean.<br><br>
 You can choose a value between 1 and 8. The value 1 will result in no more than 4 items. The value 8 will result in no more than 65536. *1=4, 2=16, 3=64, 4=256, 5=1024, 6=4098, 7=16384, 8=65536.*<br>
 <table width="100%"> 
-    <td align="center">No Sparsing<img src="/assets/img/sparse-none.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 1<img src="/assets/img/sparse-1.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 2<img src="/assets/img/sparse-2.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 3<img src="/assets/img/sparse-3.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 4<img src="/assets/img/sparse-4.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 5<img src="/assets/img/sparse-5.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">No Sparsing<img src="/assets/images/sparse-none.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 1<img src="/assets/images/sparse-1.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 2<img src="/assets/images/sparse-2.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 3<img src="/assets/images/sparse-3.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 4<img src="/assets/images/sparse-4.png" width="100" height="100" border="0" alt="Search Within"></td>
+    <td align="center">Sparse 5<img src="/assets/images/sparse-5.png" width="100" height="100" border="0" alt="Search Within"></td>
 </table><br>
 *Please note that the higher the sparse value, the slower the performance. Also, LIMIT and CURSOR are not available when using SPARSE.* 
 

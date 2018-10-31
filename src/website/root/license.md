@@ -5,11 +5,11 @@ class:  license
 -->
 
 
-## Tile38 license and trademark information
+# Tile38 license and trademark information
 Tile38 is open source software released under the terms of the MIT license. Most of the Tile38 source code was written and is copyrighted by Josh Baker. A list of other contributors can be found on the [Github Contributors Page](https://github.com/tidwall/tile38/graphs/contributors).
 The Tile38 trademark and logo are copyrighted by Tile38, LLC. Permission is required to use the tradmark and logo for commercial purposes.
 
-## License
+## MIT License
 
 Copyright (c) 2016 Josh Baker
 

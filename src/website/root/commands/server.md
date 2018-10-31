@@ -2,6 +2,7 @@
 layout:  index.html
 title:   SERVER - Tile38
 class:   command
+super:   documentation
 command: server
 -->
 

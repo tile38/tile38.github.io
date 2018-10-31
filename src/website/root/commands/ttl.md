@@ -2,6 +2,7 @@
 layout:  index.html
 title:   TTL - Tile38
 class:   command
+super:   documentation
 command: ttl
 -->
 

@@ -2,6 +2,7 @@
 layout:  index.html
 title:   AOF - Tile38
 class:   command
+super:   documentation
 command: aof
 -->
 

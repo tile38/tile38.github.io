@@ -2,6 +2,7 @@
 layout:  index.html
 title:   EVALSHA - Tile38
 class:   command
+super:   documentation
 command: evalsha
 -->
 

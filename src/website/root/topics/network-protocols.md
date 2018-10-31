@@ -2,14 +2,16 @@
 layout:  index.html
 title:   Network Protocol and Clients - Tile38
 class:   topic
+super:   documentation
 -->
 
-Network protocols
------------------
+# Network protocols
+
 
 It's recommended to use a [client library](/clients) or the [Tile38 CLI](/topics/command-line-interface), but there are times when only HTTP is available or when you need to test from a remote terminal. In those cases we provide an HTTP and telnet options.
 
-#### HTTP
+## HTTP
+
 One of the simplest ways to call a tile38 command is to use HTTP. From the command line you can use [curl](https://curl.haxx.se/). For example:
 
 ```tile38-cli
@@ -20,10 +22,12 @@ curl --data "set fleet truck3 point 33.4762 -112.10923" localhost:9851
 curl localhost:9851/set+fleet+truck3+point+33.4762+-112.10923
 ```
 
-#### Websockets
+## Websockets
+
 Websockets can be used when you need to Geofence and keep the connection alive. It works just like the HTTP example above, with the exception that the connection stays alive and the data is sent from the server as text websocket messages.
 
-#### Telnet
+## Telnet
+
 There is the option to use a plain telnet connection. The default output through telnet is [RESP](http://redis.io/topics/protocol).
 
 ```tile38-cli

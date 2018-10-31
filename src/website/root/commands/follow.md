@@ -2,6 +2,7 @@
 layout:  index.html
 title:   FOLLOW - Tile38
 class:   command
+super:   documentation
 command: follow
 -->
 

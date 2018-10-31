@@ -2,6 +2,7 @@
 layout:  index.html
 title:   CONFIG SET - Tile38
 class:   command
+super:   documentation
 command: config set
 -->
 

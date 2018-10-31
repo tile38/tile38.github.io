@@ -2,6 +2,7 @@
 layout:  index.html
 title:   Object Types - Tile38
 class:   topic
+super:   documentation
 -->
 
 Object Types

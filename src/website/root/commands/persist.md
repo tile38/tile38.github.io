@@ -2,6 +2,7 @@
 layout:  index.html
 title:   PERSIST - Tile38
 class:   command
+super:   documentation
 command: persist
 -->
 

@@ -2,6 +2,7 @@
 layout:  index.html
 title:   EVALNA - Tile38
 class:   command
+super:   documentation
 command: evalna
 -->
 
