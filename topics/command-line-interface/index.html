@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+    <title>Command Line Interface - Tile38</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet/less" type="text/css" href="/assets/less/main.less" />
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/scripts/contact.js"></script>
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body onload="if (window.init){ window.init() }">
+    <div id="sidebar" class="out">
+        <div class="inner">
+            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a href="/documentation">Documentation</a>
+            </div>
+            <div class="social">
+                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+            </div>
+            <div class="nav">
+                <a href="mailto:info@tile38.com">Send Email</a>
+                <a href="/jobs">Careers/Jobs</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <header class="primary">
+        <div class="inner">
+            <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
+            <a class="logo" href="/"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a  href="/commands">Commands</a>
+                <a class="on" href="/documentation">Documentation</a>
+                <a  href="/community">Community</a>
+            </div>
+            <div class="social">
+                <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+            </div>
+        </div>
+    </header>
+
+    
+    
+
+    
+    <div class="content">
+        <div class="inner">
+            <div class="extra">
+            
+            <h1>Command Line Interface</h1>
+
+<p>When you <a href="/#building">build</a> the <code>tile38-server</code> executable binary, an accompanied <code>tile38-cli</code> executable binary will also be built.</p>
+
+<h2>Basic Operations</h2>
+
+<p>Connect to the default Tile38 server running on port <code>9851</code>.</p>
+
+<p><code class="block">$ ./tile38-cli
+<keyword></keyword>
+<comment># add a couple of points named &#39;truck1&#39; and &#39;truck2&#39; to a collection named &#39;fleet&#39;.</comment>
+&gt; <keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <keyword></keyword> <keyword></keyword> <comment># on the Loop 101 in Phoenix</comment>
+&gt; <keyword>SET</keyword> fleet truck2 <keyword>POINT</keyword> <number>33.4626</number> <number>-112.1695</number> <keyword></keyword> <keyword></keyword> <comment># on the I-10 in Phoenix</comment>
+<keyword></keyword>
+<comment># search the &#39;fleet&#39; collection.</comment>
+&gt; <keyword>SCAN</keyword> fleet <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># returns both trucks in &#39;fleet&#39;</comment>
+&gt; <keyword>NEARBY</keyword> fleet <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># search 6 kilometers around a point. returns one truck.</comment>
+<keyword></keyword>
+<comment># crud operations</comment>
+&gt; <keyword>GET</keyword> fleet truck1 <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># returns &#39;truck1&#39;</comment>
+&gt; <keyword>DEL</keyword> fleet truck2 <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># deletes &#39;truck2&#39;</comment>
+&gt; <keyword>DROP</keyword> fleet <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># removes all</comment></code></p>
+
+<p>All of the standard <a href="/commands">commands</a> are supported. For inline help use the <code>help</code> command:</p>
+
+<p><code class="block">$ ./tile38-cli
+<keyword></keyword>
+&gt; help
+<keyword></keyword>
+tile38-cli 1.0.4
+Type: &#34;help @&lt;group&gt;&#34; to get a list of commands in &lt;group&gt;
+      &#34;help &lt;command&gt;&#34; for help on &lt;command&gt;
+      &#34;help &lt;tab&gt;&#34; to get a list of possible help topics
+      &#34;quit&#34; to exit</code></p>
+
+<h2>Arguments</h2>
+
+<p><code class="block">$ ./tile38-cli -h
+<keyword></keyword>
+tile38-cli 1.0.4
+<keyword></keyword>
+Usage: tile38-cli [OPTIONS] [cmd [arg [arg &hellip;]]]
+ -h &lt;hostname&gt; <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> Server hostname (default: 127.0.0.1).
+ -p &lt;port&gt; <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> Server port (default: 9851).</code></p>
+            <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner tiles">
+            <div class="tile menu">
+                <a class="logo white desktop" href="/"></a>
+                <a class="logo-38 white mobile" href="/"></a>
+                <div class="nav">
+                    <a href="/topics/getting-started">Download</a>
+                    <a href="/community">Community</a>
+                    <a href="/documentation" class="mobile">Docs</a>
+                    <a href="/documentation" class="desktop">Documentation</a>
+                </div>
+            </div>
+            <div class="tile contact">
+                <h2>Contact</h2>
+                <div class="nav">
+                    <a href="mailto:info@tile38.com">Send Email</a>
+                    <a href="/jobs">Careers/Jobs</a>
+                    <a href="/license">License</a>
+                </div>
+                <div class="social">
+                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+                </div>
+            </div>
+            <div class="tile">
+                <h2>Question?</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="input">
+                            <input id="name" type="text" name="name" value="" placeholder="Name">
+                        </div>
+                        <div class="input">
+                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
+                        </div>
+                        <div class="input">
+                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
+                        </div>
+                        <div class="results" id="results"></div>
+                        <div class="results-err" id="results-err"></div>
+                        <input type="submit" value="Send" id="contact-send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+        © 2018 Tile38 - All Rights Reserved<br>
+        Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+        </div>
+    </footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

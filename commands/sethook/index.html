@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="command">
+<head>
+    <title>SETHOOK - Tile38</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet/less" type="text/css" href="/assets/less/main.less" />
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/scripts/contact.js"></script>
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body onload="if (window.init){ window.init() }">
+    <div id="sidebar" class="out">
+        <div class="inner">
+            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a href="/documentation">Documentation</a>
+            </div>
+            <div class="social">
+                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+            </div>
+            <div class="nav">
+                <a href="mailto:info@tile38.com">Send Email</a>
+                <a href="/jobs">Careers/Jobs</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <header class="primary">
+        <div class="inner">
+            <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
+            <a class="logo" href="/"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a  href="/commands">Commands</a>
+                <a class="on" href="/documentation">Documentation</a>
+                <a  href="/community">Community</a>
+            </div>
+            <div class="social">
+                <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+            </div>
+        </div>
+    </header>
+
+    
+    
+
+    
+    <div class="content">
+        <div class="inner">
+            <div class="extra">
+            
+            <h2 class="command-title">
+                SETHOOK name endpoint [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param ...]
+            </h2>
+            <div class="related-commands">
+                <div>Related commands</div>
+                <ul>
+                    
+                    <li >
+                        <a href="/commands/delhook">DELHOOK</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/hooks">HOOKS</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/pdelhook">PDELHOOK</a>
+                    </li>
+                    
+                    <li class="sel" >
+                        <a href="/commands/sethook">SETHOOK</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <p>Creates a webhook which points to a <a href="/topics/geofencing">geofenced</a> search. If a hook is already associated to that name, it&rsquo;ll be overwritten.</p>
+
+<h2>Examples</h2>
+
+<p>Set a simple hook.</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse <a href="http://10.0.20.78/endpoint">http://10.0.20.78/endpoint</a> <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <number>500</number></code></p>
+
+<p>In this example we created a webhook named <code>warehouse</code> that watches for changes to objects in the <code>fleet</code> collection. When a change occurs the endpoint <code>'http://10.0.20.78/endpoint'</code> is notified with a detailed message. The message contains a member named <code>'detect'</code> which has one of the following values:</p>
+
+<ul>
+<li><strong><code>inside</code></strong> is when an object is inside the specified area.</li>
+<li><strong><code>outside</code></strong> is when an object is outside the specified area.</li>
+<li><strong><code>enter</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered the area.</li>
+<li><strong><code>exit</code></strong> is when an object that <strong>was</strong> previously in the fence has exited the area.</li>
+<li><strong><code>cross</code></strong> is when an object that <strong>was not</strong> previously in the fence has entered <strong>and</strong> exited the area.</li>
+</ul>
+
+<p><em>For more information on the format of this message please see the topic on <a href="/topics/geofencing">Geofencing</a>.</em></p>
+
+<p><a href="/commands/nearby">NEARBY</a>, <a href="/commands/intersects">INTERSECTS</a>, and <a href="/commands/within">WITHIN</a> are supported search types. The <code>FENCE</code> keyword must be present.</p>
+
+<h2>Endpoints</h2>
+
+<p>Tile38 currently supports endpoints with the following url schemes:</p>
+
+<p><strong><code>http</code></strong>, <strong><code>https</code></strong>, <strong><code>grpc</code></strong>, <strong><code>redis</code></strong>, <strong><code>disque</code></strong>, <strong><code>kafka</code></strong>, <strong><code>amqp</code></strong>, <strong><code>mqtt</code></strong>, <strong><code>sqs</code></strong>, <strong><code>nats</code></strong></p>
+
+<h3>HTTP / HTTPS</h3>
+
+<p>When using the <code>http://</code> and <code>https://</code> url scheme an HTTP POST will be sent to the specified url with the <code>content-type</code> of <code>application/json</code> and the request body containing the message.</p>
+
+<p>Tile38 expects that the endpoint will respond with the status code of 200. As long as the status is 200 the message will be considered sent.</p>
+
+<h3>GRPC</h3>
+
+<p>The <code>grpc://</code> url scheme provides support for sending messages over <a href="http://www.grpc.io/">GRPC</a>.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse grpc://10.0.20.78:6798/ &hellip;</code></p>
+
+<p>All webhook messages will be sent to the GPRC server at <code>10.0.20.78:6798</code>.</p>
+
+<p>The proto file can be found in the <a href="https://github.com/tidwall/tile38/tree/master/hservice">/hservice directory</a>.</p>
+
+<h3>Redis</h3>
+
+<p>The <code>redis://</code> url scheme provides support for sending messages to a <a href="https://redis.io">Redis</a> server.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse redis://10.0.20.78:6379/warehouse &hellip;</code></p>
+
+<p>All webhook messages will be sent to the Redis server at <code>10.0.20.78:6379</code> in a <a href="https://redis.io/commands#pubsub">PUBSUB</a> queue <code>warehouse</code> as a JSON messages.</p>
+
+<h3>Disque</h3>
+
+<p>The <code>disque://</code> url scheme provides support for sending messages to a <a href="https://github.com/antirez/disque">Disque</a> server.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse disque://10.0.20.78:7711/warehouse?replicate=2 &hellip;</code></p>
+
+<p>All webhook messages will be sent to the Disque server at <code>10.0.20.78:7711</code>. The replicate param is optional and when this value is greater than one, Tile38 will require that the Disque server to make copies of the message on N servers, where N is the value of <code>replicate</code>. Please review the <a href="https://github.com/antirez/disque#main-api">Disque API</a> for information on the replicate option.</p>
+
+<h3>Kafka</h3>
+
+<p>The <code>kafka://</code> url scheme provides support for sending messages to a <a href="https://kafka.apache.org/">Kafka</a> broker.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse kafka://10.0.20.78:9092/warehouse &hellip;</code></p>
+
+<p>All webhook messages will be sent to the Kafka server at <code>10.0.20.78:9092</code> to a <a href="https://kafka.apache.org/documentation/#intro_topics">topic</a> called warehouse. The port number is optional and will default to 9092.</p>
+
+<h3>AMQP</h3>
+
+<p>The <code>amqp://</code> url scheme provides support for sending messages to a <a href="https://www.rabbitmq.com/">RabbitMQ</a> broker via the Advanced Message Queuing Protocol (AMQP) version 0.9.1.</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse amqp://guest:guest@10.0.20.78:5672/warehouse?route=tile &hellip;</code></p>
+
+<p>All webhook messages will be sent to the RabbitMQ broker at <code>10.0.20.78:5672</code> to the queue called warehouse. Route is an optional parameter and will default to tile38.</p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>type</code> - &lsquo;direct&rsquo;<br /></li>
+<li><code>durable</code> - true<br /></li>
+<li><code>immediate</code> - false<br /></li>
+<li><code>mandatory</code> - false<br /></li>
+<li><code>auto_delete</code> - false<br /></li>
+<li><code>internal</code> - false<br /></li>
+<li><code>no_wait</code> - false<br /></li>
+<li><code>delivery_mode</code> - 1<br /></li>
+<li><code>route</code> - tile38<br /></li>
+</ul>
+
+<h3>MQTT</h3>
+
+<p>The <code>mqtt://</code> url scheme provides support for sending messages to a MQTT broker</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse mqtt://10.0.1.1:8443/mytopic?qos=1&amp;retained=0 &hellip;</code></p>
+
+<p>All webhook messages will be sent to the MQTT broker at <code>10.0.1.1:8443</code> to the topic called mytopic.</p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>qos</code> - 0<br /></li>
+<li><code>retained</code> - false<br /></li>
+<li><code>cacert</code> - empty string</li>
+<li><code>cert</code> - empty string</li>
+<li><code>key</code> - empty string</li>
+</ul>
+
+<h3>SQS</h3>
+
+<p>The <code>sqs://</code> url scheme provides support for sending messages to a <a href="https://aws.amazon.com/sqs/">SQS</a> queue</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&amp;credprofile=value &hellip;</code></p>
+
+<p>All webhook messages will be sent to the SQS queue named <code>myqueuename</code> in the region <code>eu-central-1</code> with the queue id <code>myqueueid</code></p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>credpath</code> - empty string<br /></li>
+<li><code>credprofile</code> - empty string<br /></li>
+</ul>
+
+<h3>NATS</h3>
+
+<p>The <code>nats://</code> url scheme provides support for sending messages to a <a href="https://www.nats.io/">NATS</a> topic</p>
+
+<p>For example:</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse nats://127.0.0.1:42222/mytopic?user=admin?pass=123 &hellip;</code></p>
+
+<p>All webhook messages will be sent to the NATS server at <code>127.0.0.1:4222</code> to the topic named <code>mytopic</code> and the username <code>admin</code> and password <code>123</code></p>
+
+<h4>Options</h4>
+
+<p>The following optional parameters are available for this hook, the listed value is the default value:</p>
+
+<ul>
+<li><code>user</code> - empty string<br /></li>
+<li><code>pass</code> - empty string<br /></li>
+</ul>
+
+<h3>Endpoint Failover</h3>
+
+<p>It&rsquo;s possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.</p>
+
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse <a href="http://10.0.20.78/ep1,http://10.0.20.78/ep2">http://10.0.20.78/ep1,http://10.0.20.78/ep2</a> &hellip;</code></p>
+
+<p>Tile38 will try to send a message to the first endpoint. If the send is a failure then the second endpoint is tried, and so on.</p>
+            <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner tiles">
+            <div class="tile menu">
+                <a class="logo white desktop" href="/"></a>
+                <a class="logo-38 white mobile" href="/"></a>
+                <div class="nav">
+                    <a href="/topics/getting-started">Download</a>
+                    <a href="/community">Community</a>
+                    <a href="/documentation" class="mobile">Docs</a>
+                    <a href="/documentation" class="desktop">Documentation</a>
+                </div>
+            </div>
+            <div class="tile contact">
+                <h2>Contact</h2>
+                <div class="nav">
+                    <a href="mailto:info@tile38.com">Send Email</a>
+                    <a href="/jobs">Careers/Jobs</a>
+                    <a href="/license">License</a>
+                </div>
+                <div class="social">
+                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+                </div>
+            </div>
+            <div class="tile">
+                <h2>Question?</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="input">
+                            <input id="name" type="text" name="name" value="" placeholder="Name">
+                        </div>
+                        <div class="input">
+                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
+                        </div>
+                        <div class="input">
+                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
+                        </div>
+                        <div class="results" id="results"></div>
+                        <div class="results-err" id="results-err"></div>
+                        <input type="submit" value="Send" id="contact-send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+        © 2018 Tile38 - All Rights Reserved<br>
+        Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+        </div>
+    </footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+    <title>Object Types - Tile38</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet/less" type="text/css" href="/assets/less/main.less" />
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/scripts/contact.js"></script>
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body onload="if (window.init){ window.init() }">
+    <div id="sidebar" class="out">
+        <div class="inner">
+            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a href="/documentation">Documentation</a>
+            </div>
+            <div class="social">
+                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+            </div>
+            <div class="nav">
+                <a href="mailto:info@tile38.com">Send Email</a>
+                <a href="/jobs">Careers/Jobs</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <header class="primary">
+        <div class="inner">
+            <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
+            <a class="logo" href="/"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a  href="/commands">Commands</a>
+                <a class="on" href="/documentation">Documentation</a>
+                <a  href="/community">Community</a>
+            </div>
+            <div class="social">
+                <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+            </div>
+        </div>
+    </header>
+
+    
+    
+
+    
+    <div class="content">
+        <div class="inner">
+            <div class="extra">
+            
+            <h2>Object Types</h2>
+
+<p>All object types except for XYZ Tiles and QuadKeys can be stored in a collection. XYZ Tiles and QuadKeys are reserved for the SEARCH keyword only.</p>
+
+<p><a name="latlon-point"></a></p>
+
+<h3>Lat/lon Point</h3>
+
+<p>The most basic object type is a point that is composed of a latitude and a longitude. There is an optional <code>z</code> member that may be used for auxiliary data such as elevation or a timestamp.</p>
+
+<p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># plain lat/lon</comment>
+<keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number> <number>225</number> <comment># lat/lon with z member</comment></code></p>
+
+<p><a name="bounding-box"></a></p>
+
+<h3>Bounding Box</h3>
+
+<p>A bounding box consists of two points. The first being the southwestern most point and the second is the northeastern most point.</p>
+
+<p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>BOUNDS</keyword> <number>30</number> <number>-110</number> <number>40</number> <number>-100</number></code></p>
+
+<p><a name="geohash"></a></p>
+
+<h3>Geohash</h3>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Geohash">geohash</a> is a string respresentation of a point. With the length of the string indicating the precision of the point.</p>
+
+<p><code class="block"><keyword>SET</keyword> fleet truck1 <keyword>HASH</keyword> 9tbnthxzr <keyword></keyword> <keyword></keyword> <comment># this would be equivlent to &#39;POINT 33.5123 -112.2693&#39;</comment></code></p>
+
+<p><a name="geojson"></a></p>
+
+<h3>GeoJSON</h3>
+
+<p><a href="http://geojson.org/">GeoJSON</a> is an industry standard format for representing a variety of object types including a point, multipoint, linestring, multilinestring, polygon, multipolygon, geometrycollection, feature, and featurecollection. Tile38 supports all of the standards with these exceptions.</p>
+
+<ol>
+<li>The <code>crs</code> member is not supported and will be ignored. The <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">CRS84/WGS84</a> projection is assumed.</li>
+<li>Any member that is not recognized (including <code>crs</code>) will be ignored.</li>
+<li>All coordinates can be 2 or 3 axes. Less than 2 axes or more than 3 will result in a parsing error.</li>
+</ol>
+
+<p><i>* All ignored members will not persist.</i></p>
+
+<p><strong>Important to note that all coordinates are in Longitude, Latitude order.</strong></p>
+
+<p><code class="block"><keyword>SET</keyword> city tempe <keyword>OBJECT</keyword> <geojson>{&#34;type&#34;:&#34;Polygon&#34;,&#34;coordinates&#34;:[[[-111.9787,33.4411],[-111.8902,33.4377],[-111.8950,33.2892],[-111.9739,33.2932],[-111.9787,33.4411]]]}</comment></code></p>
+
+<p><a name="xyz-tile"></a></p>
+
+<h3>XYZ Tile</h3>
+
+<p>An XYZ tile is rectangle bounding area on earth that is represented by an X, Y coordinate and a Z (zoom) level.
+Check out <a href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/">maptiler.org</a> for an interactive example.</p>
+
+<p><a name="quadkey"></a></p>
+
+<h3>QuadKey</h3>
+
+<p>A QuadKey used the same coordinate system as an XYZ tile except that the string representation is a string characters composed of 0, 1, 2, or 3. For a detailed explanation checkout <a href="https://msdn.microsoft.com/en-us/library/bb259689.aspx">The Bing Maps Tile System</a>.</p>
+            <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner tiles">
+            <div class="tile menu">
+                <a class="logo white desktop" href="/"></a>
+                <a class="logo-38 white mobile" href="/"></a>
+                <div class="nav">
+                    <a href="/topics/getting-started">Download</a>
+                    <a href="/community">Community</a>
+                    <a href="/documentation" class="mobile">Docs</a>
+                    <a href="/documentation" class="desktop">Documentation</a>
+                </div>
+            </div>
+            <div class="tile contact">
+                <h2>Contact</h2>
+                <div class="nav">
+                    <a href="mailto:info@tile38.com">Send Email</a>
+                    <a href="/jobs">Careers/Jobs</a>
+                    <a href="/license">License</a>
+                </div>
+                <div class="social">
+                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+                </div>
+            </div>
+            <div class="tile">
+                <h2>Question?</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="input">
+                            <input id="name" type="text" name="name" value="" placeholder="Name">
+                        </div>
+                        <div class="input">
+                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
+                        </div>
+                        <div class="input">
+                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
+                        </div>
+                        <div class="results" id="results"></div>
+                        <div class="results-err" id="results-err"></div>
+                        <input type="submit" value="Send" id="contact-send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+        © 2018 Tile38 - All Rights Reserved<br>
+        Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+        </div>
+    </footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

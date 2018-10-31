@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="topic">
+<head>
+    <title>Getting Started - Tile38</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet/less" type="text/css" href="/assets/less/main.less" />
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/scripts/contact.js"></script>
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body onload="if (window.init){ window.init() }">
+    <div id="sidebar" class="out">
+        <div class="inner">
+            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a href="/documentation">Documentation</a>
+            </div>
+            <div class="social">
+                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+            </div>
+            <div class="nav">
+                <a href="mailto:info@tile38.com">Send Email</a>
+                <a href="/jobs">Careers/Jobs</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <header class="primary">
+        <div class="inner">
+            <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
+            <a class="logo" href="/"></a>
+            <div class="nav">
+                <a href="/topics/getting-started">Download</a>
+                <a  href="/commands">Commands</a>
+                <a class="on" href="/documentation">Documentation</a>
+                <a  href="/community">Community</a>
+            </div>
+            <div class="social">
+                <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
+                <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+            </div>
+        </div>
+    </header>
+
+    
+    
+
+    
+    <div class="content">
+        <div class="inner">
+            <div class="extra">
+            
+            <h1>Getting Started</h1>
+
+<h2>Docker</h2>
+
+<p><code class="block">docker pull tile38/tile38
+docker run -p 9851:9851 tile38/tile38</code></p>
+
+<p>Visit the <a href="https://hub.docker.com/r/tile38/tile38/">Tile38 hub page</a> for more information.</p>
+
+<h2>Homebrew (macOS)</h2>
+
+<p><code class="block">brew install tile38
+tile38-server</code></p>
+
+<h2>Packages (linux)</h2>
+
+<p><code class="block">pkg install tile38</code></p>
+
+<h2>MacPorts (macOS)</h2>
+
+<p><code class="block">make -C /usr/ports/databases/tile38 install</code></p>
+
+<h2>Release Builds</h2>
+
+<p>Tile38 has pre-built release binaries for OSX, Linux, FreeBSD, and Windows. Instructions for using these binaries are on the GitHub <a href="https://github.com/tidwall/tile38/releases">releases page</a>.</p>
+
+<h1>Next steps</h1>
+
+<p>If not already started, start the Tile38 with:</p>
+
+<p><code class="block">tile38-server</code></p>
+
+<p>You can interact with Tile38 using the built-in client:</p>
+
+<p><code class="block">tile38-cli
+tile38&gt; <keyword>SET</keyword> fleet truck1 <keyword>POINT</keyword> <number>33.5123</number> <number>-112.2693</number>
+tile38&gt; <keyword>GET</keyword> fleet truck1</code></p>
+            <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner tiles">
+            <div class="tile menu">
+                <a class="logo white desktop" href="/"></a>
+                <a class="logo-38 white mobile" href="/"></a>
+                <div class="nav">
+                    <a href="/topics/getting-started">Download</a>
+                    <a href="/community">Community</a>
+                    <a href="/documentation" class="mobile">Docs</a>
+                    <a href="/documentation" class="desktop">Documentation</a>
+                </div>
+            </div>
+            <div class="tile contact">
+                <h2>Contact</h2>
+                <div class="nav">
+                    <a href="mailto:info@tile38.com">Send Email</a>
+                    <a href="/jobs">Careers/Jobs</a>
+                    <a href="/license">License</a>
+                </div>
+                <div class="social">
+                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
+                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
+                </div>
+            </div>
+            <div class="tile">
+                <h2>Question?</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="input">
+                            <input id="name" type="text" name="name" value="" placeholder="Name">
+                        </div>
+                        <div class="input">
+                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
+                        </div>
+                        <div class="input">
+                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
+                        </div>
+                        <div class="results" id="results"></div>
+                        <div class="results-err" id="results-err"></div>
+                        <input type="submit" value="Send" id="contact-send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+        © 2018 Tile38 - All Rights Reserved<br>
+        Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+        </div>
+    </footer>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75165369-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
