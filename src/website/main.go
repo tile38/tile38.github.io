@@ -12,7 +12,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"path"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -181,6 +183,19 @@ func Proc(output string, commands map[string]core.Command, funcMap map[string]in
 	return nil
 }
 
+func Lessc(path string) {
+	if !strings.HasSuffix(path, ".less") {
+		panic("invalid less file")
+	}
+	input := path
+	output := path[:len(path)-5] + ".css"
+	output = strings.Replace(output, "/less/", "/css/", -1)
+	combined, err := exec.Command("lessc", input, output).CombinedOutput()
+	if err != nil {
+		panic(string(combined))
+	}
+}
+
 func Scan(depth int, output, dir string, t *template.Template, commands map[string]core.Command, funcMap map[string]interface{}) error {
 	fis, err := ioutil.ReadDir(dir)
 	if err != nil {
@@ -211,6 +226,11 @@ func Scan(depth int, output, dir string, t *template.Template, commands map[stri
 			} else if err := ioutil.WriteFile(path.Join(output, fi.Name()), data, 0600); err != nil {
 				return err
 			}
+			continue
+		}
+		if path.Ext(fi.Name()) == ".less" {
+			// convert less to css
+			Lessc(filepath.Join(dir, fi.Name()))
 			continue
 		}
 		if path.Ext(fi.Name()) != ".html" && path.Ext(fi.Name()) != ".md" {
