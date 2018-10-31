@@ -1268,14 +1268,25 @@ code geojson {
 .commandtable .command:hover {
   text-decoration: none;
 }
+.commandtable .command {
+  overflow: hidden;
+}
 .commandtable .command .nameargs .name {
   font-weight: bold;
 }
 .commandtable .command .nameargs .args {
-  color: #666;
+  color: rgba(0, 0, 0, 0.5);
 }
 .commandtable .command .summary {
-  color: #666;
+  color: rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 452px) {
+  .commandtable .command {
+    height: inherit;
+  }
+  .commandtable .command .summary {
+    display: none;
+  }
 }
 .related-commands {
   float: right;

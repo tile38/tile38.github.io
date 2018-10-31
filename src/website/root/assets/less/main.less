@@ -74,11 +74,6 @@
 }
 
 /* Basics */
-// * {
-// 	margin: 0;
-// 	padding: 0;
-// }
-
 
 html,body {
 	margin: 0;
@@ -487,115 +482,7 @@ appearance: none;
 		}
 	}
 
-	// @media only screen and (max-width: 500px) {
-	// 	.hinner {
-	// 		.grid {
-	// 			.ginner {
-	// 				.item {
-	// 					margin: 6px;
-	// 					img {
-	// 						width: 120px;
-	// 						height: 120px;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-
-	
 }
-
-
-// .content.hero {
-
-	
-// 	.tiles {
-		
-// 		// height: @heroHeight;
-// 		align-items: center;
-
-// 		// @media @tablet {
-// 		// 	height: @tabletHeroHeight;
-// 		// }
-
-// 		@media @phone {
-// 			height: auto;
-// 		}
-// 		.tile {
-// 			&:first-child {
-// 				background: green;
-				
-// 				max-width: 520px;
-// 				@media @phone {
-// 					max-width: none;
-// 				}
-// 			}
-// 			&:last-child {
-// 				background: yellow;
-// 				//height: 100%;
-// 				// padding: 0;
-// 				// padding-right: 65px;
-// 			}
-// 			// .graphic {
-// 			// 	width: 100%;
-// 			// 	height: 100%;
-// 			// 	background-size: 100% auto;
-// 			// 	background-position: 50% 50%;
-// 			// 	background-repeat: no-repeat;
-// 			// 	background-image: url('/assets/images/_placeholder-home-hero.png');
-// 			// }
-// 		}
-// 	}
-// 	.button {
-// 		min-width: 190px;
-// 	}
-// 	.tile.tagline p {
-// 		line-height: 1.3em;
-// 		font-size: 19px;
-// 	}
-// 	.tile.images {
-// 		// position: relative;
-// 		// top: 10px;
-// 		font-size: 0;
-// 		display: flex;
-// 		flex: 1;
-// 		flex-direction: column;
-// 		.row {
-// 			display: flex;
-// 			display:none;
-// 			.col {
-// 				margin: 15px;
-// 				a{
-// 					display:block;
-// 					img {
-// 						border: 1px solid rgba(0,0,0,0.3);
-// 						width: 100%;
-// 						max-width: 200px;
-// 						transition: all 0.1s ease-in-out;
-// 						&:hover {
-// 							box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-// 							transform: translateY(-1px);
-// 							transition: all 0.2s ease-in-out;
-// 							cursor: pointer;
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-body > .content {
-	// @media @tablet {
-	// 	padding-bottom: @mobilePagePadding;
-	// }
-	// a {
-	// 	color: @brightBlue;
-	// }
-}
-
 
 
 .inner {
@@ -1332,17 +1219,30 @@ code geojson  { color: #e6db74; }
 .commandtable .command:hover{
 	text-decoration: none;
 }
-
+.commandtable .command {
+	overflow: hidden;
+}
 .commandtable .command .nameargs .name {
 	font-weight: bold;
 }
 
 .commandtable .command .nameargs .args {
-	color: #666
+	color: rgba(0,0,0,0.5);
 }
 
 .commandtable .command .summary {
-	color: #666;
+	color: rgba(0,0,0,0.5);
+}
+
+@media only screen and (max-width: 452px) {
+	.commandtable .command {
+		height: inherit;
+		.summary {
+			display: none;
+		
+		}
+	}
+	
 }
 
 .related-commands{
