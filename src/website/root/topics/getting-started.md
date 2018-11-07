@@ -2,7 +2,7 @@
 layout:  index.html
 title:   Getting Started - Tile38
 class:   topic
-super:   documentation
+super:   download
 -->
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="command">
+
 <head>
     <title>PING - Tile38</title>
     <meta charset="utf-8" />
@@ -17,14 +18,43 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta name="description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices.">
-	<meta name="keywords" content="">
+    <meta name="keywords" content="">
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="http://tile38.com/jobs" />
     <meta property="og:title" content="Tile38" />
-    <meta property="og:description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices."/>
+    <meta property="og:description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices." />
     <meta property="og:image" content="http://tile38.com/assets/img/ogimage2.jpg" />
+
+    <script>
+        $(document).ready(function() {
+            window.addEventListener("resize", resizeAnimations);
+            function resizeAnimations() {
+                setTimeout(function(){ resizeAnimations(); }, 100);
+                
+                var anims = document.getElementsByClassName("animation");
+                var h, w; 
+                for (anim of anims) {
+                    var imgs = anim.getElementsByTagName("img");
+                    if (imgs.length == 0) {
+                        return;
+                    }
+                    h = imgs[0].clientHeight;
+                    w = imgs[0].clientWidth;
+                    break;
+                }
+                
+                var objs = document.getElementsByTagName("object");
+                for (obj of objs) {
+                    obj.height = h;
+                    obj.width = w;
+                }
+            }
+            resizeAnimations();
+        });
+    </script>
 </head>
-<body onload="if (window.init){ window.init() }">
+
+<body>
     <div id="sidebar" class="out">
         <div class="inner">
             <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
@@ -46,66 +76,70 @@
         </div>
     </div>
 
-
+    
 
     
-    <header class="primary">
-        <div class="inner">
-            <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
-            <a class="logo" href="/"></a>
-            <div class="nav">
-                <a href="/topics/getting-started">Download</a>
-                <a  href="/commands">Commands</a>
-                <a class="on" href="/documentation">Documentation</a>
-                <a  href="/community">Community</a>
+    
+        <header class="primary">
+            <div class="inner">
+                <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
+                <a class="logo" href="/"></a>
+                <div class="nav">
+                    <a  href="/topics/getting-started">Download</a>
+                    <a  href="/commands">Commands</a>
+                    <a  class="on"  href="/documentation">Documentation</a>
+                    <a  href="/community">Community</a>
+                </div>
+                <div class="social">
+                    <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
+                    <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
+                </div>
             </div>
-            <div class="social">
-                <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
-                <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-            </div>
-        </div>
-    </header>
+        </header>
+        
+        
 
     
     
+
 
     
     <div class="content">
         <div class="inner">
             <div class="extra">
-            
-            <h2 class="command-title">
-                PING
-            </h2>
-            <div class="related-commands">
-                <div>Related commands</div>
-                <ul>
-                    
-                    <li >
-                        <a href="/commands/auth">AUTH</a>
-                    </li>
-                    
-                    <li >
-                        <a href="/commands/output">OUTPUT</a>
-                    </li>
-                    
-                    <li class="sel" >
-                        <a href="/commands/ping">PING</a>
-                    </li>
-                    
-                    <li >
-                        <a href="/commands/quit">QUIT</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            
-            <p>Ping the server. The response will contain <code>&quot;pong&quot;</code>.</p>
+                
+                <h2 class="command-title">
+                    PING
+                </h2>
+                <div class="related-commands">
+                    <div>Related commands</div>
+                    <ul>
+                        
+                        <li >
+                            <a href="/commands/auth">AUTH</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/commands/output">OUTPUT</a>
+                        </li>
+                        
+                        <li  class="sel" >
+                            <a href="/commands/ping">PING</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/commands/quit">QUIT</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <p>Ping the server. The response will contain <code>&quot;pong&quot;</code>.</p>
 
 <h2>Examples</h2>
 
 <p><code class="block"><keyword>PING</keyword></code></p>
-            <div style="clear: both"></div>
+                <div style="clear: both"></div>
             </div>
         </div>
     </div>
@@ -156,20 +190,26 @@
         </div>
 
         <div class="copyright">
-        © 2018 Tile38 - All Rights Reserved<br>
-        Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+            © 2018 Tile38 - All Rights Reserved<br>
+            Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
         </div>
     </footer>
     <script>
         (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-75165369-1', 'auto');
         ga('send', 'pageview');
     </script>
 </body>
+
 </html>
