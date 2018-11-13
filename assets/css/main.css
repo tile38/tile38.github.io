@@ -526,6 +526,14 @@ input {
   text-align: center;
   width: 100%;
 }
+.content.technicalAnimations .animations .animation:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .inner {
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
