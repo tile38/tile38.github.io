@@ -902,18 +902,24 @@ header.primary .inner .nav {
   }
 }
 header.alert {
-  height: 60px;
+  height: 50px;
   background-color: #61879f;
   color: #fff;
 }
 header.alert .button {
-  height: calc(60px - 20px);
-  line-height: calc(60px - 20px);
+  height: calc(50px - 20px);
+  line-height: calc(50px - 20px);
   margin-left: 20px;
   background-color: rgba(0, 0, 0, 0.2);
 }
 header.alert .button:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+header.alert a {
+  color: #fff;
+}
+header.alert a:hover {
+  text-decoration: underline;
 }
 @media only screen and (max-width: 767px) {
   header.alert {

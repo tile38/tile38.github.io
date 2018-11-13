@@ -20,7 +20,7 @@
 
 /* Dimensions */
 
-@alertHeight: 60px;
+@alertHeight: 50px;
 @headerHeight: 80px;
 @heroHeight: 500px; //630px;
 @tabletHeroHeight: 480px;
@@ -964,7 +964,12 @@ header {
 				background-color: fade(@black,40%);
 			}
 		}
-
+		a {
+			color: @white;
+		}
+		a:hover {
+			text-decoration: underline
+		}
 		@media @phone {
 			display: none;
 		}
