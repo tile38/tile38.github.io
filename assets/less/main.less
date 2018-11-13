@@ -46,6 +46,7 @@
 @blue: #61879f;
 @lightBlue: #ebeff2;
 @brightBlue: rgb(3, 115, 185);
+@heroBlue: #dde6ed;
 @navy: #1E394a;
 @red: #9D2724;
 
@@ -136,22 +137,41 @@ a {
 }
 
 
-h1,h2 {
+h1,h2,h3 {
 	font-family: @varela;
-	font-weight: 400;
+	font-weight: normal;
 }
             
 h1 {
 	font-size: 36px;
+	line-height: 38px;
+
 	@media @phone {
-		font-size: 28px;
+		font-size: 24px;
+		line-height: 28px;
 	}
 }
             
 h2 {
 	font-size: 24px;
+	line-height: 30px;
+
 	@media @phone {
 		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+h3 {
+	font-size: 14px;
+	line-height: 28px;
+}
+
+p {
+	margin: 20px 0;
+
+	&:last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -366,122 +386,206 @@ appearance: none;
 }
 
 
+.content {
 
-/* Layout */
-.content.hero {
-	.gradient(transparent,@lightBlue);
-	.hinner {
-		margin: 60px auto 0 auto;
-		.tagline {
-			// background: blue;
-			padding: 0 20px;
-			max-width: 600px;
-			text-align: center;
-			margin: 0 auto;
-			p {
-				margin: 0 auto 15px auto;
-				line-height: 1.5em;
-			}
-			.button {
-				margin-top: 15px;
-				min-width: 190px;
-			}
+	&.hero,&.technicalAnimations {
+		@media only screen and (max-width: 1039px) {
+			background-size: 138.46% auto;
 		}
-		.grid .label {
-			text-align: center;
-			font-size: 18px;
-			font-weight: 300;
-			margin: -30px 0 6px 0;
-			opacity: 0;
-			transition: opacity 0.2s;
+	}
+
+	&.hero {
+		display: flex;
+		flex-direction: column;
+		height: @heroHeight;
+		padding: 0;
+		background-color: @heroBlue;
+		background-image: url('/assets/images/home-hero-background.png');
+		background-position: 50% bottom;
+		background-repeat: no-repeat;
+
+		@media @phone { 
+			height: auto;
+			padding-bottom: 20px;
 		}
-		.grid {
-			margin: 20px auto 40px auto;
-			padding: 10px 0 20px 0;
-			font-size: 0;
-			.ginner {
+
+		>.inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex-grow: 1;
+			flex-shrink: 0;
+
+			.tagline {
+				// background: blue;
+				padding: 0 20px;
+				max-width: 600px;
 				text-align: center;
-				.item {
-					display: inline-block;
-					margin: 10px;
-					transition: all 0.1s ease-in-out;
-					img{
-						width: 176px;
-						height: 176px;
-						border: 1px solid rgba(0,0,0,0.2);
-					}
-					&:hover {
-						box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-						transform: translateY(-1px);
-						transition: all 0.2s ease-in-out;
-						cursor: pointer;
-						.label {
-							opacity: 0.6;
-							transition: opacity 0.2s;
-						}
-					}
-
+				margin: 0 auto;
+				p {
+					margin: 0 auto 15px auto;
+					line-height: 1.5em;
+				}
+				.button {
+					margin-top: 15px;
+					min-width: 190px;
 				}
 			}
-			
 		}
-	} 	
-	@media only screen and (max-width: 1000px) {
-		.hinner {
-			.grid {
-				.ginner {
-					.item {
-						margin: 8px;
-						img {
-							width: 146px;
-							height: 146px;
-						}
-					}
-				}
-			}
+
+		.button {
+			min-width: 190px;
 		}
 	}
 
-	@media only screen and (max-width: 830px) {
-		.hinner {
-			.grid {
-				.ginner {
-					.item {
-						margin: 6px;
-						img {
-							width: 120px;
-							height: 120px;
-						}
-						.label {
-							margin-top: -22px;
-							font-size: 14px;
-						}
-					}
+	&.technicalAnimations {
+		background-color: @navy;
+		background-image: url('/assets/images/home-technical-animations-background.png');
+		background-position: 50% top;
+		background-repeat: no-repeat;
+		padding: 0;
+		display: flex;
+		justify-content: stretch;
+
+		.inner {
+			padding: 0;
+		}
+
+		h3 {
+			padding: 0;
+			margin: 0;
+		}
+
+		.animations {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			max-width: 1040px;
+			margin: 0 auto;
+
+			.animation {
+				flex: 1;
+				position: relative;
+				line-height: 0;
+
+				img,.animation_parent {
+					margin: 0 auto;
+				}
+
+				.animation_parent {
+					width: 100%;
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+
+				h3 {
+					color: @white;
+					position: absolute;
+					top: 75%;
+					z-index: 1;
+					text-align: center;
+					width: 100%;
 				}
 			}
 		}
-	}
 
-	@media only screen and (max-width: 410px) {
-		.hinner {
-			.grid {
-				.ginner {
-					.item {
-						margin: 5px;
-						img {
-							width: 100px;
-							height: 100px;
-						}
-						.label {
-							// margin-top: -22px;
-							// font-size: 14px;
-						}
-					}
-				}
-			}
-		}
-	}
+		// @media @phone {
+		// 	.animations {
+		// 		.animation {
+		// 			flex-wrap: wrap;
+		// 		}
+		// 	}
+		// }
 
+		// @media @phone {
+		// 	background: transparent;
+
+		// 	.animations {
+		// 		.animation {
+		// 			background-color: @navy;
+		// 			background-image: url('/assets/images/home-technical-animations-background.png');
+		// 			background-repeat: no-repeat;
+		// 			background-size: auto;
+		// 			text-align: center;
+
+		// 			min-width: 150px;
+		// 			width: 20%;
+
+		// 			&.nearby {background-position: ~"calc(50% + 416px)" 50%;}
+		// 			&.within {background-position: ~"calc(50% + 208px)" 50%;}
+		// 			&.intersects {background-position: 50% 50%;}
+		// 			&.staticGeofence {background-position: ~"calc(50% - 208px)" 50%;}
+		// 			&.roamingGeofence {background-position: ~"calc(50% - 416px)" 50%;}
+
+		// 			img {
+		// 				min-width: 150px;
+		// 				width: 20%;
+		// 			}
+
+		// 			#animation_parent {
+		// 				width: 208px !important;
+		// 				height: 260px !important;
+		// 			}
+
+		// 			canvas {
+		// 				width: auto !important;
+		// 				height: auto !important;
+		// 			}
+
+		// 			h3 { 
+		// 				top: 80%;
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		// Current
+		// @media @phone {
+		// 	background: transparent;
+
+		// 	.animations {
+		// 		display: block;
+
+		// 		.animation {
+		// 			margin: 20px 20px 0 20px;
+		// 			.roundedCorners;
+		// 			background-color: @navy;
+		// 			background-image: url('/images/home-technical-animations-background.png');
+		// 			background-repeat: no-repeat;
+		// 			background-size: auto;
+		// 			text-align: center;
+
+		// 			&.nearby {background-position: ~"calc(50% + 416px)" 50%;}
+		// 			&.within {background-position: ~"calc(50% + 208px)" 50%;}
+		// 			&.intersects {background-position: 50% 50%;}
+		// 			&.staticGeofence {background-position: ~"calc(50% - 208px)" 50%;}
+		// 			&.roamingGeofence {background-position: ~"calc(50% - 416px)" 50%;}
+
+		// 			img {
+		// 				width: auto;
+		// 			}
+
+		// 			#animation_parent {
+		// 				width: 208px !important;
+		// 				height: 260px !important;
+		// 			}
+
+		// 			canvas {
+		// 				width: auto !important;
+		// 				height: auto !important;
+		// 			}
+
+		// 			h3 { 
+		// 				top: 80%;
+		// 			}
+		// 		}
+		// 	}
+		// }
+	}
 }
 
 

@@ -140,25 +140,40 @@ a.on {
   color: #fff;
 }
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Varela', 'Helvetica', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: normal;
 }
 h1 {
   font-size: 36px;
+  line-height: 38px;
 }
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 28px;
   }
 }
 h2 {
   font-size: 24px;
+  line-height: 30px;
 }
 @media only screen and (max-width: 767px) {
   h2 {
     font-size: 20px;
+    line-height: 24px;
   }
+}
+h3 {
+  font-size: 14px;
+  line-height: 28px;
+}
+p {
+  margin: 20px 0;
+}
+p:last-child {
+  margin-bottom: 0;
 }
 /* Forms */
 input[type="text"],
@@ -417,98 +432,99 @@ input {
 .logo-38.white {
   background-image: url('/assets/images/logo-white-38.svg');
 }
-/* Layout */
+@media only screen and (max-width: 1039px) {
+  .content.hero,
+  .content.technicalAnimations {
+    background-size: 138.46% auto;
+  }
+}
 .content.hero {
-  background: transparent;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ebeff2), color-stop(1, #FFF));
-  background: -ms-linear-gradient(bottom, #ebeff2, #FFF);
-  background: -moz-linear-gradient(center bottom, #ebeff2 0%, #FFF 100%);
-  background: -o-linear-gradient(#FFF, #ebeff2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='#ebeff2', GradientType=0);
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  padding: 0;
+  background-color: #dde6ed;
+  background-image: url('/assets/images/home-hero-background.png');
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
 }
-.content.hero .hinner {
-  margin: 60px auto 0 auto;
+@media only screen and (max-width: 767px) {
+  .content.hero {
+    height: auto;
+    padding-bottom: 20px;
+  }
 }
-.content.hero .hinner .tagline {
+.content.hero > .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.content.hero > .inner .tagline {
   padding: 0 20px;
   max-width: 600px;
   text-align: center;
   margin: 0 auto;
 }
-.content.hero .hinner .tagline p {
+.content.hero > .inner .tagline p {
   margin: 0 auto 15px auto;
   line-height: 1.5em;
 }
-.content.hero .hinner .tagline .button {
+.content.hero > .inner .tagline .button {
   margin-top: 15px;
   min-width: 190px;
 }
-.content.hero .hinner .grid .label {
+.content.hero .button {
+  min-width: 190px;
+}
+.content.technicalAnimations {
+  background-color: #1E394a;
+  background-image: url('/assets/images/home-technical-animations-background.png');
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: flex;
+  justify-content: stretch;
+}
+.content.technicalAnimations .inner {
+  padding: 0;
+}
+.content.technicalAnimations h3 {
+  padding: 0;
+  margin: 0;
+}
+.content.technicalAnimations .animations {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.content.technicalAnimations .animations .animation {
+  flex: 1;
+  position: relative;
+  line-height: 0;
+}
+.content.technicalAnimations .animations .animation img,
+.content.technicalAnimations .animations .animation .animation_parent {
+  margin: 0 auto;
+}
+.content.technicalAnimations .animations .animation .animation_parent {
+  width: 100%;
+}
+.content.technicalAnimations .animations .animation img {
+  width: 100%;
+  height: auto;
+}
+.content.technicalAnimations .animations .animation h3 {
+  color: #fff;
+  position: absolute;
+  top: 75%;
+  z-index: 1;
   text-align: center;
-  font-size: 18px;
-  font-weight: 300;
-  margin: -30px 0 6px 0;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.content.hero .hinner .grid {
-  margin: 20px auto 40px auto;
-  padding: 10px 0 20px 0;
-  font-size: 0;
-}
-.content.hero .hinner .grid .ginner {
-  text-align: center;
-}
-.content.hero .hinner .grid .ginner .item {
-  display: inline-block;
-  margin: 10px;
-  transition: all 0.1s ease-in-out;
-}
-.content.hero .hinner .grid .ginner .item img {
-  width: 176px;
-  height: 176px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.content.hero .hinner .grid .ginner .item:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-.content.hero .hinner .grid .ginner .item:hover .label {
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-@media only screen and (max-width: 1000px) {
-  .content.hero .hinner .grid .ginner .item {
-    margin: 8px;
-  }
-  .content.hero .hinner .grid .ginner .item img {
-    width: 146px;
-    height: 146px;
-  }
-}
-@media only screen and (max-width: 830px) {
-  .content.hero .hinner .grid .ginner .item {
-    margin: 6px;
-  }
-  .content.hero .hinner .grid .ginner .item img {
-    width: 120px;
-    height: 120px;
-  }
-  .content.hero .hinner .grid .ginner .item .label {
-    margin-top: -22px;
-    font-size: 14px;
-  }
-}
-@media only screen and (max-width: 410px) {
-  .content.hero .hinner .grid .ginner .item {
-    margin: 5px;
-  }
-  .content.hero .hinner .grid .ginner .item img {
-    width: 100px;
-    height: 100px;
-  }
+  width: 100%;
 }
 .inner {
   -ms-box-sizing: border-box;
