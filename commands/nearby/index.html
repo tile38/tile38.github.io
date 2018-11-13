@@ -142,13 +142,16 @@
                     </ul>
                 </div>
                 
-                <p>The NEARBY command searches a collection for objects that intersect a specified radius.</p>
+                <p>The NEARBY command searches a collection for objects that are close to a specified point. The KNN algorithm is used instead of the standard overlap+Haversine algorithm, sorting the results in order of ascending distance from that point, i.e., nearest first.</p>
 
-<p>This command has many options, but at it&rsquo;s most simplest it may appear like.</p>
+<p>This command has many options, but at it&rsquo;s most simplest it may appear like:</p>
 
-<p><code class="block"><keyword>NEARBY</keyword> fleet <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
+<p><code class="block"><keyword>NEARBY</keyword> fleet <keyword>LIMIT</keyword> <number>1</number> <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number></code>
+to find the object closest to the given point.</p>
 
-<p>Above is a search around the point <code>33.462,-112.268</code> with a radius of <code>6000</code> meters. A list of all objects that intersect that radius are returned.</p>
+<p>If the radius is given:
+<code class="block"><keyword>NEARBY</keyword> fleet <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code>
+then the search will be limited by that radius, in this case <code>6000</code> meters.</p>
 
 <h2>Search Options</h2>
 
@@ -157,14 +160,6 @@
 <h2>Output Formats</h2>
 
 <p>For a complete list of output formats please see the <a href="/commands/intersects#output-formats">INTERSECTS</a> command.</p>
-
-<h2>KNN Search</h2>
-
-<p>Normally the results of NEARBY are unsorted, but when a LIMIT is set with no radius, the KNN algorithm will be used instead of the standard overlap+Haversine algorithm, sorting the results in order of distance ascending, i.e., nearest first.</p>
-
-<p>The following example will find the object closest to the given point:</p>
-
-<p><code class="block"><keyword>NEARBY</keyword> fleet <keyword>LIMIT</keyword> <number>1</number> <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number></code></p>
                 <div style="clear: both"></div>
             </div>
         </div>
