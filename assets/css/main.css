@@ -443,11 +443,10 @@ input {
   flex-direction: column;
   height: 500px;
   padding: 0;
-  background-color: #fff;
-  background-image: url('/assets/images/home-hero-background.png');
-  background-image: url('/assets/images/home-hero-background.png'), linear-gradient(#fff, #dde6ed);
+  background-color: white;
+  background-image: url('/assets/images/home-hero-background.png'), url('/assets/images/home-hero-background-pixel-gradient.png');
+  background-repeat: no-repeat, repeat-x;
   background-position: 50% bottom;
-  background-repeat: no-repeat;
 }
 @media only screen and (max-width: 767px) {
   .content.hero {

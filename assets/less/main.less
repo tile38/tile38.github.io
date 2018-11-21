@@ -399,14 +399,11 @@ appearance: none;
 		flex-direction: column;
 		height: @heroHeight;
 		padding: 0;
-		background-color: @white; 
-		background-image: url('/assets/images/home-hero-background.png');
-		background-image: url('/assets/images/home-hero-background.png'), 
-			linear-gradient( @white, @heroBlue);
-			
-
+		background-color: white; 
+		background-image: url('/assets/images/home-hero-background.png'),
+		 	url('/assets/images/home-hero-background-pixel-gradient.png');
+		background-repeat:  no-repeat, repeat-x;
 		background-position: 50% bottom;
-		background-repeat: no-repeat;
 
 		@media @phone { 
 			height: auto;
@@ -422,7 +419,6 @@ appearance: none;
 			flex-shrink: 0;
 
 			.tagline {
-				// background: blue;
 				padding: 0 20px;
 				max-width: 600px;
 				text-align: center;
@@ -505,99 +501,6 @@ appearance: none;
 				left: 0;
 			}
 		}
-
-		// @media @phone {
-		// 	.animations {
-		// 		.animation {
-		// 			flex-wrap: wrap;
-		// 		}
-		// 	}
-		// }
-
-		// @media @phone {
-		// 	background: transparent;
-
-		// 	.animations {
-		// 		.animation {
-		// 			background-color: @navy;
-		// 			background-image: url('/assets/images/home-technical-animations-background.png');
-		// 			background-repeat: no-repeat;
-		// 			background-size: auto;
-		// 			text-align: center;
-
-		// 			min-width: 150px;
-		// 			width: 20%;
-
-		// 			&.nearby {background-position: ~"calc(50% + 416px)" 50%;}
-		// 			&.within {background-position: ~"calc(50% + 208px)" 50%;}
-		// 			&.intersects {background-position: 50% 50%;}
-		// 			&.staticGeofence {background-position: ~"calc(50% - 208px)" 50%;}
-		// 			&.roamingGeofence {background-position: ~"calc(50% - 416px)" 50%;}
-
-		// 			img {
-		// 				min-width: 150px;
-		// 				width: 20%;
-		// 			}
-
-		// 			#animation_parent {
-		// 				width: 208px !important;
-		// 				height: 260px !important;
-		// 			}
-
-		// 			canvas {
-		// 				width: auto !important;
-		// 				height: auto !important;
-		// 			}
-
-		// 			h3 { 
-		// 				top: 80%;
-		// 			}
-		// 		}
-		// 	}
-		// }
-
-		// Current
-		// @media @phone {
-		// 	background: transparent;
-
-		// 	.animations {
-		// 		display: block;
-
-		// 		.animation {
-		// 			margin: 20px 20px 0 20px;
-		// 			.roundedCorners;
-		// 			background-color: @navy;
-		// 			background-image: url('/images/home-technical-animations-background.png');
-		// 			background-repeat: no-repeat;
-		// 			background-size: auto;
-		// 			text-align: center;
-
-		// 			&.nearby {background-position: ~"calc(50% + 416px)" 50%;}
-		// 			&.within {background-position: ~"calc(50% + 208px)" 50%;}
-		// 			&.intersects {background-position: 50% 50%;}
-		// 			&.staticGeofence {background-position: ~"calc(50% - 208px)" 50%;}
-		// 			&.roamingGeofence {background-position: ~"calc(50% - 416px)" 50%;}
-
-		// 			img {
-		// 				width: auto;
-		// 			}
-
-		// 			#animation_parent {
-		// 				width: 208px !important;
-		// 				height: 260px !important;
-		// 			}
-
-		// 			canvas {
-		// 				width: auto !important;
-		// 				height: auto !important;
-		// 			}
-
-		// 			h3 { 
-		// 				top: 80%;
-		// 			}
-		// 		}
-		// 	}
-		// }
 	}
 }
 
