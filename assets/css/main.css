@@ -445,6 +445,7 @@ input {
   padding: 0;
   background-color: #fff;
   background-image: url('/assets/images/home-hero-background.png');
+  background-image: url('/assets/images/home-hero-background.png'), linear-gradient(#fff, #dde6ed);
   background-position: 50% bottom;
   background-repeat: no-repeat;
 }

@@ -192,8 +192,9 @@ func Lessc(path string) {
 	output = strings.Replace(output, "/less/", "/css/", -1)
 	combined, err := exec.Command("lessc", input, output).CombinedOutput()
 	if err != nil {
-		panic(string(combined))
+		log.Printf("less: %s", combined)
 	}
+
 }
 
 func Scan(depth int, output, dir string, t *template.Template, commands map[string]core.Command, funcMap map[string]interface{}) error {

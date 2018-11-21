@@ -399,8 +399,12 @@ appearance: none;
 		flex-direction: column;
 		height: @heroHeight;
 		padding: 0;
-		background-color: @white; //@heroBlue;
+		background-color: @white; 
 		background-image: url('/assets/images/home-hero-background.png');
+		background-image: url('/assets/images/home-hero-background.png'), 
+			linear-gradient( @white, @heroBlue);
+			
+
 		background-position: 50% bottom;
 		background-repeat: no-repeat;
 
