@@ -866,20 +866,25 @@ header {
 	}
 
 	&.alert {
-		height: @alertHeight;
+		// height: @alertHeight;
 		background-color: @blue;
 		color: @white;
-
-		.button {
-			height: calc(@alertHeight - 20px);
-			line-height: calc(@alertHeight - 20px);
-			margin-left: 20px;
-			background-color: fade(@black,20%);
-
-			&:hover {
-				background-color: fade(@black,40%);
-			}
+		.inner {
+			padding: 14px 0;
+			line-height: 24px;
+			text-align: center;
+			display: block;
 		}
+		// .button {
+		// 	height: calc(@alertHeight - 20px);
+		// 	line-height: calc(@alertHeight - 20px);
+		// 	margin-left: 20px;
+		// 	background-color: fade(@black,20%);
+
+		// 	&:hover {
+		// 		background-color: fade(@black,40%);
+		// 	}
+		// }
 		a {
 			color: @white;
 		}

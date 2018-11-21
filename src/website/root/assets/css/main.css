@@ -910,18 +910,14 @@ header.primary .inner .nav {
   }
 }
 header.alert {
-  height: 50px;
   background-color: #61879f;
   color: #fff;
 }
-header.alert .button {
-  height: calc(50px - 20px);
-  line-height: calc(50px - 20px);
-  margin-left: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-header.alert .button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+header.alert .inner {
+  padding: 14px 0;
+  line-height: 24px;
+  text-align: center;
+  display: block;
 }
 header.alert a {
   color: #fff;
