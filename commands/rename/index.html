@@ -10,7 +10,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-75165369-1');
     </script>
-    <title>DEL - Tile38</title>
+    <title>RENAME - Tile38</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <link href="/assets/css/main.css" rel="stylesheet">
@@ -128,7 +128,7 @@
             <div class="extra">
                 
                 <h2 class="command-title">
-                    DEL key id
+                    RENAME key newkey
                 </h2>
                 <div class="related-commands">
                     <div>Related commands</div>
@@ -138,7 +138,7 @@
                             <a href="/commands/bounds">BOUNDS</a>
                         </li>
                         
-                        <li  class="sel" >
+                        <li >
                             <a href="/commands/del">DEL</a>
                         </li>
                         
@@ -182,7 +182,7 @@
                             <a href="/commands/persist">PERSIST</a>
                         </li>
                         
-                        <li >
+                        <li  class="sel" >
                             <a href="/commands/rename">RENAME</a>
                         </li>
                         
@@ -205,11 +205,15 @@
                     </ul>
                 </div>
                 
-                <p>Remove a specified object.</p>
+                <p>Renames collection <code>key</code> to <code>newkey</code>. If <code>newkey</code> already exists, it
+will be deleted prior to renaming.</p>
+
+<p>Returns &ldquo;OK&rdquo; for success or &ldquo;ERR&rdquo; when <code>key</code> or <code>newkey</code> are actively being
+used by a geofence or webhook.</p>
 
 <h2>Examples</h2>
 
-<p><code class="block"><keyword>DEL</keyword> fleet truck1</code></p>
+<p><code class="block"><keyword>RENAME</keyword> fleet fleet2</code></p>
                 <div style="clear: both"></div>
             </div>
         </div>

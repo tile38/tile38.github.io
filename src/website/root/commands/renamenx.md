@@ -6,11 +6,11 @@ super:   documentation
 command: renamenx
 -->
 
-Renames `key` to be stored under a new name, it it does not exist yet.
+Renames collection `key` to `newkey`, if it does not exist yet. If 
+`newkey` already exists, this command does nothing.
 
-If `newkey` already exists, this command does nothing.
-
-Returns 1 if `key` was renamed to `newkey`, and 0 if `newkey` already existed.
+Returns 1 if `key` was renamed to `newkey`, 0 if `newkey` already existed, or 
+"ERR" when `key` or `newkey` are actively being used by a geofence or webhook.
 
 ## Examples
 
