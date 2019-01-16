@@ -64,7 +64,7 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 
 Below is a complete list of output formats. These formats are shared by the [NEARBY](/commands/nearby), [WITHIN](/commands/within), [INTERSECTS](/commands/intersects), and [SCAN](/commands/scan) commands.
 
-**COUNT** - Total object count for the search. *`LIMIT` and `CURSOR` options are ignored*
+**COUNT** - Total object count sent in the response. When LIMIT or CURSOR are provided, COUNT returns the number of results that would otherwise be sent as objects. When LIMIT is not specified, COUNT totals up all items starting from provided CURSOR position (or zero if a cursor is omitted). *`LIMIT` and `CURSOR` options are ignored*
 
 **IDS**  - A list of IDs belonging to the key. Will not return the objects.
 
