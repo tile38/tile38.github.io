@@ -84,6 +84,7 @@ The Lua environment inside the Tile38 server also defines these helper functions
 * `tile38.error_reply(error_string)` returns an error reply, as if obtained by the failed `tile38.pcall()`.
 * `tile38.status_reply(status_string)` returns a status reply, as if obtained by the successful `tile38.call()` or `tile38.pcall()` that returns a status reply.
 * `tile38.sha1hex(input_string)` returns a hex representation of a SHA1 digest.
+* `tile38.distance_to(lat_a, lon_a, lat_b, lon_b)` returns a distance between points `a` and `b`, in meters.
 
 ## Atomicity of scripts
 Tile38 provides three different levels of atomicity:
