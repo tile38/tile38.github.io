@@ -15,7 +15,7 @@ docker pull tile38/tile38
 docker run -p 9851:9851 tile38/tile38
 ```
 
-Visit the [Tile38 hub page](https://hub.docker.com/r/tile38/tile38/) for more information.
+Visit the [Tile38 Docker Hub Page](https://hub.docker.com/r/tile38/tile38/) for more information.
 
 ## Homebrew (macOS)
 

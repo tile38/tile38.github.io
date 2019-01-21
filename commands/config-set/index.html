@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="command">
-
 <head>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75165369-1"></script>
@@ -13,208 +12,127 @@
     <title>CONFIG SET - Tile38</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-    <link href="/assets/css/main.css" rel="stylesheet">
-    <script type="text/javascript" src="/assets/scripts/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/scripts/contact.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/css/site.css" type="text/css" />
+    <script src="/js/site.js"></script>
+    
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name="description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices.">
+    <meta name="description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices.">
     <meta name="keywords" content="">
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://tile38.com" />
     <meta property="og:title" content="Tile38" />
-    <meta property="og:description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices." />
-    <meta property="og:image" content="https://tile38.com/assets/images/ogimage3.png" />
-
-    <script>
-        $(document).ready(function () {
-            window.addEventListener("resize", resizeAnimations);
-            function resizeAnimations() {
-                setTimeout(function () { resizeAnimations(); }, 100);
-                
-                var anims = document.getElementsByClassName("animation");
-                var h, w; 
-                for (anim of anims) {
-                    var imgs = anim.getElementsByTagName("img");
-                    if (imgs.length == 0) {
-                        return;
-                    }
-                    h = imgs[0].clientHeight;
-                    w = imgs[0].clientWidth;
-                    break;
-                }
-                
-                var objs = document.getElementsByTagName("object");
-                for (obj of objs) {
-                    obj.height = h;
-                    obj.width = w;
-                }
-            }
-            resizeAnimations();
-        });
-    </script>
+    <meta property="og:description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices." />
+    <meta property="og:image" content="https://tile38.com/img/ogimage3.png" />
 </head>
 
 <body>
-    <div id="sidebar" class="out">
-        <div class="inner">
-            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
-            <div class="nav">
-                <a href="/topics/getting-started">Download</a>
-                <a href="/community">Community</a>
-                <a href="/commands">Commands</a>
-                <a href="/documentation">Documentation</a>
+
+    <header class="top">
+        <div class="left">
+            <a href="/" class="logo"></a>
+        </div>
+        <div class="right">
+            <div class="toggle">
+                <div class="open" onclick="toggleMobileNav()"></div>
+                <div class="close" onclick="toggleMobileNav()"></div>
             </div>
-            <div class="social">
-                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
-                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
-            </div>
-            <div class="nav">
-                <a href="mailto:info@tile38.com">Send Email</a>
-                <a href="/jobs">Careers/Jobs</a>
+            <nav class="desktop">
+                <a href="/commands" class="commands">Commands</a>
+                <a href="/documentation" class="documentation">Documentation</a>
+                <a href="/license" class="license">License</a>
+                <a href="/topics/getting-started" class="download button">Get Tile38</a>
+            </hav>
+        </div>
+    </header>
+    <nav class="mobile">
+        <div class="container">
+            <div class="contents">
+                <div><a href="/commands" class="commands">Commands</a></div>
+                <div><a href="/documentation" class="documentation">Documentation</a></div>
+                <div><a href="/license" class="license">License</a></div>
+                <div><a href="/topics/getting-started" class="download">Get Tile38</a></div>
             </div>
         </div>
-    </div>
-
-    
-
-    
-    
-        <header class="primary">
-            <div class="inner">
-                <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
-                <a class="logo" href="/"></a>
-                <div class="nav">
-                    <a  href="/topics/getting-started">Download</a>
-                    <a  href="/commands">Commands</a>
-                    <a  class="on"  href="/documentation">Documentation</a>
-                    <a  href="/community">Community</a>
-                </div>
-                <div class="social">
-                    <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
-                    <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                </div>
-            </div>
-        </header>
-        
-        
-
-    
-    
-
-
-    
-    <div class="content">
+    </nav>
+    <div class="contents">
         <div class="inner">
-            <div class="extra">
-                
-                <h2 class="command-title">
-                    CONFIG SET parameter [value]
-                </h2>
-                <div class="related-commands">
-                    <div>Related commands</div>
-                    <ul>
-                        
-                        <li >
-                            <a href="/commands/config-get">CONFIG GET</a>
-                        </li>
-                        
-                        <li >
-                            <a href="/commands/config-rewrite">CONFIG REWRITE</a>
-                        </li>
-                        
-                        <li  class="sel" >
-                            <a href="/commands/config-set">CONFIG SET</a>
-                        </li>
-                        
-                        <li >
-                            <a href="/commands/flushdb">FLUSHDB</a>
-                        </li>
-                        
-                        <li >
-                            <a href="/commands/gc">GC</a>
-                        </li>
-                        
-                        <li >
-                            <a href="/commands/readonly">READONLY</a>
-                        </li>
-                        
-                        <li >
-                            <a href="/commands/server">SERVER</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                <p>The CONFIG SET command is used to set special configuration properties.  These properties will not persist until the <a href="/commands/config-rewrite">CONFIG REWRITE</a> is called.</p>
+            
+            <h3 class="command-title">
+                CONFIG SET parameter [value]
+            </h3>
+            <div class="related-commands">
+                <div>Related commands</div>
+                <ul>
+                    
+                    <li >
+                        <a href="/commands/config-get">CONFIG GET</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/config-rewrite">CONFIG REWRITE</a>
+                    </li>
+                    
+                    <li  class="sel" >
+                        <a href="/commands/config-set">CONFIG SET</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/flushdb">FLUSHDB</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/gc">GC</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/readonly">READONLY</a>
+                    </li>
+                    
+                    <li >
+                        <a href="/commands/server">SERVER</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <p>The CONFIG SET command is used to set special configuration properties.  These properties will not persist until the <a href="/commands/config-rewrite">CONFIG REWRITE</a> is called.</p>
 
 <h2>Examples</h2>
 
 <p><code class="block"><keyword>CONFIG</keyword> <keyword>SET</keyword> requirepass mypass <keyword></keyword> <keyword></keyword> <comment># set a password for the AUTH command.</comment></code></p>
-                <div style="clear: both"></div>
-            </div>
+            <div style="clear: both"></div>
         </div>
     </div>
-    <footer>
-        <div class="inner tiles">
-            <div class="tile menu">
-                <a class="logo white desktop" href="/"></a>
-                <a class="logo-38 white mobile" href="/"></a>
-                <div class="nav">
-                    <a href="/topics/getting-started">Download</a>
-                    <a href="/community">Community</a>
-                    <a href="/documentation" class="mobile">Docs</a>
-                    <a href="/documentation" class="desktop">Documentation</a>
-                </div>
-            </div>
-            <div class="tile contact">
-                <h2>Contact</h2>
-                <div class="nav">
-                    <a href="mailto:info@tile38.com">Send Email</a>
-                    <a href="/jobs">Careers/Jobs</a>
-                    <a href="/license">License</a>
-                </div>
-                <div class="social">
-                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
-                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
-                </div>
-            </div>
-            <div class="tile">
-                <h2>Question?</h2>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="input">
-                            <input id="name" type="text" name="name" value="" placeholder="Name">
-                        </div>
-                        <div class="input">
-                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
-                        </div>
-                        <div class="input">
-                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
-                        </div>
-                        <div class="results" id="results"></div>
-                        <div class="results-err" id="results-err"></div>
-                        <input type="submit" value="Send" id="contact-send">
-                    </form>
-                </div>
-            </div>
-        </div>
+    
 
-        <div class="copyright">
-            © 2018 Tile38 - All Rights Reserved<br>
-            Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+
+    <footer class="bottom">
+        <div class="left">
+            © 2018 Tile38
+        </div>
+        <div class="right">
+            <a href="https://github.com/tidwall/tile38" target="_blank" class="github">
+                <img src="/img/github.svg" height="22" alt="Github">
+            </a>
+            <a href="https://twitter.com/tile38db" target="_blank" class="twitter">
+                <img src="/img/twitter.svg" height="18" alt="Twitter">
+            </a>
+            <a href="https://tile38.slack.com/join/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg" target="_blank" class="slack">
+                <img src="/img/slack.svg" height="19" alt="Slack">
+            </a>
+            <a href="mailto:info@tile38.com" target="_blank" class="email">
+                <img src="/img/email.svg" height="14" alt="Email">
+            </a>
         </div>
     </footer>
 
 </body>
-
 </html>

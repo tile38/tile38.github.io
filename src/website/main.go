@@ -168,8 +168,13 @@ func Proc(output string, commands map[string]core.Command, funcMap map[string]in
 		return err
 	}
 	defer os.RemoveAll(tmp)
-	if err := CopyDir("root/assets/", path.Join(tmp, "assets")); err != nil {
-		return err
+	// if err := CopyDir("root/assets/", path.Join(tmp, "assets")); err != nil {
+	// 	return err
+	// }
+	for _, dir := range []string{"img", "css", "fonts", "img", "js"} {
+		if err := CopyDir("root/"+dir+"/", path.Join(tmp, dir)); err != nil {
+			return err
+		}
 	}
 	if err := Scan(0, tmp, "root/", t, commands, funcMap); err != nil {
 		return err

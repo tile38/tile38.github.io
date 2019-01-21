@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="home">
-
 <head>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75165369-1"></script>
@@ -13,235 +12,284 @@
     <title>Tile38 - Geospatial database and real-time geofence notifications</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-    <link href="/assets/css/main.css" rel="stylesheet">
-    <script type="text/javascript" src="/assets/scripts/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/scripts/contact.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/css/site.css" type="text/css" />
+    <script src="/js/site.js"></script>
+    
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name="description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices.">
+    <meta name="description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices.">
     <meta name="keywords" content="">
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://tile38.com" />
     <meta property="og:title" content="Tile38" />
-    <meta property="og:description" content="Geospatial database and real-time geofence notifications for managing fleets, mobile apps, and IoT devices." />
-    <meta property="og:image" content="https://tile38.com/assets/images/ogimage3.png" />
-
-    <script>
-        $(document).ready(function () {
-            window.addEventListener("resize", resizeAnimations);
-            function resizeAnimations() {
-                setTimeout(function () { resizeAnimations(); }, 100);
-                
-                var anims = document.getElementsByClassName("animation");
-                var h, w; 
-                for (anim of anims) {
-                    var imgs = anim.getElementsByTagName("img");
-                    if (imgs.length == 0) {
-                        return;
-                    }
-                    h = imgs[0].clientHeight;
-                    w = imgs[0].clientWidth;
-                    break;
-                }
-                
-                var objs = document.getElementsByTagName("object");
-                for (obj of objs) {
-                    obj.height = h;
-                    obj.width = w;
-                }
-            }
-            resizeAnimations();
-        });
-    </script>
+    <meta property="og:description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices." />
+    <meta property="og:image" content="https://tile38.com/img/ogimage3.png" />
 </head>
 
 <body>
-    <div id="sidebar" class="out">
-        <div class="inner">
-            <a class="icon close" onclick="toggleVisibility('sidebar');"></a>
-            <div class="nav">
-                <a href="/topics/getting-started">Download</a>
-                <a href="/community">Community</a>
-                <a href="/commands">Commands</a>
-                <a href="/documentation">Documentation</a>
+
+    <header class="top">
+        <div class="left">
+            <a href="/" class="logo"></a>
+        </div>
+        <div class="right">
+            <div class="toggle">
+                <div class="open" onclick="toggleMobileNav()"></div>
+                <div class="close" onclick="toggleMobileNav()"></div>
             </div>
-            <div class="social">
-                <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
-                <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
-            </div>
-            <div class="nav">
-                <a href="mailto:info@tile38.com">Send Email</a>
-                <a href="/jobs">Careers/Jobs</a>
+            <nav class="desktop">
+                <a href="/commands" class="commands">Commands</a>
+                <a href="/documentation" class="documentation">Documentation</a>
+                <a href="/license" class="license">License</a>
+                <a href="/topics/getting-started" class="download button">Get Tile38</a>
+            </hav>
+        </div>
+    </header>
+    <nav class="mobile">
+        <div class="container">
+            <div class="contents">
+                <div><a href="/commands" class="commands">Commands</a></div>
+                <div><a href="/documentation" class="documentation">Documentation</a></div>
+                <div><a href="/license" class="license">License</a></div>
+                <div><a href="/topics/getting-started" class="download">Get Tile38</a></div>
             </div>
         </div>
-    </div>
-
-    
-
-    
-    
-    <div class="content hero">
-        
-        <header class="primary">
-            <div class="inner">
-                <a class="icon menu" onclick="toggleVisibility('sidebar');"></a>
-                <a class="logo" href="/"></a>
-                <div class="nav">
-                    <a  href="/topics/getting-started">Download</a>
-                    <a  href="/commands">Commands</a>
-                    <a  href="/documentation">Documentation</a>
-                    <a  href="/community">Community</a>
-                </div>
-                <div class="social">
-                    <a class="icon git" href="https://github.com/tidwall/tile38">Github</a>
-                    <a class="icon slack" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                </div>
-            </div>
-        </header>
-        
-        
+    </nav>
+    <div class="contents">
         <div class="inner">
-            <div class="tagline">
-                <h1>Fast Spatial Index &<br /> Real-time Geofence Notifications</h1>
-                <p>Tile38 is an open source database that's designed for monitoring real-time geospatial data.
-                    It's capable of solving a growing number of use cases such as fleet management,
-                    ride sharing, proximity marketing, automation, smart cities, and much more.</p>
-                <a class="button large" href="/topics/getting-started">Get Started</a>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    
-    <div class="content technicalAnimations">
-        <div class="inner">
-            <div class="animations">
-                <a href="/commands/nearby" class="animation nearby">
-                    <img src="/assets/images/home-technical-animation-nearby.png">
-                    <h3>Nearby</h3>
-                </a>
-                <a href="/commands/within" class="animation within">
-                    <img src="/assets/images/home-technical-animation-within.png">
-                    <h3>Within</h3>
-                </a>
-                <a href="/commands/intersects" class="animation intersects">
-                    <img src="/assets/images/home-technical-animation-intersects.png">
-                    <h3>Intersects</h3>
-                </a>
-                <a href="/topics/geofencing" class="animation staticGeofence">
-                    <object height="100" width="100" data="/assets/animations/geofences/static/index.html"></object>
-                    <h3>Static Geofence</h3>
-                </a>
-                <a href="/topics/roaming-geofences" class="animation roamingGeofence">
-                    <object height="100" width="100" data="/assets/animations/geofences/roaming/index.html"></object>
-                    <h3>Roaming Geofence</h3>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-
-
-    
+            
+            <section class="hero">
     <div class="content">
-        <div class="inner">
-            <div class="extra">
-                
-                <div class="features">
-<h1>Features</h1>
-<ul>
-<li>Very fast geospatial operations</li>
-<li>Search methods such as <a href="/commands/nearby">Nearby</a>, <a href="/commands/within">Within</a>, and <a href="/commands/intersects">Intersects</a></li>
-<li>Realtime <a href="/topics/geofencing">geofencing</a> through persistent sockets or <a href="/commands/sethook">webhooks</a></li>
-<li>Object types of <a href="/topics/object-types#latlon-point">lat/lon</a>, <a href="/topics/object-types#bounding-box">bbox</a>, <a href="/topics/object-types#geohash">Geohash</a>, <a href="/topics/object-types#geojson">GeoJSON</a>, <a href="/topics/object-types#quadkey">QuadKey</a>, and <a href="/topics/object-types#xyz-tile">XYZ tile</a></li>
-<li>Support for lots of <a href="/clients">Clients Libraries</a> written in many different languages</li>
-<li>Variety of client protocols, including <a href="/topics/network-protocols#http">http</a> (curl), <a href="/topics/network-protocols#websockets">websockets</a>, <a href="/topics/network-protocols#telnet">telnet</a>, and the <a href="http://redis.io/topics/protocol">Redis RESP</a></li>
-<li>Server responses are <a href="http://redis.io/topics/protocol">RESP</a> or <a href="https://www.json.org">JSON</a></li>
-<li>Full <a href="/topics/command-line-interface">command line interface</a></li>
-<li>Leader / follower <a href="/topics/replication">replication</a></li>
-<li>In-memory database that persists on disk</li>
-</ul>
-</div>
-
-<div class="supports">
-<h1>Supports</h1>
-<div class="slogos">
-    <img src="/assets/images/wall-logos.png">
-</div>
-</div>
-
-
-<div class="learn-more">
-<h1>Get Started Quickly</h1>
-<p>It's open and free to use.</p>
-<p><a class="button large" href="/topics/getting-started">Download Now</a></p>
-
-</div>
-                <div style="clear: both"></div>
+        <div class="textarea">
+            <div class="inner">
+                <h1 class="w400">
+                    <span class="w900">Ultra Fast</span>
+                    Geospatial Database &amp;
+                    <br class="break">
+                    Geofencing Server
+                </h1>
+                <p>
+                    Ensure your location-based applications are running
+                    at their fullest potential.
+                </p>
+                <p>
+                    <br>
+                    <a href="/topics/getting-started" class="button solid">Get Tile38</a>
+                </p>
+            </div>
+        </div>
+        <div class="video-container">
+            <div class="group">
+                <div class="gradient"></div>
+                <video playsinline muted autoplay
+                _hd="400px" _poster="/img/hero-desktop.jpg" _src="/img/hero-desktop.mp4"
+                _mobile="850px" _mobilePoster="/img/hero-mobile.jpg" _mobileSrc="/img/hero-mobile.mp4"
+                _loopDelay="3000ms"
+                ></video>
+                <script>videoAutoPlay();</script>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="inner tiles">
-            <div class="tile menu">
-                <a class="logo white desktop" href="/"></a>
-                <a class="logo-38 white mobile" href="/"></a>
-                <div class="nav">
-                    <a href="/topics/getting-started">Download</a>
-                    <a href="/community">Community</a>
-                    <a href="/documentation" class="mobile">Docs</a>
-                    <a href="/documentation" class="desktop">Documentation</a>
-                </div>
-            </div>
-            <div class="tile contact">
-                <h2>Contact</h2>
-                <div class="nav">
-                    <a href="mailto:info@tile38.com">Send Email</a>
-                    <a href="/jobs">Careers/Jobs</a>
-                    <a href="/license">License</a>
-                </div>
-                <div class="social">
-                    <a class="icon git white" href="https://github.com/tidwall/tile38">Github</a>
-                    <a class="icon slack white" href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">Slack</a>
-                    <a class="icon twitter white" href="https://twitter.com/tile38db">Twitter</a>
-                </div>
-            </div>
-            <div class="tile">
-                <h2>Question?</h2>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="input">
-                            <input id="name" type="text" name="name" value="" placeholder="Name">
-                        </div>
-                        <div class="input">
-                            <input id="email" type="text" name="email" value="" placeholder="Email Address">
-                        </div>
-                        <div class="input">
-                            <textarea id="message" name="message" placeholder="I'd like to know more about..."></textarea>
-                        </div>
-                        <div class="results" id="results"></div>
-                        <div class="results-err" id="results-err"></div>
-                        <input type="submit" value="Send" id="contact-send">
-                    </form>
-                </div>
+</section>
+
+<section class="geofence">
+    <div class="content">
+        <div class="text-container">
+            <div class="pad-left"></div>
+            <div class="text">
+                <h1 class="w400">
+                    <span class="w900">Real-time</span> Geofencing
+                </h1>
+                <p>
+                    Whether you're monitoring a few data points
+                    or millions, Tile38 delivers geofence notifications 
+                    in a snap. Enhance your application and simplify your 
+                    architechture with Tile38's geofencing capabilities.
+                </p>
             </div>
         </div>
+        <div class="video-container">
+            <video playsinline muted autoplay
+            _hd="320px" _poster="/img/geofences.jpg" _src="/img/geofences.mp4"
+            _loopDelay="0ms"
+            ></video>
+            <script>videoAutoPlay()</script>
+            <div class="gradient"></div>
+            <div class="clear"></div>
+        </div>
+    </div>    
+</section>
 
-        <div class="copyright">
-            © 2018 Tile38 - All Rights Reserved<br>
-            Tile38 is a trademark of Tile38 LLC, registered in the U.S. and in other countries.
+<section class="basic spatial-index">
+    <h1 class="w600">
+        Fast Spatial Index
+    </h1>
+    <p>
+        Tile38 features a high-performance spatial indexing engine. 
+        It supports a variety of object types including lat/lon points,
+        bounding boxes, xyz tiles, geohashes, and geojson.
+    </p>
+    <p>
+        Includes operations like Intersects, Within, Nearby, and 
+        Static &amp; Roaming Geofencing.
+    </p>
+    <div class="cards">
+        <div class="row">
+            <div><img src="/img/search-intersects.png"></div>
+            <div><img src="/img/search-within.png"></div>
+            <div><img src="/img/search-nearby.png"></div>
+            <div><img src="/img/geofence.gif"></div>
+            <div><img src="/img/roaming.gif"></div>
+        </div>
+    </div>
+</section>
+
+<section class="basic geo-events">
+    <h1 class="w600">
+        Automated Events
+    </h1>
+    <p>
+        Tile38 delivers geospatial event notifications for mission-critical applications
+        by pairing with external webhooks and event queues. 
+    </p>
+    <p>
+        There's built-in support for the most popular tools, including:
+    </p>
+    <div class="cards">
+        <div class="row">
+            <div><img src="/img/integrate-nats.png" class="nats" alt="NATS"></div>
+            <div><img src="/img/integrate-kafka.png" class="kafka" alt="Kafka"></div>
+            <div><img src="/img/integrate-amazonsqs.svg" class="amazonsqs" alt="Amazon SQS"></div>    
+            <div><img src="/img/integrate-grpc.png" class="grpc" alt="GRPC"></div>
+        </div>
+        <div class="row">
+            <div><img src="/img/integrate-redis.png" class="redis" alt="Redis"></div>
+            <div><img src="/img/integrate-rabbitmq.png" class="rabbitmq" alt="RabbitMQ"></div>
+            <div><img src="/img/integrate-mqtt.png" class="mqtt" alt="MQTT"></div>
+            <div><img src="/img/integrate-http2.png" class="http2" alt="HTTP/2"></div>
+        </div>
+    </div>
+</section>
+
+<section class="basic community">
+    <h1 class="w600">
+        Open Source <div class="with-love">
+    </h1>
+    <p>
+        Tile38 is 100% Free Open Source Software.
+    </p>
+    <p>
+        We have an active and growing community where you can ask questions 
+        and discuss ideas. 
+        Connect with us on Github, Twitter, or Slack.
+    </p>
+    
+    <div class="cards">
+        <div class="row">
+            <div><a href="https://github.com/tidwall/tile38"><img src="/img/community-github.svg" class="github" alt="Github"></a></div>
+            <div><a href="https://twitter.com/tile38db"><img src="/img/community-twitter.svg" class="twitter" alt="Twitter"></a></div>
+            <div><a href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg"><img src="/img/community-slack.svg" class="slack" alt="Slack"></a></div>
+        </div>
+    </div>
+</section>
+
+<section class="basic users">
+    <h1 class="w600">
+        Start Using Today
+    </h1>
+    <p>
+        Join the many who have solved challenging 
+        problems with the help of Tile38.
+    </p>
+    <div class="cards">
+        <div class="row">
+            <div class="stae"><img src="/img/user-stae.svg" alt="Stae"></div>
+            <div class="housecanary"><img src="/img/user-housecanary.svg" alt="HouseCanary"></div>
+            <div class="flixbus"><img src="/img/user-flixbus.png" alt="Flixbus"></div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="row">
+            <div class="shell"><img src="/img/user-shell.png" alt="Shell"></div>
+            <div class="accuweather"><img src="/img/user-accuweather.svg" alt="Accuweather"></div>
+            <div class="national-guard"><img src="/img/user-national-guard.png" alt="National Guard"></div>
+            <div class="uber"><img src="/img/user-uber.svg" alt="Uber"></div>
+        </div>
+    </div>
+
+    <div class="quotes">
+        <div class="quote">
+            <p>
+                "Thanks to a new Tile38 integration, our comp search
+                is both faster than it was and better at surfacing the
+                closest, most relevant comps to your subject property."
+            </p>
+            <p class="w700">
+                -  HouseCanary
+            </p>
+        </div>
+
+        <div class="quote">                
+            <p>
+                "We use Tile38 to do geography based data partitioning for
+                cities - we were previously doing this in PostGIS which was
+                taking 8 seconds. Tile38 brought this down to ~100ms which
+                allows us to ingest data faster."
+            </p>
+            <p class="w700">
+                - Stae
+            </p>
+        </div>
+
+        <div class="quote">
+            <p>
+                "Tile38 is running all the geofencing and geospatial queries
+                for the hurricane coordination efforts for the
+                National Guard in North Carolina right now. Thanks again
+                for the product!"
+            </p>
+            <p class="w700">
+                - National Guard
+            </p>
+        </div>
+
+    <p>
+          <a href="/topics/getting-started" class="button solid">Get Tile38</a>
+    </p>
+    </div>
+</section>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    
+
+
+    <footer class="bottom">
+        <div class="left">
+            © 2018 Tile38
+        </div>
+        <div class="right">
+            <a href="https://github.com/tidwall/tile38" target="_blank" class="github">
+                <img src="/img/github.svg" height="22" alt="Github">
+            </a>
+            <a href="https://twitter.com/tile38db" target="_blank" class="twitter">
+                <img src="/img/twitter.svg" height="18" alt="Twitter">
+            </a>
+            <a href="https://tile38.slack.com/join/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg" target="_blank" class="slack">
+                <img src="/img/slack.svg" height="19" alt="Slack">
+            </a>
+            <a href="mailto:info@tile38.com" target="_blank" class="email">
+                <img src="/img/email.svg" height="14" alt="Email">
+            </a>
         </div>
     </footer>
 
 </body>
-
 </html>

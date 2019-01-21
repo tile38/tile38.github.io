@@ -7,7 +7,7 @@ super:   documentation
 
 # Geofencing
 
-<img src="/assets/images/geofence.gif" width="200" height="200" border="0" alt="Geofence animation" align="right" style="margin-left: 10px" class="side-img">
+<img src="/img/geofence.gif" width="200" height="200" border="0" alt="Geofence animation" align="right" style="margin-left: 10px" class="side-img">
 A [geofence](https://en.wikipedia.org/wiki/Geo-fence) is a virtual boundary that can detect when an object enters or exits the area. This boundary can be a radius or any [search area format](/commands/intersects#area-formats), such as a [bounding box](/topics/object-types#bounding-box), [GeoJSON](/topics/object-types#geojson) object, etc. Tile38 can turn any standard search into a geofence monitor by adding the FENCE keyword to the search. 
 <br clear="all">
 

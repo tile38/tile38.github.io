@@ -7,7 +7,7 @@ super:   documentation
 
 # Roaming Geofences
 
-<img src="/assets/images/roaming.gif" width="225" height="225" border="0" alt="Roaming Geofence animation" align="right" style="margin-left: 10px" class="side-img">
+<img src="/img/roaming.gif" width="225" height="225" border="0" alt="Roaming Geofence animation" align="right" style="margin-left: 10px" class="side-img">
 
 Tile38 1.2 introduces a powerful new feature which allows for dynamic [geofences](/topics/geofencing). This enables realtime monitoring for when one or more moving objects are nearby each other.
 
