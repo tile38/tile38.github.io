@@ -86,10 +86,10 @@ localhost:9851&gt; <keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword
 
 <p>Subscribe on the geofence pubsub channel you just created</p>
 
-<p><code class="block">localhost:9851&gt; <keyword>PSUBSCRIBE</keyword> warehouse
-<geojson>{&#34;ok&#34;:true,&#34;command&#34;:&#34;psubscribe&#34;,&#34;channel&#34;:&#34;warehouse&#34;,&#34;num&#34;:1,&#34;elapsed&#34;:&#34;7.361µs&#34;}</comment></code></p>
+<p><code class="block">localhost:9851&gt; <keyword>SUBSCRIBE</keyword> warehouse
+<geojson>{&#34;ok&#34;:true,&#34;command&#34;:&#34;subscribe&#34;,&#34;channel&#34;:&#34;warehouse&#34;,&#34;num&#34;:1,&#34;elapsed&#34;:&#34;7.361µs&#34;}</comment></code></p>
 
-<p>The connection will be kept open using the PSUBSCRIBE command. If any object enters or exists the 6km radius around <code>33.462,-112.268</code> the server will respond in realtime with geofence notifications.</p>
+<p>The connection will be kept open using the SUBSCRIBE command. If any object enters or exists the 6km radius around <code>33.462,-112.268</code> the server will respond in realtime with geofence notifications.</p>
 
 <h2>Terminal 2</h2>
 
@@ -134,13 +134,13 @@ The <strong><code>detect</code></strong> may be one of the following values.</p>
 <p>By default <strong>all</strong> detect types and commands are returned.
 If you would like to only have a select few then use the <code>DETECT</code> option, for example:</p>
 
-<p><code class="block"><keyword>PSUBSCRIBE</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>DETECT</keyword> inside,outside <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
+<p><code class="block"><keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>DETECT</keyword> inside,outside <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
 
 <p>This command will only tell the fence that you only want <strong>inside</strong> and <strong>outside</strong> detection.</p>
 
 <p>It&rsquo;s also possible to mask which commands are returned by using the <code>COMMANDS</code> option, for example:</p>
 
-<p><code class="block"><keyword>PSUBSCRIBE</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>DETECT</keyword> enter <keyword>COMMANDS</keyword> set <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
+<p><code class="block"><keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>DETECT</keyword> enter <keyword>COMMANDS</keyword> set <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number></code></p>
 
 <p>This specifies that you only want the <strong>enter</strong> detection for the <strong>set</strong> command.</p>
             <div style="clear: both"></div>

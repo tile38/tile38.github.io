@@ -30,11 +30,11 @@ localhost:9851> SETCHAN warehouse NEARBY fleet FENCE POINT 33.462 -112.268 6000
 Subscribe on the geofence pubsub channel you just created
 
 ```tile38-cli
-localhost:9851> PSUBSCRIBE warehouse
-{"ok":true,"command":"psubscribe","channel":"warehouse","num":1,"elapsed":"7.361µs"}
+localhost:9851> SUBSCRIBE warehouse
+{"ok":true,"command":"subscribe","channel":"warehouse","num":1,"elapsed":"7.361µs"}
 ```
 
-The connection will be kept open using the PSUBSCRIBE command. If any object enters or exists the 6km radius around `33.462,-112.268` the server will respond in realtime with geofence notifications.
+The connection will be kept open using the SUBSCRIBE command. If any object enters or exists the 6km radius around `33.462,-112.268` the server will respond in realtime with geofence notifications.
 
 ## Terminal 2
 
@@ -80,7 +80,7 @@ By default **all** detect types and commands are returned.
 If you would like to only have a select few then use the `DETECT` option, for example:
 
 ```tile38
-PSUBSCRIBE warehouse NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
+SETCHAN warehouse NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
 ```
 
 This command will only tell the fence that you only want **inside** and **outside** detection.
@@ -88,7 +88,7 @@ This command will only tell the fence that you only want **inside** and **outsid
 It's also possible to mask which commands are returned by using the	`COMMANDS` option, for example:
 
 ```tile38
-PSUBSCRIBE warehouse NEARBY fleet FENCE DETECT enter COMMANDS set POINT 33.462 -112.268 6000
+SETCHAN warehouse NEARBY fleet FENCE DETECT enter COMMANDS set POINT 33.462 -112.268 6000
 ```
 
 This specifies that you only want the **enter** detection for the **set** command.
