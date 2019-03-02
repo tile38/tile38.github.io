@@ -22,9 +22,10 @@ The `stats` array will contain information about the server.
 - `avg_item_size`: An estimated size in bytes of each object.
 - `caught_up`: When in follow mode, this indicates if the server has the same data as the leader.
 - `following`: When in follow mode, this is the address of the leader.
-- `heap_size`: The actual amount of memory in bytes that the server is using.
+- `heap_size`: The bytes size of the heap. Usually equivalent to `mem_alloc`.
 - `id`: A unique identifier for the server. This is auto-generated once when the server first starts up.
 - `in_memory_size`: The estimated memory size in bytes that the key is using.
+- `mem_alloc`: The actual amount of memory in bytes that the server is using.
 - `num_collections`: The key count.
 - `num_objects`: The object count.
 - `num_points`: The total number of latitude, longitude coordinates in the key. This will always be equal to or greater than `num_objects`.
