@@ -140,15 +140,21 @@ The following optional parameters are available for this hook, the listed value 
 
 ### SQS
 
-The `sqs://` url scheme provides support for sending messages to a [SQS](https://aws.amazon.com/sqs/) queue
+Sending to [SQS](https://aws.amazon.com/sqs/) requires the URL endpoint that AWS provides.
 
 For example:
 
 ```tile38
-SETHOOK warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&credprofile=value ...
+SETHOOK warehouse https://sqs.us-east-1.amazonaws.com/349840735605/myqueue ...
 ```
 
-All webhook messages will be sent to the SQS queue named `myqueuename` in the region `eu-central-1` with the queue id `myqueueid`
+All webhook messages will be sent to the SQS queue named `myqueue` in the region `us-east-1` with the queue id `349840735605`.
+
+SQS credentials will be automatically chosen from one of the following:
+
+- ~/.aws/credentials
+- Environment variables
+- EC2 Role
 
 #### Options
 
@@ -156,7 +162,9 @@ The following optional parameters are available for this hook, the listed value 
 
 * `credpath` - empty string  
 * `credprofile` - empty string  
+* `createqueue` - false
 
+The `createqueue` param will attempt to create the queue if does not exist.
 
 ### NATS
 

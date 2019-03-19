@@ -217,13 +217,21 @@
 
 <h3>SQS</h3>
 
-<p>The <code>sqs://</code> url scheme provides support for sending messages to a <a href="https://aws.amazon.com/sqs/">SQS</a> queue</p>
+<p>Sending to <a href="https://aws.amazon.com/sqs/">SQS</a> requires the URL endpoint that AWS provides.</p>
 
 <p>For example:</p>
 
-<p><code class="block"><keyword>SETHOOK</keyword> warehouse sqs://eu-central-1:myqueueid/myqueuename?credpath=value&amp;credprofile=value &hellip;</code></p>
+<p><code class="block"><keyword>SETHOOK</keyword> warehouse <a href="https://sqs.us-east-1.amazonaws.com/349840735605/myqueue">https://sqs.us-east-1.amazonaws.com/349840735605/myqueue</a> &hellip;</code></p>
 
-<p>All webhook messages will be sent to the SQS queue named <code>myqueuename</code> in the region <code>eu-central-1</code> with the queue id <code>myqueueid</code></p>
+<p>All webhook messages will be sent to the SQS queue named <code>myqueue</code> in the region <code>us-east-1</code> with the queue id <code>349840735605</code>.</p>
+
+<p>SQS credentials will be automatically chosen from one of the following:</p>
+
+<ul>
+<li>~/.aws/credentials</li>
+<li>Environment variables</li>
+<li>EC2 Role</li>
+</ul>
 
 <h4>Options</h4>
 
@@ -232,7 +240,10 @@
 <ul>
 <li><code>credpath</code> - empty string<br /></li>
 <li><code>credprofile</code> - empty string<br /></li>
+<li><code>createqueue</code> - false</li>
 </ul>
+
+<p>The <code>createqueue</code> param will attempt to create the queue if does not exist.</p>
 
 <h3>NATS</h3>
 
