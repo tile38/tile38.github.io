@@ -22,7 +22,7 @@ Connect to the Tile38 server and create the geofence using the
 In this example we use a pubsub channel.
 
 ```tile38-cli
-$ tile38-cli -h localhost -p 9851
+$ tile38-cli
 localhost:9851> SETCHAN warehouse NEARBY fleet FENCE POINT 33.462 -112.268 6000
 {"ok":true,"elapsed":"21.712µs"}
 ```
@@ -41,7 +41,7 @@ The connection will be kept open using the SUBSCRIBE command. If any object ente
 Connect to the Tile38 server and create a point in the `fleet` collection that will trigger a geofence notification
 
 ```tile38-cli
-$ tile38-cli -h localhost -p 9851
+$ tile38-cli
 localhost:9851> SET fleet bus POINT 33.460 -112.260
 {"ok":true,"elapsed":"12.988µs"}
 ```

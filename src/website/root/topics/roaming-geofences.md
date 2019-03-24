@@ -34,17 +34,17 @@ To test, open two terminals:
 Connect to the Tile38 server and enter the fence command. 
 
 ```tile38-cli
-$ telnet localhost 9851
-NEARBY people FENCE ROAM people * 5000
+$ tile38-cli
+localhost:9851> NEARBY people FENCE ROAM people * 5000
 +OK
 ```
 ## Terminal 2
 Add two points to the `people` collection. The second SET command will trigger a fence event that will appear in the other terminal.
 
 ```tile38-cli
-$ telnet localhost 9851
-SET people bob POINT 33.01 -115.01
-SET people alice POINT 33.02 -115.02
+$ tile38-cli
+localhost:9851> SET people bob POINT 33.01 -115.01
+localhost:9851> SET people alice POINT 33.02 -115.02
 ```
 
 The event will appear in terminal 1 and look like:
@@ -82,3 +82,17 @@ And if you are using [webhooks](/commands/sethook) you can assign this fence lik
 ```tile38-cli
 SETHOOK myhook http://10.0.1.5/hook NEARBY people FENCE ROAM people * 5000
 ```
+
+### NODWELL Keyword
+
+One side effect is that you may get a lot of nearby notifications when two
+objects continue to be nearby each other. If this is a problem then use the 
+`NODWELL` keyword.
+
+```tile38-cli
+tile38-cli> NEARBY people FENCE NODWELL ROAM people * 5000
+```
+
+This will ensure that there is repeating nearby or faraway notifications for two
+connecting objects.
+
