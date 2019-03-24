@@ -9,7 +9,7 @@ super:  documentation
 
 Below are some topics that will help you on your journey.
 
-### Topics
+### General
 
 - [Getting Started](/topics/getting-started) - Downloading and installation instructions.
 - [Commands](/commands) - Complete with documentation and examples for each command.
