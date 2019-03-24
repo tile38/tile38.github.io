@@ -93,17 +93,17 @@
 
 <p>Connect to the Tile38 server and enter the fence command.</p>
 
-<p><code class="block">$ telnet localhost <number>9851</number>
-<keyword>NEARBY</keyword> people <keyword>FENCE</keyword> <keyword>ROAM</keyword> people * <number>5000</number>
+<p><code class="block">$ tile38-cli
+localhost:9851&gt; <keyword>NEARBY</keyword> people <keyword>FENCE</keyword> <keyword>ROAM</keyword> people * <number>5000</number>
 +OK</code></p>
 
 <h2>Terminal 2</h2>
 
 <p>Add two points to the <code>people</code> collection. The second SET command will trigger a fence event that will appear in the other terminal.</p>
 
-<p><code class="block">$ telnet localhost <number>9851</number>
-<keyword>SET</keyword> people bob <keyword>POINT</keyword> <number>33.01</number> <number>-115.01</number>
-<keyword>SET</keyword> people alice <keyword>POINT</keyword> <number>33.02</number> <number>-115.02</number></code></p>
+<p><code class="block">$ tile38-cli
+localhost:9851&gt; <keyword>SET</keyword> people bob <keyword>POINT</keyword> <number>33.01</number> <number>-115.01</number>
+localhost:9851&gt; <keyword>SET</keyword> people alice <keyword>POINT</keyword> <number>33.02</number> <number>-115.02</number></code></p>
 
 <p>The event will appear in terminal 1 and look like:</p>
 
@@ -134,6 +134,17 @@
 <p>And if you are using <a href="/commands/sethook">webhooks</a> you can assign this fence like such:</p>
 
 <p><code class="block"><keyword>SETHOOK</keyword> myhook <a href="http://10.0.1.5/hook">http://10.0.1.5/hook</a> <keyword>NEARBY</keyword> people <keyword>FENCE</keyword> <keyword>ROAM</keyword> people * <number>5000</number></code></p>
+
+<h3>NODWELL Keyword</h3>
+
+<p>One side effect is that you may get a lot of nearby notifications when two
+objects continue to be nearby each other. If this is a problem then use the
+<code>NODWELL</code> keyword.</p>
+
+<p><code class="block">tile38-cli&gt; <keyword>NEARBY</keyword> people <keyword>FENCE</keyword> <keyword>NODWELL</keyword> <keyword>ROAM</keyword> people * <number>5000</number></code></p>
+
+<p>This will ensure that there is repeating nearby or faraway notifications for two
+connecting objects.</p>
             <div style="clear: both"></div>
         </div>
     </div>

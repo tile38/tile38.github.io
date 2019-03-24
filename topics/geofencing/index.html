@@ -80,7 +80,7 @@ A <a href="https://en.wikipedia.org/wiki/Geo-fence">geofence</a> is a virtual bo
 
 <p>In this example we use a pubsub channel.</p>
 
-<p><code class="block">$ tile38-cli -h localhost -p <number>9851</number>
+<p><code class="block">$ tile38-cli
 localhost:9851&gt; <keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword> fleet <keyword>FENCE</keyword> <keyword>POINT</keyword> <number>33.462</number> <number>-112.268</number> <number>6000</number>
 <geojson>{&#34;ok&#34;:true,&#34;elapsed&#34;:&#34;21.712µs&#34;}</comment></code></p>
 
@@ -95,7 +95,7 @@ localhost:9851&gt; <keyword>SETCHAN</keyword> warehouse <keyword>NEARBY</keyword
 
 <p>Connect to the Tile38 server and create a point in the <code>fleet</code> collection that will trigger a geofence notification</p>
 
-<p><code class="block">$ tile38-cli -h localhost -p <number>9851</number>
+<p><code class="block">$ tile38-cli
 localhost:9851&gt; <keyword>SET</keyword> fleet bus <keyword>POINT</keyword> <number>33.460</number> <number>-112.260</number>
 <geojson>{&#34;ok&#34;:true,&#34;elapsed&#34;:&#34;12.988µs&#34;}</comment></code></p>
 
