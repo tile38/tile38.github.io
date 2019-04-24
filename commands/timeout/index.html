@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" class="command">
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75165369-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-75165369-1');
+    </script>
+    <title>TIMEOUT - Tile38</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/css/site.css" type="text/css" />
+    <script src="/js/site.js"></script>
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices.">
+    <meta name="keywords" content="">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://tile38.com" />
+    <meta property="og:title" content="TIMEOUT - Tile38" />
+    <meta property="og:description" content="Geospatial database and real-time geofence server for managing fleets, mobile apps, and IoT devices." />
+    <meta property="og:image" content="https://tile38.com/img/ogimage3.png" />
+</head>
+
+<body>
+
+    <header class="top">
+        <div class="left">
+            <a href="/" class="logo"></a>
+        </div>
+        <div class="right">
+            <div class="toggle">
+                <div class="open" onclick="toggleMobileNav()"></div>
+                <div class="close" onclick="toggleMobileNav()"></div>
+            </div>
+            <nav class="desktop">
+                <a href="/commands" class="commands">Commands</a>
+                <a href="/documentation" class="documentation">Documentation</a>
+                <a href="/license" class="license">License</a>
+                <a href="/topics/getting-started" class="download button">Get Tile38</a>
+            </hav>
+        </div>
+    </header>
+    <nav class="mobile">
+        <div class="container">
+            <div class="contents">
+                <div><a href="/commands" class="commands">Commands</a></div>
+                <div><a href="/documentation" class="documentation">Documentation</a></div>
+                <div><a href="/license" class="license">License</a></div>
+                <div><a href="/topics/getting-started" class="download">Get Tile38</a></div>
+            </div>
+        </div>
+    </nav>
+    <div class="contents">
+        <div class="inner">
+            
+            <h3 class="command-title">
+                
+            </h3>
+            <div class="related-commands">
+                <div>Related commands</div>
+                <ul>
+                    
+                </ul>
+            </div>
+            
+            <p>Gets or sets the query timeout for the current connection.</p>
+
+<p>If a numeric argument is given after the <code>TIMEOUT</code>, it will be set as timeout (in seconds) for the future queries
+on this connection.  To unset the existing timeout value, set it to 0.</p>
+
+<p>If no argument is given, the command will report the currently set timeout, in seconds.</p>
+
+<h2>Examples</h2>
+
+<p><code class="block">&gt; <keyword>TIMEOUT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># request the current timeout</comment>
+&#34;0&#34; <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># 0 means timeout is not set</comment>
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword></keyword> <comment># set the timeout to 0.25 sec</comment>
+<keyword>OK</keyword>
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># request the current timeout</comment>
+&#34;0.25&#34;</code></p>
+
+<p>Note: the only commands respecting the timeout are the scan/search commands:
+* <code>SCAN</code>
+* <code>SEARCH</code>
+* <code>INTERSECTS</code>
+* <code>WITHIN</code>
+* <code>NEARBY</code></p>
+
+<p>All others commands will ignore the timeout set on the connection.</p>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    
+
+
+    <footer class="bottom">
+        <div class="left">
+            © 2018 Tile38
+        </div>
+        <div class="right">
+            <a href="https://github.com/tidwall/tile38" target="_blank" class="github">
+                <img src="/img/github.svg" height="22" alt="Github">
+            </a>
+            <a href="https://twitter.com/tile38db" target="_blank" class="twitter">
+                <img src="/img/twitter.svg" height="18" alt="Twitter">
+            </a>
+            <a href="https://tile38.slack.com/join/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg" target="_blank" class="slack">
+                <img src="/img/slack.svg" height="19" alt="Slack">
+            </a>
+            <a href="mailto:info@tile38.com" target="_blank" class="email">
+                <img src="/img/email.svg" height="14" alt="Email">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
