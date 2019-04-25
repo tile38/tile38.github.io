@@ -58,9 +58,6 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 
 **LIMIT** - LIMIT can be used to limit the number of objects returned for a single search request.
 
-**TIMEOUT** - TIMEOUT can be used to abort a request in case it takes too long.  If TIMEOUT is not set, the connection
-timeout value will be used if it is not zero, see [TIMEOUT](/commands/timeout).
-
 
 <a name="output-formats"></a>
 ## Output Formats
