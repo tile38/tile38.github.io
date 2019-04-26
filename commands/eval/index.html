@@ -198,6 +198,13 @@
 <li><code>tile38.distance_to(lat_a, lon_a, lat_b, lon_b)</code> returns a distance between points <code>a</code> and <code>b</code>, in meters.</li>
 </ul>
 
+<h2>Helper vairables</h2>
+
+<ul>
+<li>A global variable <code>DEADLINE</code> is set inside the Lua environment. Its value is either <code>nil</code> (no timeout)
+or a Unix epoch second of the deadline after which the script will be killed, if invoked with the <a href="/commands/timeout">TIMEOUT</a>.</li>
+</ul>
+
 <h2>Atomicity of scripts</h2>
 
 <p>Tile38 provides three different levels of atomicity:</p>

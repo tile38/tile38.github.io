@@ -66,7 +66,7 @@
         <div class="inner">
             
             <h3 class="command-title">
-                TIMEOUT [seconds]
+                TIMEOUT [seconds] COMMAND [arg  ...]
             </h3>
             <div class="related-commands">
                 <div>Related commands</div>
@@ -95,32 +95,48 @@
                 </ul>
             </div>
             
-            <p>Gets or sets the query timeout for the current connection.</p>
+            <p>Runs the following command with the timeout.</p>
 
-<p>If a numeric argument is given after the <code>TIMEOUT</code>, it will be set as timeout (in seconds) for the future queries
-on this connection.  To unset the existing timeout value, set it to 0.</p>
+<p>If the command takes longer than the specified timeout (in seconds), it will be aborted
+and the timeout error returned.</p>
 
-<p>If no argument is given, the command will report the currently set timeout, in seconds.</p>
+<p>Attempting to set a timeout on a write command will result in error.</p>
+
+<p>Note: at this point, the only commands respecting the timeout are the scan/search commands
+(<code>SCAN</code>, <code>SEARCH</code>, <code>INTERSECTS</code>, <code>WITHIN</code>, <code>NEARBY</code>) as well as scripting commands
+(<code>EVAL</code>, <code>EVALRO</code>, <code>EVALNA</code>, <code>EVALSHA</code>, <code>EVALROSHA</code>, <code>EVALNASHA</code>).</p>
+
+<p>All others commands will ignore the timeout set on the connection.</p>
 
 <h2>Examples</h2>
 
-<p><code class="block">&gt; <keyword>TIMEOUT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># request the current timeout</comment>
-&#34;0&#34; <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># 0 means timeout is not set</comment>
+<p><code class="block">&gt; <keyword>TIMEOUT</keyword> <number>1</number> <keyword>SCAN</keyword> mykey <keyword>WHERE</keyword> foo <number>1</number> <number>2</number> <keyword>COUNT</keyword>
+(integer) <number>1234</number>
 <keyword></keyword>
-&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword></keyword> <comment># set the timeout to 0.25 sec</comment>
-<keyword>OK</keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.001</number> <keyword>SCAN</keyword> mykey <keyword>WHERE</keyword> foo <number>1</number> <number>2</number> <keyword>COUNT</keyword>
+(error) <keyword>ERR</keyword> timeout
 <keyword></keyword>
-&gt; <keyword>TIMEOUT</keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <keyword></keyword> <comment># request the current timeout</comment>
-&#34;0.25&#34;</code></p>
-
-<p>Note: the only commands respecting the timeout are the scan/search commands:
-* <code>SCAN</code>
-* <code>SEARCH</code>
-* <code>INTERSECTS</code>
-* <code>WITHIN</code>
-* <code>NEARBY</code></p>
-
-<p>All others commands will ignore the timeout set on the connection.</p>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword>SET</keyword> mykey myval <keyword>STRING</keyword> foo
+(error) <keyword>ERR</keyword> timeout not supported for &#39;set&#39;
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword>EVAL</keyword> &#39;return 2*3&#39; <number>0</number>
+(integer) <number>6</number>
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword>EVAL</keyword> &#39;local clock = os.clock; local function sleep(n) local t0 = clock(); while clock() - t0 &amp;lt;= n do end end sleep(1)&#39; <number>0</number>
+(error) <keyword>ERR</keyword> timeout
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword>EVAL</keyword> &#34;return tile38.call(&#39;SCAN&#39;, KEYS[1], &#39;WHERE&#39;, &#39;foo&#39;, 1, 2, &#39;COUNT&#39;)&#34; <number>1</number> mykey
+(integer) <number>0</number>
+<keyword></keyword>
+&gt; <keyword>TIMEOUT</keyword> <number>0.25</number> <keyword>EVAL</keyword> &#34;return tile38.call(&#39;TIMEOUT&#39;, 0.01, &#39;SCAN&#39;, KEYS[1], &#39;WHERE&#39;, &#39;foo&#39;, 1, 2, &#39;COUNT&#39;)&#34; <number>1</number> mykey
+(integer) <number>0</number>
+<keyword></keyword>
+&gt; <keyword>EVAL</keyword> &#34;return tile38.call(&#39;TIMEOUT&#39;, 1, &#39;SET&#39;, KEYS[1], &#39;myval&#39;, &#39;STRING&#39;, &#39;foo&#39;)&#34; <number>1</number> mykey
+  (error) <keyword>ERR</keyword> f_68e06edee55806973f923ec8283dadfbbdb0d033:1: <keyword>ERR</keyword> timeout not supported for &#39;set&#39;
+  stack traceback:
+    [G]: in function &#39;call&#39;
+    f_68e06edee55806973f923ec8283dadfbbdb0d033:1: in main chunk
+    [G]: ?</code></p>
             <div style="clear: both"></div>
         </div>
     </div>
