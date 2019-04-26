@@ -6,31 +6,49 @@ super:   documentation
 command: timeout
 -->
 
-Gets or sets the query timeout for the current connection.
+Runs the following command with the timeout.
 
-If a numeric argument is given after the `TIMEOUT`, it will be set as timeout (in seconds) for the future queries
-on this connection.  To unset the existing timeout value, set it to 0.
+If the command takes longer than the specified timeout (in seconds), it will be aborted
+and the timeout error returned.
 
-If no argument is given, the command will report the currently set timeout, in seconds.
+Attempting to set a timeout on a write command will result in error.
+
+Note: at this point, the only commands respecting the timeout are the scan/search commands
+(`SCAN`, `SEARCH`, `INTERSECTS`, `WITHIN`, `NEARBY`) as well as scripting commands
+(`EVAL`, `EVALRO`, `EVALNA`, `EVALSHA`, `EVALROSHA`, `EVALNASHA`).
+
+All others commands will ignore the timeout set on the connection.
 
 ## Examples
 
 ```tile38
-> TIMEOUT       # request the current timeout
-"0"             # 0 means timeout is not set
 
-> TIMEOUT 0.25  # set the timeout to 0.25 sec
-OK
+> TIMEOUT 1 SCAN mykey WHERE foo 1 2 COUNT
+(integer) 1234
 
-> TIMEOUT       # request the current timeout
-"0.25"
+> TIMEOUT 0.001 SCAN mykey WHERE foo 1 2 COUNT
+(error) ERR timeout
+
+> TIMEOUT 0.25 SET mykey myval STRING foo
+(error) ERR timeout not supported for 'set'
+
+> TIMEOUT 0.25 EVAL 'return 2*3' 0
+(integer) 6
+
+> TIMEOUT 0.25 EVAL 'local clock = os.clock; local function sleep(n) local t0 = clock(); while clock() - t0 <= n do end end sleep(1)' 0
+(error) ERR timeout
+
+> TIMEOUT 0.25 EVAL "return tile38.call('SCAN', KEYS[1], 'WHERE', 'foo', 1, 2, 'COUNT')" 1 mykey
+(integer) 0
+
+> TIMEOUT 0.25 EVAL "return tile38.call('TIMEOUT', 0.01, 'SCAN', KEYS[1], 'WHERE', 'foo', 1, 2, 'COUNT')" 1 mykey
+(integer) 0
+
+> EVAL "return tile38.call('TIMEOUT', 1, 'SET', KEYS[1], 'myval', 'STRING', 'foo')" 1 mykey
+  (error) ERR f_68e06edee55806973f923ec8283dadfbbdb0d033:1: ERR timeout not supported for 'set'
+  stack traceback:
+    [G]: in function 'call'
+    f_68e06edee55806973f923ec8283dadfbbdb0d033:1: in main chunk
+    [G]: ?
 ```
 
-Note: the only commands respecting the timeout are the scan/search commands:
-* `SCAN`
-* `SEARCH`
-* `INTERSECTS`
-* `WITHIN`
-* `NEARBY`
-
-All others commands will ignore the timeout set on the connection.
