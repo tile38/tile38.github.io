@@ -6,7 +6,7 @@ super:   documentation
 command: test
 -->
 
-The TEST command performs tests on given objects, without searching through the data.
+The TEST command performs tests on given areas, without searching through the data.
 
 ```tile38
 TEST a WITHIN b
@@ -20,7 +20,7 @@ TEST a INTERSECTS b
 
 returns 1 if `a` intersects `b`, and 0 otherwise.
 
-In the examples above, both `a` and `b` can be any of these types: `POINT`, `GET`, `BOUNDS`, `OBJECT`, `CIRCLE`, `TILE`, `QUADKEY`, `HASH`.
+In the examples above, both `a` and `b` can be any [area expression](/topics/area-expressions).
 
 ```tile38
 TEST a INTERSECTS CLIP b
