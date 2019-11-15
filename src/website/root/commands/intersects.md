@@ -77,30 +77,9 @@ Below is a complete list of output formats. These formats are shared by the [NEA
 **HASHES** - A list of [Geohash](https://en.wikipedia.org/wiki/Geohash). *Requires a precision of 1 to 22.*
 
 <a name="area-formats"></a>
-## Area Formats
+## Area formats
 
-Below is a complete list of area formats. These formats are shared by the [WITHIN](/commands/within) and [INTERSECTS](/commands/intersects) commands.
-
-
-**GET** - Any object that already exists in the database. For example, 
-
-```tile38
-WITHIN poi GET cities tempe
-```
-
-Might be used to search for all object in the `poi` key that are within the object `tempe` that belongs to the key `cities`. Of course, the `cities/tempe` object must exist in the database.
-
-**BOUNDS** - A [minimum bounding rectangle](/topics/object-types#bounds).
-
-**OBJECT** - A [GeoJSON](/topics/object-types#geojson) object.
-
-**CIRCLE** - A circle with the specified center and radius.
-
-**TILE** -  An [XYZ Tile](/topics/object-types#xyz-tile).
-
-**QUADKEY** - A [QuadKey](/topics/object-types#quadkey).
-
-**HASH** - A [Geohash](/topics/object-types#geohash).
+Any [area expression](/topics/area-expressions) can be used
 
 <a name="fields"></a>
 ## Fields
