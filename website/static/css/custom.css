@@ -1,0 +1,731 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* your custom css */
+
+body {
+  font-family: "Avenir Next", "AvenirNext", "Helvetica Neue", Helvetica,
+    sans-serif;
+}
+
+.wrapper {
+  max-width: 1400px;
+  padding: 0 30px;
+}
+
+/********************************/
+/* TILE38 SPECIFIC CSS
+/********************************/
+h1 {
+  font-size: 38px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 26px;
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 29px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+}
+.w100 {
+  font-weight: 100;
+}
+.w200 {
+  font-weight: 200;
+}
+.w300 {
+  font-weight: 300;
+}
+.w400 {
+  font-weight: 400;
+}
+.w500 {
+  font-weight: 500;
+}
+.w600 {
+  font-weight: 600;
+}
+.w700 {
+  font-weight: 700;
+}
+.w800 {
+  font-weight: 800;
+}
+.w900 {
+  font-weight: 900;
+}
+
+.with-love::before {
+  content: "💚";
+  visibility: hidden;
+}
+.with-love {
+  background-image: url(./../img/heart.png);
+  background-size: 100%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: brightness(70%) hue-rotate(-15deg);
+}
+
+/* SECTION (hero) */
+section.hero .content {
+  height: 500px;
+}
+section.hero .content .textarea {
+  position: absolute;
+  width: 700px;
+  height: 150px;
+  margin-top: 96px;
+  margin-left: 80px;
+  display: inline-block;
+  z-index: 5;
+  font-size: 18px;
+}
+
+section.hero .content .video-container {
+  width: 888px;
+  height: 500px;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+section.hero .content .video-container .gradient {
+  position: absolute;
+  width: 100px;
+  height: 500px;
+  background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+section.hero .content .video-container video {
+  width: 888px;
+  height: 500px;
+  object-fit: fill;
+}
+
+@media only screen and (max-width: 850px) {
+  section.hero .content .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  section.hero .content .video-container .group {
+    position: absolute;
+    font: 0;
+    display: inline-block;
+    padding: 0;
+    bottom: -5px; /* hack */
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+  section.hero .content .video-container .gradient {
+    width: 100%;
+    height: 20px;
+    background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+  }
+
+  section.hero .content .video-container video {
+    width: 100%;
+    height: auto;
+  }
+  section.hero .content .textarea {
+    margin: 0;
+    width: 100%;
+    padding: 0 30px;
+    height: inherit;
+    text-align: center;
+    display: table;
+    display: table;
+  }
+  section.hero .content .textarea .inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  section.hero .content .textarea .break {
+    display: none;
+  }
+}
+
+/* SECTION (geofence) */
+
+section.geofence {
+  background: #191a1a;
+  color: white;
+}
+section.geofence a {
+  color: white;
+  text-decoration: underline;
+}
+section.geofence .text-container {
+  position: absolute;
+  width: 100%;
+  height: 360px;
+  max-width: 1280px;
+  display: table;
+  z-index: 2;
+}
+section.geofence .text-container .pad-left {
+  width: 46%;
+  display: table-cell;
+}
+section.geofence .text-container .text {
+  text-shadow: 0px 0px 10px #191a1a;
+  width: 100%;
+  vertical-align: middle;
+  padding-right: 30px;
+  display: table-cell;
+}
+
+section.geofence .video-container {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+section.geofence .video-container video {
+  height: 100%;
+  width: 644px;
+  display: inline-block;
+}
+section.geofence .video-container .gradient {
+  height: 100%;
+  width: 160px;
+  background-image: linear-gradient(
+    to left,
+    #191a1a,
+    #191a1a,
+    rgba(25, 26, 26, 0.9),
+    rgba(25, 26, 26, 0)
+  );
+  display: inline-block;
+  position: absolute;
+  margin-left: -160px;
+}
+
+@media only screen and (max-width: 850px) {
+  section.geofence .text-container .pad-left {
+    display: none;
+  }
+  section.geofence .text-container .text {
+    padding: 0;
+  }
+  section.geofence {
+    height: 400px;
+  }
+  section.geofence .text-container {
+    width: 100%;
+    padding: 0 30px;
+    height: 400px;
+    text-align: center;
+  }
+  section.geofence .text-container h1 {
+    margin: 20px 0 0 0;
+  }
+  section.geofence .video-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  section.geofence .video-container video {
+    width: 125%;
+    object-fit: cover;
+  }
+  section.geofence .video-container .gradient {
+    margin: 0;
+    left: 0;
+    top: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(25, 26, 26, 0.5),
+      rgba(25, 26, 26, 0),
+      rgba(25, 26, 26, 0),
+      rgba(25, 26, 26, 0),
+      rgba(25, 26, 26, 0.5)
+    );
+  }
+}
+
+/* SECTION (basic) */
+
+section.basic {
+  text-align: center;
+  padding: 0 30px;
+  margin: 150px 0 50px 0;
+}
+section.basic p {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+section.basic .cards {
+  font-size: 0;
+  display: table;
+  margin: 20px auto;
+}
+section.basic .cards .row {
+  display: table-row;
+}
+section.basic .cards .row div {
+  width: 180px;
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+  padding: 15px 0;
+}
+section.basic .cards .row div img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+}
+section.basic .cards.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  section.basic {
+    margin-top: 100px;
+  }
+
+  section.basic .cards.mobile {
+    display: table;
+  }
+  section.basic .cards.desktop {
+    display: none;
+  }
+}
+section.basic .cards .row div img.grpc {
+  transform: scale(0.8);
+}
+section.basic .cards .row div img.rabbitmq {
+  transform: scale(1.1);
+}
+section.basic .cards .row div img.http2 {
+  transform: scale(0.95);
+}
+
+section.basic.spatial-index .cards .row div {
+  width: 140px;
+}
+section.basic.spatial-index .cards .row div img {
+  width: 90%;
+  filter: contrast(110%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* SECTION (community) */
+
+section.basic.community .cards .row div img {
+  width: 50%;
+}
+section.basic.community .cards .row div img.email {
+  transform: scale(0.68);
+  filter: sepia(100%) saturate(700%) brightness(150%) hue-rotate(150deg);
+  cursor: pointer;
+}
+
+/********************************/
+/* TOP NAVIGATION BAR
+/********************************/
+
+.fixedHeaderContainer {
+  background-color: $secondaryColor;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+  display: none;
+}
+
+.navigationSlider .slidingNav ul li a {
+  color: black;
+  font-weight: 400;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  background-color: $navSliderBackground;
+  color: black;
+  font-weight: 700;
+}
+
+.navigationSlider .slidingNav ul li a:hover,
+.navigationSlider .slidingNav ul li > a:focus,
+.navigationSlider .slidingNav ul li > a:hover {
+  background-color: $navSliderBackground;
+  color: #0d6c9b;
+}
+
+/********************************/
+/* LEFT SIDE NAVIGATION BAR
+/********************************/
+.toc .toggleNav .navGroup .navListItem.navListItemActive {
+  font-weight: 600;
+}
+
+/********************************/
+/* MAIN DOCUMENT
+/********************************/
+
+/* HOME */
+.homeContainer .wrapper {
+  padding: 0 0;
+}
+
+a.tile38NavButton:hover,
+a.tile38NavButton.solid {
+  color: white;
+  background: #0d6c9b;
+  transition: 0.4s;
+  border-radius: 6px;
+  padding: 10px 16px;
+}
+a.tile38NavButton.solid:hover {
+  background: #09405c;
+  transition: 0.4s;
+}
+
+/* DOCS */
+.docsContainer {
+  padding-top: 80px;
+}
+
+.postHeaderTitle {
+  font-weight: 700;
+}
+
+/* BLOG */
+.blogContainer {
+  padding-top: 90px;
+}
+
+/* keep blog content width consistent with other pages at varying page widths */
+.blog .wrapper {
+  max-width: 1400px;
+}
+
+/* CODE */
+code.language-tile38-cli {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  border-radius: 3px;
+  background-clip: padding-box;
+  background: #272822;
+  font-size: 14px;
+
+  color: #f8f8f2;
+  display: block;
+  overflow-x: auto;
+  padding: 18px 22px;
+  /* white-space: pre-wrap; */
+}
+
+code.language-tile38-cli .hljs-command {
+  color: #a6e22e;
+}
+code.language-tile38-cli .hljs-number,
+code.language-tile38-cli .hljs-neg-number {
+  color: #66d9ef;
+}
+
+code.language-tile38-cli .hljs-comment {
+  color: #75715e;
+}
+code.language-tile38-cli .hljs-geojson {
+  color: #e6db74;
+}
+
+/********************************/
+/* COMMANDS FILTER TABS
+/********************************/
+.commandtable {
+  margin-bottom: 1.5em;
+}
+
+.filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0;
+  margin-bottom: 15px;
+}
+
+.filterbar a {
+  font-size: 18px;
+  margin-top: 0;
+  margin-right: 12px;
+  color: black;
+}
+
+.filterbar a.active {
+  font-weight: 700;
+}
+
+.commands-list a {
+  color: black;
+  display: flex;
+  padding: 5px 10px;
+  margin: 0 -10px;
+}
+
+.commands-list a:hover {
+  background-color: rgba(97, 135, 159, 0.15);
+}
+
+.commands-list a.command .nameargs {
+  float: left;
+}
+
+.commands-list a.command .nameargs .name {
+  color: black;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.commands-list a:hover.command .nameargs .name {
+  color: #0d6c9b;
+}
+
+.commands-list a.command .summary {
+  float: right;
+  margin-left: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/********************************/
+/* PREV/NEXT BUTTONS
+/********************************/
+.docs-prev,
+.docs-next {
+  color: default;
+  background: default;
+  color: initial;
+  background: initial;
+  border: 1px solid #0d6c9b;
+}
+
+/********************************/
+/* FOOTER
+/********************************/
+.nav-footer {
+  margin-top: 80px;
+  background-color: #191a1a;
+}
+.nav-footer .sitemap {
+  max-width: 1400px;
+  padding: 0 30px;
+}
+
+.nav-footer .copyright {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+}
+
+div.docs,
+div.community,
+div.more {
+  text-align: right;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (max-width: 736px) {
+  .toggleNav h2 i {
+    font-style: normal;
+  }
+  .nav-footer .sitemap {
+    padding: 0;
+  }
+
+  div.docs,
+  div.community,
+  div.more {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 765px) {
+  /* COMMANDS FILTERING CONTAINER */
+  .commandsWrapper {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .fixedHeaderContainer {
+    height: 80px;
+    padding-top: 25px;
+  }
+
+  .homeContainer {
+    padding-top: 30px;
+  }
+
+  .docsNavContainer {
+    margin-top: 80px;
+    position: static;
+    overflow-y: visible;
+  }
+
+  nav.toc {
+    padding: 0 0;
+  }
+
+  .onPageNav {
+    margin-top: 80px;
+  }
+
+  .documentContainer > .wrapper {
+    margin-top: 80px;
+  }
+
+  /* GET TILE38 BUTTON */
+  .navigationSlider .slidingNav ul li a.tile38NavButton {
+    padding: 20px 16px;
+    top: -5px;
+    margin-left: 8px;
+    position: relative;
+    border-radius: 6px;
+    color: default;
+    background: default;
+    color: initial;
+    background: initial;
+    border: 1px solid #0d6c9b;
+  }
+
+  .navigationSlider .slidingNav ul li a.tile38NavButton:hover,
+  .navigationSlider .slidingNav ul li > a.tile38NavButton:focus,
+  .navigationSlider .slidingNav ul li > a.tile38NavButton:hover {
+    color: white;
+    background: #0d6c9b;
+    transition: 0.4s;
+  }
+
+  /* EDIT LINK BUTTON */
+  .edit-page-link {
+    font-size: 12px;
+    color: default;
+    background: default;
+    color: initial;
+    background: initial;
+    border: 1px solid #0d6c9b;
+  }
+
+  /* FOOTER */
+  .nav-footer .sitemap div {
+    flex: unset;
+  }
+  .nav-footer .sitemap div.legal {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  /*
+    - add some top space to header logo in top nav 
+    - remove bottom border to get rid of white space showing up 
+      b/t logo and navbar
+  */
+  .fixedHeaderContainer {
+    padding-top: 18px;
+    border-bottom: 0px;
+    justify-content: center;
+  }
+
+  .fixedHeaderContainer header img {
+    margin-right: 0;
+  }
+
+  /* remove white space b/t logo and navbar */
+  ul.nav-site.nav-site-internal {
+    margin-top: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* ul.nav-site.nav-site-internal li {
+    flex: 1 1;
+  } */
+
+  .navigationSlider .slidingNav ul li a {
+    padding: 0;
+  }
+
+  div.mainContainer.homeContainer {
+    padding: 0 0;
+    margin-top: -35px;
+  }
+
+  .licenseContainer {
+    padding-top: 50px;
+  }
+
+  .docsNavContainer {
+    margin-top: 10px;
+  }
+
+  /* center tile38 logo in header */
+  .fixedHeaderContainer header {
+    justify-content: center;
+  }
+
+  /* align left and right margins of nav and page contents on small screens */
+  .wrapper {
+    padding: 0 30px;
+  }
+
+  .docsNavContainer .toc .navBreadcrumb {
+    padding: 8px 30px;
+  }
+
+  /* bring onPageNav to front if hamburger button has been toggled first */
+  .tocActive .onPageNav {
+    z-index: 999;
+    top: 160px;
+  }
+
+  /* add padding to onPageNav toc headings when toggled */
+  .tocActive .onPageNav > .toc-headings {
+    padding: 20px 10px;
+  }
+
+  /* add padding to hamburger button categories when toggled */
+  .docsSliderActive .toc section .navGroups {
+    padding: 70px 30px;
+  }
+
+  /* add hide of hamburger button on dots toggle */
+  .tocActive .navToggle,
+  .tocActive .navBreadcrumb h2 {
+    opacity: 0;
+    transition: visibility 0s 0.1s, opacity 0s linear;
+  }
+
+  /* COMMAND FILTERBAR */
+  .filterbar .right-group {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}

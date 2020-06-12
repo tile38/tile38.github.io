@@ -1,0 +1,428 @@
+<a class="command grp-replication" href="/commands/aof">
+  <div class="nameargs">
+    <span class="name">AOF</span>
+  </div>
+  <div class="summary">
+    Downloads the AOF starting from pos and keeps the connection alive
+  </div>
+</a>
+
+<a class="command grp-replication" href="/commands/aofmd5">
+  <div class="nameargs">
+    <span class="name">AOFMD5</span>
+  </div>
+  <div class="summary">Performs a checksum on a portion of the aof</div>
+</a>
+
+<a class="command grp-replication" href="/commands/aofshrink">
+  <div class="nameargs">
+    <span class="name">AOFSHRINK</span>
+  </div>
+  <div class="summary">Shrinks the aof in the background</div>
+</a>
+
+<a class="command grp-connection" href="/commands/auth">
+  <div class="nameargs">
+    <span class="name">AUTH</span>
+  </div>
+  <div class="summary">Authenticate to the server</div>
+</a>
+
+<a class="command grp-keys" href="/commands/bounds">
+  <div class="nameargs">
+    <span class="name">BOUNDS</span>
+  </div>
+  <div class="summary">Get the combined bounds of all the objects in a key</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/chans">
+  <div class="nameargs">
+    <span class="name">CHANS</span>
+  </div>
+  <div class="summary">Finds all channels matching a pattern</div>
+</a>
+
+<a class="command grp-server" href="/commands/config-get">
+  <div class="nameargs">
+    <span class="name">CONFIG GET</span>
+  </div>
+  <div class="summary">Get the value of a configuration parameter</div>
+</a>
+
+<a class="command grp-server" href="/commands/config-rewrite">
+  <div class="nameargs">
+    <span class="name">CONFIG REWRITE</span>
+  </div>
+  <div class="summary">
+    Rewrite the configuration file with the in memory configuration
+  </div>
+</a>
+
+<a class="command grp-server" href="/commands/config-set">
+  <div class="nameargs">
+    <span class="name">CONFIG SET</span>
+  </div>
+  <div class="summary">Set a configuration parameter to the given value</div>
+</a>
+
+<a class="command grp-keys" href="/commands/del">
+  <div class="nameargs">
+    <span class="name">DEL</span>
+  </div>
+  <div class="summary">Delete an id from a key</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/delchan">
+  <div class="nameargs">
+    <span class="name">DELCHAN</span>
+  </div>
+  <div class="summary">Removes a channel</div>
+</a>
+
+<a class="command grp-webhook" href="/commands/delhook">
+  <div class="nameargs">
+    <span class="name">DELHOOK</span>
+  </div>
+  <div class="summary">Removes a webhook</div>
+</a>
+
+<a class="command grp-keys" href="/commands/drop">
+  <div class="nameargs">
+    <span class="name">DROP</span>
+  </div>
+  <div class="summary">Remove a key from the database</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/eval">
+  <div class="nameargs">
+    <span class="name">EVAL</span>
+  </div>
+  <div class="summary">Evaluates a Lua script</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/evalna">
+  <div class="nameargs">
+    <span class="name">EVALNA</span>
+  </div>
+  <div class="summary">Evaluates a Lua script in a non-atomic fashion</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/evalnasha">
+  <div class="nameargs">
+    <span class="name">EVALNASHA</span>
+  </div>
+  <div class="summary">
+    Evaluates, in a non-atomic fashion, a Lua script cached on the server by its
+    SHA1 digest
+  </div>
+</a>
+
+<a class="command grp-scripting" href="/commands/evalro">
+  <div class="nameargs">
+    <span class="name">EVALRO</span>
+  </div>
+  <div class="summary">Evaluates a read-only Lua script</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/evalrosha">
+  <div class="nameargs">
+    <span class="name">EVALROSHA</span>
+  </div>
+  <div class="summary">
+    Evaluates a read-only Lua script cached on the server by its SHA1 digest
+  </div>
+</a>
+
+<a class="command grp-scripting" href="/commands/evalsha">
+  <div class="nameargs">
+    <span class="name">EVALSHA</span>
+  </div>
+  <div class="summary">
+    Evaluates a Lua script cached on the server by its SHA1 digest
+  </div>
+</a>
+
+<a class="command grp-keys" href="/commands/expire">
+  <div class="nameargs">
+    <span class="name">EXPIRE</span>
+  </div>
+  <div class="summary">Set a timeout on an id</div>
+</a>
+
+<a class="command grp-server" href="/commands/flushdb">
+  <div class="nameargs">
+    <span class="name">FLUSHDB</span>
+  </div>
+  <div class="summary">Removes all keys</div>
+</a>
+
+<a class="command grp-replication" href="/commands/follow">
+  <div class="nameargs">
+    <span class="name">FOLLOW</span>
+  </div>
+  <div class="summary">Follows a leader host</div>
+</a>
+
+<a class="command grp-keys" href="/commands/fset">
+  <div class="nameargs">
+    <span class="name">FSET</span>
+  </div>
+  <div class="summary">Set the value for one or more fields of an id</div>
+</a>
+
+<a class="command grp-server" href="/commands/gc">
+  <div class="nameargs">
+    <span class="name">GC</span>
+  </div>
+  <div class="summary">Forces a garbage collection</div>
+</a>
+
+<a class="command grp-keys" href="/commands/get">
+  <div class="nameargs">
+    <span class="name">GET</span>
+  </div>
+  <div class="summary">Get the object of an id</div>
+</a>
+
+<a class="command grp-webhook" href="/commands/hooks">
+  <div class="nameargs">
+    <span class="name">HOOKS</span>
+  </div>
+  <div class="summary">Finds all hooks matching a pattern</div>
+</a>
+
+<a class="command grp-search" href="/commands/intersects">
+  <div class="nameargs">
+    <span class="name">INTERSECTS</span>
+  </div>
+  <div class="summary">Searches for ids that intersect an area</div>
+</a>
+
+<a class="command grp-keys" href="/commands/jdel">
+  <div class="nameargs">
+    <span class="name">JDEL</span>
+  </div>
+  <div class="summary">Delete a value from a JSON document</div>
+</a>
+
+<a class="command grp-keys" href="/commands/jget">
+  <div class="nameargs">
+    <span class="name">JGET</span>
+  </div>
+  <div class="summary">Get a value from a JSON document</div>
+</a>
+
+<a class="command grp-keys" href="/commands/jset">
+  <div class="nameargs">
+    <span class="name">JSET</span>
+  </div>
+  <div class="summary">Set a value in a JSON document</div>
+</a>
+
+<a class="command grp-keys" href="/commands/keys">
+  <div class="nameargs">
+    <span class="name">KEYS</span>
+  </div>
+  <div class="summary">Finds all keys matching the given pattern</div>
+</a>
+
+<a class="command grp-search" href="/commands/nearby">
+  <div class="nameargs">
+    <span class="name">NEARBY</span>
+  </div>
+  <div class="summary">Searches for ids that are nearby a point</div>
+</a>
+
+<a class="command grp-connection" href="/commands/output">
+  <div class="nameargs">
+    <span class="name">OUTPUT</span>
+  </div>
+  <div class="summary">
+    Gets or sets the output format for the current connection.
+  </div>
+</a>
+
+<a class="command grp-keys" href="/commands/pdel">
+  <div class="nameargs">
+    <span class="name">PDEL</span>
+  </div>
+  <div class="summary">Removes all objects matching a pattern</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/pdelchan">
+  <div class="nameargs">
+    <span class="name">PDELCHAN</span>
+  </div>
+  <div class="summary">Removes all channels matching a pattern</div>
+</a>
+
+<a class="command grp-webhook" href="/commands/pdelhook">
+  <div class="nameargs">
+    <span class="name">PDELHOOK</span>
+  </div>
+  <div class="summary">Removes all hooks matching a pattern</div>
+</a>
+
+<a class="command grp-keys" href="/commands/persist">
+  <div class="nameargs">
+    <span class="name">PERSIST</span>
+  </div>
+  <div class="summary">Remove the existing timeout on an id</div>
+</a>
+
+<a class="command grp-connection" href="/commands/ping">
+  <div class="nameargs">
+    <span class="name">PING</span>
+  </div>
+  <div class="summary">Ping the server</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/psubscribe">
+  <div class="nameargs">
+    <span class="name">PSUBSCRIBE</span>
+  </div>
+  <div class="summary">Subscribes the client to the given patterns</div>
+</a>
+
+<a class="command grp-connection" href="/commands/quit">
+  <div class="nameargs">
+    <span class="name">QUIT</span>
+  </div>
+  <div class="summary">Close the connection</div>
+</a>
+
+<a class="command grp-server" href="/commands/readonly">
+  <div class="nameargs">
+    <span class="name">READONLY</span>
+  </div>
+  <div class="summary">Turns on or off readonly mode</div>
+</a>
+
+<a class="command grp-keys" href="/commands/rename">
+  <div class="nameargs">
+    <span class="name">RENAME</span>
+  </div>
+  <div class="summary">Rename a key to be stored under a different name.</div>
+</a>
+
+<a class="command grp-keys" href="/commands/renamenx">
+  <div class="nameargs">
+    <span class="name">RENAMENX</span>
+  </div>
+  <div class="summary">
+    Rename a key to be stored under a different name, if a new key does not
+    exist.
+  </div>
+</a>
+
+<a class="command grp-search" href="/commands/scan">
+  <div class="nameargs">
+    <span class="name">SCAN</span>
+  </div>
+  <div class="summary">Incrementally iterate though a key</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/script-exists">
+  <div class="nameargs">
+    <span class="name">SCRIPT EXISTS</span>
+  </div>
+  <div class="summary">
+    Returns information about the existence of the scripts in server cache
+  </div>
+</a>
+
+<a class="command grp-scripting" href="/commands/script-flush">
+  <div class="nameargs">
+    <span class="name">SCRIPT FLUSH</span>
+  </div>
+  <div class="summary">Flushes the server cache of Lua scripts</div>
+</a>
+
+<a class="command grp-scripting" href="/commands/script-load">
+  <div class="nameargs">
+    <span class="name">SCRIPT LOAD</span>
+  </div>
+  <div class="summary">
+    Loads the compiled version of a script into the server cache, without
+    executing
+  </div>
+</a>
+
+<a class="command grp-search" href="/commands/search">
+  <div class="nameargs">
+    <span class="name">SEARCH</span>
+  </div>
+  <div class="summary">Search for string values in a key</div>
+</a>
+
+<a class="command grp-server" href="/commands/server">
+  <div class="nameargs">
+    <span class="name">SERVER</span>
+  </div>
+  <div class="summary">Show server stats and details</div>
+</a>
+
+<a class="command grp-keys" href="/commands/set">
+  <div class="nameargs">
+    <span class="name">SET</span>
+  </div>
+  <div class="summary">Sets the value of an id</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/setchan">
+  <div class="nameargs">
+    <span class="name">SETCHAN</span>
+  </div>
+  <div class="summary">
+    Creates a pubsub channel which points to geofenced search
+  </div>
+</a>
+
+<a class="command grp-webhook" href="/commands/sethook">
+  <div class="nameargs">
+    <span class="name">SETHOOK</span>
+  </div>
+  <div class="summary">Creates a webhook which points to geofenced search</div>
+</a>
+
+<a class="command grp-keys" href="/commands/stats">
+  <div class="nameargs">
+    <span class="name">STATS</span>
+  </div>
+  <div class="summary">Show stats for one or more keys</div>
+</a>
+
+<a class="command grp-pubsub" href="/commands/subscribe">
+  <div class="nameargs">
+    <span class="name">SUBSCRIBE</span>
+  </div>
+  <div class="summary">Subscribe to a geofence channel</div>
+</a>
+
+<a class="command grp-tests" href="/commands/test">
+  <div class="nameargs">
+    <span class="name">TEST</span>
+  </div>
+  <div class="summary">Performs spatial test</div>
+</a>
+
+<a class="command grp-connection" href="/commands/timeout">
+  <div class="nameargs">
+    <span class="name">TIMEOUT</span>
+  </div>
+  <div class="summary">Runs the following command with the timeout</div>
+</a>
+
+<a class="command grp-keys" href="/commands/ttl">
+  <div class="nameargs">
+    <span class="name">TTL</span>
+  </div>
+  <div class="summary">Get a timeout on an id</div>
+</a>
+
+<a class="command grp-search" href="/commands/within">
+  <div class="nameargs">
+    <span class="name">WITHIN</span>
+  </div>
+  <div class="summary">Searches for ids that completely within the area</div>
+</a>
