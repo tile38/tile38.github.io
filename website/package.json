@@ -9,7 +9,7 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.4"
+    "docusaurus": "git://github.com/tile38/tile38-stage.git#docusaurus"
   },
   "dependencies": {}
 }
