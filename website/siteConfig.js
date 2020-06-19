@@ -19,8 +19,8 @@ const users = [
     // if it is not '/', like: '/test-site/img/image.jpg'.
     image: "/img/logo.svg",
     infoLink: "https://www.tile38.com",
-    pinned: true
-  }
+    pinned: true,
+  },
 ];
 
 const siteConfig = {
@@ -47,9 +47,9 @@ const siteConfig = {
     // { blog: true, label: "Blog" },
     {
       href: "https://github.com/tidwall/tile38",
-      label: "GitHub"
+      label: "GitHub",
     },
-    { doc: "topics/installation", label: "Get Tile38", button: true }
+    { doc: "topics/installation", label: "Get Tile38", button: true },
   ],
 
   // populate command groups for commands page
@@ -68,7 +68,7 @@ const siteConfig = {
   colors: {
     primaryColor: "#0D6C9B",
     secondaryColor: "rgba(255, 255, 255, 0.9)",
-    navSliderBackground: "rgba(255, 255, 255, 0)"
+    navSliderBackground: "rgba(255, 255, 255, 0)",
   },
 
   /* Custom fonts for website */
@@ -91,8 +91,8 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: "monokai-sublime",
-    hljs: function(hljs) {
-      hljs.registerLanguage("tile38-cli", function(hljs) {
+    hljs: function (hljs) {
+      hljs.registerLanguage("tile38-cli", function (hljs) {
         return {
           contains: [
             hljs.COMMENT(
@@ -101,25 +101,25 @@ const siteConfig = {
             ),
             {
               className: "number",
-              begin: "\\b\\d+(\\.\\d+)?\\s"
+              begin: "\\b\\d+(\\.\\d+)?\\s",
             },
             {
               className: "neg-number",
-              begin: "\\-\\d+(\\.\\d+)?"
+              begin: "\\-\\d+(\\.\\d+)?",
             },
             {
               className: "command",
-              begin: "\\b[A-Z]+\\b"
+              begin: "\\b[A-Z]+\\b",
             },
             {
               className: "geojson",
               begin: "{",
-              end: "}"
-            }
-          ]
+              end: "}",
+            },
+          ],
         };
       });
-    }
+    },
   },
 
   // Add custom scripts here that would be placed in <script> tags.
@@ -139,7 +139,7 @@ const siteConfig = {
   // docsSideNavCollapsible: true
 
   // Show edit button for docs
-  editUrl: "https://github.com/melbania/tile38-test/edit/master/docs/",
+  editUrl: "https://github.com/tile38/tile38-stage/edit/master/docs/",
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
@@ -152,7 +152,7 @@ const siteConfig = {
   repoUrl: "https://github.com/tidwall/tile38",
 
   // hide /docs/ directory in URL
-  docsUrl: ""
+  docsUrl: "",
 
   // wrap raw HTML fragments in pages/ with Docusaurus styles
   // wrapPagesHTML: true,

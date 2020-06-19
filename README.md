@@ -1,19 +1,27 @@
-# Tile38 Website Generation Documentation
+# Tile38 Static Website Generation Documentation
 
-This repository contains all of the files (excepting dependencies) necessary to compile and deploy the [Tile38 documentation website](http://tile38.com). There are three main branches: master, docusaurus, and gh-pages.
+This repository contains all of the files (excepting dependencies) necessary to compile and deploy the [Tile38 documentation website](http://tile38.com).
 
-## Master Branch
+## Repo Branches
 
-The master branch contains all documentation markdown and javascript files that must be edited to change the content on the documentation website
+There are three main branches: master, docusaurus, and gh-pages.
 
-## Docusaurus Branch
+### Master Branch
 
-The Tile38 documentation website is built using a customized version of the [Docusaurus static website generator](http://docusaurus.io/). The docusaurus branch contains the customized files required to build Tile38's documentation website. These files must be installed on your local machine using [npm](https://docs.npmjs.com/) or [yarn](https://classic.yarnpkg.com/en/docs) in order to build and test changes to the website (see [Build](#build) section below).
+The _master_ branch contains all documentation markdown (.md) and javascript (.js) files that must be edited to change the content on the documentation website
 
-## gh-pages Branch
+### Docusaurus Branch
 
-# Edit Content
+The Tile38 documentation website is built using a customized version of the [Docusaurus static website generator](http://docusaurus.io/). The _docusaurus_ branch contains the modified [React-based](https://reactjs.org/) Docusaurus component files required to build Tile38's documentation website. These files must be installed on your local machine using [npm](https://docs.npmjs.com/) or [yarn](https://classic.yarnpkg.com/en/docs) in order to build and test changes to the website (see [Build](#build) section below for details).
 
-# Build
+### gh-pages Branch
 
-# Deploy
+The _gh-pages_ branch contains the static website files for the Tile38 documentation website. These files are automatically generated from the markdown and other asset files found in the _master_ branch during the [build](#build) process. The [deploy](#deploy) process pushes the static website files to this branch. **Never modify these files directly.**
+
+## Static Website Generation Process
+
+### Edit Content
+
+### Build
+
+### Deploy
