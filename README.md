@@ -24,9 +24,11 @@ The _gh-pages_ branch contains the static website files for the Tile38 documenta
 
 ### Edit Content
 
-Only pages with an EDIT button can be modified. The EDIT button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories.
+Only pages with an <button style="border-color:#0d6c9b;border-style:solid;border-radius:3px;padding:8px">EDIT</button> button can be modified. The <button style="border-color:#0d6c9b;border-style:solid;border-radius:3px;padding:8px">EDIT</button> button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories of the [Tile38 documentation website](https://tile38.com/).
 
-**The EDIT button is not visible on screens smaller than 1,024 pixels wide.**
+**The <button style="border-color:#0d6c9b;border-style:solid;border-radius:3px;padding:8px">EDIT</button> button is not visible on screens smaller than 1,024 pixels wide.**
+
+To edit an existing document, click on its <button style="border-color:#0d6c9b;border-style:solid;border-radius:3px;padding:8px">EDIT</button> button, which will take you to that page's markdown file in the _master_ branch of this repository. If you are an admin member of this repository, follow the instructions in the [Admin Members](#admin-members) section of this document; otherwise see the [Other Contributers](#other-contributers) section.
 
 #### Admin Members
 
