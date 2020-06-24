@@ -82,7 +82,7 @@ Content can be modified directly within this GitHub repo in one of two ways:
 
 Once you have navigated to the content's .md file:
 
-- Click on the pencil icon in the right corner of the content pane's header menu. and commit them.
+- Click on the pencil icon in the right corner of the content pane's header menu.
 
 - Make the desired changes to the .md file in GitHub's "Edit file" pane.
 
