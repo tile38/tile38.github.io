@@ -5,7 +5,7 @@
   - [Docusaurus Branch](#docusaurus-branch)
   - [gh-pages Branch](#gh-pages-branch)
 - [Edit Content](#edit-content)
-  - [Non-Admin Contributers](#non-admin-contributers)
+  - [Non-Admin Contributors](#non-admin-contributors)
   - [Admin Members](#admin-members)
     - [Via Local Machine](#via-local-machine)
     - [Via GitHub Repo](#via-github-repo)
@@ -36,13 +36,13 @@ The _gh-pages_ branch contains the static website files for the Tile38 documenta
 
 # Edit Content
 
-Only pages with an EDIT button can be modified by non-admin contributers. The EDIT button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories of the [Tile38 documentation website](https://tile38.com/).
+Only pages with an EDIT button can be modified by non-admin contributors. The EDIT button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories of the [Tile38 documentation website](https://tile38.com/).
 
 **_The EDIT button is not visible on screens smaller than 1,024 pixels wide._**
 
-If you are an admin member of this repository, follow the instructions in the [Admin Members](#admin-members) section of this document to edit content; otherwise see the [Non-Admin Contributers](#non-admin-contributers) section.
+If you are an Admin Member of this repository, follow the instructions in the [Admin Members](#admin-members) section of this document to edit content; otherwise see the [Non-Admin Contributors](#non-admin-contributors) section.
 
-## Non-Admin Contributers
+## Non-Admin Contributors
 
 - todo
 
