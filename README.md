@@ -76,6 +76,8 @@ Content can be modified directly within this GitHub repo in one of two ways:
 
 - You can find the .md files for content in either the `docs/commands` or `docs/topics` directories of this repo's _master_ branch and edit them directly from there.
 
+  OR
+
 - Navigate to the content that you would like to modify on the [Tile38 documentation website](http://tile38.com) and click on the EDIT button found in the top right corner of the page. The EDIT button links to the .md file for that content in this repo's _master_ branch.
 
 Once you have navigated to the content's .md file:
