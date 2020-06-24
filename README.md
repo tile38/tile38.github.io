@@ -50,6 +50,8 @@ If you are an Admin Member of this repository, follow the instructions in the [A
 
 There are two ways to edit content as an Admin Member: on your [local machine](#local-machine) (least complicated method) or via [GitHub's "Edit file" pane](#github-repo) for a file in the _master_ branch of this repository.
 
+### Clone Repo
+
 If you have not done so already, clone this repo to your local machine:
 
 ```shell
@@ -88,7 +90,7 @@ Once you have navigated to the content's .md file:
 
 - Commit the changes.
 
-- Pull the changed files down to the cloned repo on your local machine.
+- Pull the changed files down to the [cloned repo](#clone-repo) on your local machine (make sure you are on the _master_ branch).
 
   ```shell
   git pull
