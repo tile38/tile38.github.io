@@ -7,9 +7,14 @@
 - [Edit Content](#edit-content)
   - [Non-Admin Contributors](#non-admin-contributors)
   - [Admin Members](#admin-members)
+    - [Clone Repo](#clone-repo)
     - [Via Local Machine](#via-local-machine)
     - [Via GitHub Repo](#via-github-repo)
 - [Build](#build)
+  - [Install NPM](#install-npm)
+  - [Install Docusaurus Module](#install-docusaurus-module)
+  - [Build Static Pages](#build-static-pages)
+- [Test](#test)
 - [Deploy](#deploy)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -26,7 +31,7 @@ The _master_ branch contains all documentation markdown (.md) and javascript (.j
 
 ## Docusaurus Branch
 
-The Tile38 documentation website is built using a customized version of the [Docusaurus static website generator](http://docusaurus.io/). The _docusaurus_ branch contains the modified [React-based](https://reactjs.org/) Docusaurus component files required to build Tile38's documentation website. These files must be installed on your local machine using [npm](https://docs.npmjs.com/) or [yarn](https://classic.yarnpkg.com/en/docs) in order to build and test changes to the website (see [Build](#build) section below for details).
+The Tile38 documentation website is built using a customized version of the [Docusaurus static website generator](http://docusaurus.io/). The _docusaurus_ branch contains the modified [React-based](https://reactjs.org/) Docusaurus component files required to build Tile38's documentation website. These files must be installed on your local machine using [npm](https://docs.npmjs.com/) or your favorite other JavaScript package manager in order to build and test changes to the website (see [Build](#build) section below for details).
 
 ## gh-pages Branch
 
@@ -36,11 +41,14 @@ The _gh-pages_ branch contains the static website files for the Tile38 documenta
 
 # Edit Content
 
-Only pages with an EDIT button can be modified by non-admin contributors. The EDIT button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories of the [Tile38 documentation website](https://tile38.com/).
+Only pages with an EDIT button can be modified by Non-Admin Contributors. The EDIT button can be found at the top right corner of the middle panel of any page found under the "Commands" or "Docs" categories of the [Tile38 documentation website](https://tile38.com/).
 
 **_The EDIT button is not visible on screens smaller than 1,024 pixels wide._**
 
-If you are an Admin Member of this repository, follow the instructions in the [Admin Members](#admin-members) section of this document to edit content; otherwise see the [Non-Admin Contributors](#non-admin-contributors) section.
+For instructions on how to edit content see:
+
+- [Non-Admin Contributors](#non-admin-contributors)
+- [Admin Members](#admin-members)
 
 ## Non-Admin Contributors
 
@@ -48,21 +56,24 @@ If you are an Admin Member of this repository, follow the instructions in the [A
 
 ## Admin Members
 
-There are two ways to edit content as an Admin Member: on your [local machine](#local-machine) (least complicated method) or via [GitHub's "Edit file" pane](#github-repo) for a file in the _master_ branch of this repository.
-
 ### Clone Repo
 
 If you have not done so already, clone this repo to your local machine:
 
-```shell
+```bash
 git clone https://github.com/tile38/tile38-stage.git
 ```
 
 Make sure the _master_ branch is checked out:
 
-```shell
+```bash
 git checkout master
 ```
+
+There are two ways to edit content as an Admin Member:
+
+- via your [local machine](#via-local-machine)
+- via [GitHub's "Edit file" pane](#github-repo) for a file in the _master_ branch of this repository
 
 ### Via Local Machine
 
@@ -92,7 +103,7 @@ Once you have navigated to the content's .md file:
 
 - Pull the changed files down to the [cloned repo](#clone-repo) on your local machine (make sure you are on the _master_ branch).
 
-  ```shell
+  ```bash
   git pull
   ```
 
@@ -100,8 +111,82 @@ Your local copy of the repo should now be up to date. You are ready to [build](#
 
 # Build
 
-- todo
+It is not necessary to run the build process described below if you just want to deploy the website without testing it. The [deploy](#deploy) process builds the static website files before it publishes them to the _gh-pages_ branch, a redundant process if you are building and testing changes to the site as well. But that's the way the Docusaurus folks set things up, and we chose not to change it. And why would you want to deploy changes before testing them, really? You wouldn't do that, of course you wouldn't, so ...
+
+## Install NPM
+
+You will need to have [npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) in order to run the build command. To check if you have it installed, run the following at the command prompt:
+
+```bash
+npm -v
+```
+
+If you see `command not found: npm` in the output, go [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+
+## Install Docusaurus Module
+
+In order to build and [test](#test) changes to website content, you will need to have the _docusaurus_ branch of this repo installed in the `~/website/node_modules/docusaurus/` directory of the [cloned](#clone-repo) repo on your local machine. If that directory does not exist:
+
+- At the command prompt, navigate to the `~/website` directory of the [clone of this repo](#clone-repo) on your local machine.
+
+- Run the install command:
+
+  ```bash
+  npm install
+  ```
+
+You should now have the most current version of our customized docusaurus component library installed with all its dependencies in the `~/website/node_modules/` directory.
+
+## Build Static Pages
+
+The build command populates the `~/website/build/` directory with all of the static website's files.
+
+- Run the build command:
+
+  ```bash
+  npm run build
+  ```
+
+Any changes made to .md files in the _master_ branch of this repo should now be reflected in the content's .html files in the _gh-pages_ branch.
+
+# Test
+
+You can [test a local build of the website](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server) using Python's [simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html) if you have [Python installed](https://www.python.org/downloads/):
+
+- At the command prompt, navigate to `~/website/build/tile38`.
+- Run Python's simple HTTP server:
+
+  ```bash
+  python -m SimpleHTTPServer # for Python version 2.x
+  ```
+
+  OR
+
+  ```bash
+  python3 -m http.server # for Python version 3.x
+  ```
+
+- Open a browser window and view the website at URL `localhost:8000`.
+
+**If port 8000 is already in use, append the simple server command from above with a different port number, for example:**
+
+```bash
+python -m SimpleHTTPServer 3000 # for Python version 2.x
+```
 
 # Deploy
 
-- todo
+- At the command prompt, navigate to the `~/website` directory of the [cloned](#clone-repo) version of this repo on your local machine.
+- Run the publishing command (substitute your GitHub username for _yourGitHubUserName_ in the script below):
+
+```bash
+GIT_USER=yourGitHubUserName \
+CURRENT_BRANCH=master \
+USE_SSH=false \
+npm run publish-gh-pages
+```
+
+Changes should be visible on the live [Tile38 Documentation website](<(http://tile38.com)>) almost immediately (or within 10 minutes according to GitHub). Sometimes Google Chrome does not reflect the changes right away. Check the site on other browsers (Safari, Firefox, etc.). If the changes you made are showing up on those browsers, then for Chrome try the following:
+
+- Check/Uncheck the "disable cache" toggle in the Network tab of Chrome's developer tools.
+- Refresh the page (Click the circular arrow button next to the address bar).
