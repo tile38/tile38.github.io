@@ -1,9 +1,13 @@
-# Table of Contents
+# Tile38 Website
 
-- [Repo Contents](#repo-contents)
-  - [Master Branch](#master-branch)
-  - [Docusaurus Branch](#docusaurus-branch)
-  - [gh-pages Branch](#gh-pages-branch)
+This repository contains all of the files (excepting dependencies) necessary to edit, build, and deploy the [Tile38 documentation website](http://tile38.com).
+
+## Table of Contents
+
+- [Branches](#branches)
+  - [Master](#master)
+  - [Docusaurus](#docusaurus)
+  - [gh-pages](#gh-pages)
 - [Edit Content](#edit-content)
   - [Non-Admin Contributors](#non-admin-contributors)
   - [Admin Members](#admin-members)
@@ -19,21 +23,19 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-# Repo Contents
-
-This repository contains all of the files (excepting dependencies) necessary to edit, build, and deploy the [Tile38 documentation website](http://tile38.com).
+# Branches
 
 There are three main branches: master, docusaurus, and gh-pages.
 
-## Master Branch
+## Master
 
 The _master_ branch contains all documentation markdown (.md) and javascript (.js) files that must be edited to change the content on the documentation website
 
-## Docusaurus Branch
+## Docusaurus
 
 The Tile38 documentation website is built using a customized version of the [Docusaurus static website generator](http://docusaurus.io/). The _docusaurus_ branch contains the modified [React-based](https://reactjs.org/) Docusaurus component files required to build Tile38's documentation website. These files must be installed on your local machine using [npm](https://docs.npmjs.com/) or your favorite other JavaScript package manager in order to build and test changes to the website (see [Build](#build) section below for details).
 
-## gh-pages Branch
+## gh-pages
 
 The _gh-pages_ branch contains the static website files for the Tile38 documentation website. These files are automatically generated from the markdown and other asset files found in the _master_ branch during the [build](#build) process. The [deploy](#deploy) process pushes the static website files to this branch.
 
