@@ -56,7 +56,7 @@ SETHOOK warehouse grpc://10.0.20.78:6798/ ...
 
 All webhook messages will be sent to the GPRC server at `10.0.20.78:6798`.
 
-The proto file can be found in the [/hservice directory](https://github.com/tidwall/tile38/tree/master/hservice).
+The proto file can be found in the [/hservice](https://github.com/tidwall/tile38/tree/master/internal/hservice) directory.
 
 ### Redis
 
