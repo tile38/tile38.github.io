@@ -155,7 +155,7 @@ Any changes made to .md files in the _master_ branch of this repo should now be 
 
 You can [test a local build of the website](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server) using Python's [simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html) if you have [Python installed](https://www.python.org/downloads/):
 
-- At the command prompt, navigate to `./website/build/tile38`.
+- At the command prompt, navigate to `./website/build/tile38.github.io`.
 - Run Python's simple HTTP server:
 
   ```bash
