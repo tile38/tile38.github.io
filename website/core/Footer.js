@@ -42,7 +42,7 @@ class Footer extends React.Component {
             >
               Stack Overflow
             </a>
-            <a href="https://tile38.com/slack">Slack</a>
+            <a href="https://tile38.com/slack/">Slack</a>
             <a href="https://twitter.com/tile38db" rel="noreferrer noopener">
               Twitter
             </a>
