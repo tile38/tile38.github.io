@@ -127,9 +127,9 @@ If you see `command not found: npm` in the output, go [install npm](https://docs
 
 ## Install Docusaurus Module
 
-In order to build and [test](#test) changes to website content, you will need to have the _docusaurus_ branch of this repo installed in the `~/website/node_modules/docusaurus/` directory of the [cloned](#clone-repo) repo on your local machine. If that directory does not exist:
+In order to build and [test](#test) changes to website content, you will need to have the _docusaurus_ branch of this repo installed in the `./website/node_modules/docusaurus/` directory of the [cloned](#clone-repo) repo on your local machine. If that directory does not exist:
 
-- At the command prompt, navigate to the `~/website` directory of the [clone of this repo](#clone-repo) on your local machine.
+- At the command prompt, navigate to the `./website` directory of the [clone of this repo](#clone-repo) on your local machine.
 
 - Run the install command:
 
@@ -137,11 +137,11 @@ In order to build and [test](#test) changes to website content, you will need to
   npm install
   ```
 
-You should now have the most current version of our customized docusaurus component library installed with all its dependencies in the `~/website/node_modules/` directory.
+You should now have the most current version of our customized docusaurus component library installed with all its dependencies in the `./website/node_modules/` directory.
 
 ## Build Static Pages
 
-The build command populates the `~/website/build/` directory with all of the static website's files.
+The build command populates the `./website/build/` directory with all of the static website's files.
 
 - Run the build command:
 
@@ -155,7 +155,7 @@ Any changes made to .md files in the _master_ branch of this repo should now be 
 
 You can [test a local build of the website](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server) using Python's [simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html) if you have [Python installed](https://www.python.org/downloads/):
 
-- At the command prompt, navigate to `~/website/build/tile38`.
+- At the command prompt, navigate to `./website/build/tile38`.
 - Run Python's simple HTTP server:
 
   ```bash
@@ -178,7 +178,7 @@ python -m SimpleHTTPServer 3000 # for Python version 2.x
 
 # Deploy
 
-- At the command prompt, navigate to the `~/website` directory of the [cloned](#clone-repo) version of this repo on your local machine.
+- At the command prompt, navigate to the `./website` directory of the [cloned](#clone-repo) version of this repo on your local machine.
 - Run the publishing command (substitute your GitHub username for _yourGitHubUserName_ in the script below):
 
 ```bash
