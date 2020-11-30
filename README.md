@@ -63,7 +63,7 @@ For instructions on how to edit content see:
 If you have not done so already, clone this repo to your local machine:
 
 ```bash
-git clone https://github.com/tile38/tile38-stage.git
+git clone https://github.com/tile38/tile38.github.io.git
 ```
 
 Make sure the _master_ branch is checked out:

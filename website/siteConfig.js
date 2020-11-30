@@ -19,14 +19,14 @@ const users = [
 const siteConfig = {
   title: "Tile38", // Title for your website.
   tagline: "Ultra Fast Geospatial Database & Geofencing Server",
-  url: "http://stage.tile38.com", // Your website URL
+  url: "https://tile38.com", // Your website URL
   baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: "tile38-stage",
+  projectName: "tile38.github.io",
   organizationName: "tile38",
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -132,7 +132,7 @@ const siteConfig = {
   // docsSideNavCollapsible: true
 
   // Show edit button for docs
-  editUrl: "https://github.com/tile38/tile38-stage/edit/master/docs/",
+  editUrl: "https://github.com/tile38/tile38.github.io/edit/master/docs/",
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
