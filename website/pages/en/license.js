@@ -29,7 +29,7 @@ function License(props) {
 
             <h2>MIT License</h2>
 
-            <p>Copyright &copy; 2016 Josh Baker</p>
+            <p>Copyright &copy; 2020 Josh Baker</p>
 
             <p>
               Permission is hereby granted, free of charge, to any person
