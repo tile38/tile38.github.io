@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>EVAL · Tile38</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Syntax"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="EVAL · Tile38"/><meta property="og:type" content="website"/><meta property="og:url" content="https://tile38.com/"/><meta property="og:description" content="## Syntax"/><meta property="og:image" content="https://tile38.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://tile38.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon-32x32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><script type="text/javascript" src="/js/videoAutoPlay.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="Tile38"/><h2 class="headerTitleWithLogo">Tile38</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/commands" target="_self" class="">Commands</a></li><li class=""><a href="/topics/installation" target="_self" class="">Documentation</a></li><li class=""><a href="https://github.com/tidwall/tile38" target="_self" class="">GitHub</a></li><li class=""><a href="/topics/installation" target="_self" class="tile38NavButton">Get Tile38</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Geofences</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/topics/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/topics/object-types">Object Types</a></li><li class="navListItem"><a class="navItem" href="/topics/command-line-interface">Command Line Interface</a></li><li class="navListItem"><a class="navItem" href="/topics/network-protocols">Network Protocols</a></li><li class="navListItem"><a class="navItem" href="/topics/client-libraries">Client Libraries</a></li><li class="navListItem"><a class="navItem" href="/topics/replication">Replication</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/commands/">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Geofences</h3><ul class=""><li class="navListItem"><a class="navItem" href="/topics/geofencing">Geofencing</a></li><li class="navListItem"><a class="navItem" href="/topics/roaming-geofences">Roaming Geofences</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aof">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aofmd5">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aofshrink">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/auth">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/bounds">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/chans">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-get">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-rewrite">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-set">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/del">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/delchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/delhook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/drop">__no_label</a></li><li class="navListItem hide navListItemActive"><a class="navItem" href="/commands/eval">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalna">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalnasha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalro">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalrosha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalsha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/expire">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/flushdb">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/follow">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/fset">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/gc">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/get">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/hooks">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/intersects">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jdel">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jget">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jset">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/keys">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/nearby">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/output">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdel">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdelchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdelhook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/persist">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/ping">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/psubscribe">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/quit">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/readonly">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/rename">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/renamenx">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/scan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-exists">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-flush">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-load">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/search">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/server">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/set">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/setchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/sethook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/stats">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/subscribe">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/test">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/timeout">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/ttl">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/within">__no_label</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+
+              /*
+                MELBANIA: hide tocToggler if there are no onPageNav toc-headings
+              */
+              if (!headings) {
+                let tocToggler = document.querySelector("#tocToggler");
+                tocToggler.classList.add('hide');
+              }
+              /* END melbania */
+
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+
+                  /*
+                    MELBANIA: hide tocToggler if navToggler is active, unhide 
+                    otherwise; only engage hide/unhide toggling if there are toc-headings
+                  */
+                  if (target.classList.value.includes("docsNavContainer")) {
+                    let tocHeadings = document.querySelector('.toc-headings');
+                    let tocToggler = document.querySelector('#tocToggler');
+                    
+                    if (tocHeadings) {
+                      tocToggler.classList.toggle('hide');
+                    }
+                  }
+                  /* END melbania */
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/tile38/tile38.github.io/edit/master/docs/commands/eval.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">EVAL</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h2>
+<p><strong>EVAL script numkeys [key ...] [arg ...]</strong></p>
+<h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
+<p>Commands from the EVAL family evaluate Lua scripts using the Lua 5.1 interpreter running within the Tile38 server.</p>
+<p>The <code>script</code> is a text of a Lua 5.1 script.  The content of the script will be used to create a Lua function on the server.  That function will take no arguments and should return one Lua value.  Note: the script should not start with the <code>function</code> keyword.</p>
+<p>The <code>numkeys</code> is the number of tile38 keys that will be passed into EVAL.</p>
+<p>Following that, the next <code>numkeys</code> arguments are the tile38 keys that can be accessed by the script.  The remaining tokens are the additional arguments that can be accessed by the script but do not represent the tile38 keys.</p>
+<p>The keys and additional arguments are available from the script as global variables KEYS and ARGV, both are one-based arrays (Lua tables).  Specifically, they keys will be available in the script as KEYS[1], KEYS[2], ..., and the additional arguments will be available as ARGV[1], ARGV[2], ...</p>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVAL</span> 'return <span class="hljs-geojson">{"Got keys", KEYS[1], KEYS[2], "Got args", ARGV[1]}</span>' <span class="hljs-number">2 </span>fleet fleet2 drivers
+1) "Got keys"
+2) "fleet"
+3) "fleet2"
+4) "Got args"
+5) "drivers"
+</code></pre>
+<p>The Lua environment inside the Tile38 server defines two functions to call other tile38 commands from a Lua script:</p>
+<ul>
+<li><code>tile38.call()</code></li>
+<li><code>tile38.pcall()</code></li>
+</ul>
+<p>The only difference between these two functions is how they handle the errors that might happen when the tile38 command is called.  The <code>tile38.call()</code> will raise a Lua error, while <code>tile38.pcall()</code> will return a Lua table containing the error message.</p>
+<p>The arguments of <code>tile38.call()</code> and <code>tile38.pcall()</code> are the same tokens one would send as a tile38 command:</p>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVAL</span> 'return tile38.call("<span class="hljs-command">GET</span>", "fleet", "truck1", "<span class="hljs-command">POINT</span>")' <span class="hljs-number">0
+</span>1) "33"
+2) "<span class="hljs-neg-number">-115</span>"
+</code></pre>
+<p>Note that the above call includes the key name into the script and sends 0 keys.  This should be avoided in favor of the following form:</p>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVAL</span> 'return tile38.call("<span class="hljs-command">GET</span>", <span class="hljs-command">KEYS</span>[1], <span class="hljs-command">ARGV</span>[1], "<span class="hljs-command">POINT</span>")' <span class="hljs-number">1 </span>mykey myid1
+1) "33"
+2) "<span class="hljs-neg-number">-115</span>"
+</code></pre>
+<p>This is useful in many ways. One reason is the potential future features involving clustering/sharding of the data.  Another immediate reason is that it is beneficial to have constant scripts into which different keys/args are sent.  This allows caching the compiled script on the server and avoid compiling new Lua code each time the script is evaluated (see <a href="/commands/evalsha">EVALSHA</a> and <a href="/commands/script-load">SCRIPT LOAD</a> for more details.)</p>
+<p>The value returned by a Lua script will be converted from its Lua type to one of the types supported by RESP.</p>
+<h2><a class="anchor" aria-hidden="true" id="type-conversions"></a><a href="#type-conversions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Conversions</h2>
+<p>When a Lua script calls a tile38 command through <code>tile38.call()</code> or <code>tile38.pcall()</code>, the result of the call (a RESP value) is converted to Lua type. Similarly, when the script returns a value to the EVAL command, it is converted from a Lua type to RESP. The type conversion rules are as follows:</p>
+<h3><a class="anchor" aria-hidden="true" id="resp-to-lua-conversion-table"></a><a href="#resp-to-lua-conversion-table" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RESP to Lua conversion table</h3>
+<ul>
+<li>RESP integer -&gt; Lua number</li>
+<li>RESP bulk string -&gt; Lua string</li>
+<li>RESP array -&gt; Lua table (array)</li>
+<li>RESP simple string -&gt; Lua table (key-value map) with a single <code>ok</code> key and the status message as the value</li>
+<li>RESP error -&gt; Lua table (map) with a single <code>err</code> key and the error message as the value</li>
+<li>RESP Nil -&gt; Lua boolean false</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="lua-to-resp-conversion-table"></a><a href="#lua-to-resp-conversion-table" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lua to RESP conversion table</h3>
+<ul>
+<li>Lua number -&gt; RESP integer (if you need to return a float, return it as a string!)</li>
+<li>Lua string -&gt; RESP bulk string</li>
+<li>Lua table (array) -&gt; RESP array</li>
+<li>Lua table (key-value map) -&gt; RESP array of (key, value) pairs, each pair being a RESP array of two items</li>
+<li>Lua table (key-value map) with a single <code>ok</code> key -&gt; RESP simple string</li>
+<li>Lua table (key-value map) with a single <code>err</code> key -&gt; RESP error</li>
+<li>Lua boolean false -&gt; RESP Nil</li>
+</ul>
+<p>With these conversion rules, any RESP value that is converted to Lua and then back to RESP will be identical to the original.</p>
+<p>There's a couple of additional one-way Lua-RESP conversions:</p>
+<ul>
+<li>Lua boolean true -&gt; RESP integer 1</li>
+<li>Lua nil -&gt; RESP Nil</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="helper-functions"></a><a href="#helper-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Helper functions</h2>
+<p>The Lua environment inside the Tile38 server also defines these helper functions:</p>
+<ul>
+<li><code>tile38.error_reply(error_string)</code> returns an error reply, as if obtained by the failed <code>tile38.pcall()</code>.</li>
+<li><code>tile38.status_reply(status_string)</code> returns a status reply, as if obtained by the successful <code>tile38.call()</code> or <code>tile38.pcall()</code> that returns a status reply.</li>
+<li><code>tile38.sha1hex(input_string)</code> returns a hex representation of a SHA1 digest.</li>
+<li><code>tile38.distance_to(lat_a, lon_a, lat_b, lon_b)</code> returns a distance between points <code>a</code> and <code>b</code>, in meters.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="helper-vairables"></a><a href="#helper-vairables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Helper vairables</h2>
+<ul>
+<li>A global variable <code>DEADLINE</code> is set inside the Lua environment. Its value is either <code>nil</code> (no timeout)
+or a Unix epoch second of the deadline after which the script will be killed, if invoked with the <a href="/commands/timeout">TIMEOUT</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="atomicity-of-scripts"></a><a href="#atomicity-of-scripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Atomicity of scripts</h2>
+<p>Tile38 provides three different levels of atomicity:</p>
+<ul>
+<li><strong>Full</strong>, used by <a href="/commands/eval">EVAL</a> and <a href="/commands/evalsha">EVALSHA</a>:
+No other command is running on the server during the execution ofthe script;</li>
+<li><strong>Read-only</strong>, used by <a href="/commands/evalro">EVALRO</a> and <a href="/commands/evalrosha">EVALROSHA</a>: No write-capable command is running on the server during the execution of the script.  Other read-only commands or read-only scripts might run concurrently.</li>
+<li><strong>None</strong>, used by <a href="/commands/evalna">EVALNA</a> and <a href="/commands/evalnasha">EVALNASHA</a>: It is possible that any command will run concurrently with the script. The usual Tile38 atomicity rules will be applied to each tile38 command, as the script calls it through <code>tile38.call()</code> or <code>tile38.pcall()</code>.</li>
+</ul>
+<p>The reason for providing different atomicity levels is that in that the users might want to pick a particular behavior depending on their use case. Examples:</p>
+<ol>
+<li>You want to avoid race conditions: check some values and depending on the result maybe set or delete some values, or read some other values.  In that case, you absolutely don't want any data changes to happen between the parts of your script.  Use <strong>Full</strong> atomicity: call your script through <a href="/commands/eval">EVAL</a> or <a href="/commands/evalsha">EVALSHA</a>.</li>
+<li>You want to avoid race conditions, but you know your script does not make any writes itself.  In that case, you may use either <strong>Full</strong> or <strong>Read-only</strong> atomicity.  If you choose <strong>Read-only</strong> your script might execute faster, as it will not have to wait for all existing readers to finish first.  A <strong>Read-only</strong> script will also let other read-only commands or read-only scripts to run faster, as they will not have to wait for you to finish first. In other words, if your script is guaranteed to be read-only, you loose nothing and potentially gain by using <strong>Read-only</strong> level.  Call your script using <a href="/commands/evalro">EVALRO</a> or <a href="/commands/evalrosha">EVALROSHA</a>.</li>
+<li>You are running long script such as a search with the cursor, then examining the returned values and picking the ones you like, and then getting more values from the cursor, and so on.  The reason you use a script as opposed to multiple calls from the client is that you don't want to waste time on the round trips.  At the same time, you're not concerned about race conditions.  In that case, use the <strong>None</strong> atomicity. In other words, call your script through <a href="/commands/evalna">EVALNA</a> or <a href="/commands/evalnasha">EVALNASHA</a>.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="caching-and--sha-commands"></a><a href="#caching-and--sha-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching and -SHA commands</h2>
+<p>Tile38 has an internal caching mechanism that will avoid recompiling a script on every evaluation, so even if you send the same script multiple times it will only be compiled once.</p>
+<p>However, you can run scripts even more efficiently (taking less bandwidth) by using -SHA version of the commands: <a href="/commands/evalsha">EVALSHA</a>, <a href="/commands/evalrosha">EVALROSHA</a>, and <a href="/commands/evalnasha">EVALNASHA</a>.  For each script you want to run:</p>
+<ol>
+<li>Load that script by <a href="/commands/script-load">SCRIPT LOAD</a> command, which returns the SHA1 digest of your script.</li>
+</ol>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">SCRIPT</span> <span class="hljs-command">LOAD</span> "return tile38.pcall('set', <span class="hljs-command">KEYS</span>[1], <span class="hljs-command">ARGV</span>[1], 'point', <span class="hljs-command">ARGV</span>[2], <span class="hljs-command">ARGV</span>[2])"
+"d8bc159162250f39654a6466a92a66215814877b"
+</code></pre>
+<ol start="2">
+<li>Use a -SHA command exactly as you would have used a non-SHA command, the only difference being that you send a SHA1 digest string as your first argument.</li>
+</ol>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVALSHA</span> d8bc159162250f39654a6466a92a66215814877b <span class="hljs-number">1 </span>mykey myid2 <span class="hljs-number">33.1 </span><span class="hljs-neg-number">-115.1</span>
+<span class="hljs-command">OK</span>
+</code></pre>
+<p>The script caching is not persistent, meaning it will be lost when the tile38 server is restarted.</p>
+<p>Commands relevant to script caching are:</p>
+<ul>
+<li><a href="/commands/script-flush">SCRIPT FLUSH</a></li>
+<li><a href="/commands/script-exists">SCRIPT EXISTS</a></li>
+<li><a href="/commands/script-load">SCRIPT LOAD</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="replication"></a><a href="#replication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Replication</h2>
+<p>The changes to the tile38 data made by scripts are replicated on the command level.  In other words, when the script runs multiple commands, each command's changes will be shipped to the replicas and replayed there.</p>
+<h2><a class="anchor" aria-hidden="true" id="global-variables-protection"></a><a href="#global-variables-protection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Global variables protection</h2>
+<p>The scripts are not allowed to create global variables, as this would leak memory in the re-used Lua state.  An attempt to create a global variable will result in error:</p>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVAL</span> 'a=10' <span class="hljs-number">0
+</span>(error) <span class="hljs-command">ERR</span> f_933044db579a2f8fd45d8065f04a8d0249383e57:1: attempt to create global variable 'a'
+stack traceback:
+    [<span class="hljs-command">G</span>]: in function (anonymous)
+    f_933044db579a2f8fd45d8065f04a8d0249383e57:1: in main chunk
+    [<span class="hljs-command">G</span>]: ?
+</code></pre>
+<p>Note: this measure can only prevent the accidental modifications of the global namespace.  If the malicious user really wants to modify or delete existing global variables, there's no protection we could put in place that the user could not undo.  Therefore there's no more protection for existing globals. Do not mess them up!</p>
+<p>Any variables that the script needs to set up should be prepended with the <code>local</code> keyword:</p>
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">EVAL</span> 'local a=10; return a * 3' <span class="hljs-number">0
+</span>(integer) <span class="hljs-number">30
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="available-libraries"></a><a href="#available-libraries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Available libraries</h2>
+<p>The following libraries are loaded in the Lua interpreter inside the Tile38 server:</p>
+<ul>
+<li><code>base</code></li>
+<li><code>table</code></li>
+<li><code>io</code></li>
+<li><code>os</code></li>
+<li><code>string</code></li>
+<li><code>math</code></li>
+<li><code>debug</code></li>
+<li><code>json</code></li>
+</ul>
+<p>Every Tile38 instance is guaranteed to have all these libraries so you can be sure that the environment for your scripts is always the same.</p>
+<p><code>json</code> is an external library, all the other libraries are standard Lua libraries, see <strong>Miscellaneous notes</strong> below.</p>
+<h3><a class="anchor" aria-hidden="true" id="json"></a><a href="#json" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON</h3>
+<p>The JSON library exposes <code>decode</code> and <code>encode</code> functions. Examples:</p>
+<pre><code class="hljs css language-tile38-cli">&gt; <span class="hljs-command">EVAL</span> 'return json.encode(<span class="hljs-geojson">{["foo"]= "bar"}</span>)' <span class="hljs-number">0
+</span>"<span class="hljs-geojson">{\"foo\":\"bar\"}</span>"
+    
+&gt; <span class="hljs-command">EVAL</span> 'return json.decode(<span class="hljs-command">ARGV</span>[1])["foo"]' <span class="hljs-number">0 </span>"<span class="hljs-geojson">{\"foo\":\"bar\"}</span>"
+"bar"
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="unsupported-functions"></a><a href="#unsupported-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unsupported functions</h3>
+<p>The following functions from standard Lua libraries are not available:</p>
+<ul>
+<li><code>string.dump</code></li>
+<li><code>os.setlocale</code></li>
+<li><code>lua_Debug.namewhat</code></li>
+<li><code>package.loadlib</code></li>
+<li>debug hooks</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="miscellaneous-notes"></a><a href="#miscellaneous-notes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous notes</h3>
+<ul>
+<li><code>collectgarbage</code> does not take any arguments and runs the garbage collector for the entire Tile38 server.</li>
+<li><code>file:setvbuf</code> does not support a line buffering.</li>
+<li>Daylight saving time is not supported.</li>
+<li><code>os.setenv(name, value)</code> is a function that sets an environment variable.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="related-commands"></a><a href="#related-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Related Commands</h2>
+<p><strong><a href="/commands/eval">EVAL</a></strong><br>
+<a href="/commands/evalna">EVALNA</a><br>
+<a href="/commands/evalnasha">EVALNASHA</a><br>
+<a href="/commands/evalro">EVALRO</a><br>
+<a href="/commands/evalrosha">EVALROSHA</a><br>
+<a href="/commands/evalsha">EVALSHA</a><br>
+<a href="/commands/script-exists">SCRIPT EXISTS</a><br>
+<a href="/commands/script-flush">SCRIPT FLUSH</a><br>
+<a href="/commands/script-load">SCRIPT LOAD</a><br></p>
+</span></div></article></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#syntax">Syntax</a></li><li><a href="#description">Description</a></li><li><a href="#type-conversions">Type Conversions</a><ul class="toc-headings"><li><a href="#resp-to-lua-conversion-table">RESP to Lua conversion table</a></li><li><a href="#lua-to-resp-conversion-table">Lua to RESP conversion table</a></li></ul></li><li><a href="#helper-functions">Helper functions</a></li><li><a href="#helper-vairables">Helper vairables</a></li><li><a href="#atomicity-of-scripts">Atomicity of scripts</a></li><li><a href="#caching-and--sha-commands">Caching and -SHA commands</a></li><li><a href="#replication">Replication</a></li><li><a href="#global-variables-protection">Global variables protection</a></li><li><a href="#available-libraries">Available libraries</a><ul class="toc-headings"><li><a href="#json">JSON</a></li><li><a href="#unsupported-functions">Unsupported functions</a></li><li><a href="#miscellaneous-notes">Miscellaneous notes</a></li></ul></li><li><a href="#related-commands">Related Commands</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="legal"><section class="copyright">Copyright © 2020 Tile38<a href="/license">MIT License</a></section></div><div class="docs"><h5>Docs</h5><a href="/topics/installation">Getting Started</a><a href="/topics/geofencing">Geofences</a><a href="/commands/">Commands</a></div><div class="community"><h5>Community</h5><a href="https://stackoverflow.com/search?q=tile38" rel="noreferrer noopener">Stack Overflow</a><a href="https://tile38.com/slack">Slack</a><a href="https://twitter.com/tile38db" rel="noreferrer noopener">Twitter</a></div><div class="more"><h5>More</h5><a href="https://github.com/tidwall/tile38">GitHub</a><a class="github-button" href="https://github.com/tidwall/tile38" data-icon="octicon-star" data-count-href="/tidwall/tile38/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>

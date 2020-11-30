@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Tile38 Blog</title>
+        <link>https://tile38.com/blog</link>
+        <description>The best place to stay up-to-date with the latest Tile38 news and events.</description>
+        <lastBuildDate>Tue, 01 Dec 2020 06:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Tile38 Blog</title>
+            <url>https://tile38.com/img/logo.svg</url>
+            <link>https://tile38.com/blog</link>
+        </image>
+        <copyright>Copyright © 2020 Tile38</copyright>
+        <item>
+            <title><![CDATA[New Website]]></title>
+            <link>https://tile38.com/blog/2020/12/01/blog-post.html</link>
+            <guid>https://tile38.com/blog/2020/12/01/blog-post.html</guid>
+            <pubDate>Tue, 01 Dec 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
+]]></description>
+        </item>
+    </channel>
+</rss>

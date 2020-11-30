@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tile38.com/blog</id>
+    <title>Tile38 Blog</title>
+    <updated>2020-12-01T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://tile38.com/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest Tile38 news and events.</subtitle>
+    <logo>https://tile38.com/img/logo.svg</logo>
+    <rights>Copyright © 2020 Tile38</rights>
+    <entry>
+        <title type="html"><![CDATA[New Website]]></title>
+        <id>https://tile38.com/blog/2020/12/01/blog-post.html</id>
+        <link href="https://tile38.com/blog/2020/12/01/blog-post.html"/>
+        <updated>2020-12-01T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
+]]></summary>
+        <author>
+            <name>Josh Baker</name>
+            <uri>http://twitter.com/tidwall</uri>
+        </author>
+    </entry>
+</feed>
