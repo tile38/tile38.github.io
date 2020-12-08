@@ -79,7 +79,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Tile38`,
+  copyright: `Copyright © ${new Date().getFullYear()} Tile38, LLC`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
