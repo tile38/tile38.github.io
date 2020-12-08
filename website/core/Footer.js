@@ -21,7 +21,7 @@ class Footer extends React.Component {
           <div className="legal">
             <section className="copyright">
               {this.props.config.copyright}
-              <a href={this.docUrl("license")}>MIT License</a>
+              <a href={this.docUrl("license")}>License</a>
             </section>
           </div>
 
