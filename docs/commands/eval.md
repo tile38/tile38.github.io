@@ -116,7 +116,7 @@ However, you can run scripts even more efficiently (taking less bandwidth) by us
 
 1. Load that script by [SCRIPT LOAD](../commands/script-load.md) command, which returns the SHA1 digest of your script.
 ```tile38-cli
-SCRIPT LOAD "return tile38.pcall('set', KEYS[1], ARGV[1], 'point', ARGV[2], ARGV[2])"
+SCRIPT LOAD "return tile38.pcall('set', KEYS[1], ARGV[1], 'point', ARGV[2], ARGV[3])"
 "d8bc159162250f39654a6466a92a66215814877b"
 ```
 2. Use a -SHA command exactly as you would have used a non-SHA command, the only difference being that you send a SHA1 digest string as your first argument.
