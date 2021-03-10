@@ -192,3 +192,14 @@ Changes should be visible on the live [Tile38 Documentation website](<(http://ti
 
 - Check/Uncheck the "disable cache" toggle in the Network tab of Chrome's developer tools.
 - Refresh the page (Click the circular arrow button next to the address bar).
+
+# Makefile
+
+There's also a makefile that shortens the steps above.
+
+```
+make build   # build the site
+make serve   # serve and test the site on your machine at port 8000
+make publish # publish to tile38.github.io (https://tile38.com)
+```
+
