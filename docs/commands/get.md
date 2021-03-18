@@ -19,7 +19,7 @@ Output formats:
 - **BOUNDS**: A [minimum bounding rectangle](https://en.wikipedia.org/wiki/Minimum_bounding_rectangle). 
 - **HASH**: A [Geohash](https://en.wikipedia.org/wiki/Geohash).
 
-A Geohash requires a precision of 1 to 22.
+A Geohash requires a precision of 1 to 12.
 
 The **WITHFIELDS** option will also return the [fields](../commands/set.md#fields) that belong to the object.
 Field values that are equal to zero are omitted.
