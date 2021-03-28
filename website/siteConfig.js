@@ -39,6 +39,10 @@ const siteConfig = {
     // { page: "license", label: "License" },
     // { blog: true, label: "Blog" },
     {
+      href: "https://github.com/sponsors/tidwall",
+      label: "Sponsor",
+    },
+    {
       href: "https://github.com/tidwall/tile38",
       label: "GitHub",
     },
