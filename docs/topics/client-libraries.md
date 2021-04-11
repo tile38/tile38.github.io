@@ -4,7 +4,7 @@ title: Client Libraries
 sidebar_label: Client Libraries
 ---
 
-## Tile38 Clients Libraries
+## Tile38 Client Libraries
 
 The following clients are built specifically for Tile38.  
 Clients that support most Tile38 features are marked with a ⭐️.
