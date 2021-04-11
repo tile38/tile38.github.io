@@ -6,7 +6,7 @@ sidebar_label: Client Libraries
 
 ## Tile38 Clients Libraries
 
-The following clients are built specifically for Tile38. 
+The following clients are built specifically for Tile38.  
 Clients that support most Tile38 features are marked with a ⭐️.
 
 - ⭐️ Go: [xjem/t38c](https://github.com/xjem/t38c)
