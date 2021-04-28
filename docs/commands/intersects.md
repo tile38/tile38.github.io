@@ -60,7 +60,7 @@ You can choose a value between 1 and 8. The value 1 will result in no more than 
 
 **CLIP** - CLIP tells the server to clip intersecting objects by the bounding box area of the search.  It can only be used with these area formats: BOUNDS, TILE, QUADKEY, HASH.
 
-**LIMIT** - LIMIT can be used to limit the number of objects returned for a single search request.
+**LIMIT** - LIMIT can be used to limit the number of objects returned for a single search request. If not provide, the default is 100.
 
 
 <a name="output-formats"></a>
