@@ -54,6 +54,8 @@ sidebar_label: Commands
 
 **[GET](get.html)** - Get the object of an id
 
+**[HEALTHZ](healthz.html)** - Health/Ready check for Leader/Follower
+
 **[HOOKS](hooks.html)** - Finds all hooks matching a pattern
 
 **[INTERSECTS](intersects.html)** - Searches for ids that intersect an area
@@ -119,4 +121,3 @@ sidebar_label: Commands
 **[TTL](ttl.html)** - Get a timeout on an id
 
 **[WITHIN](within.html)** - Searches for ids that completely within the area
-
