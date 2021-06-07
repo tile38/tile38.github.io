@@ -51,10 +51,10 @@ SET fleet truck1 HASH 9tbnthxzr   # this would be equivlent to 'POINT 33.5123 -1
 
 <i>\* All ignored members will not persist.</i>
 
-**Important to note that all coordinates are in Longitude, Latitude order.**
+**Important to note that all GeoJSON coordinates are in Longitude, Latitude order.**
 
 ```tile38-cli
-SET city tempe OBJECT {"type":"Polygon","coordinates":[[[-111.9787,33.4411],[-111.8902,33.4377],[-111.8950,33.2892],[-111.9739,33.2932],[-111.9787,33.4411]]]}
+SET city tempe OBJECT '{"type":"Polygon","coordinates":[[[-111.9787,33.4411],[-111.8902,33.4377],[-111.8950,33.2892],[-111.9739,33.2932],[-111.9787,33.4411]]]}'
 ```
 
 <a name="xyz-tile"></a>
