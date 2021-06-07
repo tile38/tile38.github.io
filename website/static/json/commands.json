@@ -1267,6 +1267,10 @@
     "summary": "Ping the server",
     "group": "connection"
   },
+  "HEALTHZ": {
+    "summary": "Health/Ready check for Leader/Follower",
+    "group": "connection"
+  },
   "QUIT": {
     "summary": "Close the connection",
     "group": "connection"
