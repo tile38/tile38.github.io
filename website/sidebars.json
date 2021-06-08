@@ -9,9 +9,10 @@
       "topics/replication",
       "commands/index"
     ],
-    "Geofences": [
+    "Topics": [
       "topics/geofencing",
       "topics/roaming-geofences",
+      "topics/areas-expressions",
       "commands/aof",
       "commands/aofmd5",
       "commands/aofshrink",

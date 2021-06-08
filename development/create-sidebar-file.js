@@ -13,7 +13,11 @@ let categories = {
       "topics/replication",
       "commands/index"
     ],
-    Geofences: ["topics/geofencing", "topics/roaming-geofences"]
+    Geofences: [
+      "topics/geofencing", 
+      "topics/roaming-geofences",
+      "topics/areas-expressions"
+    ]
   }
 };
 
