@@ -4,8 +4,6 @@ title: Replication
 sidebar_label: Replication
 ---
 
-
-
 Tile38 replication is a leader-follower model and is intended to be very easy to set up.
 
 ## Quick Tutorial
@@ -51,3 +49,14 @@ GET key1 obj1                    # execute on the port 9852 server
 ```
 
 The object will be returned.
+
+## Additional information
+
+A follower will never accept write commands. Write commands are those that create, update, delete or rename objects and collections.
+For a follower to accept read commands, so commands that request data from the server like e.g. `SCAN`, `WITHIN`, the follower
+must have **caught up** to its leader.
+If not caught up, the follower will reject the commands with `[Error]: not caught up`.
+
+You can check that status using [HEALTHZ](../commands/healthz.md).
+
+Commands like `HEALTHZ`, `INFO`, `SERVER` and `OUTPUT` are always accepted by a follower, no matter if caught up, or not.
