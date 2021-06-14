@@ -36,6 +36,8 @@ readinessProbe:
   initialDelaySeconds: 60
 ```
 
+For more information on the availability of commands on the follower see [Replication](../topics/replication.md).
+
 ## Related Commands
 
 [AUTH](../commands/auth.md)<br>
