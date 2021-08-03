@@ -94,6 +94,52 @@ SETHOOK warehouse kafka://10.0.20.78:9092/warehouse ...
 
 All webhook messages will be sent to the Kafka server at `10.0.20.78:9092` to a [topic](https://kafka.apache.org/documentation/#intro_topics) called warehouse. The port number is optional and will default to 9092.
 
+#### Options
+
+- `auth` - `sasl`, `tls`
+- `ssl` - `true`
+- `sha256` - `true`
+- `sha512` - `true`
+- `cacert` - `path/to/ca.crt`
+- `cert` - `path/to/user.crt`
+- `key` - `path/to/user.key`
+
+#### Authentication
+
+Tile38 currently supports SASL/PLAIN, SASL/SSL and TLS authentication with
+your Apache Kafka broker.
+
+##### SASL PLAIN
+
+Add `KAFKA_USERNAME` and `KAFKA_PASSWORD` to your environment. Then you can set
+the hook as follows:
+
+```
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&ssl=false&sha512=true ...
+```
+
+##### SASL / SSL
+
+Add `KAFKA_USERNAME` and `KAFKA_PASSWORD` to your environment. Make sure to
+mount the root certificate of your broker into your Tile38 leader. Then you can set
+the hook as follows:
+
+```
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&ssl=true&sha512=true&cacert=path/to/ca.crt ...
+```
+
+where `sha256` or `sha512` depend on the authentication that has
+been setup in your broker.
+
+##### TLS
+
+Make sure that the root certificate of your broker as well as the user certificate
+and the key are mounted into the Tile38 leader instance. Then setup as follows:
+
+```
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=tls&cacert=path/to/ca.crt&cert=/path/to/user.crt&key=/path/to/user.key ...
+```
+
 ### AMQP
 
 The `amqp://` url scheme provides support for sending messages to a [RabbitMQ](https://www.rabbitmq.com/) broker via the Advanced Message Queuing Protocol (AMQP) version 0.9.1.
@@ -205,3 +251,4 @@ Tile38 will try to send a message to the first endpoint. If the send is a failur
 [HOOKS](../commands/hooks.md)<br>
 [PDELHOOK](../commands/pdelhook.md)<br>
 **[SETHOOK](../commands/sethook.md)**<br>
+
