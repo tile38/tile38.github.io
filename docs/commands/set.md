@@ -84,13 +84,13 @@ To set the z coordinate:
 
 ```tile38-cli
 SET fleet truck1 POINT 33.5123 -112.2693 115
-SET fleet truck1 OBJECT {"type":"Point","coordinates":[33.5123,-112.2693,115]}
+SET fleet truck1 OBJECT {"type":"Point","coordinates":[-112.2693,33.5123,115]}
 ```
 
 Now queries can search the z coordinate by treating it as a field:
 
 ```tile38-cli
-NEARBY 1 WHERE z -15 130 POINTS 33 -115 100000
+NEARBY fleet WHERE z -15 130 POINTS 33 -115 100000
 ```
 
 Which will look for all points that are within 100 kilometers of 33,-115 and have a `z` coordinate between -15 and 130.
