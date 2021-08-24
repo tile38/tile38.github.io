@@ -128,10 +128,10 @@ There is no limit to the number of fields that an object can have.</p>
 <p>A <strong>z</strong> coordinate allows for optimized range queries for values such as Elevation and Timestamps.</p>
 <p>To set the z coordinate:</p>
 <pre><code class="hljs css language-tile38-cli"><span class="hljs-command">SET</span> fleet truck1 <span class="hljs-command">POINT</span> <span class="hljs-number">33.5123 </span><span class="hljs-neg-number">-112.2693</span> <span class="hljs-number">115
-</span><span class="hljs-command">SET</span> fleet truck1 <span class="hljs-command">OBJECT</span> <span class="hljs-geojson">{"type":"Point","coordinates":[33.5123,-112.2693,115]}</span>
+</span><span class="hljs-command">SET</span> fleet truck1 <span class="hljs-command">OBJECT</span> <span class="hljs-geojson">{"type":"Point","coordinates":[-112.2693,33.5123,115]}</span>
 </code></pre>
 <p>Now queries can search the z coordinate by treating it as a field:</p>
-<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">NEARBY</span> <span class="hljs-number">1 </span><span class="hljs-command">WHERE</span> z <span class="hljs-neg-number">-15</span> <span class="hljs-number">130 </span><span class="hljs-command">POINTS</span> <span class="hljs-number">33 </span><span class="hljs-neg-number">-115</span> <span class="hljs-number">100000
+<pre><code class="hljs css language-tile38-cli"><span class="hljs-command">NEARBY</span> fleet <span class="hljs-command">WHERE</span> z <span class="hljs-neg-number">-15</span> <span class="hljs-number">130 </span><span class="hljs-command">POINTS</span> <span class="hljs-number">33 </span><span class="hljs-neg-number">-115</span> <span class="hljs-number">100000
 </span></code></pre>
 <p>Which will look for all points that are within 100 kilometers of 33,-115 and have a <code>z</code> coordinate between -15 and 130.
 <strong>notice the lowercase <code>z</code> in the WHERE clause</strong></p>
