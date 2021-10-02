@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)**
+**INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
 
 ## Description
 
@@ -105,6 +105,8 @@ Might be used to search for all object in the `poi` key that are within the obje
 **QUADKEY** - A [QuadKey](../topics/object-types.md#quadkey).
 
 **HASH** - A [Geohash](../topics/object-types.md#geohash).
+
+**SECTOR** - A [Sector](../topics/object-types.md#sector).
 
 <a name="fields"></a>
 ## Fields
