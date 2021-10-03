@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**TEST (POINT lat lon)|(GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash) INTERSECTS|WITHIN [CLIP] (POINT lat lon)|(GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)**
+**TEST (POINT lat lon)|(GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash) INTERSECTS|WITHIN [CLIP] (POINT lat lon)|(GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
 
 ## Description
 

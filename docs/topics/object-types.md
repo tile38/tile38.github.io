@@ -38,7 +38,6 @@ A [geohash](https://en.wikipedia.org/wiki/Geohash) is a string respresentation o
 ```tile38-cli
 SET fleet truck1 HASH 9tbnthxzr   # this would be equivlent to 'POINT 33.5123 -112.2693'
 ```
-
 <a name="geojson"></a>
 
 ## GeoJSON
@@ -69,3 +68,16 @@ Check out [maptiler.org](http://www.maptiler.org/google-maps-coordinates-tile-bo
 ## QuadKey
 
 A QuadKey used the same coordinate system as an XYZ tile except that the string representation is a string characters composed of 0, 1, 2, or 3. For a detailed explanation checkout [The Bing Maps Tile System](https://msdn.microsoft.com/en-us/library/bb259689.aspx).
+
+<a name="sector"></a>
+
+## Sector
+
+A circular sector polygon feature spanning the angle between two given bearings, a center point and a radius. A 0 degree bearing describes the geographic north.
+
+```tile38-cli
+WITHIN fleet SECTOR 33.5123 -112.2693 1000 0 90			# lat, lon, meters, bearing1 bearing2
+```
+
+This would return all objects in the fleet collection between a 0 degree and 90 degree angle from the origin point in the given radius in meters.
+
