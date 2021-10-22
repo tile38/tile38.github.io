@@ -235,6 +235,19 @@ The following optional parameters are available for this hook, the listed value 
 - `user` - empty string
 - `pass` - empty string
 
+### Azure Event Hub
+Messages can be sent to an [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about) by specifying the Event Hub connection string. 
+
+For example: 
+
+```
+SETHOOK warehouse Endpoint=sb://event-hub-namespace.windows.net/;SharedAccessKeyName=sharedAccessKeyName;SharedAccessKey=***Secret***;EntityPath=event-hub-name ...
+```
+
+All webhook messages will be sent to the Event Hub in namespace `event-hub-namespace` to the Event Hub `event-hub-name`.
+
+The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements shown (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing. 
+
 ### Endpoint Failover
 
 It's possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.
