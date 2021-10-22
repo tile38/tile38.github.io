@@ -240,13 +240,13 @@ Messages can be sent to an [Azure Event Hub](https://docs.microsoft.com/en-us/az
 
 For example: 
 
-```
+```tile38-cli
 SETHOOK warehouse Endpoint=sb://event-hub-namespace.windows.net/;SharedAccessKeyName=sharedAccessKeyName;SharedAccessKey=***Secret***;EntityPath=event-hub-name ...
 ```
 
 All webhook messages will be sent to the Event Hub in namespace `event-hub-namespace` to the Event Hub `event-hub-name`.
 
-The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements shown (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing. 
+The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing or not in the order shown in the example. 
 
 ### Endpoint Failover
 
