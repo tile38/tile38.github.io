@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**INTERSECTS key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
+**INTERSECTS key [CURSOR start] [LIMIT count] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
 
 ## Description
 
@@ -27,24 +27,9 @@ Above is a search around the rectangle with the southwestern point `33.462,-112.
 
 Below is a complete list of search options. These options are shared by the [NEARBY](../commands/nearby.md), [WITHIN](../commands/within.md), [INTERSECTS](../commands/intersects.md), and [SCAN](../commands/scan.md) commands.
 
-*Please note that the [SCAN](../commands/scan.md) command does not allow `FENCE` and `SPARSE`.*
-
 **FENCE** - FENCE opens a [Geofence](../topics/geofencing.md).
 
 **DETECT** - DETECT is available when the FENCE options is specified. It allows for filtering out geofence notifications based on the type. For more information see the [Geofence](../topics/geofencing.md#detect) topic.
-
-**SPARSE** - SPARSE will distribute the results of a search evenly across the requested area.  
-This is very helpful for example; when you have many (perhaps millions) of objects and do not want them all clustered together on a map. Sparse will limit the number of objects returned and provide them evenly distributed so that your map looks clean.<br><br>
-You can choose a value between 1 and 8. The value 1 will result in no more than 4 items. The value 8 will result in no more than 65536. *1=4, 2=16, 3=64, 4=256, 5=1024, 6=4098, 7=16384, 8=65536.*<br>
-<table width="100%"> 
-    <td align="center">No Sparsing<img src="/img/sparse-none.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 1<img src="/img/sparse-1.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 2<img src="/img/sparse-2.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 3<img src="/img/sparse-3.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 4<img src="/img/sparse-4.png" width="100" height="100" border="0" alt="Search Within"></td>
-    <td align="center">Sparse 5<img src="/img/sparse-5.png" width="100" height="100" border="0" alt="Search Within"></td>
-</table><br>
-*Please note that the higher the sparse value, the slower the performance. Also, LIMIT and CURSOR are not available when using SPARSE.* 
 
 **WHERE** - WHERE allows for filtering out results based on [field](../commands/set.md#fields) values. For example<br>```nearby fleet where speed 70 +inf point 33.462 -112.268 6000``` will return only the objects in the 'fleet' collection that are within the 6 km radius **and** have a field named `speed` that is greater than `70`. <br><br>Multiple WHEREs are concatenated as **and** clauses. ```WHERE speed 70 +inf WHERE age -inf 24``` would be interpreted as *speed is over 70 <b>and</b> age is less than 24.*<br><br>The default value for a field is always `0`. Thus if you do a WHERE on the field `speed` and an object does not have that field set, the server will pretend that the object does and that the value is Zero.
 

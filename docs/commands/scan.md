@@ -24,8 +24,6 @@ Above is a scan for all object in the `fleet` key.
 
 For a complete list of search options please see the [INTERSECTS](../commands/intersects.md#search-options) command.
 
-*Please note that the [SCAN](../commands/scan.md) command does not allow `FENCE` and `SPARSE`.*
-
 ## Output Formats
 
 For a complete list of output formats please see the [INTERSECTS](../commands/intersects.md#output-formats) command.

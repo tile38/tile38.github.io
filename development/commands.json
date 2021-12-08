@@ -560,12 +560,6 @@
         "optional": true
       },
       {
-        "command": "SPARSE",
-        "name": "spread",
-        "type": "integer",
-        "optional": true
-      },
-      {
         "command": "MATCH",
         "name": "pattern",
         "type": "pattern",
@@ -722,12 +716,6 @@
       {
         "command": "LIMIT",
         "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "SPARSE",
-        "name": "spread",
         "type": "integer",
         "optional": true
       },
@@ -919,30 +907,30 @@
                 "type": "geohash"
               }
             ]
-          },
-          { 
-						"name": "SECTOR",
+          },          
+          {
+            "name": "SECTOR",
             "arguments": [
               {
                 "name": "lat",
                 "type": "double"
               },
-							{
+              {
                 "name": "lon",
                 "type": "double"
               },
-							{
-                "name": "meters",
+              {
+                "name": "radius",
                 "type": "double"
               },
-							{
-                "name": "bearing1",
+              {
+                "name": "startBearing",
                 "type": "double"
               },
-							{
-                "name": "bearing2",
+              {
+                "name": "endBearing",
                 "type": "double"
-              },
+              }
             ]
           }
         ]
@@ -968,12 +956,6 @@
       {
         "command": "LIMIT",
         "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "SPARSE",
-        "name": "spread",
         "type": "integer",
         "optional": true
       },
@@ -1172,32 +1154,31 @@
               }
             ]
           },
-          { 
-						"name": "SECTOR",
+          {
+            "name": "SECTOR",
             "arguments": [
               {
                 "name": "lat",
                 "type": "double"
               },
-							{
+              {
                 "name": "lon",
                 "type": "double"
               },
-							{
-                "name": "meters",
+              {
+                "name": "radius",
                 "type": "double"
               },
-							{
-                "name": "bearing1",
+              {
+                "name": "startBearing",
                 "type": "double"
               },
-							{
-                "name": "bearing2",
+              {
+                "name": "endBearing",
                 "type": "double"
-              },
+              }
             ]
           }
-
         ]
       }
     ],
@@ -1316,10 +1297,6 @@
   },
   "PING": {
     "summary": "Ping the server",
-    "group": "connection"
-  },
-  "HEALTHZ": {
-    "summary": "Health/Ready check for Leader/Follower",
     "group": "connection"
   },
   "QUIT": {
@@ -1973,33 +1950,7 @@
                 "type": "geohash"
               }
             ]
-          },
-          { 
-						"name": "SECTOR",
-            "arguments": [
-              {
-                "name": "lat",
-                "type": "double"
-              },
-							{
-                "name": "lon",
-                "type": "double"
-              },
-							{
-                "name": "meters",
-                "type": "double"
-              },
-							{
-                "name": "bearing1",
-                "type": "double"
-              },
-							{
-                "name": "bearing2",
-                "type": "double"
-              },
-            ]
           }
-
         ]
       },
       {
@@ -2129,33 +2080,7 @@
                 "type": "geohash"
               }
             ]
-          },
-          { 
-						"name": "SECTOR",
-            "arguments": [
-              {
-                "name": "lat",
-                "type": "double"
-              },
-							{
-                "name": "lon",
-                "type": "double"
-              },
-							{
-                "name": "meters",
-                "type": "double"
-              },
-							{
-                "name": "bearing1",
-                "type": "double"
-              },
-							{
-                "name": "bearing2",
-                "type": "double"
-              },
-            ]
           }
-
         ]
       }
     ],

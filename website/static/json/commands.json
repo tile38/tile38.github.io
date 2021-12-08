@@ -560,12 +560,6 @@
         "optional": true
       },
       {
-        "command": "SPARSE",
-        "name": "spread",
-        "type": "integer",
-        "optional": true
-      },
-      {
         "command": "MATCH",
         "name": "pattern",
         "type": "pattern",
@@ -722,12 +716,6 @@
       {
         "command": "LIMIT",
         "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "SPARSE",
-        "name": "spread",
         "type": "integer",
         "optional": true
       },
@@ -919,6 +907,31 @@
                 "type": "geohash"
               }
             ]
+          },          
+          {
+            "name": "SECTOR",
+            "arguments": [
+              {
+                "name": "lat",
+                "type": "double"
+              },
+              {
+                "name": "lon",
+                "type": "double"
+              },
+              {
+                "name": "radius",
+                "type": "double"
+              },
+              {
+                "name": "startBearing",
+                "type": "double"
+              },
+              {
+                "name": "endBearing",
+                "type": "double"
+              }
+            ]
           }
         ]
       }
@@ -943,12 +956,6 @@
       {
         "command": "LIMIT",
         "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "SPARSE",
-        "name": "spread",
         "type": "integer",
         "optional": true
       },
@@ -1146,6 +1153,31 @@
                 "type": "geohash"
               }
             ]
+          },
+          {
+            "name": "SECTOR",
+            "arguments": [
+              {
+                "name": "lat",
+                "type": "double"
+              },
+              {
+                "name": "lon",
+                "type": "double"
+              },
+              {
+                "name": "radius",
+                "type": "double"
+              },
+              {
+                "name": "startBearing",
+                "type": "double"
+              },
+              {
+                "name": "endBearing",
+                "type": "double"
+              }
+            ]
           }
         ]
       }
@@ -1265,10 +1297,6 @@
   },
   "PING": {
     "summary": "Ping the server",
-    "group": "connection"
-  },
-  "HEALTHZ": {
-    "summary": "Health/Ready check for Leader/Follower",
     "group": "connection"
   },
   "QUIT": {

@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**NEARBY key [CURSOR start] [LIMIT count] [SPARSE spread] [MATCH pattern] [DISTANCE] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (POINT lat lon meters)|(ROAM key pattern meters)**
+**NEARBY key [CURSOR start] [LIMIT count] [MATCH pattern] [DISTANCE] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (POINT lat lon meters)|(ROAM key pattern meters)**
 
 ## Description
 
