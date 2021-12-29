@@ -5,16 +5,17 @@ const commands = JSON.parse(rawdata);
 let categories = {
   docs: {
     "Getting Started": [
+      "topics/configuration",
       "topics/installation",
       "topics/object-types",
       "topics/command-line-interface",
       "topics/network-protocols",
       "topics/client-libraries",
       "topics/replication",
-      "commands/index"
+      "commands/index",
     ],
-    Geofences: ["topics/geofencing", "topics/roaming-geofences"]
-  }
+    Geofences: ["topics/geofencing", "topics/roaming-geofences"],
+  },
 };
 
 const rootDir = "commands/";
@@ -31,12 +32,12 @@ noLabelCommands = noLabelCommands.sort();
 
 categories.docs["Getting Started"] = [
   ...categories.docs["Getting Started"],
-  ...noLabelCommands
+  ...noLabelCommands,
 ];
 
 // // write content to file
 const content = JSON.stringify(categories);
-fs.writeFile(`../website/sidebars.json`, content, function(err) {
+fs.writeFile(`../website/sidebars.json`, content, function (err) {
   if (err) throw err;
   console.log(`Saved!`);
 });
