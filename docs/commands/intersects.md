@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**INTERSECTS key [CURSOR start] [LIMIT count] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
+**INTERSECTS key [CURSOR start] [BUFFER meters] [LIMIT count] [MATCH pattern] [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] [WHEREEVALSHA sha1 numargs arg [arg...] ...] [CLIP] [NOFIELDS] [FENCE] [DETECT what] [COMMANDS which] [COUNT|IDS|OBJECTS|POINTS|BOUNDS|(HASHES precision)] (GET key id)|(BOUNDS minlat minlon maxlat maxlon)|(OBJECT geojson)|(CIRCLE lat lon meters)|(TILE x y z)|(QUADKEY quadkey)|(HASH geohash)|(SECTOR lat lon meters bearing1 bearing2)**
 
 ## Description
 
@@ -46,6 +46,8 @@ Below is a complete list of search options. These options are shared by the [NEA
 **CLIP** - CLIP tells the server to clip intersecting objects by the bounding box area of the search.  It can only be used with these area formats: BOUNDS, TILE, QUADKEY, HASH.
 
 **LIMIT** - LIMIT can be used to limit the number of objects returned for a single search request. If not provide, the default is 100.
+
+**BUFFER** - Apply a BUFFER around [Area Formats](#area-formats) to increase the search area by x meters in [WITHIN](../commands/within.md) and [INTERSECTS](../commands/intersects.md) searches.
 
 
 <a name="output-formats"></a>
