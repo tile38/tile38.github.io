@@ -2,6 +2,7 @@
   "docs": {
     "Getting Started": [
       "topics/installation",
+      "topics/configuration",
       "topics/object-types",
       "topics/command-line-interface",
       "topics/network-protocols",
