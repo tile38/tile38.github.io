@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuration · Tile38</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Usage"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuration · Tile38"/><meta property="og:type" content="website"/><meta property="og:url" content="https://tile38.com/"/><meta property="og:description" content="## Usage"/><meta property="og:image" content="https://tile38.com/img/ogimage3.png"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon-32x32.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><script type="text/javascript" src="/js/videoAutoPlay.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="Tile38"/><h2 class="headerTitleWithLogo">Tile38</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/commands" target="_self" class="">Commands</a></li><li class="siteNavGroupActive"><a href="/topics/installation" target="_self" class="">Documentation</a></li><li class=""><a href="https://github.com/tidwall/tile38" target="_self" class="">GitHub</a></li><li class=""><a href="/topics/installation" target="_self" class="tile38NavButton">Get Tile38</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/topics/installation">Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/topics/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/topics/object-types">Object Types</a></li><li class="navListItem"><a class="navItem" href="/topics/command-line-interface">Command Line Interface</a></li><li class="navListItem"><a class="navItem" href="/topics/network-protocols">Network Protocols</a></li><li class="navListItem"><a class="navItem" href="/topics/client-libraries">Client Libraries</a></li><li class="navListItem"><a class="navItem" href="/topics/replication">Replication</a></li><li class="navListItem"><a class="navItem" href="/commands/">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Geofences</h3><ul class=""><li class="navListItem"><a class="navItem" href="/topics/geofencing">Geofencing</a></li><li class="navListItem"><a class="navItem" href="/topics/roaming-geofences">Roaming Geofences</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aof">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aofmd5">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/aofshrink">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/auth">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/bounds">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/chans">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-get">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-rewrite">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/config-set">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/del">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/delchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/delhook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/drop">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/eval">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalna">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalnasha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalro">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalrosha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/evalsha">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/expire">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/flushdb">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/follow">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/fset">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/gc">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/get">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/hooks">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/intersects">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jdel">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jget">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/jset">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/keys">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/nearby">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/output">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdel">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdelchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/pdelhook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/persist">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/ping">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/psubscribe">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/quit">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/readonly">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/rename">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/renamenx">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/scan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-exists">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-flush">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/script-load">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/search">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/server">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/set">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/setchan">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/sethook">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/stats">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/subscribe">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/test">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/timeout">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/ttl">__no_label</a></li><li class="navListItem hide"><a class="navItem" href="/commands/within">__no_label</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+
+              /*
+                MELBANIA: hide tocToggler if there are no onPageNav toc-headings
+              */
+              if (!headings) {
+                let tocToggler = document.querySelector("#tocToggler");
+                tocToggler.classList.add('hide');
+              }
+              /* END melbania */
+
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+
+                  /*
+                    MELBANIA: hide tocToggler if navToggler is active, unhide 
+                    otherwise; only engage hide/unhide toggling if there are toc-headings
+                  */
+                  if (target.classList.value.includes("docsNavContainer")) {
+                    let tocHeadings = document.querySelector('.toc-headings');
+                    let tocToggler = document.querySelector('#tocToggler');
+                    
+                    if (tocHeadings) {
+                      tocToggler.classList.toggle('hide');
+                    }
+                  }
+                  /* END melbania */
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/tile38/tile38.github.io/edit/master/docs/topics/configuration.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Configuration</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<pre><code class="hljs css language-plaintext">Usage: tile38-server [-p port]
+Basic Options:
+  -h hostname : listening host
+  -p port     : listening port (default: 9851)
+  -d path     : data directory (default: data)
+  -s socket   : listen on unix socket file
+  -l encoding : set log encoding to json or text (default: text) 
+  -q          : no logging. totally silent output
+  -v          : enable verbose logging
+  -vv         : enable very verbose logging
+
+Advanced Options: 
+  --pidfile path          : file that contains the pid
+  --appendonly yes/no     : AOF persistence (default: yes)
+  --appendfilename path   : AOF path (default: data/appendonly.aof)
+  --queuefilename path    : Event queue path (default:data/queue.db)
+  --http-transport yes/no : HTTP transport (default: yes)
+  --protected-mode yes/no : protected mode (default: yes)
+  --nohup                 : do not exit on SIGHUP
+
+Developer Options:
+  --dev                             : enable developer mode
+  --webhook-http-consumer-port port : Start a test HTTP webhook server
+  --webhook-grpc-consumer-port port : Start a test GRPC webhook server
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configuration-file"></a><a href="#configuration-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration File</h2>
+<p>By default <code>tile38-server</code> creates <code>data/</code> directory, and in it a <code>config</code> file. If a <code>config</code> is present in the directory, <code>tile38-server</code> will attempt to use it on start-up.</p>
+<table>
+<thead>
+<tr><th>options</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>requirepass</code></td><td>Set a password and make server password-protected, defaults to: <code>&quot;&quot;</code> (no password)</td></tr>
+<tr><td><code>leaderauth</code></td><td>If leader is password-protected, followers have to authenticate before they are allowed to follow.</td></tr>
+<tr><td><code>protected-mode</code></td><td>Tile38 only allows authenticated clients or connections from <code>localhost</code>. Defaults to: <code>&quot;yes&quot;</code></td></tr>
+<tr><td><code>maxmemory</code></td><td>Set max memory in bytes. Get max memory in bytes/kb/mb/gb.</td></tr>
+<tr><td><code>autogc</code></td><td>Set auto garbage collection to time in seconds where server performs a garbage collection. Defaults to: <code>0</code> (no garbage collection)</td></tr>
+<tr><td><code>keep_alive</code></td><td>Time server keeps client connections alive. Defaults to: <code>300</code> (seconds)</td></tr>
+<tr><td><code>follow_host</code></td><td>URI of Leader to follow</td></tr>
+<tr><td><code>follow_port</code></td><td>PORT of Leader to follow</td></tr>
+<tr><td><code>follow_pos</code></td><td>Follow from a specific point in the <code>appendonly.aof</code></td></tr>
+<tr><td><code>follow_id</code></td><td>ID of Leader</td></tr>
+<tr><td><code>server_id</code></td><td>Server ID of the current instance</td></tr>
+<tr><td><code>read_only</code></td><td>Make Tile38 read-only</td></tr>
+<tr><td><code>logconfig</code></td><td><a href="https://pkg.go.dev/go.uber.org/zap#Config">zap.Config</a> in json format</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p><strong>Leader configuration</strong></p>
+<p><code>tile38-server -d data-dir-leader/ -h localhost -p 1337</code></p>
+<pre><code class="hljs css language-plaintext"># data-dir-leader/config
+
+{
+  "maxmemory": "2gb",
+  "requirepass": "super-secret-leader-password"
+}
+</code></pre>
+<p><strong>Follower configuration</strong></p>
+<p><code>tile38-server -d data-dir-follower/ -h localhost -p 1333</code></p>
+<pre><code class="hljs css language-plaintext"># data-dir-follower/config
+
+{
+  "follow_host": "localhost",
+  "follow_port": 1337,
+  "leaderauth": "super-secret-leader-password"
+}
+</code></pre>
+<p>This will start a Tile38 leader/writer instance on <code>localhost:1337</code> with a required password of <code>super-secret-leader-password</code>. Upon successful start-up of the Tile38 leader, the
+a follower is started, picks up the config and connects to the Tile38 leader instance. More on replication in general, see <a href="/topics/replication">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="logging"></a><a href="#logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging</h2>
+<p>With <a href="https://github.com/tidwall/tile38/releases/tag/1.27.0">v1.27.0</a> Tile38 introduced the option to enable structured json logs using <a href="https://pkg.go.dev/go.uber.org/zap">zap</a> if <code>-l json</code> (defaults to <code>text</code> logs) is passed on start-up.
+If a <a href="https://pkg.go.dev/go.uber.org/zap#Config">zap.Config</a> is present in the <code>logconfig</code> child of the configuration file, Tile38 will use it. If no custom configuration is provided, it'll fallback to
+a <a href="https://pkg.go.dev/go.uber.org/zap#NewProductionConfig">default configuration</a>. The <code>level</code> of either is overwritten to <code>debug</code> to allow backward compatibility with text logging and and its respective log levels.</p>
+<table>
+<thead>
+<tr><th>option</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>-q</code></td><td>no logging. totally silent output</td></tr>
+<tr><td><code>-v</code></td><td>enable verbose logging</td></tr>
+<tr><td><code>-vv</code></td><td>enable very verbose logging</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p><code>tile38-server -h localhost -p 1337 -l json</code></p>
+<pre><code class="hljs css language-plaintext"># data/config with custom logconfig
+
+{
+  "maxmemory": "2gb",
+  "logconfig": {
+    "level": "debug",
+    "encoding": "json", 
+    "outputPaths": ["stdout"],
+    "errorOutputPaths": ["stderr"],
+    "encoderConfig": {
+      "messageKey": "message",
+      "levelKey": "level",
+      "levelEncoder": "lowercase"
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="prometheus-metrics"></a><a href="#prometheus-metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prometheus Metrics</h2>
+<p>Tile38 can natively export Prometheus metrics by setting the <code>--metrics-addr</code> command line flag (disabled by default). This example exposes the HTTP metrics server on port 4321:</p>
+<pre><code class="hljs css language-plaintext"># start server and enable Prometheus metrics, listen on local interface only
+./tile38-server --metrics-addr=127.0.0.1:4321
+
+# access metrics
+curl http://127.0.0.1:4321/metrics
+</code></pre>
+<p>If you need to access the <code>/metrics</code> endpoint from a different host you'll have to set the flag accordingly, e.g. set it to <code>0.0.0.0:&lt;&lt;port&gt;&gt;</code> to listen on all interfaces.</p>
+<p>Use the <a href="https://github.com/oliver006/redis_exporter">redis_exporter</a> for more advanced use cases like extracting key values or running a lua script.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/topics/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/topics/object-types"><span>Object Types</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#configuration-file">Configuration File</a><ul class="toc-headings"><li><a href="#example">Example</a></li></ul></li><li><a href="#logging">Logging</a><ul class="toc-headings"><li><a href="#example-1">Example</a></li></ul></li><li><a href="#prometheus-metrics">Prometheus Metrics</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="legal"><section class="copyright">Copyright © 2022 Tile38, LLC<a href="/license">License</a></section></div><div class="docs"><h5>Docs</h5><a href="/topics/installation">Getting Started</a><a href="/topics/geofencing">Geofences</a><a href="/commands/">Commands</a></div><div class="community"><h5>Community</h5><a href="https://stackoverflow.com/search?q=tile38" rel="noreferrer noopener">Stack Overflow</a><a href="https://tile38.com/slack/">Slack</a><a href="https://twitter.com/tile38db" rel="noreferrer noopener">Twitter</a></div><div class="more"><h5>More</h5><a href="https://github.com/tidwall/tile38">GitHub</a><a class="github-button" href="https://github.com/tidwall/tile38" data-icon="octicon-star" data-count-href="/tidwall/tile38/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div></body></html>
