@@ -34,9 +34,21 @@ _For more information on the format of this message please see the topic on [Geo
 
 ## Endpoints
 
-Tile38 currently supports endpoints with the following url schemes:
+Tile38 currently supports endpoints with the following services:
 
-**`http`**, **`https`**, **`grpc`**, **`redis`**, **`disque`**, **`kafka`**, **`amqp`**, **`mqtt`**, **`sqs`**, **`nats`**
+- [http](#http--https)
+- [https](#http--https)
+- [gRPC](#grpc)
+- [Redis](#redis)
+- [Disque](#disque)
+- [Kafka](#kafka)
+- [AMQP](#amqp)
+- [MQTT](#mqtt)
+- [NATS](#nats)
+- [Amazon SQS](#sqs)
+- [Azure Event Hub](#azure-event-hub)
+- [Google Pubsub](#google-pubsub)
+
 
 ### HTTP / HTTPS
 
@@ -236,6 +248,7 @@ The following optional parameters are available for this hook, the listed value 
 - `pass` - empty string
 
 ### Azure Event Hub
+
 Messages can be sent to an [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about) by specifying the Event Hub connection string. 
 
 For example: 
@@ -247,6 +260,16 @@ SETHOOK warehouse Endpoint=sb://event-hub-namespace.windows.net/;SharedAccessKey
 All webhook messages will be sent to the Event Hub in namespace `event-hub-namespace` to the Event Hub `event-hub-name`.
 
 The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing or not in the order shown in the example. 
+
+### Google Pubsub
+
+Messages can be sent to a [Google Pubsub](https://cloud.google.com/pubsub/) endpoint.
+
+For example:
+
+```tile38-cli
+SETHOOK warehouse pubsub://my-gcp-project:my-topic?credpath=/path/to/creds/key.json NEARBY fleet FENCE POINT 33.5123 -112.2693 500
+```
 
 ### Endpoint Failover
 
