@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**SETHOOK name endpoint [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param...]**
+**SETHOOK name endpoint [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] FENCE [DETECT what] [COMMANDS which] param [param...]**
 
 ## Description
 
@@ -48,7 +48,6 @@ Tile38 currently supports endpoints with the following services:
 - [Amazon SQS](#sqs)
 - [Azure Event Hub](#azure-event-hub)
 - [Google Pubsub](#google-pubsub)
-
 
 ### HTTP / HTTPS
 
@@ -249,9 +248,9 @@ The following optional parameters are available for this hook, the listed value 
 
 ### Azure Event Hub
 
-Messages can be sent to an [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about) by specifying the Event Hub connection string. 
+Messages can be sent to an [Azure Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about) by specifying the Event Hub connection string.
 
-For example: 
+For example:
 
 ```tile38-cli
 SETHOOK warehouse Endpoint=sb://event-hub-namespace.windows.net/;SharedAccessKeyName=sharedAccessKeyName;SharedAccessKey=***Secret***;EntityPath=event-hub-name ...
@@ -259,7 +258,7 @@ SETHOOK warehouse Endpoint=sb://event-hub-namespace.windows.net/;SharedAccessKey
 
 All webhook messages will be sent to the Event Hub in namespace `event-hub-namespace` to the Event Hub `event-hub-name`.
 
-The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing or not in the order shown in the example. 
+The connection string can be found from the Azure Portal blade for the Event Hub in question. Validation will fail if any of the connection string elements (Endpoint, SharedAccessKeyName, SharedAccessKey or EntityPath) are missing or not in the order shown in the example.
 
 ### Google Pubsub
 
@@ -271,7 +270,7 @@ For example:
 SETHOOK warehouse pubsub://my-gcp-project:my-topic?credpath=/path/to/creds/key.json NEARBY fleet FENCE POINT 33.5123 -112.2693 500
 ```
 
-### Endpoint Failover
+## Endpoint Failover
 
 It's possible to specify multiple endpoints for a webhook by separating each with a comma. Make sure that there are no spaces between the comma and the urls.
 
@@ -287,4 +286,3 @@ Tile38 will try to send a message to the first endpoint. If the send is a failur
 [HOOKS](../commands/hooks.md)<br>
 [PDELHOOK](../commands/pdelhook.md)<br>
 **[SETHOOK](../commands/sethook.md)**<br>
-
