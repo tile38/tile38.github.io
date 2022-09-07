@@ -118,35 +118,45 @@ All webhook messages will be sent to the Kafka server at `10.0.20.78:9092` to a 
 
 #### Authentication
 
-Tile38 currently supports SASL/PLAIN, SASL/SSL and TLS authentication with
+Tile38 currently supports SASL/PLAIN, SASL/SCRAM and TLS authentication with
 your Apache Kafka broker.
 
-##### SASL PLAIN
+##### SASL 
 
-Add `KAFKA_USERNAME` and `KAFKA_PASSWORD` to your environment. Then you can set
-the hook as follows:
+Add `KAFKA_USERNAME` and `KAFKA_PASSWORD` to your environment. 
+If `&ssl=true` is set, then by default Tile38 will try to verify the server certificate with your host CA set. 
+You can present a custom certificate with `&cacert=` but do not forget to mount it
+into your Tile38 leader volume.
 
-```
-SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&ssl=false&sha512=true ...
-```
-
-##### SASL / SSL
-
-Add `KAFKA_USERNAME` and `KAFKA_PASSWORD` to your environment. Make sure to
-mount the root certificate of your broker into your Tile38 leader. Then you can set
-the hook as follows:
+Then you can set the hook as follows:
 
 ```
-SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&ssl=true&sha512=true&cacert=path/to/ca.crt ...
+# SASL/PLAIN without SSL
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl ...
 ```
 
-where `sha256` or `sha512` depend on the authentication that has
-been setup in your broker.
+```
+# SASL/PLAIN with SSL
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&ssl=true ...
+```
+
+```
+# SASL/SCRAM with SSL
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&sha512=true&ssl=true ...
+
+# or sha256 respectively
+SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=sasl&sha512=true&ssl=true ...
+```
 
 ##### TLS
 
+By default Tile38 will try to verify the server certificate with your host CA set. 
+If you have a custom server certificate, you can present it with `&cacert=`.
 Make sure that the root certificate of your broker as well as the user certificate
-and the key are mounted into the Tile38 leader instance. Then setup as follows:
+and the key are mounted into the Tile38 leader instance. 
+TLS does not require you to set `&ssl=true` because SSL is implied.
+
+Then setup as follows:
 
 ```
 SETHOOK warehouse kafka://10.0.20.78:9092/warehouse?auth=tls&cacert=path/to/ca.crt&cert=/path/to/user.crt&key=/path/to/user.key ...
