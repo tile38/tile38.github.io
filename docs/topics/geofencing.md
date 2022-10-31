@@ -30,7 +30,7 @@ localhost:9851> SUBSCRIBE warehouse
 {"ok":true,"command":"subscribe","channel":"warehouse","num":1,"elapsed":"7.361µs"}
 ```
 
-The connection will be kept open using the SUBSCRIBE command. If any object enters or exists the 6km radius around `33.462,-112.268` the server will respond in realtime with geofence notifications.
+The connection will be kept open using the SUBSCRIBE command. If any object enters or exits the 6km radius around `33.462,-112.268` the server will respond in realtime with geofence notifications.
 
 ## Terminal 2
 
