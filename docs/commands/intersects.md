@@ -56,7 +56,7 @@ As of 1.30.0 Tile38 supports more elaborate [filter expressions](https://github.
 SET fleet truck2 FIELD hello '{"world":"tom"}' POINT -112 33
 >> {"ok":true}
 
-SCAN fleet WHERE hello.world == 'tom' COUNT
+SCAN fleet WHERE hello.world == tom COUNT
 >> {"ok":true,"count":1,"cursor":0}
 ```
 

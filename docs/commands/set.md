@@ -84,7 +84,7 @@ SET fleet truck1 FIELD driver '{"firstname":"Josh","lastname":"Baker"}' POINT 33
 >> {"ok":true}
 
 # can be searched for with
-SCAN fleet WHERE driver.firstname == "Josh" IDS
+SCAN fleet WHERE driver.firstname == Josh IDS
 >> {"ok":true, IDS:["truck1"]}
 ```
 
