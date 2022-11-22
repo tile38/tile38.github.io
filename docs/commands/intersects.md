@@ -44,19 +44,19 @@ WHERE allows for filtering out results based on [field](../commands/set.md#field
 
 For example:
 
-```
+```tile38-cli
 NEARBY fleet WHERE speed 70 +inf POINT 33.462 -112.268 6000
 ```
 
 will return only the objects in the **fleet** collection that are within the 6 km radius **and** have a field named `speed` that is greater than `70`. <br><br>Multiple WHEREs are concatenated as **and** clauses. `WHERE speed 70 +inf WHERE age -inf 24` would be interpreted as _speed is over 70 <b>and</b> age is less than 24._<br><br>The default value for a field is always `0`. Thus if you do a WHERE on the field `speed` and an object does not have that field set, the server will pretend that the object does and that the value is Zero.
 
-As of 1.30.0 Tile38 supports more elaborate [filter expressions](https://github.com/tidwall/expr).
+As of 1.30.0 Tile38 supports more elaborate [filter expressions](/topics/filter-expressions).
 
-```
-SET fleet truck2 FIELD hello '{"world":"tom"}' POINT -112 33
+```tile38-cli
+SET fleet truck2 FIELD info '{"speed":61,"name":"Tom"}' POINT -112 33
 >> {"ok":true}
 
-SCAN fleet WHERE hello.world == tom COUNT
+SCAN fleet WHERE 'info.speed > 45' COUNT
 >> {"ok":true,"count":1,"cursor":0}
 ```
 
@@ -64,7 +64,7 @@ SCAN fleet WHERE hello.world == tom COUNT
 
 Using [gjson](https://github.com/tidwall/gjson), as of 1.30.0 Tile38 objects can be filtered by object attributes.
 
-```
+```tile38-cli
 # add a complex object
 SET fleet truck OBJECT '{"type":"Feature","geometry":{"type":"Point","coordinates":[-112,33]},"properties":{"speed":50},"asdf":"Adsf"}'
 >> {"ok":true}
@@ -78,7 +78,7 @@ SCAN fleet WHERE properties.speed > 49 IDS
 
 WHEREIN is similar to WHERE except that it checks whether the object's [field](../commands/set.md#fields) value is in a given list. For example<br>`nearby fleet where wheels 3 14 18 22 point 33.462 -112.268 6000` will return only the objects in the 'fleet' collection that are within the 6 km radius **and** have a field named `wheels` that is either `14` or `18` or `22`. <br><br>Multiple WHEREINs are concatenated as **and** clauses. `WHEREIN doors 2 2 5 WHEREIN wheels 3 14 18 22` would be interpreted as _doors is either 2 or 5 <b>and</b> wheels is either 14 or 18 or 22._<br><br>The default value for a field is always `0`. Thus if you do a WHEREIN on the field `wheels` and an object does not have that field set, the server will pretend that the object does and that the value is Zero. <br><br>**Note**: immediately following the **WHEREIN** token must be an integer specifying the number of values specified in this clause.
 
-### WHEREEVAL and WHEREEVALSHA
+### WHEREEVAL
 
 Similar to WHERE except that matching decision is made by Lua script. For example <br>`nearby fleet whereeval "return FIELDS.wheels > ARGV[1] or (FIELDS.length * FIELDS.width) > ARGV[2]" 2 8 120 point 33.462 -112.268 6000` will return only the objects in the `fleet` collection that are within the 6km radius **and** have a field named `wheels` that is above `8`, or have `length` and `width` whose product is greater than `120`. <br>Multiple WHEREEVALs are concatenated as **and** clauses. See [EVAL](../commands/eval.md) command for more details. Note that, unlike the EVAL command, WHEREVAL Lua environment (1) does not have KEYS global, and (2) has the FIELDS global with the Lua table of the iterated object's fields.
 

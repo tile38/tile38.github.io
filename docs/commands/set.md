@@ -67,7 +67,6 @@ SET supports a set of options that modify its behavior:
 ## Fields
 
 Fields are extra data which belongs to an object.
-A field is always a [double precision floating point](https://en.wikipedia.org/wiki/Double-precision_floating-point_format).
 There is no limit to the number of fields that an object can have.
 
 To set a field when setting an object.
@@ -77,7 +76,7 @@ SET fleet truck1 FIELD speed 90 POINT 33.5123 -112.2693
 SET fleet truck1 FIELD speed 90 FIELD age 21 POINT 33.5123 -112.2693
 ```
 
-As of Tile38 1.30.0 `FIELD` is no longer limited to double precision floating point.
+_As of Tile38 1.30.0 `FIELD` is no longer limited to numbers._
 
 ```tile38-cli
 SET fleet truck1 FIELD driver '{"firstname":"Josh","lastname":"Baker"}' POINT 33.5123 -112.2693

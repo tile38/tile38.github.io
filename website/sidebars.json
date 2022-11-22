@@ -8,6 +8,7 @@
       "topics/network-protocols",
       "topics/client-libraries",
       "topics/replication",
+      "topics/filter-expressions",
       "commands/index"
     ],
     "Geofences": [
