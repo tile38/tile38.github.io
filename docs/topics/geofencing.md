@@ -57,11 +57,7 @@ The event will appear in Terminal 1 and look like:
 }
 ```
 
-The server will notify the subscribed clients if the `command` is **`del`** or **`set`** or **`drop`**.
-
-- **`del`** notifies the client that an object has been deleted from the collection that is being fenced.
-- **`drop`** notifies the client that the entire collection is dropped.
-- **`set`** notifies the client that an object has been added or updated, and when it's position is detected by the fence.
+### Detect
 
 <a name="detect"></a>
 The **`detect`** may be one of the following values.
@@ -76,15 +72,81 @@ By default **all** detect types and commands are returned.
 If you would like to only have a select few then use the `DETECT` option, for example:
 
 ```tile38-cli
-SETCHAN warehouse NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
+$ tile38-cli
+localhost:9851> SETCHAN warehouse NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
+{"ok":true,"elapsed":"12.988µs"}
 ```
 
 This command will only tell the fence that you only want **inside** and **outside** detection.
 
+### Command
+
+The server will notify the subscribed clients if the `command` is **`del`** or **`set`** or **`drop`**.
+
+- **`del`** notifies the client that an object has been deleted from the collection that is being fenced.
+- **`drop`** notifies the client that the entire collection is dropped.
+- **`set`** notifies the client that an object has been added or updated, and when it's position is detected by the fence.
+
 It's also possible to mask which commands are returned by using the `COMMANDS` option, for example:
 
 ```tile38-cli
-SETCHAN warehouse NEARBY fleet FENCE DETECT enter COMMANDS set POINT 33.462 -112.268 6000
+$ tile38-cli
+localhost:9851> SETCHAN warehouse NEARBY fleet FENCE DETECT enter COMMANDS set POINT 33.462 -112.268 6000
+{"ok":true,"elapsed":"12.988µs"}
 ```
 
 This specifies that you only want the **enter** detection for the **set** command.
+
+### Where
+
+Similar to searches, geofencing can exclude events based on filters set in `WHERE`, `WHEREIN` and `WHEREEVAL`.
+
+The example of a geofence that only emits an event for objects with a speed of >50 mph is used to demonstrate the behaviour.
+
+```tile38-cli
+$ tile38-cli
+localhost:9851> SETCHAN warehouse INTERSECTS fleet WHERE speed 50 +inf FENCE DETECT outside,inside POINT 33.462 -112.268 6000
+{"ok":true,"elapsed":"12.988µs"}
+```
+
+Upon setting an object in the fleet collection with a `speed` `FIELD` that is not matching the `WHERE` filter expression of the geofence, the geofence emits an **outside** event.
+
+```tile38-cli
+$ tile38-cli
+localhost:9851> SET fleet bus FIELD speed 20 POINT 33.460 -112.260
+{"ok":true,"elapsed":"12.988µs"}
+
+{
+  "command": "set",
+  "group": "5c5203ccf5ec4e4f349fd038",
+  "detect": "outside",
+  "hook": "warehouse",
+  "key": "fleet",
+  "time": "2019-01-30T13:06:36.769273-07:00",
+  "id": "bus",
+  "object": { "type": "Point", "coordinates": [-112.26, 33.46] },
+  "fields":{"speed": 20}
+}
+```
+
+Although the vehicle is **physically inside** the geofence, it **does not match** the `WHERE` expression of the geofence and is therefore considered outside for the scope of this particular geofence.
+
+When setting the object to same physically position, but with a speed matching the `WHERE` expression, the geofence emits an **inside** event.
+
+```tile38-cli
+$ tile38-cli
+localhost:9851> SET fleet bus FIELD speed 51 POINT 33.460 -112.260
+{"ok":true,"elapsed":"12.988µs"}
+
+{
+  "command": "set",
+  "group": "5c5203ccf5ec4e4f349fd038",
+  "detect": "inside",
+  "hook": "warehouse",
+  "key": "fleet",
+  "time": "2019-01-30T13:06:36.769273-07:00",
+  "id": "bus",
+  "object": { "type": "Point", "coordinates": [-112.26, 33.46] },
+  "fields":{"speed": 51}
+}
+```

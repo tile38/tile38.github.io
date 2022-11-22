@@ -6,7 +6,7 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**SETCHAN name [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key FENCE [DETECT what] [COMMANDS which] param [param...]**
+**SETCHAN name [META name value ...] [EX seconds] NEARBY|WITHIN|INTERSECTS key [WHERE field min max ...] [WHEREIN field count value [value...] ...] [WHEREEVAL script numargs arg [arg...] ...] FENCE [DETECT what] [COMMANDS which] param [param...]**
 
 ## Description
 
@@ -28,7 +28,7 @@ In this example we created a channel named `warehouse` that watches for changes 
 - **`exit`** is when an object that **was** previously in the fence has exited the area.
 - **`cross`** is when an object that **was not** previously in the fence has entered **and** exited the area.
 
-*For more information on the format of this message please see the topic on [Geofencing](../topics/geofencing.md).*
+_For more information on the format of this message and the use of `WHERE` please see the topic on [Geofencing](../topics/geofencing.md)._
 
 [NEARBY](../commands/nearby.md), [INTERSECTS](../commands/intersects.md), and [WITHIN](../commands/within.md) are supported search types. The `FENCE` keyword must be present.
 
