@@ -28,6 +28,16 @@ INTERSECTS fleet WHERE 'name == "Andy"' BOUNDS 30 -120 40 -100
 INTERSECTS fleet WHERE 'info.speed > 45 && info.age < 21' BOUNDS 30 -120 40 -100
 ```
 
+### Matching string fields
+
+It's often useful to filter on a substring of a field's value.
+For example to filter on objects in the `fleet` collection that have a field
+named `class` with a string value starting with `driver:`.
+
+```tile38-cli
+INTERSECTS fleet WHERE 'class.match("driver:*")' BOUNDS 30 -120 40 -100
+```
+
 ### GeoJSON Properties
 
 Expressions can be used to filter on the "properties" member of a GeoJSON Feature.
