@@ -225,12 +225,11 @@ class Index extends React.Component {
       <Container className="communityContainer">
         <section className="basic community">
           <h1 className="w600">
-            Open Source <div className="with-love"></div>
+            Open Source
           </h1>
           <p>Tile38 is 100% Open Source Software.</p>
           <p>
-            We have an active and growing community where you can ask questions
-            and discuss ideas. Connect with us on Github, Twitter, or Slack.
+            Connect with us on Github, Twitter, or Slack.
           </p>
           <div className="cards">
             <div className="row">
