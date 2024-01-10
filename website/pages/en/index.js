@@ -252,7 +252,7 @@ class Index extends React.Component {
                 </a>
               </div>
               <div>
-                <a href="https://join.slack.com/t/tile38/shared_invite/enQtMzQ0OTEwMDUxMzc5LTc0NTJjZmM3YjFhOGZiZGU2NDNjOWEwM2Q5ZWE3MzFiYWZkZDIyN2U2ZmUzZDBmODU0MjI1ZjQ0N2Y1M2I1NTg">
+                <a href="https://tile38.com/slack">
                   <img
                     src="./img/community-slack.svg"
                     className="slack"
