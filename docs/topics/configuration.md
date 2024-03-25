@@ -52,6 +52,8 @@ By default `tile38-server` creates `data/` directory, and in it a `config` file.
 | `server_id` | Server ID of the current instance |
 | `read_only` | Make Tile38 read-only |
 | `logconfig`| [zap.Config](https://pkg.go.dev/go.uber.org/zap#Config) in json format |
+| `replica_announce_ip` | IP address to hand to leader when following that instructs leader (and others) how to connect to follower. Defaults to '' (auto detect). |
+| `replica_announce_port` | Port to hand to leader when following that instructs leader (and others) how to connect to follower. Defaults to server port. |
 
 ### Example
 
