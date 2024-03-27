@@ -107,7 +107,7 @@ All webhook messages will be sent to the Kafka server at `10.0.20.78:9092` to a 
 
 #### Options
 
-- `auth` - `sasl`, `tls`
+- `auth` - `sasl`, `tls`, `none`
 - `ssl` - `true`
 - `sha256` - `true`
 - `sha512` - `true`

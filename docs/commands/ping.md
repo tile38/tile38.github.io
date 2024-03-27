@@ -6,17 +6,18 @@ sidebar_label: __no_label
 
 ## Syntax
 
-**PING**
+**PING [echo]**
 
 ## Description
 
-Ping the server. The response will contain `"pong"`.
+Ping the server. The response will contain `"pong"` unless `echo` is provided, in which case `echo` will be sent back.
 
 
 ## Examples
 
 ```tile38-cli
 PING
+PING 1234
 ```
 
 ## Related Commands
