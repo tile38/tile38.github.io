@@ -33,7 +33,7 @@ SET fleet truck1 BOUNDS 30 -110 40 -100
 
 ## Geohash
 
-A [geohash](https://en.wikipedia.org/wiki/Geohash) is a string respresentation of a point. With the length of the string indicating the precision of the point.
+A [geohash](https://en.wikipedia.org/wiki/Geohash) is a string representation of a point. With the length of the string indicating the precision of the point.
 
 ```tile38-cli
 SET fleet truck1 HASH 9tbnthxzr   # this would be equivlent to 'POINT 33.5123 -112.2693'
