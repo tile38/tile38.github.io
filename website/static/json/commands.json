@@ -1222,6 +1222,12 @@
     "since": "1.0.0",
     "group": "server"
   },
+  "HEALTHZ": {
+    "summary": "Healthchecks on leader and follower",
+    "arguments": [],
+    "since": "1.0.0",
+    "group": "server"
+  },
   "GC": {
     "summary": "Forces a garbage collection",
     "complexity": "O(1)",
