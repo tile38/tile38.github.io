@@ -28,4 +28,6 @@ FLUSHDB
 **[FLUSHDB](../commands/flushdb.md)**<br>
 [GC](../commands/gc.md)<br>
 [READONLY](../commands/readonly.md)<br>
+[INFO](../commands/info.md)<br>
+[ROLE](../commands/role.md)<br>
 [SERVER](../commands/server.md)<br>
