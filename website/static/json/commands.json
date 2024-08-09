@@ -164,6 +164,26 @@
     "since": "1.0.0",
     "group": "keys"
   },
+  "FGET": {
+    "summary": "Gets the value for the field of an id",
+    "complexity": "O(1)",
+    "arguments": [
+      {
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "field",
+        "type": "string"
+      }
+    ],
+    "since": "1.33.0",
+    "group": "keys"
+  },
   "FSET": {
     "summary": "Set the value for one or more fields of an id",
     "complexity": "O(1)",
@@ -194,6 +214,42 @@
       }
     ],
     "since": "1.0.0",
+    "group": "keys"
+  },
+  "EXISTS": {
+    "summary": "Checks to see if a id exists",
+    "complexity": "O(1)",
+    "arguments": [
+      {
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "since": "1.33.0",
+    "group": "keys"
+  },
+  "FEXISTS": {
+    "summary": "Checks to see if a field exists on a id",
+    "complexity": "O(1)",
+    "arguments": [
+      {
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "field",
+        "type": "string"
+      }
+    ],
+    "since": "1.33.0",
     "group": "keys"
   },
   "BOUNDS": {
@@ -1225,6 +1281,80 @@
   "HEALTHZ": {
     "summary": "Healthchecks on leader and follower",
     "arguments": [],
+    "since": "1.0.0",
+    "group": "server"
+  },
+  "ROLE": {
+    "summary": "Gets information about the leader/follower status",
+    "arguments": [],
+    "since": "1.33.1",
+    "group": "server"
+  },
+  "INFO": {
+    "summary": "Gets information about the server",
+    "arguments": [
+      {
+        "name": "section",
+        "multiple": true,
+        "optional": true,
+        "enumargs": [
+          {
+            "name": "server"
+          },
+          {
+            "name": "clients"
+          },
+          {
+            "name": "memory"
+          },
+          {
+            "name": "clients"
+          },
+          {
+            "name": "persistence"
+          },
+          {
+            "name": "stats"
+          },
+          {
+            "name": "replication"
+          },
+          {
+            "name": "cpu"
+          },
+          {
+            "name": "commandstats"
+          },
+          {
+            "name": "latencystats"
+          },
+          {
+            "name": "sentinel"
+          },
+          {
+            "name": "cluster"
+          },
+          {
+            "name": "modules"
+          },
+          {
+            "name": "keyspace"
+          },
+          {
+            "name": "errorstats"
+          },
+          {
+            "name": "all"
+          },
+          {
+            "name": "default"
+          },
+          {
+            "name": "everything"
+          }
+        ]
+      }
+    ],
     "since": "1.0.0",
     "group": "server"
   },
