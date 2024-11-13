@@ -261,7 +261,7 @@ class Index extends React.Component {
                 </a>
               </div>
               <div>
-                <a href="https://discord.gg/7JUad5hQ">
+                <a href="https://discord.gg/esq8ESgzms">
                   <img
                     src="./img/community-discord.png"
                     className="discord"
