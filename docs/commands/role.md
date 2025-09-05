@@ -10,7 +10,7 @@ sidebar_label: __no_label
 
 ## Description
 
-Provide information on the role of a Tile38 instance in the context of replication, by returning if the instance is currently a master or slave. The command also returns additional information about the state of the replication (if the role is master or slave).
+Provide information on the role of a Tile38 instance in the context of replication, by returning if the instance is currently a leader or follower. The command also returns additional information about the state of the replication. The responses use the legacy nomenclature "master" and "slave".
 
 ## Related Commands
 
