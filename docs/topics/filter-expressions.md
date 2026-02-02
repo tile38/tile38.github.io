@@ -38,6 +38,11 @@ named `class` with a string value starting with `driver:`.
 INTERSECTS fleet WHERE 'class.match("driver:*")' BOUNDS 30 -120 40 -100
 ```
 
+### Regular expression matching
+
+WHERE expressions support the `=~` operator for regex matching to match string values in fields or GeoJSON properties within objects. For example, `WHERE properties.name =~ 'truck.*'` filters objects where the 'name' property matches the pattern, and `WHERE field_name =~ 'value.*'` works similarly for fields.
+
+
 ### GeoJSON Properties
 
 Expressions can be used to filter on the "properties" member of a GeoJSON Feature.
@@ -65,6 +70,38 @@ The "properties" member can be queried using like such:
 ```tile38-cli
 INTERSECTS fleet WHERE 'properties.name == "Carol"' BOUNDS 30 -120 40 -100
 ```
+
+### GJSON queries
+
+Valid JSON fields and properties may be queried using the [GJSON path](https://github.com/tidwall/gjson/blob/master/SYNTAX.md) syntax. 
+
+For example, take the following json array:
+
+```json
+[
+  {"name":"car1","make":"Dodge","tag":"A"},
+  {"name":"car2","make":"Ford","tag":"B"}
+]
+```
+
+```tile38-cli
+SET fleet truck5 FIELD cars '[{"name":"car1","make":"Dodge","tag":"A"},{"name":"car2","make":"Ford","tag":"B"}]'
+```
+
+The "cars" field can be queried for 'Dodge' like:
+
+```text
+INTERSECTS fleet WHERE 'cars["#(make=Dodge)#|#"]' BOUNDS 30 -120 40 -100
+```
+
+It takes the 'cars' JSON field, and performs a gjson query for the the path
+`#(make=Dodge)#|#`.
+
+The `#(make=Dodge)#` part finds all makes that equals Dodge.  
+The `|#` part gets the number of results.  
+The `WHERE` filter then evaluates results `>0` as true and `0` as false.
+
+You can test gjson queries here <a href="https://gjson.dev">https://gjson.dev</a>.
 
 
 ----
