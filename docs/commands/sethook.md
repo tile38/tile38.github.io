@@ -105,6 +105,12 @@ SETHOOK warehouse kafka://10.0.20.78:9092/warehouse ...
 
 All webhook messages will be sent to the Kafka server at `10.0.20.78:9092` to a [topic](https://kafka.apache.org/documentation/#intro_topics) called warehouse. The port number is optional and will default to 9092.
 
+Multiple broker addresses can be specified using commas, so the client can bootstrap through any available broker in the cluster:
+
+```tile38-cli
+SETHOOK warehouse kafka://10.0.20.78:9092,10.0.20.79:9092,10.0.20.80:9092/warehouse ...
+```
+
 #### Options
 
 - `auth` - `sasl`, `tls`, `none`
