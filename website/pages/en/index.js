@@ -229,7 +229,7 @@ class Index extends React.Component {
           </h1>
           <p>Tile38 is 100% Open Source Software.</p>
           <p>
-            Connect with us on Github, Twitter, Slack, or Discord.
+            Connect with us on Github {/*, Twitter, Slack, or Discord.*/}
           </p>
           <div className="cards">
             <div className="row">
@@ -242,7 +242,7 @@ class Index extends React.Component {
                   />
                 </a>
               </div>
-              <div>
+              {/*<div>
                 <a href="https://twitter.com/tile38db">
                   <img
                     src="./img/community-twitter.svg"
@@ -268,7 +268,7 @@ class Index extends React.Component {
                     alt="Discord"
                   />
                 </a>
-              </div>
+              </div>*/}
             </div>
           </div>
         </section>
